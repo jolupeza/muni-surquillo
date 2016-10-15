@@ -14,25 +14,7 @@
 /* --------------------------- *\
 //          VARIABLES
 /* --------------------------- */
-$purple: #623d91
-$yellow: #ffcc00
-$lightBlue: #34c0d0
-$gray: #e2e2e2
-$gray_text: #5c5c5c
-$gray_dark: #969696
-$text_gray: #b0b0b0
-
-$azul_claro: #3a67ac
-$azul: #213b6f
-$celeste: #62add8
-$aqua: #5596b2
-$green: #859e3b
-$text_color: #505050
-$black: #313131
-$blackGb: #222221
-$blackHard: #161616
-
-$purple: #531878
+$gray: #8c908f
 
 /* --------------------------- *\
 //           GENERAL
@@ -41,14 +23,20 @@ $purple: #531878
 //   height: 100%
 //   width: 100%
 body
-  color: $text_color
-  font-family: "Open Sans", sans-serif
+  font-family: "Arial", sans-serif
   font-size: 16px
-  position: relative
-a
-  color: $azul
-  &:hover
-    color: $azul_claro
+
+.t-xs
+  font-size: 0.625em
+.t-s
+  font-size: 0.75em
+.t-m
+  font-size: 0.875em
+.t-l
+  font-size: 1.125em
+.t-white
+  color: #fff
+
 /* --------------------------- *\
 //           LOADERWRAPPER
 /* --------------------------- */
@@ -1599,95 +1587,10 @@ a
 //          FOOTER
 /* --------------------------- */
 .Footer
-  background-color: $blackGb
-  padding: 40px 0 20px
-  p
-    color: white
-    font-size: 0.8125em
-    font-weight: 300
-    a
-      color: white
-      font-weight: 600
-.Footer-title
-  border-bottom: 1px solid white
-  color: white
-  font-size: 1.125em
-  font-weight: 400
-  margin-bottom: 30px
-  margin-top: 0
-  span
-    background-color: $blackGb
-    padding-right: 10px
-.Footer-text
-  color: white
-  font-size: 0.8125em
-  font-weight: 300
-  a
-    color: white
-    font-weight: 600
-.Footer-menuSocial
-  margin-top: 20px
-.Footer-menuSocial-item
-  color: white
-  font-size: 0.875em
-  font-weight: 300
-  vertical-align: middle
-.Footer-menuSocial-item--fb
-  a
-    background: transparent url('../images/sprites.png') -134px 0 no-repeat
-    display: block
-    height: 38px
-    width: 38px
-  &:hover
-    a
-      background-position: -172px 0
-.Footer-menuSocial-item--tw
-  a
-    background: transparent url('../images/sprites.png') -134px -38px no-repeat
-    display: block
-    height: 38px
-    width: 38px
-  &:hover
-    a
-      background-position: -172px -38px
-.Footer-blog
-  +display-flex()
-  margin-bottom: 20px
-.Footer-blog-img
-  +flex-basis(50%)
-  margin-right: 10px
-.Footer-blog-info
-  +flex-basis(50%)
-.Footer-blog-title
-  color: white
-  font-size: 0.875em
-  font-weight: 600
-  margin-top: 0
-.Footer-map
-  margin-bottom: 20px
-  height: 200px
-  // min-height: 200px
-.Footer-copy
-  color: #7b7b7b
-  font-size: 0.875em
-  font-weight: 300
-  padding-top: 5px
-.Footer-menu
-  margin-bottom: 0
-  li
-    vertical-align: top
-    a
-      color: white
-      font-size: 0.875em
-      font-weight: 300
-    &.current-menu-item
-      a
-        text-decoration: underline
-@media only screen and (max-width: 991px)
-  .Footer-menu
-    margin-top: 20px
-    text-align: center
+  background-color: $gray
+
 /* --------------------------- *\
+
 //           MARKER
 /* --------------------------- */
 .Marker-list
