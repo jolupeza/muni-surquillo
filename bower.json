@@ -1,0 +1,23 @@
+{
+  "name": "muni-surquillo",
+  "description": "Website Municipalidad de Surquillo",
+  "main": "index.html",
+  "authors": [
+    "José Pérez <jolupeza@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [],
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/lib",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

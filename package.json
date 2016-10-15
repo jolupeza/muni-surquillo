@@ -1,0 +1,29 @@
+{
+  "name": "muni-surquillo",
+  "version": "1.0.0",
+  "description": "Website Municipalidad de Surquillo",
+  "private": true,
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-compass": "^2.1.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-if": "^2.0.1",
+    "gulp-inject": "^4.1.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-uglify": "^2.0.0",
+    "gulp-uncss": "^1.0.6",
+    "gulp-useref": "^3.1.2",
+    "jshint": "^2.9.3",
+    "jshint-stylish": "^2.2.1",
+    "wiredep": "^4.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "José Pérez <jolupeza@gmail.com>",
+  "license": "MIT"
+}

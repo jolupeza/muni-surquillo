@@ -1,0 +1,15 @@
+{
+    "name": "cepuch/webcepuch",
+    "description": "New website CEPUCH",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jose Perez",
+            "email": "joseluis@watson.pe"
+        }
+    ],
+    "require": {
+        "suncat/php-mobile-detect": "^2.0",
+        "endroid/simple-excel": "^1.0"
+    }
+}
