@@ -14,15 +14,16 @@
 /* --------------------------- *\
 //          VARIABLES
 /* --------------------------- */
-$gray: #8c908f
+$text-color: #6c6c6c
+$text-blue: #40588d
+$black: #1b1b1b
+$gray: #f5f5f5
 
 /* --------------------------- *\
 //           GENERAL
 /* --------------------------- */
-// body, html
-//   height: 100%
-//   width: 100%
 body
+  color: $text-color
   font-family: "Arial", sans-serif
   font-size: 16px
 
@@ -36,9 +37,84 @@ body
   font-size: 1.125em
 .t-white
   color: #fff
+.t-blue
+  color: $text-blue
+.t-black
+  color: $black
+.t-legend
+  font-weight: bold
+.Page-loader
+  left: 45%
+  position: fixed
+  top: 45%
+  z-index: 5
 
 /* --------------------------- *\
-//           LOADERWRAPPER
+//           HEADER
+/* --------------------------- */
+.Header
+  padding: 15px 0
+.Header-logo
+  margin: 0
+.Header-nav
+  margin-top: 15px
+.Header-menu
+  li
+    padding: 0 15px
+    text-transform: uppercase
+    a
+      color: $text-color
+      display: block
+      font-weight: bold
+      +transition(all 0.2s ease)
+      &:hover
+        color: $text-blue
+        text-decoration: none
+      &::before
+        background-image: url("../images/sprites.png")
+        content: ""
+        display: block
+        height: 50px
+        margin: 0 auto
+        width: 50px
+    &.Menu-home
+      a
+        &::before
+          background-position: -150px -100px
+        &:hover
+          &::before
+            background-position: -50px -150px
+    &.Menu-distrito
+      a
+        &::before
+          background-position: -100px -100px
+        &:hover
+          &::before
+            background-position: 0 -150px
+    &.Menu-municipalidad
+      a
+        &::before
+          background-position: -200px -100px
+        &:hover
+          &::before
+            background-position: -100px -150px
+    &.Menu-servicios
+      a
+        &::before
+          background-position: -250px -100px
+        &:hover
+          &::before
+            background-position: -150px -150px
+    &.Menu-transparencia
+      a
+        &::before
+          background-position: -300px -100px
+        &:hover
+          &::before
+            background-position: -200px -150px
+
+/* --------------------------- *\
+//       LOADERWRAPPER
 /* --------------------------- */
 .LoaderWrapper
   background-color: white
@@ -61,2576 +137,314 @@ body
     width: 100%
   #loadingbar
     height: 5px
-    background-color: $azul_claro
+    background-color: $text-blue
     position: absolute
     top: 51%
     left: 0px
     +transition(width 0.2s ease)
     width: 0%
-
-
 .Page-loader
   left: 45%
   position: fixed
   top: 45%
   z-index: 5
 
-/* --------------------------- *\
-//           HEADER
-/* --------------------------- */
-.Header
-  z-index: 99
-  +transition(all 0.2s ease)
-  &.affix
-    width: 100%
-    .Header-wrapper
-      background-color: $azul_claro
-    .Header-wrapper-logo
-      background-color: white
-      +flex-basis(25%)
-      margin-right: 0
-    .Header-logo
-      margin-top: 0
-      position: absolute
-      right: -24px
-      width: 100%
-    .Header-mainMenu
-      margin: 0
-    .Header-mainMenu-list
-      > li
-        +border-radius(0)
-        margin-right: -4px
-        padding: 0
-        &:hover, &.active, &.current_page_item, &.current-menu-item, &.current-category-ancestor, &.current-post-ancestor, &.current-menu-parent, &.current-menu-ancestor
-          background-color: $azul
-          > a
-            color: white
-        &.Header-mainMenu-list--submenu
-          > a
-            &::after
-              bottom: 0
-        > .sub-menu
-          margin-top: 0
-      > li
-        > a
-          padding: 25px 10px
-    .Header-mainMenu--blue, .Header-mainMenu--bluesoft, .Header-mainMenu--celeste, .Header-mainMenu--green, .Header-mainMenu--black
-      background-color: transparent
-    .Header-mainMenu-black
-      background-color: transparent
-      &.Header-mainMenu-black--left
-        padding-right: 10px
-        a
-          border-right: none
-          padding-right: 0
-        &:hover, &.active, &.current_page_item, &.current-menu-item, &.current-category-ancestor, &.current-post-ancestor, &.current-menu-parent, &.current-menu-ancestor
-          a
-            border-right: none
-    > .sub-menu
-      margin-top: 0
-  &.affix-top
-    position: fixed
-    width: 100%
-.Header-wrapper
-  +display-flex()
-.Header-wrapper-logo
-  +flex-basis(30%)
-  margin-right: 25px
-  position: relative
-  +transition(all 0.2 ease)
-.Header-logo
-  margin-bottom: 0
-  a
-    display: block
-.Header-logo-img
-  display: none
-  margin: 0 0 0 auto
-  +transition(all 0.1s ease)
-  &.active
-    display: block
-.Header-mainMenu
-  +flex-basis(60%)
-  margin-top: 35px
-  +transition(all 0.2s ease-in-out)
-.Header-mainMenu-list
-  border-bottom: none
-  > li
-    +border-radius(5px)
-    display: inline-block
-    float: none
-    margin-bottom: 0
-    margin-right: 10px
-    position: static
-    vertical-align: top
-    &:last-child
-      margin-right: 0
-    &.text-hide
-      display: none
-    > a
-      +border-radius(0)
-      border: none
-      color: white
-      display: block
-      font-size: 0.875em
-      font-weight: 700
-      padding: 10px
-      position: relative
-      +transition(all 0.1s ease)
-      &:link
-        background-color: transparent
-        text-decoration: none
-      &::after
-        border-bottom: 5px solid white
-        border-left: 8px solid transparent
-        border-right: 8px solid transparent
-        bottom: -5px
-        content: ""
-        display: none
-        height: 0
-        left: 45%
-        position: absolute
-        width: 0
-    &.Header-mainMenu-list--submenu
-      &:hover
-        > .sub-menu
-          +display-flex()
-        > a
-          &::after
-            display: block
-    &.active, &.current_page_item, &.current-menu-item, &.current-category-ancestor, &.current-post-ancestor, &.current-menu-parent, &.current-menu-ancestor
-      > a, > a:hover, > a:focus
-        background-color: transparent
-        border: none
-        color: white
-        text-decoration: none
-    > .sub-menu
-      background-color: white
-      +box-shadow(rgba(black, 0.5) 3px 3px 9px)
-      +display-flex()
-      display: none
-      +flex-wrap(wrap)
-      left: 0
-      list-style: none
-      margin: 5px 95px 0
-      padding: 25px
-      position: absolute
-      text-align: left
-      width: 90%
-      z-index: 9
-      > li
-        +flex-basis(24%)
-        margin-bottom: 15px
-        margin-right: 15px
-        text-transform: uppercase
-        &:nth-child(4n+4)
-          margin-right: 0
-        > a
-          color: white
-          display: inline-block
-          font-size: 0.875em
-          font-weight: 400
-          padding: 2px 40px
-          position: relative
-          &:hover
-            color: white
-            text-decoration: none
-          &::after
-            border-bottom: 10px solid white
-            border-left: 10px solid transparent
-            bottom: 0
-            content: ""
-            display: inline-block
-            height: 0
-            position: absolute
-            right: 0
-            width: 0
-          &::before
-            background-image: url("../images/sprites.png")
-            background-repeat: no-repeat
-            content: ""
-            display: inline-block
-            height: 23px
-            left: 0
-            position: absolute
-            top: 0
-            vertical-align: top
-            width: 32px
-        &.Submenu-globe
-          a
-            &::before
-              background-position: 0 -167px
-        &.Submenu-book
-          a
-            &::before
-              background-position: -32px -167px
-        &.Submenu-pencil
-          a
-            &::before
-              background-position: -64px -167px
-        &.Submenu-negocio
-          a
-            &::before
-              background-position: -96px -167px
-        > .sub-menu
-          margin: 15px 0
-          > li
-            margin-bottom: 10px
-            a
-              color: $blackGb
-              font-size: 0.8125em
-            &.current-menu-item, &.active
-              a
-                text-decoration: underline
-    &.Header-mainMenu-list--nodesc
-      &:hover
-        > .sub-menu
-          display: block
-      > .sub-menu
-        left: auto
-        list-style: square
-        padding: 25px 25px 25px 35px
-        margin: 5px 0 0 0
-        width: auto
-        > li
-          +flex-basis(100%)
-          margin-bottom: 10px
-          a
-            color: $blackGb
-            display: block
-            font-size: 0.8125em
-            padding: 0
-            &::before, &::after
-              background-image: none
-              display: none
-            &:hover
-              text-decoration: underline
-          &.current-menu-item, &.active
-            a
-              text-decoration: underline
-.Header-mainMenu--blue
-  background-color: $azul
-.Header-mainMenu--bluesoft
-  background-color: $azul_claro
-.Header-mainMenu--celeste
-  background-color: $celeste
-.Header-mainMenu--green
-  background-color: $green
-.Header-mainMenu-black
-  background-color: #000
-  &.Header-mainMenu-black--left
-    +border-radius(5px 0 0 5px)
-    margin-right: -5px
-    padding-right: 0
-    a
-      border-right: 1px solid $celeste
-      padding-right: 10px
-    &:hover, &.active, &.current_page_item, &.current-menu-item, &.current-category-ancestor, &.current-post-ancestor
-      a
-        border-right: 1px solid $celeste
-  &.Header-mainMenu-black--right
-    +border-radius(0 5px 5px 0)
-.Header-bar
-  cursor: pointer
-  left: 0
-  padding: 20px 15px
-  position: absolute
-  top: 0
-  z-index: 999
-.Header-bar-icon
-  background: transparent url('../images/sprites.png') -134px -76px no-repeat
-  display: block
-  height: 30px
-  width: 30px
-
-.Submenu-azul
-  > a
-    background-color: $azul
-.Submenu-morado
-  > a
-    background-color: $purple
-.Submenu-verde
-  > a
-    background-color: $green
-.Submenu-celeste
-  > a
-    background-color: $azul_claro
-
-.Submenu-more
-  display: none
-@media only screen and (max-width: 1700px)
-  .Header-mainMenu-list
-    > li
-      > .sub-menu
-        margin: 5px 68px 0
-      // &.Header-mainMenu-list--nodesc
-      //   > .sub-menu
-      //     margin: 5px 68px 0
-@media only screen and (max-width: 1300px)
-  .Header
-    &.affix
-      .Header-mainMenu
-        padding-left: 50px
-  .Header-mainMenu-list
-    > li
-      > .sub-menu
-        margin: 5px 0 0
-        width: 100%
-      // &.Header-mainMenu-list--nodesc
-      //   > .sub-menu
-      //     margin: 5px 68px 0
-@media only screen and (max-width: 1100px)
-  .Header-mainMenu-list
-    > li
-      > .sub-menu
-        > li
-          +flex-basis(23%)
-@media only screen and (min-width: 992px) and (max-width: 1200px)
-  .Header-logo
-    margin-top: 10px
-  .Header-mainMenu
-    +flex-basis(65%)
-    margin-top: 10px
-  .Header-mainMenu-list
-    > li
-      margin-bottom: 10px
-  .Header
-    &.affix
-      .Header-mainMenu
-        +flex-basis(75%)
-      .Header-mainMenu-list
-        > li
-          margin-bottom: 0
-@media only screen and (max-width: 991px)
-  .Header-wrapper-logo
-    +flex-basis(100%)
-    margin-right: 15px
-  .Header-logo
-    margin-top: 10px
-  .Header-logo-img
-    height: auto
-    width: 200px
-  .Header
-    &.affix
-      .Header-wrapper
-        background-color: transparent
-        display: block
-      .Header-wrapper-logo
-        background-color: rgba(white, 0.6)
-        padding-right: 15px
-      .Header-logo
-        position: relative
-        right: auto
-      .Header-bar-icon
-        background-position: -164px -76px
-
-/* --------------------------- *\
-//           SLIDEBAR
-/* --------------------------- */
-.Slidebar
-  background-color: $blackHard
-  padding: 20px 0
-  z-index: 9
-  .Header-logo
-    margin: 0
-    padding: 0 15px
-  // .Header-mainMenu
-  .Header-mainMenu-list
-    margin-right: 0
-    padding-left: 0
-    > li
-      +border-radius(0)
-      display: block
-      list-style: none
-      margin-bottom: 10px
-      margin-right: 0
-      padding: 10px 0
-      position: relative
-      > a
-        border-left: 5px solid transparent
-        font-size: 1em
-      &:hover, &.active, &.current_page_item, &.current-menu-item, &.current-category-ancestor, &.current-post-ancestor, &.current-menu-parent, &.current-menu-ancestor
-        > a
-          border-left: 5px solid $azul_claro
-          border-bottom: none
-      &.Header-mainMenu-list--submenu
-        &:hover
-          > .sub-menu
-            display: none
-          > a
-            &::after
-              display: none
-      > .sub-menu
-        background-color: #0b0b0b
-        display: none
-        margin: 0
-        padding: 10px 0 10px 20px
-        position: static
-        width: 100%
-        > li
-          display: block
-          margin: 0
-          padding: 10px 0
-          position: relative
-          width: 100%
-          > a
-            color: white
-            padding: 0
-            &::before, &::after
-              display: none
-            + .Submenu-more
-              top: 0
-          > .sub-menu
-            display: none
-            list-style: none
-            padding-left: 20px
-            > li
-              border-left: 5px solid transparent
-              a
-                color: white
-                display: block
-                padding: 10px 0 10px 5px
-              &.current-menu-item, &.active
-                border-left: 5px solid $celeste
-      &.Header-mainMenu-list--nodesc
-        > .sub-menu
-          padding-left: 20px
-          > li
-            border-left: 5px solid transparent
-            a
-              color: white
-              display: block
-              padding: 10px 0 10px 5px
-            &.current-menu-item, &.active
-              border-left: 5px solid $celeste
-    > li
-      &.active, &.current_page_item, &.current-menu-item, &.current-category-ancestor, &.current-post-ancestor, &.current-menu-parent, &.current-menu-ancestor
-        > a:hover, > a:focus
-          border-bottom: none
-    .Header-mainMenu--blue, .Header-mainMenu--bluesoft, .Header-mainMenu--celeste, .Header-mainMenu--green, .Header-mainMenu-black
-      background-color: transparent
-  .Submenu-azul, .Submenu-morado, .Submenu-verde, .Submenu-celeste
-    > a
-      background-color: transparent
-  .Submenu-more
-    background-image: url("../images/sprites.png")
-    background-repeat: no-repeat
-    cursor: pointer
-    display: block
-    height: 40px
-    position: absolute
-    right: 15px
-    top: 10px
-    width: 40px
-    z-index: 999
-    &.plus
-      background-position: -230px 0
-    &.minus
-      background-position: -230px -40px
-@media only screen and (max-width: 767px)
-  .Slidebar
-    .Header-mainMenu-list
-      > li
-        > a
-          font-size: 0.875em
-        > .sub-menu
-          > li
-            > .sub-menu
-              padding-left: 10px
-    .Submenu-more
-      right: 5px
-
-/* --------------------------- *\
-//           SB-SITE
-/* --------------------------- */
-#sb-site
-  &.Slidebar-course
-    +transform(none)
-@media only screen and (max-width: 991px)
-  #sb-site
-    &.Slidebar-course
-      +translate(0, 0)
-
-
-/* --------------------------- *\
-//           SLIDERS
-/* --------------------------- */
-.Sliders
-  position: relative
-@media only screen and (max-width: 991px)
-  .Sliders
-    .Arrow
-      display: none
 
 /* --------------------------- *\
 //           CAROUSEL
 /* --------------------------- */
-// .Carousel--home
-.Carousel--home-indicators
-  bottom: 37%
-  left: auto
+.Carousel
+.Carousel-indicators
+  bottom: 5px
   margin-bottom: 0
   margin-left: 0
-  right: 150px
-  top: auto
   width: auto
-  li
-    +border-radius(50%)
-    height: 28px
-    width: 28px
-    &.active
-      height: 28px
-      width: 28px
-// .Carousel--home-inner
-// .Carousel--home-item
-// .Carousel--home-caption
-.Carousel--home-control
-  background-repeat: no-repeat
-  height: 67px
-  width: 67px
-  z-index: 99
-  &.right, &.left
-    background-image: url("../images/sprites.png")
-    top: 50%
-  &.left
-    background-position: 0 0
-    left: 100px
-  &.right
-    background-position: -67px 0
-    right: 100px
-.Carousel--home-caption
-  bottom: auto
+.Carousel-caption
+  background-color: rgba(black, 0.4)
+  bottom: 40px
   left: auto
-  padding: 0
+  padding: 30px 0
   right: 0
-  top: 20%
-.Carousel--home-caption-info
-  background-color: $azul_claro
-  overflow: hidden
-  padding: 50px 150px 10px 45px
-  width: 550px
-  h3
-    font-size: 2.25em
-    font-weight: 700
-    margin-bottom: 30px
-    margin-top: 0
-    +text-shadow(none)
-  p
-    font-weight: 600
-    +text-shadow(none)
-.Carousel--home-caption-borderBottom
-  background: transparent url('../images/carousel-caption-bg.png') 0 0 no-repeat
-  background-size: cover
-  height: 69px
-.Carousel-button
-  display: inline-block
-
-//.Carousel--blog
-  //.Carousel--blog-item
-    //&.active
-      //+display-flex()
-      //.Carousel--blog-figure, .Carousel--blog-caption
-        //margin-left: 0
-// .Carousel--blog-indicators
-// .Carousel--blog-inner
-.Carousel--blog-item
-  img
-    margin: 0 0 0 auto
-.Carousel--blog-content
-  +display-flex()
-.Carousel--blog-figure
-  +flex-basis(55%)
-  position: relative
-  width: 55%
-  &::before
-    border-right: 40px solid transparent
-    border-top: 40px solid white
-    content: ""
-    height: 0
-    left: 0
-    position: absolute
-    top: 0
-    width: 0
-.Carousel--blog-caption
-  bottom: 0
-  +flex-basis(45%)
-  left: auto
-  padding: 100px 15px 0 10%
-  position: relative
-  right: auto
-  text-align: left
-  +text-shadow(none)
-  width: 45%
-  h3
-    color: $blackGb
-    font-size: 1.625em
-    font-weight: 600
-    margin-top: 0
-  p
-    color: $blackGb
-    font-size: 1.125em
-    a
-      color: $blackGb
-      &:hover
-        color: $azul_claro
-.Carousel--blog-control
-  &.right, &.left
-    top: 40%
-  &.left
-    left: 15px
-  &.right
-    right: 15px
-.Carousel--blog-indicators
-  bottom: 20px
+  width: 50%
+.Carousel-caption-title
+  font-weight: bold
+  margin: 0
+.Carousel-nav
+  left: 0
+  position: absolute
+  text-align: center
+  top: 10px
+  width: 10%
+.Carousel-menu
   margin-bottom: 0
-  margin-left: 0
-  left: auto
-  right: 30%
-  width: auto
-@media only screen and (max-width: 1700px)
-  .Carousel--home-indicators
-    bottom: 30%
-@media only screen and (max-width: 1400px)
-  .Carousel--home-indicators
-    bottom: 20%
-  .Carousel--blog-caption
-    padding: 100px 100px 0 100px
-@media only screen and (max-width: 1300px)
-  .Carousel--blog-caption
-    padding: 60px 100px 0 100px
-@media only screen and (min-width: 992px) and (max-width: 1200px)
-  .Carousel--home-caption
-    bottom: 50px
-    top: auto
-  .Carousel--home-caption-info
-    padding-right: 50px
-    padding-top: 20px
-  .Carousel--home-indicators
-    bottom: 12%
-    right: 10px
-  .Carousel--home-control
-    &.right
-      right: 15px
-    &.left
-      left: 15px
-  .Carousel--blog-caption
-    padding: 40px 30px 0 30px
-@media only screen and (max-width: 991px)
-  .Carousel--home-caption
-    position: relative
-    width: 100%
-  .Carousel--home-caption-info
-    padding: 15px
-    width: 100%
-    h3
-      font-size: 1.625em
-      margin-bottom: 20px
-    p
+  padding-left: 0
+  li
+    background-color: rgba($text-blue, 0.4)
+    list-style: none
+    margin-bottom: 10px
+    padding: 15px 5px
+    text-transform: uppercase
+    +transition(all 0.3s ease)
+    a
+      color: white
+      display: block
       font-size: 0.875em
-  .Carousel--home-caption-button
-    text-align: center
-  .Carousel--home-caption-borderBottom
-    display: none
-  .Carousel--home-indicators
-    bottom: 20px
-    right: 20px
-  .Carousel--home-control
-    display: none
-  .Carousel--blog-content
-    +flex-wrap(wrap)
-  .Carousel--blog-caption, .Carousel--blog-figure
-    +flex-basis(auto)
-    width: 100%
-  .Carousel--blog-caption
-    bottom: auto
-    +order(1)
-    padding: 20px 50px
-    h3
-      font-size: 1.25em
-    p
-      font-size: 1em
-  .Carousel--blog-indicators
-    display: none
-  .Carousel--blog-figure
-    +order(0)
-    img
-      margin: 0 auto
+      &:hover
+        text-decoration: none
+    &:hover
+      background-color: rgba($text-blue, 0.8)
+
+.Social-nav
+  background-color: #FFF
+  +border-radius(5px)
+  padding: 5px
+  position: absolute
+  right: 10px
+  top: 10px
+.Social-list
+  margin-bottom: 0
+  padding-left: 0
+  li
+    list-style: none
+    a
+      display: block
+      &::before
+        background-image: url("../images/sprites.png")
+        background-repeat: no-repeat
+        content: ""
+        display: block
+        height: 40px
+        width: 40px
+.Social-fb
+  a
     &::before
-      display: none
-@media only screen and (max-width: 380px)
-  .Carousel--home-caption
-    bottom: 0
-    position: absolute
-    top: auto
-  .Carousel--home-caption-borderBottom
-    background-image: url("../images/carousel-caption-movil-bg.png")
-    display: block
-    height: 50px
-  .Carousel--home-indicators
-    bottom: 15px
-    right: 15px
-  .Carousel--blog-caption
-    padding: 15px
+      background-position: -120px -200px
+.Social-lk
+  a
+    &::before
+      background-position: -80px -200px
+.Social-tw
+  a
+    &::before
+      background-position: -40px -200px
+.Social-gplus
+  a
+    &::before
+      background-position: 0 -200px
 
 /* --------------------------- *\
-//          CONTENT
+//           FOOTER
 /* --------------------------- */
-.Content
-  padding-top: 120px
+.Footer
+  background-color: $text-color
+  border-top: 60px solid $black
+  padding: 10px 0
+  p
+    margin-bottom: 0
 
 /* --------------------------- *\
 //           PAGE
 /* --------------------------- */
-.Page
-  p
-    font-weight: 400
-.Page--about
-  background-position: right 0
-  background-repeat: no-repeat
-  margin-left: 20%
-  min-height: 397px
-  margin-top: 70px
-  overflow: hidden
-  padding-top: 70px
-.Page-subtitle
-  font-size: 2em
-  font-weight: 400
-  margin-top: 0
 .Page-title
-  font-size: 4.75em
-  font-weight: 700
-  margin-top: 0
-.Page-title--medium
-  font-size: 2.25em
-.Page-title--blue
-  color: $azul
-.Page-title--white
-  color: white
-.Page-excerpt
-  font-size: 1.375em
-  font-weight: 600
-  margin-top: 0
-.Page-text
-  font-weight: 400
-.Page-button
-  border: 2px solid $black
-  color: $black
-  display: inline-block
-  font-size: 1.25em
-  padding: 10px 20px
-  +transition(all 0.2s ease)
-  &:hover
-    background-color: $black
-    color: white
-    text-decoration: none
-.Page-card
-  margin-top: 30px
-.Page-card--about
-  background: transparent url('../images/cepuch-bg.jpg') 0 0 no-repeat
-  background-size: cover
-  margin-top: 0
-  padding: 20px 0
-  &.affix
-    padding: 0
-    top: 70px
-    width: 100%
-    z-index: 99
-    .Card-image
-      img
-        height: auto
-        width: 35px
-    .Card-title
-      font-size: 1.125em
-      margin: 10px 0 0 0
-.Page-video
-  margin-top: 30px
-.Page-about
-  padding-top: 70px
-.Page-about--morePadding
-  padding-top: 157px
-.Page-about--flex
-  +display-flex()
-.Page-about--left
-  .Page-about--40
-    min-height: auto
-    padding: 120px 25px 120px 10%
-  .Page-about--60
-    background-position: right 0
-    background-repeat: no-repeat
-    background-size: cover
-    padding: 0
-.Page-about--right
-  .Page-about--60
-    padding: 50px 10% 0 25px
-.Page-about--single
-  margin-bottom: 25px
-  p
-    margin: 0 auto 20px auto
-    width: 40%
-.Page-about-subtitle
-  color: $gray_text
-  font-size: 2.25em
-  font-weight: 400
-.Page-about-title
-  color: $azul
-  font-size: 3.5em
-  font-weight: 700
-  margin-top: 0
-.Page-about--60
-  +flex-basis(60%)
-  padding: 50px 25px 0 10%
-.Page-about--40
-  background-size: cover
-  +flex-basis(40%)
-  min-height: 593px
-  position: relative
-.Page-about--40--triangle
-  &::before
-    border-right: 36px solid transparent
-    border-top: 36px solid white
-    content: ""
-    height: 0
-    left: 0
-    position: absolute
-    top: 0
-    width: 0
-.Page-about--40--triangleRight
-  &::before
-    border-bottom: 36px solid transparent
-    border-right: 36px solid white
-    content: ""
-    height: 0
-    right: 0
-    position: absolute
-    top: 0
-    width: 0
-.Page-about--40--small
-  min-height: 401px
-.Page-listConvenios
-  list-style-type: none
-  margin-bottom: 30px
-.Page-displayMore
-  border-bottom: 1px solid #a1a1a1
-  border-top: 1px solid #a1a1a1
-  margin-bottom: 30px
-  padding: 15px
-  a
-    color: $azul_claro
-    display: inline-block
-    &::before
-      background-image: url("../images/sprites.png")
-      background-position: -210px 0
-      background-repeat: no-repeat
-      content: ""
-      display: inline-block
-      height: 20px
-      margin-right: 10px
-      vertical-align: middle
-      width: 20px
-@media only screen and (max-width: 1500px)
-  .Page--about
-    margin-left: 15%
-  .Page-about--left
-    .Page-about--40
-      min-height: auto
-      padding: 80px 25px 80px 10%
-@media only screen and (max-width: 1300px)
-  .Page--about
-    margin-left: 5%
-  .Page-about--left
-    .Page-about--40
-      +flex-basis(50%)
-      padding: 30px 0 30px 5%
-    .Page-about--60
-      +flex-basis(50%)
-@media only screen and (max-width: 1100px)
-  .Page-about--left
-    .Page-about--40
-      padding: 20px 0 20px 20px
-@media only screen and (max-width: 991px)
-  .Page-about
-    padding-top: 0
-  .Page-about--left
-    +flex-wrap(wrap)
-    .Page-about--60
-      background-position: center 0
-      +order(-1)
-      min-height: 335px
-    .Page-about--60, .Page-about--40
-      +flex-basis(100%)
-  .Page-about--resize
-    +flex-wrap(wrap)
-    .Page-about--40, .Page-about--60
-      +flex-basis(100%)
-    .Page-about--40
-      background-position: center 0
-      background-repeat: no-repeat
-      background-size: contain
-      +order(-1)
-    .Page-about--60
-      padding: 20px 30px 0
-    .Page-title
-      text-align: center
-  .Page-about--right
-    margin-bottom: 20px
-    .Page-about--60
-      +flex-basis(100%)
-    .Page-title
-      text-align: center
-    .Page-about--60
-      padding: 20px 30px 0
-@media only screen and (max-width: 767px)
-  .Page-about--left
-    .Page-about--60
-      min-height: 158px
-    .Page-about--40
-      padding: 15px
-      .Page-subtitle, .Page-title, .Page-excerpt
-        text-align: left
-  .Page-about--single
-    padding: 15px
-    .Page-about-subtitle
-      font-size: 1.5em
-    .Page-about-title
-      font-size: 2.25em
-    p
-      font-size: 0.875em
-      width: 100%
-  .Page-about--resize
-    .Page-about--40
-      min-height: 374px
-    .Page-title
-      font-size: 1.5em
-    .Page-about--60
-      padding: 15px
-    p
-      font-size: 0.875em
-  .Page-about--right
-    .Page-title
-      font-size: 1.5em
-    p
-      font-size: 0.875em
-  .Page-subtitle
-    font-size: 1.5em
-    text-align: center
-  .Page-title
-    font-size: 3.125em
-    text-align: center
-  .Page-excerpt
-    font-size: 1.25em
-    text-align: center
-
-/* --------------------------- *\
-//           COURSE
-/* --------------------------- */
-.Course
-  padding-top: 70px
-  p
-    color: $blackGb
-  .Course-form-text
-    color: white
-.Course-wrapper
-  margin-top: 40px
-.Course-breadcrumb
-  background-color: #FFF
-  list-style: none
-  li
-    color: #777777
-    font-size: 0.8125em
-    font-weight: 300
-    a
-      color: #777777
-      font-size: 1em
-      font-weight: 600
-  > li
-    + li
-      &::before
-        color: #777
-        content: ">"
-        font-weight: 300
-.Course-title
-  color: $azul
-  font-size: 2.25em
-  margin-bottom: 0
-  font-weight: 700
-.Course-subtitle
-  color: $azul_claro
-  font-size: 1.375em
-  font-weight: 400
-  margin-bottom: 25px
-  margin-top: 0
-.Course-info
-  margin: 20px 0
-.Course-tabs
-  background-color: $azul_claro
-  border-bottom: none
-  +display-flex()
-  margin-bottom: 20px
-  > li
-    +flex-basis(50%)
-    // +flex-basis(33.3%)
-    float: none
-    margin-bottom: 0
-    > a
-      border: none
-      +border-radius(0)
-      color: #fefefe
-      font-weight: 300
-      margin-right: 0
-      padding: 15px
-      position: relative
-      &:hover, &:focus
-        background-color: $azul
-        color: #fefefe
-        font-weight: 300
-        &::after
-          border-left: 10px solid transparent
-          border-right: 10px solid transparent
-          border-top: 10px solid $azul
-          bottom: -10px
-          content: ""
-          display: block
-          height: 0
-          left: 45%
-          margin: 0 auto
-          position: absolute
-          width: 0
-    &.active
-      > a
-        background-color: $azul
-        border: none
-        +border-radius(0)
-        color: white
-        &::after
-          border-left: 10px solid transparent
-          border-right: 10px solid transparent
-          border-top: 10px solid $azul
-          bottom: -10px
-          content: ""
-          display: block
-          height: 0
-          left: 45%
-          margin: 0 auto
-          position: absolute
-          width: 0
-        &:hover, &:focus
-          background-color: $azul
-          border: none
-          +border-radius(0)
-          color: white
-.Course-tabs-content
-  // margin-bottom: 20px
-  padding: 20px
-.Course-tabs-pane
-  h2
-    color: $azul_claro
-  h4
-    color: $azul_claro
-    font-size: 700
-  h5
-    border-bottom: 2px solid $azul_claro
-    color: $azul_claro
-    font-size: 1.125em
-    font-weight: 600
-    text-transform: uppercase
-  p
-    color: $blackGb
-    font-weight: 300
-    margin-bottom: 20px
-  ul, ol
-    margin-bottom: 20px
-    padding-left: 20px
-    li
-      color: $blackGb
-      font-weight: 300
-  ul
-    li
-      list-style-type: square
-.Course-prices
-  border: 1px solid $azul_claro
-  +display-flex()
-  margin: 0 auto 10px
-  width: 70%
-.Course-prices-label
-  background-color: $azul_claro
-  +flex-basis(50%)
-  padding: 25px
-  h3
-    color: white
-    font-size: 1.75em
-    font-weight: 400
-    margin-top: 0
-  h4
-    color: white
-    font-size: 1.125em
-    font-weight: 300
-    margin-bottom: 0
-    margin-top: 0
-.Course-prices-price
-  +flex-basis(50%)
-  h3
-    color: $azul_claro
-    font-size: 2em
-    font-weight: 600
-    line-height: 3.44em
-    margin: 0
-.Course-dscto-title
-  background-color: $azul
-  color: white
-  font-size: 1.125em
-  font-weight: 300
-  margin: 0 auto 10px
-  padding: 10px 0
-  width: 70%
-.Course-dsctos
-  +display-flex()
-  +justify-content(center)
-  margin: 0 auto
-  width: 70%
-.Course-dscto
-  border: 1px solid $azul
-  +flex-basis(33.3%)
-  margin-right: 10px
-  position: relative
-  &:last-child
-    margin-right: 0
-  &:hover
-    background-color: $azul
-    .Tooltip
-      display: block
-    h3, h4
-      color: white
-    &::before
-      border-right: 10px solid transparent
-      border-top: 10px solid white
-      content: ""
-      display: inline-block
-      height: 0
-      left: 5px
-      position: absolute
-      top: 5px
-      width: 0
-  h3
-    color: $azul_claro
-    font-size: 0.875em
-    font-weight: 400
-  h4
-    color: $azul_claro
-    font-size: 1.875em
-    font-weight: 600
-.Course-subs
-  &.affix
-    position: fixed
-    top: 110px
-    &.bug
-      position: relative
-      top: auto !important
-  &.affix-bottom
-    position: absolute
-    &.bug
-      position: relative
-      top: auto !important
-.Course-subs-wrapper
-  background-color: $azul_claro
-  margin-bottom: 15px
-  padding: 40px 30px
-  &::before
-    border-right: 50px solid transparent
-    border-top: 50px solid white
-    content: ""
-    display: inline-block
-    height: 0
-    left: 0
-    position: absolute
-    top: 0
-    width: 0
-.Course-subs-title
-  color: white
-  font-size: 2em
-  font-weight: 700
-  margin-top: 0
-.Course-subs-text
-  color: white !important
-  font-size: 0.875em
-.Course-form
-  margin-top: 40px
-.Course-form-label
-  color: white !important
-  font-size: 0.75em
-  font-weight: 300
-.Course-link
-  a
-    color: $azul_claro
-    font-size: 0.75em
-    font-weight: 600
-  &::before
-    background: transparent url('../images/sprites.png') -128px -167px no-repeat
-    content: ""
-    display: inline-block
-    height: 15px
-    margin-right: 10px
-    vertical-align: middle
-    width: 18px
-@media only screen and (min-width: 1200px)
-  .Course-subs
-    &.affix
-      width: 457px
-@media only screen and (max-width: 991px)
-  .Course-wrapper
-    margin-top: 0
-  .Course-subs
-    &.affix, &.affix-top, &.affix-bottom
-      position: relative
-      top: 0 !important
-@media only screen and (max-width: 767px)
-  .Course-title
-    font-size: 2em
-    text-align: center
-  .Course-subtitle
-    text-align: center
-  .Course-tabs
-    > li
-      > a
-        font-size: 0.875em
-@media only screen and (max-width: 600px)
-  .Course-tabs-content
-    padding: 0
-  .Course-prices, .Course-dsctos
-    width: 100%
-@media only screen and (max-width: 350px)
-  .Course-prices-label
-    padding: 10px
-
-/* --------------------------- *\
-//           CARD
-/* --------------------------- */
-.Card
-  +flex-basis(25%)
-  min-height: 190px
-.Card--about
-  min-height: auto
-  .Card-title
-    color: white
-    a
-      color: white
-      &:visited, &:hover
-        color: white
-      &:link
-        text-decoration: none
-      &:hover
-        text-decoration: underline
-// .Card-nav
-.Card-menuCepuch
-  border-bottom: none
-  +display-flex()
-  list-style: none
-  margin-bottom: 0
-  padding-left: 0
-  li
-    float: none
-    margin-bottom: 0
-    a
-      +border-radius(4px)
-      margin-right: 0
-      &:focus
-        background-color: transparent
-        border-color: transparent
-      &:hover
-        background-color: $azul
-    &:visited, &:hover, &.active, &:focus
-      a
-        background-color: $azul
-        border: 1px solid #ddd
-        border-bottom-color: #ddd
-        &:visited, &:hover, &:focus
-          background-color: $azul
-          border: 1px solid #ddd
-          border-bottom-color: #ddd
-.Card-image
-  img
-    +transition(all 0.2s ease)
-.Card-title
-  font-size: 1.5em
-.Card-text
-  padding: 0 30px
-@media only screen and (max-width: 991px)
-  .Card
-    margin-bottom: 15px
-
-/* --------------------------- *\
-//        TESTIMONIOS
-/* --------------------------- */
-.Testimonios
-  background-color: $azul_claro
-  padding: 80px 0 50px 0
-  &.Page-about--morePadding
-    padding-top: 157px
-// .Testimonios-slider
-//   margin-bottom: 0
-//   padding-left: 0
-// .Testimonios-item
-//   &:last-child
-//     margin-right: 0
-.Testimonios-figure
-  display: inline-block
-  vertical-align: top
-  margin-right: 15px
-  img
-    border: 10px solid rgba(black, 0.1)
-.Testomonios-single
-  margin-bottom: 15px
-.Testimonios-info
-  display: inline-block
-  vertical-align: top
-  width: 230px
-  p
-    color: white
-    font-size: 0.875em
-    font-weight: 300
-    text-align: left
-    a
-      color: white
-      font-style: italic
-      &:hover
-        color: $azul
-        text-decoration: underline
-.Testimonios-name
-  color: white
-  font-size: 1em
-  font-weight: 600
-  text-align: left
-@media only screen and (max-width: 1100px)
-  .Testimonios-figure, .Testimonios-info
-    display: block
-  .Testimonios-figure
-    margin-right: 0
-  .Testimonios-info
-    text-align: center
-    padding: 0 20px
-    width: 100%
-    p
-      text-align: center
-  .Testimonios-name
-    text-align: center
-@media only screen and (max-width: 991px)
-  .Testimonios
-    margin-top: 30px
-  .Testimonios-slider
-    +flex-wrap(wrap)
-  .Testimonios-item
-    +flex-basis(100%)
-    margin-right: 0
-    text-align: center
-  .Testimonios-figure, .Testimonios-info
-    display: block
-  .Testimonios-info
-    margin: 0 auto
-    width: 80%
-@media only screen and (max-width: 767px)
-  .Testimonios
-    .Page-title
-      font-size: 1.75em
-
-/* --------------------------- *\
-//           CAMPUS
-/* --------------------------- */
-.Campus
-  +display-flex()
-  padding-top: 70px
-.Campus-info
-  background: transparent url('../images/campus-info-bg.jpg') center center no-repeat
-  background-size: cover
-  border-top: 3px solid $azul_claro
-  +flex-basis(40%)
-  padding: 50px 5% 50px 10%
-.Campus-map
-  border-top: 3px solid $azul_claro
-  +flex-basis(60%)
-.Campus-title
-  color: white
-  font-weight: 600
-  margin-bottom: 30px
-  margin-top: 0
-.Campus-list
-  margin-bottom: 0
-  padding-left: 0
-  li
-    list-style: none
-  > li
-    margin-bottom: 20px
-.Campus-list-item
-  padding-left: 35px
-  position: relative
-  &::before
-    background-image: url("../images/sprites.png")
-    background-repeat: no-repeat
-    content: ""
-    display: inline-block
-    height: 23px
-    left: 0
-    position: absolute
-    width: 23px
-.Campus-list-item--horario
-  &::before
-    background-position: -44px -67px
-.Campus-list-item--ubicacion
-  &::before
-    background-position: -44px -90px
-.Campus-list-item--telefono
-  &::before
-    background-position: -67px -67px
-.Campus-list-item--correo
-  &::before
-    background-position: -67px -90px
-.Campus-list-title
-  color: white
-  font-size: 0.875em
-  font-weight: 600
-  margin-top: 0
-.Campus-list-block
-  padding-left: 0
-  +display-flex()
-  li
-    +flex-basis(50%)
-.Campus-list-text
-  color: white
-  font-size: .8125em
-  margin-bottom: 0
-.Campus-gallery
-  +display-flex()
-  +flex-wrap(wrap)
-  +justify-content(space-between)
-.Campus-gallery-item
-  +flex-basis(48%)
-  margin-bottom: 15px
-@media only screen and (max-width: 1300px)
-  .Campus-info
-    padding-left: 5%
-@media only screen and (max-width: 1100px)
-  .Campus-info
-    padding-left: 30px
-    padding-right: 30px
-@media only screen and (max-width: 767px)
-  .Campus
-    display: block
-  .Campus-info
-    padding: 20px
-  .Campus-map
-    min-height: 300px
-
-/* --------------------------- *\
-//          Contactanos
-/* --------------------------- */
-.Contactanos
-  +display-flex()
-.Contactanos-form
-  +flex-basis(60%)
-  padding: 100px 10% 50px 10%
-.Contactanos-figure
-  background-color: transparent
-  background-position: center 0
-  background-repeat: no-repeat
-  background-size: cover
-  +flex-basis(40%)
-  position: relative
-  &::before
-    border-right: 36px solid transparent
-    border-top: 36px solid white
-    content: ""
-    height: 0
-    left: 0
-    position: absolute
-    top: 0
-    width: 0
-.Contactanos-title
-  font-size: 2.25em
-  font-weight: 700
-  margin-top: 0
-.Contactanos-contact
-  margin-top: 30px
-  position: relative
-.Contactanos-loader
-  left: 40%
-  position: absolute
-  top: 40%
-  z-index: 9
-.Contactanos-text
-  font-size: 0.875em
-  font-weight: 300
-@media only screen and (max-width: 1300px)
-  .Contactanos-form
-    padding-left: 5%
-@media only screen and (max-width: 1100px)
-  .Contactanos-form
-    padding-left: 30px
-    padding-right: 30px
-@media only screen and (max-width: 991px)
-  .Contactanos
-    display: block
-    .Page-text, p
-      text-align: center
-      padding: 0 10%
-  .Contactanos-form
-    margin-bottom: 40px
-    padding: 0
-  .Contactanos-contact
-    padding: 0 10%
-  .Contactanos-figure
-    display: none
-  .Contactanos-title
-    background-color: $azul_claro
-    color: white
-    font-size: 1.375em
-    padding: 20px 0
-    text-align: center
-
-/* --------------------------- *\
-//          FOOTER
-/* --------------------------- */
-.Footer
-  background-color: $gray
-
-/* --------------------------- *\
-
-//           MARKER
-/* --------------------------- */
-.Marker-list
-  padding-left: 0
-  li
-    list-style: none
-
-/* --------------------------- *\
-//          BLOG
-/* --------------------------- */
-.Blog
-  position: relative
-  padding-top: 70px
-// .Blog-featured
-.Blog-posts
-  margin-top: 50px
-  margin-bottom: 50px
-.Blog-posts--mt
-  margin-top: 120px
-.Blog-loader
-  margin-bottom: 15px
-.Blog-wrapper
-  overflow: hidden
-.Blog-post
-  border: 1px solid rgba(black, 0.2)
-  margin-bottom: 15px
-  min-height: 390px
-.Blog-post-figure
-  margin-bottom: 10px
-.Blog-post-content
-  padding: 15px 20px
-  p
-    font-size: 0.875em
-    font-weight: 300
-    a
-      font-weight: 600
-.Blog-post-title
-  color: $azul
-  font-size: 1em
-  font-weight: 600
-  margin-top: 0
-  a
-    color: $azul
-    &:hover
-      color: $azul_claro
-@media only screen and (max-width: 1050px)
-  .Blog-sidebar
-    width: 300px
-@media only screen and (max-width: 991px)
-  .Blog
-    padding-top: 100px
-  .Blog-menu-list
-    background-color: transparent
-    +border-radius(0)
-    li
-      a
-        color: $purple
-  .Blog-items, .Blog-sidebar
-    display: block
-    width: 100%
-  .Blog-article-info
-    padding: 10px 15px
-  .Blog-featured
-    margin-bottom: 0
-    padding-top: 0
-  .Blog-posts--mt
-    margin-top: 100px
-@media only screen and (max-width: 767px)
-  .Blog-post
-    min-height: 0
-@media only screen and (max-width: 500px)
-  .Blog-menu-list
-    padding: 10px
-  .Blog-article-title
-    font-size: 1.375em
-  .Blog-article--secondary
-    .Blog-article-title
-      font-size: 1.125em
-@media only screen and (max-width: 450px)
-  .Blog-menu-list
-    padding: 0
-    li
-      display: block
-      margin-bottom: 15px
-  .Blog-article--secondary
-    .Blog-article-figure, .Blog-article-info
-      display: block
-      width: 100%
-
-/* --------------------------- *\
-//          EVENTS
-/* --------------------------- */
-.Events
-  background: transparent url('../images/events-bg.jpg') center center no-repeat
-  background-size: cover
-  padding: 30px 0
-.Events-header
-  margin-bottom: 25px
-  position: relative
-  &:after
-    border-bottom: 2px solid white
-    content: ""
-    display: inline-block
-    width: 66%
-.Events-viewmore
-  border: 1px solid white
-  color: white
-  display: inline-block
-  margin-top: 15px
-  padding: 5px 15px
-  &:hover
-    background-color: $celeste
-    color: white
-    text-decoration: none
-  &:focus
-    background-color: transparent
-    color: white
-    text-decoration: none
-.Events-title
-  display: inline-block
-  color: white
-  font-size: 2.25em
-  font-weight: 700
-  margin-bottom: 0
-  margin-right: 15px
-  margin-top: 0
-.Events-item
-  position: relative
-  &:hover
-    .Events-info
-      +scale(1)
-.Events-info
-  background-color: rgba($aqua, 0.7)
-  bottom: 0
-  height: 100%
-  position: absolute
-  +scale(0)
-  +transition(all 0.2s ease-in-out)
-  width: 100%
-.Events-data
-  bottom: 0
-  padding: 20px
-  position: absolute
-  width: 100%
-.Events-day
-  color: white
-  font-size: 0.875em
-  font-weight: 600
-  margin-top: 0
-  margin-bottom: 10px
-.Events-subtitle
-  color: white
-  font-size: 0.875em
-  font-weight: 600
-  margin-bottom: 10px
-  margin-top: 0
-.Events-titleEvent
-  color: white
-  font-size: 1.125em
-  font-weight: 700
-  margin-bottom: 10px
-  margin-top: 0
-.Events-button
-  margin-bottom: 0
-  a
-    border: 1px solid white
-    color: white
-    display: inline-block
-    font-size: 0.875em
-    padding: 5px 15px
-    &:hover
-      background-color: white
-      color: $blackGb
-      text-decoration: none
-.Events-item-mb
-  margin-bottom: 15px
-.Events-table
-  margin-bottom: 20px
-  width: 100%
-  td
-    border-right: 1px solid $azul_claro
-    border-top: 1px solid $azul_claro
-    font-size: 0.875em
-    padding: 15px 0
-    width: 50%
-.Events-table-th
-  background-color: $azul_claro
-  color: white
-  font-weight: 600
-.Events-table-td
-  color: $blackGb
-.Events-table-td--bdb
-  border-bottom: 1px solid $azul_claro
-@media only screen and (max-width: 1199px)
-  .Events-header
-    &:after
-      width: 59%
-@media only screen and (max-width: 991px)
-  .Events-header
-    &:after
-      display: none
-
-/* --------------------------- *\
-//          TOOLTIP
-/* --------------------------- */
-.Tooltip
-  background-color: #FFF
-  border: 1px solid #777
-  +border-radius(3px)
-  bottom: -65px
-  display: none
-  padding: 8px
-  position: absolute
-  z-index: 9
-  &::before
-    border-bottom: 5px solid #777
-    border-left: 10px solid transparent
-    border-right: 10px solid transparent
-    content: ""
-    display: block
-    height: 0
-    left: 45%
-    margin: 0 auto
-    position: absolute
-    top: -6px
-    width: 0
-  p
-    color: black
-    font-size: 0.8125em
-    margin-bottom: 0
-    text-align: center
-
-/* --------------------------- *\
-//          SINGLE
-/* --------------------------- */
-.Single
-  margin: 15px 0
-  padding-top: 75px
-  p
-    color: $blackGb
-    font-weight: 300
-  h2
-    color: $azul_claro
-    font-weight: 600
-    text-transform: uppercase
-  h3
-    color: $blackGb
-    font-weight: 600
-  ul
-    list-style-type: square
-    padding-left: 25px
-    li
-      color: $blackGb
-      font-weight: 300
-.Single-image
-  margin-bottom: 15px
-.Single-title
-  color: $blackGb
-  font-size: 1.625em
-  font-weight: 600
-  margin-top: 0
-.Single-category
-  color: $blackGb
-  font-size: 0.875em
-  font-weight: 600
-  margin-top: 0
-.Single-related-title
-  border-bottom: 2px solid $azul
-  color: $azul_claro
-  font-size: 1em
-  font-weight: 600
-  margin: 50px 0 20px 0
-  span
-    background-color: #FFF
-    padding-right: 10px
-.Single-related
-  +display-flex()
-  margin-bottom: 30px
-.Single-related-item
-  +box-shadow(rgba(black, 0.2) 1px 1px 3px)
-  +flex-basis(50%)
-  &:first-child
-    margin-right: 15px
-.Single-related-info
-  padding: 20px
-  p
-    color: $blackGb
-    font-size: 0.875em
-.Single-related-titlePost
-  color: $azul
-  font-size: 1em
-  font-weight: 600
-  margin-top: 0
-.Single-related-category
-  color: $blackGb
-  font-size: 0.875em
-  font-weight: 400
-@media only screen and (max-width: 991px)
-  .Single
-    margin-top: 0
-    padding-top: 80px
-@media only screen and (max-width: 767px)
-  .Single
-    p
-      font-size: 0.875em
-  .Single-related
-    display: block
-  .Single-title
-    font-size: 1.125em
-  .Single-related-title
-    border: none
-    span
-      background-color: transparent
-  .Single-related-item
-    margin-bottom: 15px
-    &:first-child
-      margin-right: 0
-
-/* --------------------------- *\
-//          REGISTER
-/* --------------------------- */
-.Register
-  +display-flex()
-  padding-top: 70px
-.Register-figure
-  background: transparent url('../images/register-bg.jpg') 0 0 no-repeat
-  background-size: cover
-  +flex-basis(33%)
-  margin-right: 25px
-.Register-content
-  margin: 20px 0
-  p
-    color: $blackGb
-@media only screen and (max-width: 1100px)
-  .Register-figure
-    +flex-basis(38%)
-@media only screen and (max-width: 991px)
-  .Register
-    display: block
-  .Register-figure
-    display: none
-@media only screen and (max-width: 767px)
-  .Register-content
-    .Contactanos-contact
-      padding: 0
-
-/* --------------------------- *\
-//          FORM
-/* --------------------------- */
-.Form-group
-  overflow: hidden
-.Form-input
-  border: none
-  border-bottom: 1px solid $black
-  +border-radius(0)
-  +box-shadow(none)
-  color: $black
-  font-weight: 400
-  height: 40px
-  +input-placeholder
-    color: $black
-    font-weight: 400
-  &:focus
-    +box-shadow(none)
-    border-color: $azul_claro
-.Form-textarea
-  border: 1px solid $black
-.Form-label
-  color: $black
-  font-size: 0.875em
-.Form-label--white
-  color: white
-  a
-    color: white !important
-    font-weight: 600
-    &:hover
-      color: white
-.Form-label--radio
-  font-weight: 400
-  padding-left: 0 !important
-.Form-button
-  background-color: $azul_claro
-  border: none
-  +box-shadow(rgba(0,0,0,0.75) -3px -1px 8px -1px inset)
-  color: white
-  font-size: 1.375em
-  font-weight: 400
-  padding: 7px 50px
-  +transition(all 0.3s ease-in)
-  &:hover
-    background-color: $azul
-    +box-shadow(rgba(0,0,0,0.75) 3px 1px 8px -1px inset)
-.Form-button--white
-  background-color: #FFF
-  +box-shadow(none)
-  color: $azul_claro
-  position: relative
-  &:hover
-    background-color: #FFF
-    +box-shadow(none)
-    color: $azul
-.Form-label-button
-  position: relative
-  &::after
-    border-bottom: 15px solid $azul_claro
-    border-left: 15px solid transparent
-    bottom: 0
-    content: ""
-    display: none
-    height: 0
-    position: absolute
-    right: 0
-    +transition(all 0.2s ease-in-out)
-    width: 0
-  &:hover
-    &::after
-      display: block
-.Form-group
-  &.has-error, &.has-success
-    .form-control
-      +box-shadow(none)
-.Form-input--white
-  background-color: transparent
-  border-bottom: 1px solid white
-  color: white
-  +input-placeholder
-    color: white
-  &:focus
-    border-color: $azul
-  &[disabled]
-    background-color: transparent
-.Form-legend
-  border-bottom: 1px solid $azul_claro
-  color: $azul_claro
-  font-size: 1.25em
-  span
-    background-color: #FFF
-    padding-right: 15px
-.Form-hide
-  display: none
-.Form-label--check
-  padding-left: 0
-  white-space: nowrap
-  -webkit-user-select: none
-  -moz-user-select: none
-  -ms-user-select: none
-  -o-user-select: none
-  user-select: none
-  vertical-align: top
-  // input[type="radio"]
-    // display: none
-  //   ~ span.icon
-  //     vertical-align: middle
-  //     &::before
-  //       background-image: url("../images/sprites.png")
-  //       background-repeat: no-repeat
-  //       content: ""
-  //       display: block
-  //       height: 17px
-  //       width: 17px
-  //   ~ span.icon.icon-unchecked
-  //     display: inline-block
-  //     &::before
-  //       background-position: -230px -80px
-  //   ~ span.icon.icon-check
-  //     display: none
-  //     &::before
-  //       background-position: -247px -80px
-  //   &:checked
-  //     ~ span.icon.icon-unchecked
-  //       display: none
-  //     ~ span.icon.icon-check
-  //       display: inline-block
-.radio-inline
-  display: inline-block
-  margin-top: 0
-  padding-left: 0
-  vertical-align: top
-@media only screen and (max-width: 991px)
-  .Form-group
-    margin-bottom: 25px
-@media only screen and (max-width: 767px)
-  .radio-inline
-    display: block
-    margin: 0 0 10px 0
-    margin-left: 0 !important
-
-/* --------------------------- *\
-//          UTILS
-/* --------------------------- */
-.Button
-  border: 2px solid white
-  color: white
-  padding: 10px 45px
-  &:hover
-    background-color: $azul
-    color: white
-    text-decoration: none
-.Button--white
-  display: inline-block
-  margin-top: 0
-  padding: 10px 20px
-  +transition(all 0.2s ease)
-  &:hover
-    background-color: #FFF
-    color: $blackGb
-.Button--black
-  border-color: $blackGb
-  color: $blackGb
-  display: inline-block
-  margin-top: 0
-  padding: 10px 40px
-  +transition(all 0.2s ease)
-  &:hover
-    background-color: $blackGb
-    color: white
-.Button--blue
-  background-color: $azul_claro
-  display: inline-block
-
-.select-style
-  background: transparent url('../images/arrow-select.png') 100% 50% no-repeat
-  margin: 0
-  overflow: hidden
-  padding: 0
-  width: 300px
-.select-style--full
-  width: 100%
-.select-style--white
-  background-image: url("../images/arrow-select-white.png")
-.Form-select
-  +appearance(none)
-  background-color: transparent
-  background-image: none
-  border: none
-  border-bottom: 1px solid $black
-  color: $black
-  font-size: 0.875em
-  font-weight: 400
-  height: 40px
-  padding: 3px 5px
-  width: 100%
-  option
-    background-color: $gray
-    color: $black
-    font-size: 1em
-    font-weight: 400
-.Arrow
-  +animation-duration(3s)
-  background: transparent url('../images/sprites.png') 0 -67px no-repeat
-  bottom: 20px
-  height: 44px
-  left: 50%
-  +opacity(0.5)
-  padding: 0
-  position: absolute
-  +transition(opacity 0.4s ease-in-out)
-  width: 44px
-  &:hover
-    +opacity(1)
-.ArrowTop
-  +animation-duration(3s)
-  background: transparent url('../images/sprites.png') -90px -67px no-repeat
-  border: 0
-  bottom: 50px
-  display: none
-  height: 44px
-  position: fixed
-  right: 50px
-  width: 44px
-  z-index: 9
-.Form-select--white
-  border-bottom: 1px solid white
-  color: white
-@media only screen and (max-width:991px)
-  .ArrowTop
-    bottom: 10px
-    right: 10px
-@media only screen and (max-width: 767px)
-  .select-style
-    width: 100%
-  .Form-select
-    width: 100%
-
-/* --------------------------- *\
-//           CAROUSEL
-/* --------------------------- */
-.Carousel-item
-  padding: 80px 0
-.Carousel-control
-  height: 47px
-  +opacity(1)
-  +text-shadow(none)
-  top: 35%
-  width: 45px
-  &.Carousel-control--left, &.Carousel-control--right
-    background-image: none
-  span
-    background-color: transparent
-    background-image: url("../images/sprites.png")
-    background-repeat: no-repeat
-    display: block
-    height: 47px
-    width: 45px
-  &.Carousel-control--right
-    right: 10%
-.Carousel-control--left
-  left: 10%
-  span
-    background-position: 0 -128px
-.Carousel-control--right
-  span
-    background-position: -45px -128px
-@media only screen and (max-width: 1200px)
-  .Carousel-control--left
-    left: 15px
-  .Carousel-control
-    &.Carousel-control--right
-      right: 15px
-@media only screen and (max-width: 991px)
-  .Carousel-item
-    padding: 30px 0
-
-
-/* -----------------------------*\
-//        	$COMMENTS
-/*------------------------------*/
-.comments-area
-  margin: 2em 0
-  // padding: 0 15px
-.comment-reply-title
-  color: $purple
-  // font-family: "Roboto"
-  font-size: 1.375em
   font-weight: bold
-  padding-bottom: 3px
-.article-add-comment
-  display: inline-block
-  width: 48px
-  height: 53px
-  background: transparent url('../images/sprites.png') -384px -64px no-repeat
-  float: right
-  &:hover
-    background: transparent url('../images/sprites.png') -432px -64px no-repeat
-.commentslist
-  counter-reset: comment-id
-  margin: 2em 0
-  padding-left: 0
-  li
-    background-color: #fff
-    list-style: none
-    article
-      border: 1px solid #c5c5c5
-      margin-bottom: 2em
-      padding: 1em
-      .comment-avatar, .comment-wrapper
-        display: inline-block
-        vertical-align: top
-      .comment-avatar
-        margin-right: 15px
-      .comment-wrapper
-        position: relative
-        width: 85%
-        &::before
-          color: #999
-          content: counter(comment-id)
-          counter-increment: comment-id
-          font-size: 48px
-          line-height: 1em
-          position: absolute
-          right: 0
-          top: 0
-      .comment-info
-        h4
-          color: $purple
-          // font-family: "Roboto"
-          font-style: italic
-          font-weight: bold
-          margin-bottom: .2em
-          margin-top: 0
-          a
-            font-weight: normal
-        p
-          color: #2e2a2a
-          // font-family: "Roboto"
-          font-weight: 300
-          span
-            font-style: italic
-      header
-        //border-bottom: 1px solid #f1f1f1
-        margin-bottom: 1em
-        font-size: 12px
-        position: relative
-        p
-          color: #5e5d5d
-          // font-family: "Roboto"
-          font-size: 1.17em
-          margin-bottom: 0
-          span
-            font-style: italic
-        h4
-          color: #5e5d5d
-          // font-family: "Roboto"
-          font-style: italic
-          font-weight: bold
-          margin-bottom: .2em
-          margin-top: 0
-          a
-            font-weight: normal
-        &::before
-          color: #999
-          content: counter(comment-id)
-          counter-increment: comment-id
-          font-size: 48px
-          line-height: 1em
-          position: absolute
-          right: 0
-          top: 0
-        .comment-avatar
-          display: inline-block
-          margin-right: 15px
-          vertical-align: top
-          // img
-          // 	//float: right
-          // 	margin-left: 2em
-          // 	margin-bottom: 1em
-        .comment-info
-          display: inline-block
-          vertical-align: top
-      .awaiting-moderation
-        color: #c9c9c9
-        font-style: italic
-      &.comment-author-admin
-        border: 1px solid #bebebe
-        h4
-          span
-            // font: normal 10px Helvetica, Arial, "Lucida Grande", sans-serif
-            text-transform: uppercase
-            background: #282b2f
-            +border-radius(5px)
-            +background-clip(padding-box)
-            color: white
-            padding: .5em
-            margin: 0 1em 0 0
-            display: inline-block
-      h4
-        span
-          display: none
-      .comment-text
-        background-color: #FFF
-        border: 1px solid rgba(black, 0.2)
-        // margin-left: 90px
-        padding: 10px
-        p
-          font-weight: 300
-    ol, ul
-      padding-left: 3em
-      margin-left: 2em
-      border-left: 1px dotted #d7d7d7
-      li
-        position: relative
-        &::before
-          content: ''
-          width: 2em
-          height: 1px
-          border-bottom: 1px dotted #d7d7d7
-          left: -2.5em
-          top: 3em
-          position: absolute
-  article
-    ul, ol
-      border: none
-      padding-left: 0
-      &::before
-        content: ''
-        display: none
-    > ul, > ol
-      margin-bottom: 2em
-    ol
-      li
-        list-style: decimal
-    ul
-      li
-        list-style: disc
-#comment-form
-  p
-    label
-      display: none
-      font-size: 12px
-    input[type='text'], input[type='email'], input[type='url'], textarea
-      border: 1px solid rgba(black, 0.28)
-      // font-family: "Roboto"
-      font-size: 0.875em
-      margin-right: 1em
-      padding: 8px 10px
-      width: 50%
-    textarea
-      margin-right: 0
-      width: 100%
-  p
-    &.form-submit
-      text-align: right
-      input[type='submit']
-        background-color: $yellow
-        border: none
-        color: white
-        // font-family: "Roboto"
-        font-size: 1em
-        padding: 10px 15px
-        +transition(all 0.2s ease)
-        &:hover
-          background-color: $purple
-@media only screen and (max-width: 1050px)
-  .commentslist
-    li
-      article
-        .comment-wrapper
-          width: 82%
-@media only screen and (max-width: 500px)
-  #comment-form
-    p
-      input[type='text'], input[type='email'], input[type='url'], textarea
-        width: 100%
-  .commentslist
-    li
-      article
-        header
-          &::before
-            display: none
-        .comment-text
-          margin-left: 0
-      ol, ul
-        margin-left: 1em
-        padding-left: 1em
-        li
-          &::before
-            left: -1em
-            width: 1em
-  .comment-nav-section
-    margin-bottom: 2em
-    border-bottom: 1px solid #d7d7d7
-  .allowed-tags
-    margin: 2em 0
-    font-size: 12px
-  #cancel-comment-reply-link
-    font-size: 12px
-    display: block
-    font-family: Helvetica, Arial, "Lucida Grande", sans-serif
-    margin-top: 1em
-@media only screen and (max-width: 991px)
-  #comment-form
-    p
-      &.form-submit
-        text-align: center
-        input[type="submit"]
-          font-size: 1em
-          padding: 15px 25px
-  #comment-form p input[type="email"], #comment-form p input[type="text"], #comment-form p input[type="url"]
-    height: 54px
-  #comment-form p input[type="email"], #comment-form p input[type="text"], #comment-form p input[type="url"], #comment-form p textarea
-    border: none
-    border-bottom: 1px solid rgba(0,0,0,0.28)
-    padding: 10px
-@media only screen and (max-width: 500px)
-  .commentslist
-    li
-      article
-        .comment-wrapper
-          width: 76%
-@media only screen and (max-width: 400px)
-  .commentslist
-    li
-      article
-        .comment-avatar, .comment-wrapper
-          display: block
-          width: 100%
-        .comment-avatar
-          margin-right: 0
-          text-align: center
+  margin-top: 0
+  padding-bottom: 8px
 
-/* -----------------------------*\
-//          $ADMISION
-/*------------------------------*/
-.Admision-list
+/* --------------------------- *\
+//           LASTPOST
+/* --------------------------- */
+.LastPosts
+  padding: 15px 0
+
+/* --------------------------- *\
+//       LINKSVIDEOS
+/* --------------------------- */
+.LinksVideos
   +display-flex()
-  +flex-wrap(wrap)
-  list-style: none
-  margin: 30px 0
-  padding: 0 20px
-  text-align: center
-.Admision-item
-  color: $blackGb
-  +flex-basis(33.3%)
-  font-size: 0.875em
-  font-weight: 600
-  margin-bottom: 40px
-  padding: 20px
-  &:before
-    background-image: url("../images/sprites.png")
-    background-repeat: no-repeat
-    content: ""
-    display: block
-    height: 54px
-    margin: 0 auto 15px
-    width: 54px
-  &:hover
-    background-color: $azul_claro
-    color: white
-.Admision-file
-  &:before
-    background-position: 0 -113px
-  &:hover
-    &:before
-      background-position: -108px -113px
-.Admision-files
-  &:before
-    background-position: -54px -113px
-  &:hover
-    &:before
-      background-position: -162px -113px
-@media only screen and (max-width: 767px)
-  .Admision-list
-    padding: 0
-  .Admision-item
+  margin-bottom: 20px
+  .Links, .Videos
     +flex-basis(50%)
 
 /* --------------------------- *\
-//        ANIMATION
+//       VIDEOS
 /* --------------------------- */
+.Videos
+  background-color: $black
+  padding: 15px
 
+/* --------------------------- *\
+//           LINKS
+/* --------------------------- */
+.Links
+  background-color: $gray
+  padding: 15px
+// .Links-nav
+.Links-menu
+  +display-flex()
+  +flex-wrap(wrap)
+  padding-left: 0
+  li
+    list-style: none
+    padding: 10px 5px
+    text-align: center
+    +transition(all 0.3s ease-in-out)
+    a
+      color: $text-color
+      display: block
+      font-size: 0.75em
+      font-weight: 700
+      text-transform: uppercase
+      +transition(all 0.3s ease-in-out)
+      &::before
+        background-image: url("../images/sprites.png")
+        background-repeat: no-repeat
+        content: ""
+        display: block
+        height: 50px
+        margin: 0 auto
+        width: 50px
+    &:nth-child(2n+2)
+      background-color: #eee
+    &:hover
+      background-color: $text-color
+      a
+        color: white
+        text-decoration: none
+    &.link--edificacion
+      a
+        &::before
+          background-position: 0 0
+    &.link--funcionamiento
+      a
+        &::before
+          background-position: -50px 0
+    &.link--tributos
+      a
+        &::before
+          background-position: -100px 0
+    &.link--tupa
+      a
+        &::before
+          background-position: -150px 0
+    &.link--leyes
+      a
+        &::before
+          background-position: -200px 0
+    &.link--cas
+      a
+        &::before
+          background-position: -250px 0
+    &.link--laboral
+      a
+        &::before
+          background-position: 0 -50px
+    &.link--juventud
+      a
+        &::before
+          background-position: -50px -50px
+    &.link--leche
+      a
+        &::before
+          background-position: -100px -50px
+    &.link--adulto
+      a
+        &::before
+          background-position: -150px -50px
+    &.link--omaped
+      a
+        &::before
+          background-position: -200px -50px
+    &.link--demuna
+      a
+        &::before
+          background-position: -250px -50px
+    &.link--deportes
+      a
+        &::before
+          background-position: 0 -100px
+    &.link--mascotas
+      a
+        &::before
+          background-position: -50px -100px
+  &.Links-menu--flex33
+    li
+      +flex-basis(33.33%)
+  &.Links-menu--flex25
+    li
+      +flex-basis(25%)
+
+.Metas-list
+  background-color: $gray
+  margin-bottom: 0
 
 /* --------------------------- *\
 //          SIDEBAR
 /* --------------------------- */
-.SidebarWidget
-  margin-bottom: 15px
-  h4
-    border-bottom: 3px solid $purple
-    color: $purple
-    font-size: 1.5em
-    font-style: italic
+.Sidebar-footer
+  h3
     font-weight: 700
     margin-top: 0
-.Fbpage-wrapper
-  text-align: center
+  .Sidebar-legend
+    font-weight: 700
+  p
+    font-size: 0.875em
 
 /* --------------------------- *\
-//        ADVERTISING
+//          PREFOOTER
 /* --------------------------- */
-.Sidebar
-  &.affix-top, &.affix-bottom
-    position: relative
-  &.affix
-    position: fixed
-    top: 100px
-.Sidebar-Widget
-  margin-bottom: 20px
-  overflow: hidden
+.Prefooter
+  background-color: $gray
+  margin-top: 30px
+  padding: 30px 0
+  p
+    font-size: 0.875em
   ul
-    list-style-type: square
-    padding-left: 25px
+    padding-left: 0
     li
-      color: $blackGb
-      font-weight: 300
-.Sidebar-advertising
-  a
+      border-bottom: 1px dotted $text-color
+      list-style-image: url('../images/list-type-plus.png')
+      list-style-position: inside
+      margin-bottom: 10px
+      padding-bottom: 5px
+      a
+        color: $text-color
+        font-size: 0.875em
+        &:hover
+          color: $black
+          text-decoration: none
+  .t-legend
     display: block
-  img
-    margin: 0 0 0 auto
-.Sidebar-Widget-title
-  color: $blackGb
-  margin-bottom: 15px
-  margin-top: 0px
-@media only screen and (max-width: 991px)
-  .Sidebar-advertising
-    img
-      margin: 0 auto
-  .Sidebar
-    margin-top: 20px
-    &.affix, &.affix-top, &.affix-bottom
-      position: relative
-      top: 0 !important
 
+.Widget-LastPosts
+  li
+    list-style-image: none !important
+    list-style-type: none
+    h4
+      font-weight: bold
+      margin: 0 0 5px 0
+      a
+        font-size: 0.78em
+.Widget-LastPosts-time
+  font-size: 0.75em !important
 
 /* --------------------------- *\
-//        CAROUSELCUST
+//          UTILS
 /* --------------------------- */
-// .CarouselCust
-// .CarouselCust-inner
-// .CarouselCust-item
-.CarouselCust-control.right, .CarouselCust-control.left
-  background-image: none
+.bdb-blue
+  border-bottom: 2px solid $text-blue
+.bdb-white
+  border-bottom: 2px solid white
 
 
-/* --------------------------- *\
-//    CAROUSEL-TESTIMONIES
-/* --------------------------- */
-.Carousel-testimonies-indicators
-  bottom: -40px
-  margin-bottom: 0
-  margin-left: 0
-  width: auto
-.Carousel-testimonies-control
-  background-color: transparent
-  background-repeat: no-repeat
-  height: 20px
-  +opacity(1)
-  +text-shadow(none)
-  top: 45%
-  width: 20px
-  &.left
-    background-image: url("../images/sprites.png")
-    background-position: -210px -40px
-    left: -50px
-    &:hover
-      background-position: -210px -80px
-  &.right
-    background-image: url("../images/sprites.png")
-    background-position: -210px -20px
-    right: -50px
-    &:hover
-      background-position: -210px -60px
-.Carousel-testimonies-inner
-  min-height: 150px
-@media only screen and (max-width: 1100px)
-  .Carousel-testimonies-control
-    &.right
-      right: 0
+.carousel-showmanymoveone
+  .carousel-control
+    width: 4%
+    background-image: none
     &.left
-      left: 0
-@media only screen and (max-width: 992px)
-  .Carousel-testimonies-indicators
-    left: 45%
-
-/* --------------------------- *\
-//        CAROUSEL-MULTIPLE
-/* --------------------------- */
-.Carousel-multiple
-  // .cloneditem-1, .cloneditem-2, .cloneditem-3, .cloneditem-4, .cloneditem-5
-  .cloneditem-1, .cloneditem-2
+      margin-left: 15px
+    &.right
+      margin-right: 15px
+  .cloneditem-1, .cloneditem-2, .cloneditem-3
     display: none
   .carousel-inner
     @media all and (min-width: 768px)
@@ -2650,27 +464,24 @@ body
         left:  50%
       > .left, > .prev.right, > .active
         left: 0
-      // .cloneditem-1, .cloneditem-2
       .cloneditem-1
         display: block
-
     @media all and (min-width: 992px)
       @media (transform-3d), (-webkit-transform-3d)
         > .item.active.right, > .item.next
-          transform: translate3d(33.33%, 0, 0)
+          transform: translate3d(25%, 0, 0)
           left: 0
         > .item.active.left, > .item.prev
-          transform: translate3d(-33.33%, 0, 0)
+          transform: translate3d(-25%, 0, 0)
           left: 0
         > .item.left, > .item.prev.right, > .item.active
           transform: translate3d(0, 0, 0)
           left: 0
       > .active.left, > .prev
-        left: -33.33%
+        left: -25%
       > .active.right, > .next
-        left:  33.33%
+        left:  25%
       > .left, > .prev.right, > .active
         left: 0
-      // .cloneditem-3, .cloneditem-4, .cloneditem-5
-      .cloneditem-2
+      .cloneditem-2, .cloneditem-3
         display: block

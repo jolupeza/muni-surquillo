@@ -148,7 +148,7 @@ var j = jQuery.noConflict();
       j('.Carousel-multiple .item').each(function(){
         var itemToClone = j(this);
 
-        for (var i=1;i<3;i++) {
+        for (var i = 1; i < 3; i++) {
           itemToClone = itemToClone.next();
 
           // wrap around if at end of item collection
@@ -283,7 +283,7 @@ var j = jQuery.noConflict();
     });
 
     // Mobile Slidebars
-    j.slidebars();
+    // j.slidebars();
 
     // Swipe carousel bootstrap
     j(".carousel").swipe({
@@ -294,11 +294,23 @@ var j = jQuery.noConflict();
       allowPageScroll:"vertical"
     });
 
-    // j('.Course-tabs li a[data-toggle="tab"]').on('show.bs.tab', function(e){
-    //   // e.target;
-    //   // e.relatedTarget;
-    //   checkAffixSubs();
-    // });
+    j('.carousel-showmanymoveone .item').each(function(){
+      var itemToClone = j(this);
+
+      for (var i = 1; i < 4; i++) {
+        itemToClone = itemToClone.next();
+
+        // wrap around if at end of item collection
+        if (!itemToClone.length) {
+          itemToClone = j(this).siblings(':first');
+        }
+
+        // grab item, clone, add marker class, add to collection
+        itemToClone.children(':first-child').clone()
+          .addClass("cloneditem-"+(i))
+          .appendTo(j(this));
+      }
+    });
   });
 
   function checkIfInView() {

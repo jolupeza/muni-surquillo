@@ -1,0 +1,565 @@
+/* --------------------------- *\ */
+/* --------------------------- */
+/* --------------------------- *\ */
+/* --------------------------- */
+/* --------------------------- *\ */
+/* --------------------------- */
+body {
+  color: #6c6c6c;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+}
+
+.t-xs {
+  font-size: 0.625em;
+}
+
+.t-s {
+  font-size: 0.75em;
+}
+
+.t-m {
+  font-size: 0.875em;
+}
+
+.t-l {
+  font-size: 1.125em;
+}
+
+.t-white {
+  color: #fff;
+}
+
+.t-blue {
+  color: #40588d;
+}
+
+.t-black {
+  color: #1b1b1b;
+}
+
+.t-legend {
+  font-weight: bold;
+}
+
+.Page-loader {
+  left: 45%;
+  position: fixed;
+  top: 45%;
+  z-index: 5;
+}
+
+/* --------------------------- *\ */
+/* --------------------------- */
+.Header {
+  padding: 15px 0;
+}
+
+.Header-logo {
+  margin: 0;
+}
+
+.Header-nav {
+  margin-top: 15px;
+}
+
+.Header-menu li {
+  padding: 0 15px;
+  text-transform: uppercase;
+}
+.Header-menu li a {
+  color: #6c6c6c;
+  display: block;
+  font-weight: bold;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.Header-menu li a:hover {
+  color: #40588d;
+  text-decoration: none;
+}
+.Header-menu li a::before {
+  background-image: url("../images/sprites.png");
+  content: "";
+  display: block;
+  height: 50px;
+  margin: 0 auto;
+  width: 50px;
+}
+.Header-menu li.Menu-home a::before {
+  background-position: -150px -100px;
+}
+.Header-menu li.Menu-home a:hover::before {
+  background-position: -50px -150px;
+}
+.Header-menu li.Menu-distrito a::before {
+  background-position: -100px -100px;
+}
+.Header-menu li.Menu-distrito a:hover::before {
+  background-position: 0 -150px;
+}
+.Header-menu li.Menu-municipalidad a::before {
+  background-position: -200px -100px;
+}
+.Header-menu li.Menu-municipalidad a:hover::before {
+  background-position: -100px -150px;
+}
+.Header-menu li.Menu-servicios a::before {
+  background-position: -250px -100px;
+}
+.Header-menu li.Menu-servicios a:hover::before {
+  background-position: -150px -150px;
+}
+.Header-menu li.Menu-transparencia a::before {
+  background-position: -300px -100px;
+}
+.Header-menu li.Menu-transparencia a:hover::before {
+  background-position: -200px -150px;
+}
+
+/* --------------------------- *\ */
+/* --------------------------- */
+.LoaderWrapper {
+  background-color: white;
+  display: block;
+  height: 100%;
+  min-height: 100vh;
+  position: fixed;
+  z-index: 100000;
+  width: 100%;
+}
+.LoaderWrapper #loader {
+  -moz-animation-duration: 3s;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -moz-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  background: url("../images/loading.png") bottom center no-repeat transparent;
+  bottom: 51%;
+  height: 200px;
+  left: 0px;
+  margin: 0px;
+  max-width: 100%;
+  position: absolute;
+  width: 100%;
+}
+.LoaderWrapper #loadingbar {
+  height: 5px;
+  background-color: #40588d;
+  position: absolute;
+  top: 51%;
+  left: 0px;
+  -moz-transition: width 0.2s ease;
+  -o-transition: width 0.2s ease;
+  -webkit-transition: width 0.2s ease;
+  transition: width 0.2s ease;
+  width: 0%;
+}
+
+.Page-loader {
+  left: 45%;
+  position: fixed;
+  top: 45%;
+  z-index: 5;
+}
+
+/* --------------------------- *\ */
+/* --------------------------- */
+.Carousel-indicators {
+  bottom: 5px;
+  margin-bottom: 0;
+  margin-left: 0;
+  width: auto;
+}
+
+.Carousel-caption {
+  background-color: rgba(0, 0, 0, 0.4);
+  bottom: 40px;
+  left: auto;
+  padding: 30px 0;
+  right: 0;
+  width: 50%;
+}
+
+.Carousel-caption-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.Carousel-nav {
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 10px;
+  width: 10%;
+}
+
+.Carousel-menu {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.Carousel-menu li {
+  background-color: rgba(64, 88, 141, 0.4);
+  list-style: none;
+  margin-bottom: 10px;
+  padding: 15px 5px;
+  text-transform: uppercase;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.Carousel-menu li a {
+  color: white;
+  display: block;
+  font-size: 0.875em;
+}
+.Carousel-menu li a:hover {
+  text-decoration: none;
+}
+.Carousel-menu li:hover {
+  background-color: rgba(64, 88, 141, 0.8);
+}
+
+.Social-nav {
+  background-color: #FFF;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.Social-list {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.Social-list li {
+  list-style: none;
+}
+.Social-list li a {
+  display: block;
+}
+.Social-list li a::before {
+  background-image: url("../images/sprites.png");
+  background-repeat: no-repeat;
+  content: "";
+  display: block;
+  height: 40px;
+  width: 40px;
+}
+
+.Social-fb a::before {
+  background-position: -120px -200px;
+}
+
+.Social-lk a::before {
+  background-position: -80px -200px;
+}
+
+.Social-tw a::before {
+  background-position: -40px -200px;
+}
+
+.Social-gplus a::before {
+  background-position: 0 -200px;
+}
+
+/* --------------------------- *\ */
+/* --------------------------- */
+.Footer {
+  background-color: #6c6c6c;
+  border-top: 60px solid #1b1b1b;
+  padding: 10px 0;
+}
+.Footer p {
+  margin-bottom: 0;
+}
+
+/* --------------------------- *\ */
+/* --------------------------- */
+.Page-title {
+  font-weight: bold;
+  margin-top: 0;
+  padding-bottom: 8px;
+}
+
+/* --------------------------- *\ */
+/* --------------------------- */
+.LastPosts {
+  padding: 15px 0;
+}
+
+/* --------------------------- *\ */
+/* --------------------------- */
+.LinksVideos {
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 20px;
+}
+.LinksVideos .Links, .LinksVideos .Videos {
+  -webkit-flex-basis: 50%;
+  flex-basis: 50%;
+}
+
+/* --------------------------- *\ */
+/* --------------------------- */
+.Videos {
+  background-color: #1b1b1b;
+  padding: 15px;
+}
+
+/* --------------------------- *\ */
+/* --------------------------- */
+.Links {
+  background-color: #f5f5f5;
+  padding: 15px;
+}
+
+.Links-menu {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+.Links-menu li {
+  list-style: none;
+  padding: 10px 5px;
+  text-align: center;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.Links-menu li a {
+  color: #6c6c6c;
+  display: block;
+  font-size: 0.75em;
+  font-weight: 700;
+  text-transform: uppercase;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.Links-menu li a::before {
+  background-image: url("../images/sprites.png");
+  background-repeat: no-repeat;
+  content: "";
+  display: block;
+  height: 50px;
+  margin: 0 auto;
+  width: 50px;
+}
+.Links-menu li:nth-child(2n+2) {
+  background-color: #eee;
+}
+.Links-menu li:hover {
+  background-color: #6c6c6c;
+}
+.Links-menu li:hover a {
+  color: white;
+  text-decoration: none;
+}
+.Links-menu li.link--edificacion a::before {
+  background-position: 0 0;
+}
+.Links-menu li.link--funcionamiento a::before {
+  background-position: -50px 0;
+}
+.Links-menu li.link--tributos a::before {
+  background-position: -100px 0;
+}
+.Links-menu li.link--tupa a::before {
+  background-position: -150px 0;
+}
+.Links-menu li.link--leyes a::before {
+  background-position: -200px 0;
+}
+.Links-menu li.link--cas a::before {
+  background-position: -250px 0;
+}
+.Links-menu li.link--laboral a::before {
+  background-position: 0 -50px;
+}
+.Links-menu li.link--juventud a::before {
+  background-position: -50px -50px;
+}
+.Links-menu li.link--leche a::before {
+  background-position: -100px -50px;
+}
+.Links-menu li.link--adulto a::before {
+  background-position: -150px -50px;
+}
+.Links-menu li.link--omaped a::before {
+  background-position: -200px -50px;
+}
+.Links-menu li.link--demuna a::before {
+  background-position: -250px -50px;
+}
+.Links-menu li.link--deportes a::before {
+  background-position: 0 -100px;
+}
+.Links-menu li.link--mascotas a::before {
+  background-position: -50px -100px;
+}
+.Links-menu.Links-menu--flex33 li {
+  -webkit-flex-basis: 33.33%;
+  flex-basis: 33.33%;
+}
+.Links-menu.Links-menu--flex25 li {
+  -webkit-flex-basis: 25%;
+  flex-basis: 25%;
+}
+
+.Metas-list {
+  background-color: #f5f5f5;
+  margin-bottom: 0;
+}
+
+/* --------------------------- *\ */
+/* --------------------------- */
+.Sidebar-footer h3 {
+  font-weight: 700;
+  margin-top: 0;
+}
+.Sidebar-footer .Sidebar-legend {
+  font-weight: 700;
+}
+.Sidebar-footer p {
+  font-size: 0.875em;
+}
+
+/* --------------------------- *\ */
+/* --------------------------- */
+.Prefooter {
+  background-color: #f5f5f5;
+  margin-top: 30px;
+  padding: 30px 0;
+}
+.Prefooter p {
+  font-size: 0.875em;
+}
+.Prefooter ul {
+  padding-left: 0;
+}
+.Prefooter ul li {
+  border-bottom: 1px dotted #6c6c6c;
+  list-style-image: url("../images/list-type-plus.png");
+  list-style-position: inside;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+.Prefooter ul li a {
+  color: #6c6c6c;
+  font-size: 0.875em;
+}
+.Prefooter ul li a:hover {
+  color: #1b1b1b;
+  text-decoration: none;
+}
+.Prefooter .t-legend {
+  display: block;
+}
+
+.Widget-LastPosts li {
+  list-style-image: none !important;
+  list-style-type: none;
+}
+.Widget-LastPosts li h4 {
+  font-weight: bold;
+  margin: 0 0 5px 0;
+}
+.Widget-LastPosts li h4 a {
+  font-size: 0.78em;
+}
+
+.Widget-LastPosts-time {
+  font-size: 0.75em !important;
+}
+
+/* --------------------------- *\ */
+/* --------------------------- */
+.bdb-blue {
+  border-bottom: 2px solid #40588d;
+}
+
+.bdb-white {
+  border-bottom: 2px solid white;
+}
+
+.carousel-showmanymoveone .carousel-control {
+  width: 4%;
+  background-image: none;
+}
+.carousel-showmanymoveone .carousel-control.left {
+  margin-left: 15px;
+}
+.carousel-showmanymoveone .carousel-control.right {
+  margin-right: 15px;
+}
+.carousel-showmanymoveone .cloneditem-1, .carousel-showmanymoveone .cloneditem-2, .carousel-showmanymoveone .cloneditem-3 {
+  display: none;
+}
+@media all and (min-width: 768px) and (transform-3d), all and (min-width: 768px) and (-webkit-transform-3d) {
+  .carousel-showmanymoveone .carousel-inner > .item.active.right, .carousel-showmanymoveone .carousel-inner > .item.next {
+    transform: translate3d(50%, 0, 0);
+    left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner > .item.active.left, .carousel-showmanymoveone .carousel-inner > .item.prev {
+    transform: translate3d(-50%, 0, 0);
+    left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner > .item.left, .carousel-showmanymoveone .carousel-inner > .item.prev.right, .carousel-showmanymoveone .carousel-inner > .item.active {
+    transform: translate3d(0, 0, 0);
+    left: 0;
+  }
+}
+@media all and (min-width: 768px) {
+  .carousel-showmanymoveone .carousel-inner > .active.left, .carousel-showmanymoveone .carousel-inner > .prev {
+    left: -50%;
+  }
+  .carousel-showmanymoveone .carousel-inner > .active.right, .carousel-showmanymoveone .carousel-inner > .next {
+    left: 50%;
+  }
+  .carousel-showmanymoveone .carousel-inner > .left, .carousel-showmanymoveone .carousel-inner > .prev.right, .carousel-showmanymoveone .carousel-inner > .active {
+    left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner .cloneditem-1 {
+    display: block;
+  }
+}
+@media all and (min-width: 992px) and (transform-3d), all and (min-width: 992px) and (-webkit-transform-3d) {
+  .carousel-showmanymoveone .carousel-inner > .item.active.right, .carousel-showmanymoveone .carousel-inner > .item.next {
+    transform: translate3d(25%, 0, 0);
+    left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner > .item.active.left, .carousel-showmanymoveone .carousel-inner > .item.prev {
+    transform: translate3d(-25%, 0, 0);
+    left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner > .item.left, .carousel-showmanymoveone .carousel-inner > .item.prev.right, .carousel-showmanymoveone .carousel-inner > .item.active {
+    transform: translate3d(0, 0, 0);
+    left: 0;
+  }
+}
+@media all and (min-width: 992px) {
+  .carousel-showmanymoveone .carousel-inner > .active.left, .carousel-showmanymoveone .carousel-inner > .prev {
+    left: -25%;
+  }
+  .carousel-showmanymoveone .carousel-inner > .active.right, .carousel-showmanymoveone .carousel-inner > .next {
+    left: 25%;
+  }
+  .carousel-showmanymoveone .carousel-inner > .left, .carousel-showmanymoveone .carousel-inner > .prev.right, .carousel-showmanymoveone .carousel-inner > .active {
+    left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner .cloneditem-2, .carousel-showmanymoveone .carousel-inner .cloneditem-3 {
+    display: block;
+  }
+}
