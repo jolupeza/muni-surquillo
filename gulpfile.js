@@ -76,18 +76,6 @@ gulp.task('compress', function()  {
     .pipe(gulp.dest('./public'))
 })
 
-gulp.task('minifycss', function(){
-  return gulp.src('./public/css/*.css')
-    .pipe(cssnano())
-    .pipe(gulp.dest('./wp-content/themes/cepuch/css'))
-})
-
-gulp.task('minifyjs', function(){
-  return gulp.src('./public/js/*.js')
-    .pipe(uglify())
-    .pipe(gulp.dest('./wp-content/themes/cepuch/js'))
-})
-
 // Elimina el CSS que no es utilizado para reducir el peso del archivo
 gulp.task('uncss', ['compress'], function(){
   gulp.src('./public/css/style.min.css')
@@ -117,12 +105,14 @@ gulp.task('copy', ['uncss'], function(){
 // Copia el contenido de los estáticos al directorio
 // de producción de wp sin tags de comentarios
 gulp.task('copywp', function(){
+  gulp.src('./public/css/**')
+    .pipe(gulp.dest('./wp-content/themes/muni/css'))
+  gulp.src('./public/js/**')
+    .pipe(gulp.dest('./wp-content/themes/muni/js'))
   gulp.src('./public/images/**')
-    .pipe(gulp.dest('./wp-content/themes/cepuch/images'))
+    .pipe(gulp.dest('./wp-content/themes/muni/images'))
   gulp.src('./public/fonts/**')
-    .pipe(gulp.dest('./wp-content/themes/cepuch/fonts'))
-  gulp.src('./public/videos/**')
-    .pipe(gulp.dest('./wp-content/themes/cepuch/videos'))
+    .pipe(gulp.dest('./wp-content/themes/muni/fonts'))
 })
 
 gulp.task('watch', function(){
@@ -147,12 +137,11 @@ gulp.task('cleanpublic', function(){
 
 gulp.task('cleanwp', function(){
   return gulp.src([
-    'wp-content/themes/cepuch/js/app.min.js',
-    'wp-content/themes/cepuch/js/vendor.min.js',
-    'wp-content/themes/cepuch/images',
-    'wp-content/themes/cepuch/fonts',
-    'wp-content/themes/cepuch/css/style.min.css',
-    'public/*.html'
+    'wp-content/themes/muni/js/app.min.js',
+    'wp-content/themes/muni/js/vendor.min.js',
+    'wp-content/themes/muni/images',
+    'wp-content/themes/muni/fonts',
+    'wp-content/themes/muni/css/style.min.css',
     ], {read: false})
     .pipe(clean())
 })
@@ -164,7 +153,6 @@ gulp.task('dev', ['watch'])
 gulp.task('bower', ['wiredep'])
 
 gulp.task('build', ['copy'])
-gulp.task('buildwp', ['copywp', 'minifycss', 'minifyjs'])
+gulp.task('buildwp', ['copywp'])
 
-gulp.task('del', ['cleanpublic'])
-// gulp.task('del', ['cleanpublic', 'cleanwp'])
+gulp.task('del', ['cleanpublic', 'cleanwp'])

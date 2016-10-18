@@ -79,6 +79,29 @@ body
         height: 50px
         margin: 0 auto 7px
         width: 50px
+    &.current-menu-item
+      a
+        color: $text-blue
+      &.Menu-home
+        a
+          &::before
+            background-position: -50px -150px
+      &.Menu-distrito
+        a
+          &::before
+            background-position: 0 -150px
+      &.Menu-municipalidad
+        a
+          &::before
+            background-position: -100px -150px
+      &.Menu-servicios
+        a
+          &::before
+            background-position: -150px -150px
+      &.Menu-transparencia
+        a
+          &::before
+            background-position: -200px -150px
     &.Menu-home
       a
         &::before
@@ -264,6 +287,7 @@ body
         color: $black
         text-decoration: none
 .LastPosts-title
+  min-height: 50px
   margin-top: 0
   a
     color: $text-color
@@ -443,7 +467,7 @@ body
   .t-legend
     display: block
 .Prefooter-sidebar
-  margin_0 auto
+  margin: 0 auto
   width: 80%
 
 .Widget-LastPosts

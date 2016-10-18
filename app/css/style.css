@@ -90,6 +90,24 @@ body {
   margin: 0 auto 7px;
   width: 50px;
 }
+.Header-menu li.current-menu-item a {
+  color: #40588d;
+}
+.Header-menu li.current-menu-item.Menu-home a::before {
+  background-position: -50px -150px;
+}
+.Header-menu li.current-menu-item.Menu-distrito a::before {
+  background-position: 0 -150px;
+}
+.Header-menu li.current-menu-item.Menu-municipalidad a::before {
+  background-position: -100px -150px;
+}
+.Header-menu li.current-menu-item.Menu-servicios a::before {
+  background-position: -150px -150px;
+}
+.Header-menu li.current-menu-item.Menu-transparencia a::before {
+  background-position: -200px -150px;
+}
 .Header-menu li.Menu-home a::before {
   background-position: -150px -100px;
 }
@@ -307,6 +325,7 @@ body {
 }
 
 .LastPosts-title {
+  min-height: 50px;
   margin-top: 0;
 }
 .LastPosts-title a {
@@ -518,6 +537,7 @@ body {
 }
 
 .Prefooter-sidebar {
+  margin: 0 auto;
   width: 80%;
 }
 
