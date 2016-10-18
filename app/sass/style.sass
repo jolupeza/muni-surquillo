@@ -60,11 +60,13 @@ body
   margin-top: 15px
 .Header-menu
   li
+    margin: 0 10px
     padding: 0 15px
     text-transform: uppercase
     a
       color: $text-color
       display: block
+      font-size: 0.875em
       font-weight: bold
       +transition(all 0.2s ease)
       &:hover
@@ -75,7 +77,7 @@ body
         content: ""
         display: block
         height: 50px
-        margin: 0 auto
+        margin: 0 auto 7px
         width: 50px
     &.Menu-home
       a
@@ -153,7 +155,7 @@ body
 /* --------------------------- *\
 //           CAROUSEL
 /* --------------------------- */
-.Carousel
+// .Carousel
 .Carousel-indicators
   bottom: 5px
   margin-bottom: 0
@@ -246,7 +248,6 @@ body
 //           PAGE
 /* --------------------------- */
 .Page-title
-  font-weight: bold
   margin-top: 0
   padding-bottom: 8px
 
@@ -255,6 +256,24 @@ body
 /* --------------------------- */
 .LastPosts
   padding: 15px 0
+  p
+    font-size: 0.875em
+    a
+      color: $text-color
+      &:hover
+        color: $black
+        text-decoration: none
+.LastPosts-title
+  margin-top: 0
+  a
+    color: $text-color
+    font-weight: bold
+    +transition(all 0.2s ease-in-out)
+    &:hover
+      color: $black
+      text-decoration: none
+.LastPosts-figure
+  margin-bottom: 15px
 
 /* --------------------------- *\
 //       LINKSVIDEOS
@@ -264,6 +283,14 @@ body
   margin-bottom: 20px
   .Links, .Videos
     +flex-basis(50%)
+
+.LastPostsLinks
+  +display-flex()
+  .LastPosts
+    +flex-basis(60%)
+    margin-right: 20px
+  .Links
+    +flex-basis(40%)
 
 /* --------------------------- *\
 //       VIDEOS
@@ -277,8 +304,9 @@ body
 /* --------------------------- */
 .Links
   background-color: $gray
-  padding: 15px
-// .Links-nav
+  padding: 15px 25px
+.Links-nav
+  margin: 50px 0
 .Links-menu
   +display-flex()
   +flex-wrap(wrap)
@@ -414,6 +442,9 @@ body
           text-decoration: none
   .t-legend
     display: block
+.Prefooter-sidebar
+  margin_0 auto
+  width: 80%
 
 .Widget-LastPosts
   li
@@ -436,15 +467,32 @@ body
   border-bottom: 2px solid white
 
 
-.carousel-showmanymoveone
+.Carousel-lastPosts
   .carousel-control
-    width: 4%
-    background-image: none
-    &.left
-      margin-left: 15px
+    background-image: url("../images/sprites.png")
+    background-repeat: no-repeat
+    content: ""
+    display: block
+    height: 32px
+    top: 45%
+    width: 32px
     &.right
-      margin-right: 15px
-  .cloneditem-1, .cloneditem-2, .cloneditem-3
+      background-position: -300px -32px
+      right: -20px
+    &.left
+      background-position: -300px 0
+      left: -20px
+
+.carousel-showmanymoveone
+  // .carousel-control
+  //   width: 4%
+  //   background-image: none
+  //   &.left
+  //     margin-left: 15px
+  //   &.right
+  //     margin-right: 15px
+  // .cloneditem-1, .cloneditem-2, .cloneditem-3
+  .cloneditem-1
     display: none
   .carousel-inner
     @media all and (min-width: 768px)
@@ -469,19 +517,20 @@ body
     @media all and (min-width: 992px)
       @media (transform-3d), (-webkit-transform-3d)
         > .item.active.right, > .item.next
-          transform: translate3d(25%, 0, 0)
+          transform: translate3d(50%, 0, 0)
           left: 0
         > .item.active.left, > .item.prev
-          transform: translate3d(-25%, 0, 0)
+          transform: translate3d(-50%, 0, 0)
           left: 0
         > .item.left, > .item.prev.right, > .item.active
           transform: translate3d(0, 0, 0)
           left: 0
       > .active.left, > .prev
-        left: -25%
+        left: -50%
       > .active.right, > .next
-        left:  25%
+        left:  50%
       > .left, > .prev.right, > .active
         left: 0
-      .cloneditem-2, .cloneditem-3
+      // .cloneditem-2, .cloneditem-3
+      .cloneditem-1
         display: block

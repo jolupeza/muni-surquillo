@@ -64,12 +64,14 @@ body {
 }
 
 .Header-menu li {
+  margin: 0 10px;
   padding: 0 15px;
   text-transform: uppercase;
 }
 .Header-menu li a {
   color: #6c6c6c;
   display: block;
+  font-size: 0.875em;
   font-weight: bold;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
@@ -85,7 +87,7 @@ body {
   content: "";
   display: block;
   height: 50px;
-  margin: 0 auto;
+  margin: 0 auto 7px;
   width: 50px;
 }
 .Header-menu li.Menu-home a::before {
@@ -284,7 +286,6 @@ body {
 /* --------------------------- *\ */
 /* --------------------------- */
 .Page-title {
-  font-weight: bold;
   margin-top: 0;
   padding-bottom: 8px;
 }
@@ -293,6 +294,36 @@ body {
 /* --------------------------- */
 .LastPosts {
   padding: 15px 0;
+}
+.LastPosts p {
+  font-size: 0.875em;
+}
+.LastPosts p a {
+  color: #6c6c6c;
+}
+.LastPosts p a:hover {
+  color: #1b1b1b;
+  text-decoration: none;
+}
+
+.LastPosts-title {
+  margin-top: 0;
+}
+.LastPosts-title a {
+  color: #6c6c6c;
+  font-weight: bold;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.LastPosts-title a:hover {
+  color: #1b1b1b;
+  text-decoration: none;
+}
+
+.LastPosts-figure {
+  margin-bottom: 15px;
 }
 
 /* --------------------------- *\ */
@@ -307,6 +338,20 @@ body {
   flex-basis: 50%;
 }
 
+.LastPostsLinks {
+  display: -webkit-flex;
+  display: flex;
+}
+.LastPostsLinks .LastPosts {
+  -webkit-flex-basis: 60%;
+  flex-basis: 60%;
+  margin-right: 20px;
+}
+.LastPostsLinks .Links {
+  -webkit-flex-basis: 40%;
+  flex-basis: 40%;
+}
+
 /* --------------------------- *\ */
 /* --------------------------- */
 .Videos {
@@ -318,7 +363,11 @@ body {
 /* --------------------------- */
 .Links {
   background-color: #f5f5f5;
-  padding: 15px;
+  padding: 15px 25px;
+}
+
+.Links-nav {
+  margin: 50px 0;
 }
 
 .Links-menu {
@@ -468,6 +517,10 @@ body {
   display: block;
 }
 
+.Prefooter-sidebar {
+  width: 80%;
+}
+
 .Widget-LastPosts li {
   list-style-image: none !important;
   list-style-type: none;
@@ -494,17 +547,25 @@ body {
   border-bottom: 2px solid white;
 }
 
-.carousel-showmanymoveone .carousel-control {
-  width: 4%;
-  background-image: none;
+.Carousel-lastPosts .carousel-control {
+  background-image: url("../images/sprites.png");
+  background-repeat: no-repeat;
+  content: "";
+  display: block;
+  height: 32px;
+  top: 45%;
+  width: 32px;
 }
-.carousel-showmanymoveone .carousel-control.left {
-  margin-left: 15px;
+.Carousel-lastPosts .carousel-control.right {
+  background-position: -300px -32px;
+  right: -20px;
 }
-.carousel-showmanymoveone .carousel-control.right {
-  margin-right: 15px;
+.Carousel-lastPosts .carousel-control.left {
+  background-position: -300px 0;
+  left: -20px;
 }
-.carousel-showmanymoveone .cloneditem-1, .carousel-showmanymoveone .cloneditem-2, .carousel-showmanymoveone .cloneditem-3 {
+
+.carousel-showmanymoveone .cloneditem-1 {
   display: none;
 }
 @media all and (min-width: 768px) and (transform-3d), all and (min-width: 768px) and (-webkit-transform-3d) {
@@ -537,11 +598,11 @@ body {
 }
 @media all and (min-width: 992px) and (transform-3d), all and (min-width: 992px) and (-webkit-transform-3d) {
   .carousel-showmanymoveone .carousel-inner > .item.active.right, .carousel-showmanymoveone .carousel-inner > .item.next {
-    transform: translate3d(25%, 0, 0);
+    transform: translate3d(50%, 0, 0);
     left: 0;
   }
   .carousel-showmanymoveone .carousel-inner > .item.active.left, .carousel-showmanymoveone .carousel-inner > .item.prev {
-    transform: translate3d(-25%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
     left: 0;
   }
   .carousel-showmanymoveone .carousel-inner > .item.left, .carousel-showmanymoveone .carousel-inner > .item.prev.right, .carousel-showmanymoveone .carousel-inner > .item.active {
@@ -551,15 +612,15 @@ body {
 }
 @media all and (min-width: 992px) {
   .carousel-showmanymoveone .carousel-inner > .active.left, .carousel-showmanymoveone .carousel-inner > .prev {
-    left: -25%;
+    left: -50%;
   }
   .carousel-showmanymoveone .carousel-inner > .active.right, .carousel-showmanymoveone .carousel-inner > .next {
-    left: 25%;
+    left: 50%;
   }
   .carousel-showmanymoveone .carousel-inner > .left, .carousel-showmanymoveone .carousel-inner > .prev.right, .carousel-showmanymoveone .carousel-inner > .active {
     left: 0;
   }
-  .carousel-showmanymoveone .carousel-inner .cloneditem-2, .carousel-showmanymoveone .carousel-inner .cloneditem-3 {
+  .carousel-showmanymoveone .carousel-inner .cloneditem-1 {
     display: block;
   }
 }

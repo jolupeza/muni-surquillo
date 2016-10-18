@@ -6,118 +6,19 @@ var j = jQuery.noConflict();
   var $win = j(window);
   var $doc = j(document);
   var $animationElements = j('.animation-element');
-  var $sliders = j('.Sliders');
-  var $formSubs = j('.Course-subs');
-  var $sidebar = j('.Sidebar');
-  var body = j('body');
-  var $header = j('.header');
-  var $footer = j('.Footer');
+  // var $sliders = j('.Sliders');
+  // var $formSubs = j('.Course-subs');
+  // var $sidebar = j('.Sidebar');
+  // var body = j('body');
+  // var $header = j('.header');
+  // var $footer = j('.Footer');
 
-  function affixHeader() {
-    if ($sliders.length) {
-      j('#affixHeader').affix({
-        offset: {
-          top: function() {
-            return ($sliders.outerHeight(true) / 2) - 80;
-          }
-        }
-      });
-    }
-  }
+  // function loaderEffect() {
+  //   j("#loader").delay(500).fadeOut();
+  //   j(".LoaderWrapper").delay(1000).fadeOut("slow");
+  // }
 
-  function affixMenuCepuch() {
-    var cepuch = j('#js-cepuch');
-
-    if (cepuch.length) {
-      j('#affixMenuCepuch').affix({
-        offset: {
-          top: function() {
-            return (cepuch.outerHeight(true) - 80);
-          }
-        }
-      });
-    }
-  }
-
-  function affixFormSubs() {
-    if ($formSubs.length) {
-      j('#affixFormSubs').affix({
-        offset: {
-          top: function() {
-            return $header.outerHeight(true) + 40;
-          },
-          bottom: function() {
-            return (this.bottom = $footer.outerHeight(true) + 100);
-          }
-        }
-      });
-    }
-  }
-
-  function checkPositionFormSubs() {
-    if ($formSubs.length) {
-      j('.Course-tabs li a[data-toggle="tab"]').on('show.bs.tab', function(e){
-        j('#affixFormSubs').removeClass('bug');
-      });
-
-      j('#affixFormSubs').on('affix-bottom.bs.affix', function(e){
-        if (j('.Course-tabs-content').height() < 500) {
-          j(e.target).addClass('bug');
-        } else {
-          j(e.target).removeClass('bug');
-        }
-      });
-    }
-  }
-
-  function affixSidebar() {
-    if ($sidebar.length) {
-      j('#affixSidebar').affix({
-        offset: {
-          top: function() {
-            return $header.outerHeight(true) + 40;
-          },
-          bottom: function() {
-            return (this.bottom = $footer.outerHeight(true) + 120);
-          }
-        }
-      });
-    }
-  }
-
-  function scrollHeader() {
-    var logoNormal = j('#js-logo-normal'),
-      logoScroll = j('#js-logo-scroll');
-
-    if ($sliders.length) {
-      var limit = ($sliders.outerHeight(true) / 2) - 80;
-
-      if ($win.scrollTop() > limit) {
-        logoNormal.removeClass('active');
-        logoScroll.addClass('active');
-      } else {
-        logoNormal.addClass('active');
-        logoScroll.removeClass('active');
-      }
-    }
-  }
-
-  function loaderEffect() {
-    j("#loader").delay(500).fadeOut();
-    j(".LoaderWrapper").delay(1000).fadeOut("slow");
-  }
-
-  function changeLogoHeader() {
-    if (!$sliders.length) {
-      var logoNormal = j('#js-logo-normal'),
-        logoScroll = j('#js-logo-scroll');
-
-      logoNormal.removeClass('active');
-      logoScroll.addClass('active');
-    }
-  }
-
-  function loadingProcess() {
+  /*function loadingProcess() {
     var loadedimages = 0;
     var loadedpercent = 0;
 
@@ -141,66 +42,26 @@ var j = jQuery.noConflict();
       jQuery('#loadingbar').css('width', loadedpercent+'%');
       //console.log( 'image is ' + result + ' for ' + image.img.src );
     });
-  }
-
-  function initTestimonials() {
-    if (j('.Carousel-multiple').length) {
-      j('.Carousel-multiple .item').each(function(){
-        var itemToClone = j(this);
-
-        for (var i = 1; i < 3; i++) {
-          itemToClone = itemToClone.next();
-
-          // wrap around if at end of item collection
-          if (!itemToClone.length) {
-            itemToClone = $(this).siblings(':first');
-          }
-
-          // grab item, clone, add marker class, add to collection
-          itemToClone.children(':first-child').clone()
-            .addClass("cloneditem-"+(i))
-            .appendTo(j(this));
-        }
-      });
-    }
-  }
+  }*/
 
   $win.on('load', function(){
-    loaderEffect();
-
-    changeLogoHeader();
+    // loaderEffect();
   });
 
-  $win.on('scroll', function(event){
+  $win.on('scroll', function(){
     if(j(this).scrollTop() > 150) {
       j('.ArrowTop').fadeIn();
     } else {
       j('.ArrowTop').fadeOut();
     }
-
-    if ($win.width() > 991) {
-      scrollHeader();
-    }
   });
 
   $win.on('resize', function(){
-    affixHeader();
-    affixFormSubs();
-    checkPositionFormSubs();
-    affixSidebar();
-    affixMenuCepuch();
+
   });
 
-  j(document).on('ready', function(){
-    loadingProcess();
-
-    initTestimonials();
-
-    affixHeader();
-    affixFormSubs();
-    checkPositionFormSubs();
-    affixSidebar();
-    affixMenuCepuch();
+  $doc.on('ready', function(){
+    // loadingProcess();
 
     j('.js-move-scroll').on('click', function(event) {
       event.preventDefault();
@@ -235,69 +96,22 @@ var j = jQuery.noConflict();
       }
     });
 
-    j('.Card a').on('click', function(e){
-      var menu = j('#affixMenuCepuch');
-
-      var $this = j(this),
-        $target = j(this.hash);
-
-      e.preventDefault();
-
-      if (menu.hasClass('affix-top')) {
-        return false;
-      } else {
-        j('html, body').stop().animate({
-          'scrollTop': $target.offset().top + 2
-        }, 2000, 'easeInOutExpo');
-      }
-    });
-
-    body.on('click', '.Submenu-more', function(ev){
-      ev.preventDefault();
-      var $this = j(this),
-        parent = Boolean($this.data('parent')),
-        status = Boolean($this.data('status'));
-
-      if (parent) {
-        j('.Submenu-more').each(function(index) {
-          var $t = j(this);
-          $t.next().hide();
-          $t.removeClass('minus').addClass('plus').data('status', false);
-        });
-
-      } else {
-        $this.parent().parent().find('.sub-menu').hide();
-        $this.parent().parent().find('.Submenu-more').removeClass('minus').addClass('plus').data('status', false);
-      }
-
-      if (!status) {
-        $this.next().show();
-        $this.removeClass('plus').addClass('minus');
-      } else {
-        $this.next().hide();
-        $this.removeClass('minus').addClass('plus');
-      }
-
-      status = !status;
-      $this.data('status', status);
-    });
-
     // Mobile Slidebars
     // j.slidebars();
 
     // Swipe carousel bootstrap
-    j(".carousel").swipe({
-      swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
-        if (direction == 'left') $(this).carousel('next');
-        if (direction == 'right') $(this).carousel('prev');
-      },
-      allowPageScroll:"vertical"
-    });
+    // j(".carousel").swipe({
+    //   swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+    //     if (direction === 'left') $(this).carousel('next');
+    //     if (direction === 'right') $(this).carousel('prev');
+    //   },
+    //   allowPageScroll:"vertical"
+    // });
 
     j('.carousel-showmanymoveone .item').each(function(){
       var itemToClone = j(this);
 
-      for (var i = 1; i < 4; i++) {
+      for (var i = 1; i < 2; i++) {
         itemToClone = itemToClone.next();
 
         // wrap around if at end of item collection

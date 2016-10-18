@@ -37,13 +37,6 @@ gulp.task('html', function(){
     .pipe(livereload())
 })
 
-// Recarga el navegador cuando hay cambios en el PHP de wp
-gulp.task('phpwp', function(){
-  // gulp.src(['./public/**/*.html', './app/**/*.html'])
-  gulp.src(['./wp-content/themes/cepuch/**/*.php'])
-    .pipe(livereload())
-})
-
 // Busca errores en el JS y nos los muestra por pantalla
 gulp.task('jshint', function(){
   return gulp.src('./app/js/**/*.js')
@@ -136,13 +129,9 @@ gulp.task('watch', function(){
   livereload.listen()
   gulp.watch(['./app/**/*.html'], ['html'])
   gulp.watch(paths.compass, ['compass', 'inject'])
-  gulp.watch(['./app/js/**/*.js'], ['jshint', 'inject'])
+  gulp.watch(['./app/js/**/*.js'], ['inject'])
+  // gulp.watch(['./app/js/**/*.js'], ['jshint', 'inject'])
   // gulp.watch(['./bower.json'], ['wiredep'])
-})
-
-gulp.task('watchwp', function(){
-  livereload.listen()
-  gulp.watch(['./wp-content/themes/cepuch/**/*.php'], ['phpwp'])
 })
 
 gulp.task('cleanpublic', function(){
@@ -172,10 +161,10 @@ gulp.task('default', ['inject', 'watch'])
 // gulp.task('default', ['inject', 'wiredep', 'watch'])
 
 gulp.task('dev', ['watch'])
-gulp.task('devwp', ['watchwp'])
 gulp.task('bower', ['wiredep'])
 
 gulp.task('build', ['copy'])
 gulp.task('buildwp', ['copywp', 'minifycss', 'minifyjs'])
 
-gulp.task('del', ['cleanpublic', 'cleanwp'])
+gulp.task('del', ['cleanpublic'])
+// gulp.task('del', ['cleanpublic', 'cleanwp'])
