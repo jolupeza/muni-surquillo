@@ -6,7 +6,7 @@
  *
  *
  * @wordpress-plugin
- * Plugin Name:       Cepuch Manager
+ * Plugin Name:       Muni Manager
  * Plugin URI:        https://github.com/jolupeza/muni-surquillo
  * Description:       Manage personalized web content.
  * Version:           1.0.0

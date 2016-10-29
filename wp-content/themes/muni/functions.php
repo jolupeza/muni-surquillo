@@ -13,7 +13,7 @@ function load_custom_scripts() {
   wp_enqueue_script('vendor_script', THEMEROOT . '/js/vendor.min.js', array('jquery'), false, true);
   wp_enqueue_script('custom_script', THEMEROOT . '/js/app.min.js', array('jquery'), false, true);
   wp_enqueue_script('main_script', THEMEROOT . '/js/main.js', array('jquery'), false, true);
-  wp_localize_script('custom_script', 'MuniAjax', array('url' => admin_url('admin-ajax.php'), 'nonce' => wp_create_nonce('cepuchajax-nonce')));
+  wp_localize_script('custom_script', 'MuniAjax', array('url' => admin_url('admin-ajax.php'), 'nonce' => wp_create_nonce('muniajax-nonce')));
 }
 add_action('wp_enqueue_scripts', 'load_custom_scripts');
 
@@ -38,11 +38,9 @@ function register_my_menus() {
   register_nav_menus(
     [
       'main-menu'   => __( 'Main Menu', THEMEDOMAIN ),
-      'left-menu' => __( 'Left Menu', THEMEDOMAIN ),
-      'services-menu' => __( 'Servicios Municipales Menu', THEMEDOMAIN ),
-      'actions-menu' => __( 'Acciones Municipales Menu', THEMEDOMAIN ),
-      'links-menu' => __( 'Enlaces Menu', THEMEDOMAIN ),
-      'module-menu' => __( 'Módulos Web Menu', THEMEDOMAIN ),
+      'top-menu'   => __( 'Top Menu', THEMEDOMAIN ),
+      'footer-link-menu'   => __( 'Enlaces Footer Menu', THEMEDOMAIN ),
+      'footer-service-menu'   => __( 'Servicios Footer Menu', THEMEDOMAIN ),
     ]
   );
 }
@@ -53,8 +51,8 @@ add_action('init', 'register_my_menus');
 /***************************************/
 function my_theme_setup() {
   add_theme_support('custom-logo', [
-    'height' => 106,
-    'width' => 281,
+    'height' => 90,
+    'width' => 285,
     'flex-height' => true
   ]);
 }

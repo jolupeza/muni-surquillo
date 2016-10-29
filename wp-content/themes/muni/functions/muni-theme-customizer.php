@@ -12,11 +12,29 @@ function display_custom_options_link() {
 /***********************************************************************************************/
 add_action('customize_register', 'muni_customize_register');
 function muni_customize_register($wp_customize) {
+    // Logo Footer
+    $wp_customize->add_section('muni_logo', array(
+        'title' => __('Logo Footer', THEMEDOMAIN),
+        'description' => __('Le permite cargar un logo personalizado para el footer.', THEMEDOMAIN),
+        'priority' => 35
+    ));
+
+    $wp_customize->add_setting('muni_custom_settings[logo]', array(
+        'default' => IMAGES . '/logo-footer.png',
+        'type' => 'option'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'logo', array(
+        'label' => __('Sube tu logo', THEMEDOMAIN),
+        'section' => 'muni_logo',
+        'settings' => 'muni_custom_settings[logo]'
+    )));
+
     // Links Social Media
     $wp_customize->add_section('muni_social', array(
         'title' => __( 'Links Redes Sociales', THEMEDOMAIN),
         'description' => __('Mostrar links a redes sociales', THEMEDOMAIN),
-        'priority' => 35
+        'priority' => 36
     ));
 
     $wp_customize->add_setting('muni_custom_settings[display_social_link]', array(
@@ -87,7 +105,20 @@ function muni_customize_register($wp_customize) {
     $wp_customize->add_section('muni_info', array(
         'title' => __( 'Datos de la empresa', THEMEDOMAIN),
         'description' => __('Configurar información sobre la empresa', THEMEDOMAIN),
-        'priority' => 36
+        'priority' => 37
+    ));
+
+    // Description
+    $wp_customize->add_setting('muni_custom_settings[desc]', array(
+        'default' => '',
+        'type'    => 'option'
+    ));
+
+    $wp_customize->add_control('muni_custom_settings[desc]', array(
+        'label'    => __('Descripción', THEMEDOMAIN),
+        'section'  => 'muni_info',
+        'settings' => 'muni_custom_settings[desc]',
+        'type'     => 'textarea'
     ));
 
     // Address
@@ -123,7 +154,7 @@ function muni_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_control('muni_custom_settings[phone]', array(
-        'label'    => __('Teléfonos', THEMEDOMAIN),
+        'label'    => __('Central Telefónica', THEMEDOMAIN),
         'section'  => 'muni_info',
         'settings' => 'muni_custom_settings[phone]',
         'type'     => 'text'

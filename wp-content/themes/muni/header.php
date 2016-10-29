@@ -30,15 +30,39 @@
     <?php wp_head(); ?>
   </head>
   <body>
+    <?php $options = get_option('muni_custom_settings'); ?>
     <!-- <div class="LoaderWrapper">
       <div id="loader" class="animated bounce infinite"></div>
       <div id="loadingbar"></div>
     </div> --><!-- end LoaderWrapper -->
 
     <header class="Header">
+      <nav class="Header-navTop text-right">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <?php
+                $args = [
+                  'theme_location' => 'top-menu',
+                  // 'container' => 'nav',
+                  // 'container_class' => 'Header-mainMenu text-center',
+                  'menu_class' => 'Menu-top list-inline',
+                ];
+                wp_nav_menu( $args );
+              ?>
+              <ul class="Menu-social list-inline">
+                <li class="Menu-social-fb"><a href="">f</a></li>
+                <li class="Menu-social-lnk"><a href="">in</a></li>
+                <li class="Menu-social-you"><a href="">y</a></li>
+              </ul><!-- end Menu-social -->
+            </div><!-- end col-md-12 -->
+          </div><!-- end row -->
+        </div><!-- end container -->
+      </nav><!-- end Header-navTop -->
+
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-6">
             <?php
               $custom_logo_id = get_theme_mod('custom_logo');
               $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
@@ -48,18 +72,31 @@
                 <img src="<?php echo $logo[0]; ?>" alt="<?php bloginfo('name'); ?> | <?php bloginfo('description'); ?>">
               </a>
             </h1>
-          </div><!-- end col-md-3 -->
-          <div class="col-md-9">
+          </div><!-- end col-md-6 -->
+          <?php if (!empty($options['phone'])) : ?>
+            <div class="col-md-6">
+              <aside class="Header-central">
+                <i class="Header-central-icon Icon Icon--phone"></i>
+                <span>Central Telefónica <b><?php echo $options['phone']; ?></b></span>
+              </aside>
+            </div><!-- end col-md-6 -->
+          <?php endif; ?>
+        </div><!-- end row -->
+      </div><!-- end container -->
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
             <?php
-              $args = array(
+              $args = [
                 'theme_location' => 'main-menu',
                 'container' => 'nav',
-                'container_class' => 'Header-nav text-center',
-                'menu_class' => 'Header-menu list-inline',
-              );
+                'container_class' => 'Header-mainMenu text-center',
+                'menu_class' => 'Menu-main list-inline',
+              ];
               wp_nav_menu( $args );
             ?>
-          </div><!-- end col-md-9 -->
+          </div><!-- end col-md-12 -->
         </div><!-- end row -->
       </div><!-- end container -->
     </header><!-- end Header -->

@@ -1,75 +1,77 @@
 <?php $options = get_option('muni_custom_settings'); ?>
 
-    <section class="Prefooter">
+    <footer class="Footer">
       <div class="container">
         <div class="row">
-          <?php if (!empty($options['address']) || !empty($options['phone'])) : ?>
-            <div class="col-md-3">
-              <aside class="Prefooter-sidebar">
-                <h3 class="h5 text-uppercase Page-title t-black">Municipalidad</h3>
-                <?php if (!empty($options['address'])) : ?>
-                  <p><span class="t-legend">Dirección:</span> <?php echo $options['address']; ?></p>
-                <?php endif; ?>
+          <div class="col-md-4">
+            <?php
+              $logo = (!empty($options['logo'])) ? $options['logo'] : IMAGES . '/logo-footer.png';
+            ?>
+            <h3 class="Footer-logo text-center">
+              <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>">
+                <img class="img-responsive center-block" src="<?php echo $logo; ?>" alt="<?php bloginfo('name'); ?> | <?php bloginfo('description'); ?>">
+              </a>
+            </h3><!-- end Footer-logo -->
 
-                <?php if (!empty($options['phone'])) : ?>
-                  <p><span class="t-legend">Central Telefónica:</span> <?php echo $options['phone']; ?></p>
-                <?php endif; ?>
-              </aside>
+            <?php if (!empty($options['desc'])) : ?>
+              <p class="text--white"><?php echo $options['desc']; ?></p>
+            <?php endif; ?>
+          </div><!-- end col-md-4 -->
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="text--white Title">Enlaces</h3>
+                <?php
+                  $args = [
+                    'theme_location' => 'footer-link-menu',
+                    'menu_class' => 'Footer-list',
+                  ];
+                  wp_nav_menu( $args );
+                ?>
+              </div>
+              <div class="col-md-6">
+                <h3 class="text--white Title">Servicios</h3>
+                <?php
+                  $args = [
+                    'theme_location' => 'footer-service-menu',
+                    'menu_class' => 'Footer-list',
+                  ];
+                  wp_nav_menu( $args );
+                ?>
+                <!-- <ul class="Footer-list">
+                  <li><a href="">Ventanilla Electrónica</a></li>
+                  <li><a href="">Solicitud de acceso a la información</a></li>
+                  <li><a href="">Estado de Cuenta Corriente</a></li>
+                  <li><a href="">Licencia de funcionamiento</a></li>
+                  <li><a href="">Licencia de edificación</a></li>
+                  <li><a href="">Tributos municipales</a></li>
+                </ul> -->
+              </div>
             </div>
-          <?php endif; ?>
-          <div class="col-md-3">
-            <aside class="Prefooter-sidebar">
-              <h3 class="h5 text-uppercase Page-title t-black">Enlaces</h3>
+          </div><!-- end col-md-4 -->
+          <div class="col-md-4">
+            <h3 class="text--white Title">Suscríbete</h3>
+            <p class="text--white">Suscríbete y entérate de las últimas novedades, eventos, actividades y nuevas ordenanzas.</p>
 
-              <?php
-                $args = array(
-                  'theme_location' => 'links-menu',
-                );
-                wp_nav_menu( $args );
-              ?>
-            </aside>
-          </div>
-          <div class="col-md-3">
-            <aside class="Prefooter-sidebar">
-              <h3 class="h5 text-uppercase Page-title t-black">Últimas noticias</h3>
-              <ul class="Widget-LastPosts">
-                <li>
-                  <h4><a href="">Recuerdan 75 años de la inmolación del héroe Capitán Alfredo Novoa Cava</a></h4>
-                  <p class="Widget-LastPosts-time">12 Sep 2016</p>
-                </li>
-                <li>
-                  <h4><a href="">Ciento treinta vecinos brigadistas ecológicos juramentan en Lince</a></h4>
-                  <p class="Widget-LastPosts-time">08 Sep 2016</p>
-                </li>
-                <li>
-                  <h4><a href="">Charla de cómo armonizar el trabajo y la familia</a></h4>
-                  <p class="Widget-LastPosts-time">08 Sep 2016</p>
-                </li>
-                <li>
-                  <h4><a href="">A la vuelta de la Esquina - Reportaje de nuestro Distrito de Lince</a></h4>
-                  <p class="Widget-LastPosts-time">06 Sep 2016</p>
-                </li>
-              </ul>
-            </aside>
-          </div>
-          <div class="col-md-3">
-            <aside class="Prefooter-sidebar">
-              <h3 class="h5 text-uppercase Page-title t-black">Módulos Web</h3>
-              <?php
-                $args = array(
-                  'theme_location' => 'module-menu',
-                );
-                wp_nav_menu( $args );
-              ?>
-            </aside>
-          </div>
+            <form class="Form">
+              <div class="form-group">
+                <label for="email" class="sr-only">Correo electrónico</label>
+                <div class="input-group">
+                  <input type="email" name="email" id="email" class="form-control" placeholder="Ingresa tu correo electrónico" aria-describedby="basic-email">
+                  <span class="input-group-addon" id="basic-email"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+                </div>
+              </div>
+            </form>
+          </div><!-- end col-md-4 -->
+        </div><!-- end row -->
+      </div><!-- end container -->
+
+      <div class="Footer-copy">
+        <div class="container">
+          <p class="text-center text--white text--s">Copyright &copy; 2009 - <?php echo date('Y'); ?>. All rights reserved.</p>
         </div>
       </div>
-    </section><!-- end Prefooter -->
-
-    <footer class="Footer">
-      <p class="text-center t-white t-s">Todos los Derechos Reservados &copy; Municipalida de Surquillo</p>
-    </footer>
+    </footer><!-- end Footer -->
 
     <!-- <button class="ArrowTop text-hide">Ir a arriba</button> -->
 
