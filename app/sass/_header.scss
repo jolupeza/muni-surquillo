@@ -6,12 +6,12 @@
   border-bottom: 1px solid $graySoft;
 }
 
-.Menu-top, .Menu-social {
+.Menu-top-wrapper, .Menu-social-wrapper {
   display: inline-block;
-  margin-bottom: 0;
   vertical-align: top;
 }
 .Menu-top {
+  margin-bottom: 0;
   margin-right: 15px;
   margin-top: 10px;
   li {
@@ -40,6 +40,7 @@
   }
 }
 .Menu-social {
+  margin-bottom: 0;
   li {
     border-left: 1px solid $graySoft;
     margin-right: -4px;
