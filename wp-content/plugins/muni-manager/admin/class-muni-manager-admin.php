@@ -110,7 +110,7 @@ class Muni_Manager_Admin
     public function cd_mb_sliders_add()
     {
         add_meta_box(
-            'mb-contacts-id', 'Otras configuraciones', array($this, 'render_mb_sliders'), 'sliders', 'normal', 'core'
+            'mb-sliders-id', 'Otras configuraciones', array($this, 'render_mb_sliders'), 'sliders', 'normal', 'core'
         );
     }
 
@@ -151,13 +151,21 @@ class Muni_Manager_Admin
     }
 
     /**
+     * Requires the file that is used to display the user interface of the post meta box.
+     */
+    public function render_mb_sliders()
+    {
+        require_once plugin_dir_path(__FILE__) . 'partials/muni-mb-sliders.php';
+    }
+
+    /**
      * Registers the meta box that will be used to display all of the post meta data
      * associated with post type metas.
      */
     public function cd_mb_metas_add()
     {
         add_meta_box(
-            'mb-contacts-id', 'Otras configuraciones', array($this, 'render_mb_metas'), 'metas', 'normal', 'core'
+            'mb-metas-id', 'Otras configuraciones', array($this, 'render_mb_metas'), 'metas', 'normal', 'core'
         );
     }
 
@@ -196,6 +204,50 @@ class Muni_Manager_Admin
     public function render_mb_metas()
     {
         require_once plugin_dir_path(__FILE__) . 'partials/muni-mb-metas.php';
+    }
+
+    /**
+     * Registers the meta box that will be used to display all of the post meta data
+     * associated with post type videos.
+     */
+    public function cd_mb_videos_add()
+    {
+        add_meta_box(
+            'mb-videos-id', 'Otras configuraciones', array($this, 'render_mb_videos'), 'videos', 'normal', 'core'
+        );
+    }
+
+    public function cd_mb_videos_save($post_id)
+    {
+        // Bail if we're doing an auto save
+        if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+            return;
+        }
+
+        // if our nonce isn't there, or we can't verify it, bail
+        if (!isset($_POST['meta_box_nonce']) || !wp_verify_nonce($_POST['meta_box_nonce'], 'videos_meta_box_nonce')) {
+            return;
+        }
+
+        // if our current user can't edit this post, bail
+        if (!current_user_can('edit_post', $post_id)) {
+            return;
+        }
+
+        // Video
+        if (isset($_POST['mb_video']) && !empty($_POST['mb_video'])) {
+            update_post_meta($post_id, 'mb_video', esc_attr($_POST['mb_video']));
+        } else {
+            delete_post_meta($post_id, 'mb_video');
+        }
+    }
+
+    /**
+     * Requires the file that is used to display the user interface of the post meta box.
+     */
+    public function render_mb_videos()
+    {
+        require_once plugin_dir_path(__FILE__) . 'partials/muni-mb-videos.php';
     }
 
     /**
@@ -303,6 +355,51 @@ class Muni_Manager_Admin
             // 'rewrite'     => true
         );
         register_post_type('metas', $args);
+
+        $labels = array(
+            'name'               => __('Videos', $this->domain),
+            'singular_name'      => __('Videos', $this->domain),
+            'add_new'            => __('Nuevo video', $this->domain),
+            'add_new_item'       => __('Agregar nueva video', $this->domain),
+            'edit_item'          => __('Editar video', $this->domain),
+            'new_item'           => __('Nueva video', $this->domain),
+            'view_item'          => __('Ver video', $this->domain),
+            'search_items'       => __('Buscar video', $this->domain),
+            'not_found'          => __('Video no encontrada', $this->domain),
+            'not_found_in_trash' => __('Video no encontrada en la papelera', $this->domain),
+            'all_items'          => __('Todos las Videos', $this->domain),
+        );
+        $args = array(
+            'labels' => $labels,
+            'description' => 'Videos',
+            // 'public'              => false,
+            // 'exclude_from_search' => true,
+            // 'publicly_queryable' => false,
+            'show_ui' => true,
+            'show_in_nav_menus' => false,
+            'show_in_menu' => true,
+            'show_in_admin_bar' => true,
+            // 'menu_position'          => null,
+            'menu_icon' => 'dashicons-video-alt3',
+            // 'hierarchical'        => false,
+            'supports' => array(
+                'title',
+                'editor',
+                'custom-fields',
+                'author',
+                'thumbnail',
+                'page-attributes',
+                // 'excerpt'
+                // 'trackbacks'
+                // 'comments',
+                // 'revisions',
+                // 'post-formats'
+            ),
+            // 'taxonomies'  => array('post_tag', 'category'),
+            // 'has_archive' => false,
+            // 'rewrite'     => true
+        );
+        register_post_type('videos', $args);
     }
 
     public function unregister_post_type()

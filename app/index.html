@@ -35,272 +35,253 @@
     </div> --><!-- end LoaderWrapper -->
 
     <header class="Header">
+      <nav class="Header-navTop text-right">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <ul class="Menu-top list-inline">
+                <li class="active"><a href="">Agenda Telefónica</a></li>
+                <li><a href="">Consultas online</a></li>
+              </ul><!-- end Menu-top -->
+              <ul class="Menu-social list-inline">
+                <li class="Menu-social-fb"><a href="">f</a></li>
+                <li class="Menu-social-lnk"><a href="">in</a></li>
+                <li class="Menu-social-you"><a href="">y</a></li>
+              </ul><!-- end Menu-social -->
+            </div><!-- end col-md-12 -->
+          </div><!-- end row -->
+        </div><!-- end container -->
+      </nav><!-- end Header-navTop -->
+
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-6">
             <h1 class="Header-logo">
-              <a href="#"><img src="images/logo.jpg" alt="Municipalidad de Surquillo"></a>
+              <a href="http://muni-surquillo.web/app" title=""><img src="images/logo.png" alt=""></a>
             </h1>
-          </div><!-- end col-md-3 -->
-          <div class="col-md-9">
-            <nav class="Header-nav text-center">
-              <ul class="Header-menu list-inline">
-                <li class="Menu-home"><a href="#">Inicio</a></li>
-                <li class="Menu-distrito"><a href="#">Distrito</a></li>
-                <li class="Menu-municipalidad"><a href="#">Municipalidad</a></li>
-                <li class="Menu-servicios"><a href="#">Servicios</a></li>
-                <li class="Menu-transparencia"><a href="#">Transparencia</a></li>
-              </ul><!-- end Header-mainMenu-list -->
-            </nav><!-- end Header-mainMenu -->
-          </div><!-- end col-md-9 -->
+          </div>
+          <div class="col-md-6">
+            <aside class="Header-central">
+              <i class="Header-central-icon Icon Icon--phone"></i>
+              <span>Central Telefónica <b>(51 1) 241 - 0413</b></span>
+            </aside>
+          </div>
         </div><!-- end row -->
       </div><!-- end container -->
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <nav class="Header-mainMenu text-center">
+              <ul class="Menu-main list-inline">
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Somos Surquillo</a></li>
+                <li><a href="">Servicios y trámites</a></li>
+                <li><a href="">Novedades</a></li>
+                <li><a href="">Transparencia</a></li>
+                <li><a href="">Contacto</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
     </header><!-- end Header -->
 
     <section id="carousel-home" class="carousel slide Carousel Carousel--home" data-ride="carousel">
       <!-- Indicators -->
-      <ol class="carousel-indicators Carousel-indicators">
+      <ol class="carousel-indicators">
         <li data-target="#carousel-home" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-home" data-slide-to="1"></li>
       </ol><!-- end Carousel-indicators -->
 
-      <div class="carousel-inner Carousel-inner" role="listbox">
-        <div class="item active Carousel-item">
-          <img src="images/resources/slider-1920-548.jpg" alt="" />
-          <div class="carousel-caption Carousel-caption">
-            <h3 class="Carousel-caption-title">Parque Samiria - Surquillo</h3>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="images/resources/slide1.jpg" alt="" />
+          <div class="carousel-caption">
+            <h3 class="Carousel-captionTitle text-uppercase">mejorando</h3>
+            <h4 class="Carousel-captionSubtitle text-uppercase">por el bien de los vecinos</h4>
+            <p><a href="" class="Button Button--transp Button--white text-uppercase">ver metas ></a></p>
+          </div><!-- end Carousel-caption -->
+        </div><!-- end Carousel-item -->
+
+        <div class="item">
+          <img src="images/resources/slide2.jpg" alt="" />
+          <div class="carousel-caption">
+            <h3 class="Carousel-captionTitle text-uppercase">mejorando</h3>
+            <h4 class="Carousel-captionSubtitle text-uppercase">por el bien de los vecinos</h4>
+            <p><a href="" class="Button Button--transp Button--white text-uppercase">ver metas ></a></p>
           </div><!-- end Carousel-caption -->
         </div><!-- end Carousel-item -->
       </div><!-- end Carousel-inner -->
 
-      <!-- Controls -->
-      <!-- <a class="left carousel-control Carousel-control" href="#carousel-home" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control Carousel-control" href="#carousel-home" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a> -->
-
-      <nav class="Carousel-nav">
-        <ul class="Carousel-menu">
-          <li><a href="">Agenda</a></li>
-          <li><a href="">Consultas online</a></li>
-          <li><a href="">Ventanilla electrónica</a></li>
-          <li><a href="">Normas legales</a></li>
-          <li><a href="">Acceso a información</a></li>
-        </ul><!-- end Carousel-menu -->
-      </nav><!-- end Carousel-nav -->
-
-      <nav class="Social-nav">
-        <ul class="Social-list">
-          <li class="Social-fb"><a href="" class="text-hide" title="Ir a Facebook">Facebook</a></li>
-          <li class="Social-lk"><a href="" class="text-hide" title="Ir a Linkedin">Linkedin</a></li>
-          <li class="Social-tw"><a href="" class="text-hide" title="Ir a Twitter">Twitter</a></li>
-          <li class="Social-gplus"><a href="" class="text-hide" title="Ir a Google+">Google+</a></li>
-        </ul>
-      </nav>
+      <button class="Carousel-arrow Button Button--arrowDown text-center text-uppercase">Ver más</button>
     </section><!-- end Carousel -->
 
     <div class="container">
-      <section class="LastPostsLinks">
-        <section class="LastPosts">
-          <h3 class="h4 text-uppercase t-blue bdb-blue Page-title">Últimas noticias</h3>
-          <div class="carousel carousel-showmanymoveone slide Carousel-lastPosts" id="carousel-lastPosts">
-            <div class="carousel-inner">
-              <div class="item active">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                  <h2 class="LastPosts-title h4"><a href="#">Cuna guardería municipal celebro aniversario</a></h2>
-                  <figure class="LastPosts-figure">
-                    <img src="http://placehold.it/300x144/0054A6/fff/&amp;text=A" class="img-responsive">
-                  </figure>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, molestiae provident ipsa, possimus at eius illum harum quos laborum doloribus omnis ipsum voluptas rerum, reprehenderit sit quasi impedit quis consequatur. <a href="#">[seguir leyendo]</a></p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                  <h2 class="LastPosts-title h4"><a href="#">Cuna guardería municipal celebro aniversario</a></h2>
-                  <figure class="LastPosts-figure">
-                    <img src="http://placehold.it/300x144/0054A6/fff/&amp;text=A" class="img-responsive">
-                  </figure>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, molestiae provident ipsa, possimus at eius illum harum quos laborum doloribus omnis ipsum voluptas rerum, reprehenderit sit quasi impedit quis consequatur. <a href="#">[seguir leyendo]</a></p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                  <h2 class="LastPosts-title h4"><a href="#">Cuna guardería municipal celebro aniversario</a></h2>
-                  <figure class="LastPosts-figure">
-                    <img src="http://placehold.it/300x144/0054A6/fff/&amp;text=A" class="img-responsive">
-                  </figure>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, molestiae provident ipsa, possimus at eius illum harum quos laborum doloribus omnis ipsum voluptas rerum, reprehenderit sit quasi impedit quis consequatur. <a href="#">[seguir leyendo]</a></p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                  <h2 class="LastPosts-title h4"><a href="#">Cuna guardería municipal celebro aniversario</a></h2>
-                  <figure class="LastPosts-figure">
-                    <img src="http://placehold.it/300x144/0054A6/fff/&amp;text=A" class="img-responsive">
-                  </figure>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, molestiae provident ipsa, possimus at eius illum harum quos laborum doloribus omnis ipsum voluptas rerum, reprehenderit sit quasi impedit quis consequatur. <a href="#">[seguir leyendo]</a></p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                  <h2 class="LastPosts-title h4"><a href="#">Cuna guardería municipal celebro aniversario</a></h2>
-                  <figure class="LastPosts-figure">
-                    <img src="http://placehold.it/300x144/0054A6/fff/&amp;text=A" class="img-responsive">
-                  </figure>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, molestiae provident ipsa, possimus at eius illum harum quos laborum doloribus omnis ipsum voluptas rerum, reprehenderit sit quasi impedit quis consequatur. <a href="#">[seguir leyendo]</a></p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                  <h2 class="LastPosts-title h4"><a href="#">Cuna guardería municipal celebro aniversario</a></h2>
-                  <figure class="LastPosts-figure">
-                    <img src="http://placehold.it/300x144/0054A6/fff/&amp;text=A" class="img-responsive">
-                  </figure>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, molestiae provident ipsa, possimus at eius illum harum quos laborum doloribus omnis ipsum voluptas rerum, reprehenderit sit quasi impedit quis consequatur. <a href="#">[seguir leyendo]</a></p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                  <h2 class="LastPosts-title h4"><a href="#">Cuna guardería municipal celebro aniversario</a></h2>
-                  <figure class="LastPosts-figure">
-                    <img src="http://placehold.it/300x144/0054A6/fff/&amp;text=A" class="img-responsive">
-                  </figure>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, molestiae provident ipsa, possimus at eius illum harum quos laborum doloribus omnis ipsum voluptas rerum, reprehenderit sit quasi impedit quis consequatur. <a href="#">[seguir leyendo]</a></p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                  <h2 class="LastPosts-title h4"><a href="#">Cuna guardería municipal celebro aniversario</a></h2>
-                  <figure class="LastPosts-figure">
-                    <img src="http://placehold.it/300x144/0054A6/fff/&amp;text=A" class="img-responsive">
-                  </figure>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, molestiae provident ipsa, possimus at eius illum harum quos laborum doloribus omnis ipsum voluptas rerum, reprehenderit sit quasi impedit quis consequatur. <a href="#">[seguir leyendo]</a></p>
-                </div>
-              </div>
-            </div>
-            <a class="left carousel-control" href="#carousel-lastPosts" data-slide="prev"></a>
-            <a class="right carousel-control" href="#carousel-lastPosts" data-slide="next"></a>
-          </div>
-        </section><!-- end LastPosts -->
-        <aside class="Links">
-          <h3 class="h4 text-center text-uppercase Page-title">Servicios municipales</h3>
-          <nav class="Links-nav">
-            <ul class="Links-menu Links-menu--flex33">
-              <li class="link--edificacion"><a href="">Licencia de edificación</a></li>
-              <li class="link--funcionamiento"><a href="">Licencia de funcionamiento</a></li>
-              <li class="link--tributos"><a href="">Tributos municipales</a></li>
-              <li class="link--tupa"><a href="">Tupa</a></li>
-              <li class="link--leyes"><a href="">Leyes y normas legales</a></li>
-              <li class="link--cas"><a href="">Procesos CAS</a></li>
-            </ul><!-- end Links-menu -->
-          </nav><!-- end Links-nav -->
-        </aside><!-- end Links -->
-      </section><!-- end LastPostsLinks -->
-
-      <section class="LinksVideos">
-        <aside class="Links">
-          <h3 class="h4 text-center text-uppercase Page-title">Acciones municipales</h3>
-          <nav class="Links-nav">
-            <ul class="Links-menu Links-menu--flex25">
-              <li class="link--laboral"><a href="">Promoción laboral</a></li>
-              <li class="link--juventud"><a href="">Casa de la juventud</a></li>
-              <li class="link--leche"><a href="">Vaso de leche</a></li>
-              <li class="link--adulto"><a href="">Adulto mayor</a></li>
-              <li class="link--omaped"><a href="">Omaped</a></li>
-              <li class="link--demuna"><a href="">Demuna</a></li>
-              <li class="link--deportes"><a href="">Deportes</a></li>
-              <li class="link--mascotas"><a href="">Mascotas</a></li>
-            </ul><!-- end Links-menu -->
-          </nav><!-- end Links-nav -->
-        </aside><!-- end Links -->
-        <section class="Videos">
-          <h3 class="Page-title text-uppercase t-white bdb-white">Videos</h3>
-        </section><!-- end Videos -->
-      </section><!-- end LinksVideos -->
-
-      <h3 class="Page-title t-blue text-uppercase bdb-blue">Metas Municipales</h3>
-
-      <ul class="Metas-list list-inline text-center">
-        <li><a href=""><img src="images/resources/codisec.jpg" alt=""></a></li>
-        <li><a href=""><img src="images/resources/meta26.jpg" alt=""></a></li>
-        <li><a href=""><img src="images/resources/meta24.jpg" alt=""></a></li>
-        <li><a href=""><img src="images/resources/meta3.jpg" alt=""></a></li>
-        <li><a href=""><img src="images/resources/codisec.jpg" alt=""></a></li>
-        <li><a href=""><img src="images/resources/meta26.jpg" alt=""></a></li>
-        <li><a href=""><img src="images/resources/meta24.jpg" alt=""></a></li>
-        <li><a href=""><img src="images/resources/meta3.jpg" alt=""></a></li>
-      </ul>
+      <section class="About">
+        <div class="article About-item">
+          <h2 class="Title text--blue h1">Bienvenido a Surquillo</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non tempore ratione, ipsum amet sint dolore quisquam nihil mollitia iste esse quo, quas praesentium. Officia nobis consectetur, ea incidunt fuga beatae.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit obcaecati consequatur provident. Quaerat, rem quod, nostrum dolores nemo odio, neque amet vero quis laborum facere ipsum rerum pariatur velit provident.</p>
+          <p>Atte.</p>
+          <p><b>Lorem ipsum</b> <br>Gerente Municipal</p>
+        </div><!-- end About-item -->
+        <div class="article About-item">
+          <figure class="Figure">
+            <img src="http://placehold.it/380x217/0054A6/fff/" alt="" class="img-responsive center-block">
+          </figure>
+          <h3 class="Subtitle text--blue text-center">Metas período 2016 - II</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione neque quo praesentium odit aspernatur aliquam quisquam nemo quaerat voluptatem sit ipsam repudiandae voluptate vero, excepturi, esse totam! Officiis, beatae quae?</p>
+          <p class="text-center"><a href="" class="Button Button--transp Button--blue">Ver metas</a></p>
+        </div><!-- end About-item -->
+        <div class="article About-item About-item--skyblue">
+          <h3 class="Subtitle text--white text-center">Programas y eventos</h3>
+          <figure class="Figure">
+            <img src="http://placehold.it/380x217/85a71e/fff/" alt="" class="img-responsive center-block">
+          </figure>
+          <h4 class="Subtitle text--white">Programa Ponte Pilas</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aut, corrupti incidunt architecto earum praesentium iste accusantium nemo tempora dolorem, distinctio officiis tenetur harum optio suscipit atque. Alias, magnam esse?</p>
+          <p><a href="">ver programa</a></p>
+        </div><!-- end About-item -->
+      </section><!-- end About -->
     </div><!-- end container -->
 
-    <section class="Prefooter">
+    <section class="Page Page--blue Page--girl">
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
-            <aside class="Prefooter-sidebar">
-              <h3 class="h5 text-uppercase Page-title t-black">Municipalidad</h3>
-              <p><span class="t-legend">Dirección:</span> Av. Juan Pardo de Zela N° 480 Lima 14</p>
-              <p><span class="t-legend">Central Telefónica:</span> 619 - 1818</p>
-            </aside>
-          </div>
-          <div class="col-md-3">
-            <aside class="Prefooter-sidebar">
-              <h3 class="h5 text-uppercase Page-title t-black">Enlaces</h3>
-              <ul>
-                <li><a href="">Teléfonos de Emergencia</a></li>
-                <li><a href="">Procedimiento de Separación Convencional y Divorcio Ulterior</a></li>
-                <li><a href="">Conciliaciones ExtraJudiciales</a></li>
-                <li><a href="">Registro Civil</a></li>
-                <li><a href="">Plano Zonificación del Distrito de Lince</a></li>
-                <li><a href="">Bolsa de Trabajo</a></li>
-              </ul>
-            </aside>
-          </div>
-          <div class="col-md-3">
-            <aside class="Prefooter-sidebar">
-              <h3 class="h5 text-uppercase Page-title t-black">Últimas noticias</h3>
-              <ul class="Widget-LastPosts">
-                <li>
-                  <h4><a href="">Recuerdan 75 años de la inmolación del héroe Capitán Alfredo Novoa Cava</a></h4>
-                  <p class="Widget-LastPosts-time">12 Sep 2016</p>
-                </li>
-                <li>
-                  <h4><a href="">Ciento treinta vecinos brigadistas ecológicos juramentan en Lince</a></h4>
-                  <p class="Widget-LastPosts-time">08 Sep 2016</p>
-                </li>
-                <li>
-                  <h4><a href="">Charla de cómo armonizar el trabajo y la familia</a></h4>
-                  <p class="Widget-LastPosts-time">08 Sep 2016</p>
-                </li>
-                <li>
-                  <h4><a href="">A la vuelta de la Esquina - Reportaje de nuestro Distrito de Lince</a></h4>
-                  <p class="Widget-LastPosts-time">06 Sep 2016</p>
-                </li>
-              </ul>
-            </aside>
-          </div>
-          <div class="col-md-3">
-            <aside class="Prefooter-sidebar">
-              <h3 class="h5 text-uppercase Page-title t-black">Módulos Web</h3>
-              <ul>
-                <li><a href="">Correo Institucional</a></li>
-                <li><a href="">Estado de Cuenta Corriente</a></li>
-                <li><a href="">Programa Piloto de Segregación de Origen</a></li>
-                <li><a href="">SIGA - Sistema Integral de Gestión</a></li>
-                <li><a href="">SIGA - Colegio</a></li>
-                <li><a href="">SIGA - Deportes</a></li>
-              </ul>
-            </aside>
-          </div>
-        </div>
-      </div>
-    </section><!-- end Prefooter -->
+          <div class="col-xs-12">
+            <h2 class="Title text--white h1">Servicios Municipales</h2>
+          </div><!-- end col-xs-12 -->
+        </div><!-- end row -->
+
+        <section class="Cards">
+          <article class="Card-item">
+            <h3 class="Card-title Title text--white">Licencia de funcionamiento</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam est ad ducimus, recusandae ex eligendi laborum, fugit veritatis temporibus amet totam sunt eaque porro excepturi nostrum illum hic numquam obcaecati.</p>
+            <p><a href="">Ver servicio</a></p>
+          </article>
+
+          <article class="Card-item">
+            <h3 class="Card-title Title text--white">Licencia de edificación</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam est ad ducimus, recusandae ex eligendi laborum, fugit veritatis temporibus amet totam sunt eaque porro excepturi nostrum illum hic numquam obcaecati.</p>
+            <p><a href="">Ver servicio</a></p>
+          </article>
+
+          <article class="Card-item">
+            <h3 class="Card-title Title text--white">Tributos municipales</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam est ad ducimus, recusandae ex eligendi laborum, fugit veritatis temporibus amet totam sunt eaque porro excepturi nostrum illum hic numquam obcaecati.</p>
+            <p><a href="">Ver servicio</a></p>
+          </article>
+
+          <article class="Card-item">
+            <h3 class="Card-title Title text--white">Procesos CAS</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam est ad ducimus, recusandae ex eligendi laborum, fugit veritatis temporibus amet totam sunt eaque porro excepturi nostrum illum hic numquam obcaecati.</p>
+            <p><a href="">Ver servicio</a></p>
+          </article>
+
+          <article class="Card-item">
+            <h3 class="Card-title Title text--white">Normas legales</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam est ad ducimus, recusandae ex eligendi laborum, fugit veritatis temporibus amet totam sunt eaque porro excepturi nostrum illum hic numquam obcaecati.</p>
+            <p><a href="">Ver servicio</a></p>
+          </article>
+        </section>
+
+        <p class="text-center"><a href="" class="Button Button--transp Button--white">Ver más servicios ></a></p>
+      </div><!-- end container -->
+    </section><!-- end Page -->
+
+    <section class="Page">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 class="Title text--blue h1">Últimas noticias</h2>
+          </div><!-- end col-xs-12 -->
+        </div><!-- end row -->
+
+        <section class="Boxes">
+          <article class="Box">
+            <p><span></span>Octubre 21, 2016</p>
+            <h4 class="Box-title">Lorem ipsum dolor sit amet, consectetur.</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio nemo eaque tempore ad natus suscipit quis magnam, debitis quaerat optio unde veniam aliquid deleniti obcaecati iure fugiat voluptate incidunt eius.</p>
+            <p class="text-uppercase"><a href="">Seguir leyendo</a></p>
+          </article>
+
+          <article class="Box">
+            <p><span></span>Octubre 21, 2016</p>
+            <h4 class="Box-title">Lorem ipsum dolor sit amet, consectetur.</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio nemo eaque tempore ad natus suscipit quis magnam, debitis quaerat optio unde veniam aliquid deleniti obcaecati iure fugiat voluptate incidunt eius.</p>
+            <p class="text-uppercase"><a href="">Seguir leyendo</a></p>
+          </article>
+
+          <article class="Box">
+            <p><span></span>Octubre 21, 2016</p>
+            <h4 class="Box-title">Lorem ipsum dolor sit amet, consectetur.</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio nemo eaque tempore ad natus suscipit quis magnam, debitis quaerat optio unde veniam aliquid deleniti obcaecati iure fugiat voluptate incidunt eius.</p>
+            <p class="text-uppercase"><a href="">Seguir leyendo</a></p>
+          </article>
+        </section><!-- end Boxes -->
+
+        <p class="text-center"><a href="" class="Button Button--transp Button--blue">Ver más noticias</a></p>
+      </div><!-- end container -->
+    </section><!-- end Page -->
 
     <footer class="Footer">
-      <p class="text-center t-white t-s">Todos los Derechos Reservados &copy; Municipalida de Surquillo</p>
-    </footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h3 class="Footer-logo text-center">
+              <a href=""><img src="images/logo-footer.png" alt=""></a>
+            </h3><!-- end Footer-logo -->
+            <p class="text--white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, vitae excepturi, vel, libero fuga saepe necessitatibus repudiandae nesciunt consequuntur ut, praesentium. Quas perferendis, reiciendis dignissimos velit dolore, explicabo ipsam modi.</p>
+          </div><!-- end col-md-4 -->
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="text--white Title">Enlaces</h3>
+                <ul class="Footer-list">
+                  <li><a href="">Teléfonos de emergencia</a></li>
+                  <li><a href="">Registro Civil</a></li>
+                  <li><a href="">Bolsa de Trabajo</a></li>
+                  <li><a href="">Procedimiento de Separación Convencional y Divorcio Ulterior</a></li>
+                  <li><a href="">Conciliaciones Extra Judiciales</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h3 class="text--white Title">Servicios</h3>
+                <ul class="Footer-list">
+                  <li><a href="">Ventanilla Electrónica</a></li>
+                  <li><a href="">Solicitud de acceso a la información</a></li>
+                  <li><a href="">Estado de Cuenta Corriente</a></li>
+                  <li><a href="">Licencia de funcionamiento</a></li>
+                  <li><a href="">Licencia de edificación</a></li>
+                  <li><a href="">Tributos municipales</a></li>
+                </ul>
+              </div>
+            </div>
+          </div><!-- end col-md-4 -->
+          <div class="col-md-4">
+            <h3 class="text--white Title">Suscríbete</h3>
+            <p class="text--white">Suscríbete y entérate de las últimas novedades, eventos, actividades y nuevas ordenanzas.</p>
+
+            <form class="Form">
+              <div class="form-group">
+                <label for="email" class="sr-only">Correo electrónico</label>
+                <div class="input-group">
+                  <input type="email" name="email" id="email" class="form-control" placeholder="Ingresa tu correo electrónico" aria-describedby="basic-email">
+                  <span class="input-group-addon" id="basic-email"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+                </div>
+              </div>
+            </form>
+          </div><!-- end col-md-4 -->
+        </div><!-- end row -->
+      </div><!-- end container -->
+
+      <div class="Footer-copy">
+        <div class="container">
+          <p class="text-center text--white text--s">Copyright &copy; 2009 - 2016. All rights reserved.</p>
+        </div>
+      </div>
+    </footer><!-- end Footer -->
 
     <!-- <button class="ArrowTop text-hide">Ir a arriba</button> -->
 

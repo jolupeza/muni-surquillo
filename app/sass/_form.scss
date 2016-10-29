@@ -1,0 +1,16 @@
+.Form {
+  margin-top: 20px;
+  .form-control {
+    @include border-radius(0);
+    border: 1px solid #202020;
+    border-right: none;
+    height: 40px;
+  }
+  .input-group-addon {
+    background-color: $red;
+    border: 1px solid #202020;
+    border-left: none;
+    @include border-radius(0);
+    color: $whiteDark;
+  }
+}

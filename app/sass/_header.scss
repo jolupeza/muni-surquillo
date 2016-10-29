@@ -1,0 +1,149 @@
+.Header {
+
+}
+.Header-navTop {
+  background-color: $whiteDark;
+  border-bottom: 1px solid $graySoft;
+}
+
+.Menu-top, .Menu-social {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: top;
+}
+.Menu-top {
+  margin-right: 15px;
+  margin-top: 10px;
+  li {
+    a {
+      color: $text-soft;
+      font-size: 0.875em;
+    }
+    &.active, &:hover {
+      a {
+        color: $text-color;
+        text-decoration: none;
+      }
+    }
+    &::after {
+      color: $graySoft;
+      content: "|";
+      display: inline-block;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+.Menu-social {
+  li {
+    border-left: 1px solid $graySoft;
+    margin-right: -4px;
+    padding: 10px;
+    a {
+      background-color: transparent;
+      border: 0;
+      color: transparent;
+      display: block;
+      font: 0/0 a;
+      &::before {
+        background-image: url('../images/sprites.png');
+        background-repeat: no-repeat;
+        content: "";
+        display: block;
+        height: 25px;
+        width: 25px;
+      }
+    }
+    &.Menu-social-fb {
+      a {
+        &::before {
+          background-position: 0 0;
+        }
+      }
+    }
+    &.Menu-social-lnk {
+      a {
+        &::before {
+          background-position: -25px 0;
+        }
+      }
+    }
+    &.Menu-social-you {
+      a {
+        &::before {
+          background-position: -50px 0;
+        }
+      }
+    }
+  }
+}
+.Header-logo {
+  margin-bottom: 40px;
+}
+.Header-central {
+  margin: 40px 0 0 auto;
+  width: 60%;
+  span {
+    color: $text-soft;
+    display: inline-block;
+    font-size: 0.875em;
+    font-weight: 600;
+    vertical-align: top;
+    width: 70%;
+    b {
+      color: $blue;
+      display: block;
+      font-size: 1.43em;
+      font-weight: 700;
+    }
+  }
+}
+.Header-central-icon {
+  border: 1px solid $graySoft;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px;
+  vertical-align: middle;
+}
+.Header-mainMenu {
+  bottom: -30px;
+  position: absolute;
+  width: 100%;
+  z-index: 9;
+}
+.Menu-main {
+  margin-bottom: 0;
+  li {
+    margin-right: -4px;
+    padding: 15px 25px;
+    text-transform: uppercase;
+    a {
+      color: white;
+      font-size: 0.875em;
+      font-weight: 700;
+    }
+    &:first-child {
+      background-color: $azul1;
+    }
+    &:nth-child(2) {
+      background-color: $azul2;
+    }
+    &:nth-child(3) {
+      background-color: $azul3;
+    }
+    &:nth-child(4) {
+      background-color: $azul4;
+    }
+    &:nth-child(5) {
+      background-color: $azul5;
+    }
+    &:last-child {
+      background-color: $azul6;
+    }
+  }
+}

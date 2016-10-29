@@ -1,0 +1,54 @@
+body {
+  color: $text-color;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+a {
+  @include transition(all 0.2s ease-in-out);
+}
+p {
+  font-size: 0.875em;
+  font-weight: 300;
+}
+b {
+  font-weight: 700;
+}
+.text--xs {
+  font-size: 0.625em;
+}
+.text--s {
+  font-size: 0.75em;
+}
+.text--m {
+  font-size: 0.875em;
+}
+.text--l {
+  font-size: 1.125em;
+}
+.text--white {
+  color: $whiteDark;
+}
+.text--blue {
+  color: $azul1;
+}
+
+.Title {
+  font-weight: 800;
+}
+.Subtitle {
+  font-weight: 800;
+}
+.Page {
+  padding: 50px 0;
+  &--blue {
+    background-color: $blueDark;
+  }
+  &--girl {
+    background-image: url('../images/bg-girl.png');
+    background-position: 90% 100%;
+    background-repeat: no-repeat;
+  }
+  .Title {
+    margin-top: 0;
+  }
+}

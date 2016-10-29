@@ -15,7 +15,7 @@ var gulp = require('gulp'),
     clean = require('gulp-clean')
 
 var paths = {
-  compass: ['./app/sass/**/*.sass']
+  compass: ['./app/sass/**/*.scss']
 }
 
 // Pre-procesa archivos Sass a CSS y recarga los cambios

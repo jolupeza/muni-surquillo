@@ -105,6 +105,9 @@ class Muni_Manager
         $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_metas_add');
         $this->loader->add_action('save_post', $admin, 'cd_mb_metas_save' );
 
+        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_videos_add');
+        $this->loader->add_action('save_post', $admin, 'cd_mb_videos_save' );
+
         // $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_contacts_add');
         // $this->loader->add_filter('manage_edit-contacts_columns', $admin, 'custom_columns_contacts');
         // $this->loader->add_action('manage_contacts_posts_custom_column', $admin, 'custom_column_contacts');
