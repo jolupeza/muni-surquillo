@@ -62,32 +62,6 @@ function muni_customize_register($wp_customize) {
         'type'     => 'text'
     ));
 
-    // Twitter
-    $wp_customize->add_setting('muni_custom_settings[twitter]', array(
-        'default' => '',
-        'type'    => 'option'
-    ));
-
-    $wp_customize->add_control('muni_custom_settings[twitter]', array(
-        'label'    => __('Twitter', THEMEDOMAIN),
-        'section'  => 'muni_social',
-        'settings' => 'muni_custom_settings[twitter]',
-        'type'     => 'text'
-    ));
-
-    // Google+
-    $wp_customize->add_setting('muni_custom_settings[googleplus]', array(
-        'default' => '',
-        'type'    => 'option'
-    ));
-
-    $wp_customize->add_control('muni_custom_settings[googleplus]', array(
-        'label'    => __('Google+', THEMEDOMAIN),
-        'section'  => 'muni_social',
-        'settings' => 'muni_custom_settings[googleplus]',
-        'type'     => 'text'
-    ));
-
     // Linkedin
     $wp_customize->add_setting('muni_custom_settings[linkedin]', array(
         'default' => '',
@@ -98,6 +72,19 @@ function muni_customize_register($wp_customize) {
         'label'    => __('Linkedin', THEMEDOMAIN),
         'section'  => 'muni_social',
         'settings' => 'muni_custom_settings[linkedin]',
+        'type'     => 'text'
+    ));
+
+    // Youtube
+    $wp_customize->add_setting('muni_custom_settings[youtube]', array(
+        'default' => '',
+        'type'    => 'option'
+    ));
+
+    $wp_customize->add_control('muni_custom_settings[youtube]', array(
+        'label'    => __('Youtube', THEMEDOMAIN),
+        'section'  => 'muni_social',
+        'settings' => 'muni_custom_settings[youtube]',
         'type'     => 'text'
     ));
 
@@ -135,7 +122,7 @@ function muni_customize_register($wp_customize) {
     ));
 
     // Email
-    /*$wp_customize->add_setting('muni_custom_settings[email_contact]', array(
+    $wp_customize->add_setting('muni_custom_settings[email_contact]', array(
         'default' => '',
         'type'    => 'option'
     ));
@@ -145,7 +132,7 @@ function muni_customize_register($wp_customize) {
         'section'  => 'muni_info',
         'settings' => 'muni_custom_settings[email_contact]',
         'type'     => 'text'
-    ));*/
+    ));
 
     // Phone
     $wp_customize->add_setting('muni_custom_settings[phone]', array(

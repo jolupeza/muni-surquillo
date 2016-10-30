@@ -112,6 +112,149 @@ if (function_exists('register_sidebar'))
   // );
 }
 
+/***********************************************************/
+/* Register subscriptor via ajax */
+/***********************************************************/
+add_action('wp_ajax_register_subscriptor', 'register_subscriptor_callback');
+add_action('wp_ajax_nopriv_register_subscriptor', 'register_subscriptor_callback');
+
+function register_subscriptor_callback()
+{
+  $nonce = $_POST['nonce'];
+  $result = array(
+    'result' => false,
+    'error' => ''
+  );
+
+  if (!wp_verify_nonce($nonce, 'muniajax-nonce')) {
+      die('¡Acceso denegado!');
+  }
+
+  $email = trim($_POST['email']);
+
+  if (!empty($email) && is_email($email)) {
+    $email = sanitize_email($email);
+
+    // Verify register previous of email
+    $args = array(
+      'post_type' => 'subscribers',
+      'meta_query' => array(
+        array(
+          'key' => 'mb_email',
+          'value' => $email,
+        ),
+      ),
+    );
+    $the_query = new WP_Query($args);
+    if (!$the_query->have_posts()) {
+      $receiverEmail = $options['email_contact'];
+
+      if (!isset($receiverEmail) || empty($receiverEmail)) {
+        $receiverEmail = get_option('admin_email');
+      }
+
+      $subjectEmail = "Nuevo suscriptor";
+
+      ob_start();
+      $filename = TEMPLATEPATH . '/includes/template-email-subscriber.php';
+      if (file_exists($filename)) {
+        include $filename;
+
+        $content = ob_get_contents();
+        ob_get_clean();
+
+        $headers[] = 'From: Municipalidad de Surquillo';
+        //$headers[] = 'Reply-To: jolupeza@icloud.com';
+        $headers[] = 'Content-type: text/html; charset=utf-8';
+
+        if (wp_mail($receiverEmail, $subjectEmail, $content, $headers)) {
+          // Send email to customer
+          $subjectEmail = "Suscripción satisfactoria. Municipalidad de Surquillo.";
+
+          ob_start();
+          $filename = TEMPLATEPATH . '/includes/template-gratitude.php';
+          if (file_exists($filename)) {
+            $textEmail = 'Gracias por suscribirte, recibirás información importante.';
+
+            include $filename;
+
+            $content = ob_get_contents();
+            ob_get_clean();
+
+            $headers[] = 'From: Municipalidad de Surquillo';
+            //$headers[] = 'Reply-To: jolupeza@icloud.com';
+            $headers[] = 'Content-type: text/html; charset=utf-8';
+
+            wp_mail($email, $subjectEmail, $content, $headers);
+
+            $post_id = wp_insert_post(array(
+                'post_author' => 1,
+                'post_status' => 'publish',
+                'post_type' => 'subscribers',
+            ));
+            update_post_meta($post_id, 'mb_email', $email);
+            $result['result'] = true;
+          } else {
+            $result['error'] = 'Plantilla email no encontrada.';
+          }
+        } else {
+          $result['error'] = 'No se puedo enviar email.';
+        }
+      } else {
+        $result['error'] = 'Plantilla email no encontrada.';
+      }
+    } else {
+      $result['error'] = 'Correo electrónico se encuentra registrado.';
+    }
+
+    wp_reset_postdata();
+  } else {
+    $result['error'] = 'No ha ingresado el correo electrónico.';
+  }
+
+  echo json_encode($result);
+  die();
+}
+
+/***********************************************************/
+/* Send and register form subscribers via ajax */
+/***********************************************************/
+add_action('wp_ajax_validate_email_subscriber', 'validate_email_subscriber_callback');
+add_action('wp_ajax_nopriv_validate_email_subscriber', 'validate_email_subscriber_callback');
+
+function validate_email_subscriber_callback() {
+  $nonce = $_POST['nonce'];
+  $result = ['valid' => true];
+
+  if (!wp_verify_nonce( $nonce, 'muniajax-nonce' )) {
+    die('¡Acceso denegado!');
+  }
+
+  $email    = trim($_POST['email']);
+
+  if (!empty($email) && is_email($email)) {
+    $email = sanitize_email($email);
+
+    // Verify if email is register
+    $args = [
+      'post_type' => 'subscribers',
+      'meta_query' => array(
+        array(
+          'key' => 'mb_email',
+          'value' => $email,
+        ),
+      ),
+    ];
+    $the_query = new WP_Query($args);
+    if ($the_query->have_posts()) {
+      $result['valid'] = false;
+    }
+  }
+
+  echo json_encode($result);
+  die();
+}
+
 /****************************************************/
 /* Load Theme Options Page and Custom Widgets */
 /****************************************************/

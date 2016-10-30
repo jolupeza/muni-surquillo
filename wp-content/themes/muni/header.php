@@ -44,17 +44,27 @@
               <?php
                 $args = [
                   'theme_location' => 'top-menu',
-                  // 'container' => 'nav',
-                  // 'container_class' => 'Header-mainMenu text-center',
+                  'container' => 'nav',
+                  'container_class' => 'Menu-top-wrapper',
                   'menu_class' => 'Menu-top list-inline',
                 ];
                 wp_nav_menu( $args );
               ?>
-              <ul class="Menu-social list-inline">
-                <li class="Menu-social-fb"><a href="">f</a></li>
-                <li class="Menu-social-lnk"><a href="">in</a></li>
-                <li class="Menu-social-you"><a href="">y</a></li>
-              </ul><!-- end Menu-social -->
+              <?php if (isset($options['display_social_link']) && $options['display_social_link']) : ?>
+                <nav class="Menu-social-wrapper">
+                  <ul class="Menu-social list-inline">
+                    <?php if (!empty($options['facebook'])) : ?>
+                      <li class="Menu-social-fb"><a href="<?php echo $options['facebook']; ?>" title="Síguenos en Facebook" target="_blank" rel="noopener noreferrer">f</a></li>
+                    <?php endif; ?>
+                    <?php if (!empty($options['linkedin'])) : ?>
+                      <li class="Menu-social-lnk"><a href="<?php echo $options['linkedin']; ?>" title="Síguenos en Linkedin" target="_blank" rel="noopener noreferrer">in</a></li>
+                    <?php endif; ?>
+                    <?php if (!empty($options['youtube'])) : ?>
+                      <li class="Menu-social-you"><a href="<?php echo $options['youtube']; ?>" title="Síguenos en Youtube" target="_blank" rel="noopener noreferrer">y</a></li>
+                    <?php endif; ?>
+                  </ul><!-- end Menu-social -->
+                </nav><!-- end Menu-social-wrapper -->
+              <?php endif; ?>
             </div><!-- end col-md-12 -->
           </div><!-- end row -->
         </div><!-- end container -->

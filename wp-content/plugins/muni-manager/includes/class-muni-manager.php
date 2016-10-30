@@ -102,35 +102,21 @@ class Muni_Manager
         $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_sliders_add');
         $this->loader->add_action('save_post', $admin, 'cd_mb_sliders_save' );
 
-        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_metas_add');
-        $this->loader->add_action('save_post', $admin, 'cd_mb_metas_save' );
-
-        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_videos_add');
-        $this->loader->add_action('save_post', $admin, 'cd_mb_videos_save' );
+        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_subscribers_add');
+        // $this->loader->add_action('save_post', $admin, 'cd_mb_subscribers_save' );
+        $this->loader->add_filter('manage_edit-subscribers_columns', $admin, 'custom_columns_subscribers');
+        $this->loader->add_action('manage_subscribers_posts_custom_column', $admin, 'custom_column_subscribers');
 
         // $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_contacts_add');
         // $this->loader->add_filter('manage_edit-contacts_columns', $admin, 'custom_columns_contacts');
         // $this->loader->add_action('manage_contacts_posts_custom_column', $admin, 'custom_column_contacts');
         // $this->loader->add_filter('views_edit-contacts', $admin, 'contacts_button_view_edit');
 
-        // $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_posts_add');
-        // $this->loader->add_action('save_post', $admin, 'cd_mb_posts_save' );
-
-        // $this->loader->add_action('pre_get_posts', $admin, 'cepuch_get_posts');
-
-        // $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_partners_add');
-        // $this->loader->add_action('save_post', $admin, 'cd_mb_partners_save' );
-
-        // $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_banners_add');
-        // $this->loader->add_action('save_post', $admin, 'cd_mb_banners_save' );
-
         // $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_carreras_add');
         // $this->loader->add_action('save_post', $admin, 'cd_mb_carreras_save' );
         // $this->loader->add_action('init', $admin, 'add_taxonomies_carreras');
 
         // $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_subscribers_add');
-        // $this->loader->add_filter('manage_edit-subscribers_columns', $admin, 'custom_columns_subscribers');
-        // $this->loader->add_action('manage_subscribers_posts_custom_column', $admin, 'custom_column_subscribers');
         // $this->loader->add_filter('views_edit-subscribers', $admin, 'subscribers_button_view_edit');
         // $this->loader->add_action('restrict_manage_posts', $admin, 'subscribers_table_filtering');
         // $this->loader->add_filter('parse_query', $admin, 'subscribers_table_filter');
@@ -144,7 +130,7 @@ class Muni_Manager
         // $this->loader->add_filter('parse_query', $admin, 'students_table_filter');
         // $this->loader->add_action('init', $admin, 'add_taxonomies_students');
 
-//         $this->loader->add_action('init', $admin, 'unregister_post_type');
+        // $this->loader->add_action('init', $admin, 'unregister_post_type');
     }
 
     /**

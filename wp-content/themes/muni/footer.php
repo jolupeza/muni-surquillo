@@ -38,14 +38,6 @@
                   ];
                   wp_nav_menu( $args );
                 ?>
-                <!-- <ul class="Footer-list">
-                  <li><a href="">Ventanilla Electrónica</a></li>
-                  <li><a href="">Solicitud de acceso a la información</a></li>
-                  <li><a href="">Estado de Cuenta Corriente</a></li>
-                  <li><a href="">Licencia de funcionamiento</a></li>
-                  <li><a href="">Licencia de edificación</a></li>
-                  <li><a href="">Tributos municipales</a></li>
-                </ul> -->
               </div>
             </div>
           </div><!-- end col-md-4 -->
@@ -53,14 +45,23 @@
             <h3 class="text--white Title">Suscríbete</h3>
             <p class="text--white">Suscríbete y entérate de las últimas novedades, eventos, actividades y nuevas ordenanzas.</p>
 
-            <form class="Form">
+            <form class="Form" id="js-form-subs" method="POST">
+              <div class="Footer-loader text-center hidden" id="js-form-subs-loader">
+                <span class="glyphicon glyphicon-refresh text--white" aria-hidden="true"></span>
+              </div>
+              <p class="text-center text--white" id="js-form-subs-msg"></p>
+
               <div class="form-group">
                 <label for="email" class="sr-only">Correo electrónico</label>
                 <div class="input-group">
-                  <input type="email" name="email" id="email" class="form-control" placeholder="Ingresa tu correo electrónico" aria-describedby="basic-email">
+                  <input type="email" name="email" id="email" class="form-control" placeholder="Ingresa tu correo electrónico" aria-describedby="basic-email" required>
                   <span class="input-group-addon" id="basic-email"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
                 </div>
-              </div>
+              </div><!-- end form-group -->
+
+              <p class="text-center">
+                <button type="submit" class="Button Button--transp Button--white text-uppercase">Suscribirme</button>
+              </p>
             </form>
           </div><!-- end col-md-4 -->
         </div><!-- end row -->
