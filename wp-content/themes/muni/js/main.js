@@ -45,7 +45,7 @@ var j = jQuery.noConflict();
       var msg = j('#js-form-subs-msg');
       var loader = j('#js-form-subs-loader');
 
-      loader.removeClass('hidden');
+      loader.removeClass('hidden').find('span').addClass('rotateIn');
       msg.text('');
 
       j.post(MuniAjax.url, {
@@ -61,7 +61,7 @@ var j = jQuery.noConflict();
           msg.text(data.error);
         }
 
-        loader.addClass('hidden');
+        loader.addClass('hidden').find('span').removeClass('rotateIn');
         msg.fadeIn('slow');
         setTimeout(function(){
           msg.fadeOut('slow', function(){

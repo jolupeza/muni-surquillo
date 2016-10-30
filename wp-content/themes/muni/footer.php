@@ -47,7 +47,7 @@
 
             <form class="Form" id="js-form-subs" method="POST">
               <div class="Footer-loader text-center hidden" id="js-form-subs-loader">
-                <span class="glyphicon glyphicon-refresh text--white" aria-hidden="true"></span>
+                <span class="animated infinite glyphicon glyphicon-refresh text--white" aria-hidden="true"></span>
               </div>
               <p class="text-center text--white" id="js-form-subs-msg"></p>
 

@@ -13,4 +13,9 @@
     @include border-radius(0);
     color: $whiteDark;
   }
+  .input-group {
+    + .form-control-feedback {
+      right: 40px;
+    }
+  }
 }
