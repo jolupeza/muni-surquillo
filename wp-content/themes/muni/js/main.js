@@ -69,6 +69,9 @@ var j = jQuery.noConflict();
           });
         }, 5000);
       }, 'json').fail(function(){
+        loader.addClass('hidden').find('span').removeClass('rotateIn');
+        $form.data('formValidation').resetForm(true);
+
         alert('No se pudo realizar la operación solicitada. Por favor vuelva a intentarlo');
       });
     });
