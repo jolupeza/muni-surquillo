@@ -10263,6 +10263,111 @@ button.close {
 }
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot?c42fou");
+  src: url("../fonts/icomoon.eot?c42fou#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?c42fou") format("truetype"), url("../fonts/icomoon.woff?c42fou") format("woff"), url("../fonts/icomoon.svg?c42fou#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-adulto_mayor:before {
+  content: "\e900";
+}
+
+.icon-casa_juventud:before {
+  content: "\e901";
+}
+
+.icon-demuna:before {
+  content: "\e902";
+}
+
+.icon-deportes:before {
+  content: "\e903";
+}
+
+.icon-licencia_edificacion:before {
+  content: "\e904";
+}
+
+.icon-licencia_funcionamiento:before {
+  content: "\e905";
+}
+
+.icon-mascotas:before {
+  content: "\e906";
+}
+
+.icon-nav_contacto_icon:before {
+  content: "\e907";
+}
+
+.icon-nav_distrito_icon:before {
+  content: "\e908";
+}
+
+.icon-nav_home_icon:before {
+  content: "\e909";
+}
+
+.icon-nav_municipio_icon:before {
+  content: "\e90a";
+}
+
+.icon-nav_novedades_icon:before {
+  content: "\e90b";
+}
+
+.icon-nav_transparencia_icon:before {
+  content: "\e90c";
+}
+
+.icon-normas_legales:before {
+  content: "\e90d";
+}
+
+.icon-omaped:before {
+  content: "\e90e";
+}
+
+.icon-proceso_cas:before {
+  content: "\e90f";
+}
+
+.icon-promocion_laboral:before {
+  content: "\e910";
+}
+
+.icon-servicios_icon_nav:before {
+  content: "\e911";
+}
+
+.icon-tributos_municipales:before {
+  content: "\e912";
+}
+
+.icon-tupa:before {
+  content: "\e913";
+}
+
+.icon-vaso_leche:before {
+  content: "\e914";
+}
+
 .Icon::before {
   background-image: url("../images/sprites.png");
   content: "";
@@ -10509,6 +10614,12 @@ b {
   font-size: 0.875em;
   font-weight: 700;
 }
+.Menu-main li a .icons {
+  margin-right: 10px;
+}
+.Menu-main li a:hover {
+  text-decoration: none;
+}
 .Menu-main li:first-child {
   background-color: #30518a;
 }
@@ -10657,6 +10768,7 @@ b {
   margin-bottom: 25px;
   margin-right: 20px;
   padding: 50px 20px 20px;
+  position: relative;
 }
 .Card-item p {
   color: #9c9c9c;
@@ -10667,6 +10779,13 @@ b {
 }
 .Card-item p a:hover {
   color: #fdfdfd;
+}
+.Card-item .icons {
+  color: #bfd841;
+  font-size: 2.5em;
+  left: 30px;
+  position: absolute;
+  top: -20px;
 }
 
 .Card-title {

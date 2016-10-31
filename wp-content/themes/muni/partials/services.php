@@ -21,8 +21,15 @@
 
       <section class="Cards">
         <?php while ($the_query->have_posts()) : ?>
-          <?php $the_query->the_post(); ?>
+          <?php
+            $the_query->the_post();
+            $values = get_post_custom(get_the_id());
+            $icon = isset($values['mb_icon']) ? esc_attr($values['mb_icon'][0]) : '';
+          ?>
           <article class="Card-item">
+            <?php if (!empty($icon)) : ?>
+              <i class="icons <?php echo $icon; ?>"></i>
+            <?php endif; ?>
             <h3 class="Card-title Title text--white"><?php the_title(); ?></h3>
             <?php the_content(''); ?>
             <p><a href="<?php the_permalink(); ?>">Ver servicio</a></p>
