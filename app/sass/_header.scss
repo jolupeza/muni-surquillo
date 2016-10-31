@@ -127,6 +127,12 @@
       color: white;
       font-size: 0.875em;
       font-weight: 700;
+      .icons {
+        margin-right: 10px;
+      }
+      &:hover {
+        text-decoration: none;
+      }
     }
     &:first-child {
       background-color: $azul1;
