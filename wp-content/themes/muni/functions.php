@@ -133,6 +133,7 @@ function register_subscriptor_callback()
   $email = trim($_POST['email']);
 
   if (!empty($email) && is_email($email)) {
+    $options = get_option('muni_custom_settings');
     $email = sanitize_email($email);
 
     // Verify register previous of email
@@ -147,7 +148,7 @@ function register_subscriptor_callback()
     );
     $the_query = new WP_Query($args);
     if (!$the_query->have_posts()) {
-      $receiverEmail = $options['email_contact'];
+      /*$receiverEmail = $options['email_contact'];
 
       if (!isset($receiverEmail) || empty($receiverEmail)) {
         $receiverEmail = get_option('admin_email');
@@ -185,7 +186,7 @@ function register_subscriptor_callback()
             //$headers[] = 'Reply-To: jolupeza@icloud.com';
             $headers[] = 'Content-type: text/html; charset=utf-8';
 
-            wp_mail($email, $subjectEmail, $content, $headers);
+            wp_mail($email, $subjectEmail, $content, $headers);*/
 
             $post_id = wp_insert_post(array(
                 'post_author' => 1,
@@ -194,7 +195,7 @@ function register_subscriptor_callback()
             ));
             update_post_meta($post_id, 'mb_email', $email);
             $result['result'] = true;
-          } else {
+          /*} else {
             $result['error'] = 'Plantilla email no encontrada.';
           }
         } else {
@@ -202,7 +203,7 @@ function register_subscriptor_callback()
         }
       } else {
         $result['error'] = 'Plantilla email no encontrada.';
-      }
+      }*/
     } else {
       $result['error'] = 'Correo electrónico se encuentra registrado.';
     }

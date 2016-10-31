@@ -146,30 +146,4 @@ function muni_customize_register($wp_customize) {
         'settings' => 'muni_custom_settings[phone]',
         'type'     => 'text'
     ));
-
-    // Latitud
-    /*$wp_customize->add_setting('muni_custom_settings[latitud]', array(
-        'default' => '',
-        'type'    => 'option'
-    ));
-
-    $wp_customize->add_control('muni_custom_settings[latitud]', array(
-        'label'    => __('Ubicación Google Map Latitud', THEMEDOMAIN),
-        'section'  => 'muni_info',
-        'settings' => 'muni_custom_settings[latitud]',
-        'type'     => 'text'
-    ));
-
-    // Longitud
-    $wp_customize->add_setting('muni_custom_settings[longitud]', array(
-        'default' => '',
-        'type'    => 'option'
-    ));
-
-    $wp_customize->add_control('muni_custom_settings[longitud]', array(
-        'label'    => __('Ubicación Google Map Longitud', THEMEDOMAIN),
-        'section'  => 'muni_info',
-        'settings' => 'muni_custom_settings[longitud]',
-        'type'     => 'text'
-    ));*/
 }

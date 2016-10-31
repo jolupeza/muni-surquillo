@@ -99,11 +99,13 @@ class Muni_Manager
         $this->loader->add_action('admin_enqueue_scripts', $admin, 'enqueue_styles');
         $this->loader->add_action('admin_enqueue_scripts', $admin, 'enqueue_scripts');
 
+        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_pages_add');
+        $this->loader->add_action('save_post', $admin, 'cd_mb_pages_save' );
+
         $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_sliders_add');
         $this->loader->add_action('save_post', $admin, 'cd_mb_sliders_save' );
 
         $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_subscribers_add');
-        // $this->loader->add_action('save_post', $admin, 'cd_mb_subscribers_save' );
         $this->loader->add_filter('manage_edit-subscribers_columns', $admin, 'custom_columns_subscribers');
         $this->loader->add_action('manage_subscribers_posts_custom_column', $admin, 'custom_column_subscribers');
 

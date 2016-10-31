@@ -1,8 +1,10 @@
 <?php
+  $pageParent = get_page_by_title('Servicios Municipales');
+
   $args = array(
     'posts_per_page' => 5,
     'post_type' => 'page',
-    'post_parent' => 35,
+    'post_parent' => $pageParent->ID,
     'order' => 'ASC',
     'orderby' => 'menu_order'
   );

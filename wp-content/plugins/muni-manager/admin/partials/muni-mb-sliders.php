@@ -1,8 +1,8 @@
 <?php
 /**
- * Displays the user interface for the Watson Manager meta box by type content Banners.
+ * Displays the user interface for the Muni Manager meta box by type content Banners.
  *
- * This is a partial template that is included by the Watson Manager
+ * This is a partial template that is included by the Muni Manager
  * Admin class that is used to display all of the information that is related
  * to the page meta data for the given page.
  */

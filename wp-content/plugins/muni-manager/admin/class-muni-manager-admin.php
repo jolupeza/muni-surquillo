@@ -105,6 +105,55 @@ class Muni_Manager_Admin
 
     /**
      * Registers the meta box that will be used to display all of the post meta data
+     * associated with post type page.
+     */
+    public function cd_mb_pages_add()
+    {
+        add_meta_box(
+            'mb-pages-id',
+            'Otras Configuraciones',
+            array($this, 'render_mb_pages'),
+            'page',
+            'normal',
+            'core'
+        );
+    }
+
+    public function cd_mb_pages_save($post_id)
+    {
+        // Bail if we're doing an auto save
+        if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+            return;
+        }
+
+        // if our nonce isn't there, or we can't verify it, bail
+        if (!isset($_POST['meta_box_nonce']) || !wp_verify_nonce($_POST['meta_box_nonce'], 'pages_meta_box_nonce')) {
+            return;
+        }
+
+        // if our current user can't edit this post, bail
+        if (!current_user_can('edit_post', $post_id)) {
+            return;
+        }
+
+        // Video
+        if (isset($_POST['mb_video']) && !empty($_POST['mb_video'])) {
+            update_post_meta($post_id, 'mb_video', esc_attr($_POST['mb_video']));
+        } else {
+            delete_post_meta($post_id, 'mb_video');
+        }
+    }
+
+    /**
+     * Requires the file that is used to display the user interface of the post meta box.
+     */
+    public function render_mb_pages()
+    {
+        require_once plugin_dir_path(__FILE__).'partials/muni-mb-pages.php';
+    }
+
+    /**
+     * Registers the meta box that will be used to display all of the post meta data
      * associated with post type sliders.
      */
     public function cd_mb_sliders_add()
@@ -141,13 +190,6 @@ class Muni_Manager_Admin
         // Target
         $target = isset($_POST['mb_target']) && $_POST['mb_target'] ? 'on' : 'off';
         update_post_meta($post_id, 'mb_target', $target);
-
-        // Image Responsive
-        /*if (isset($_POST['mb_responsive']) && !empty($_POST['mb_responsive'])) {
-            update_post_meta($post_id, 'mb_responsive', esc_attr($_POST['mb_responsive']));
-        } else {
-            delete_post_meta($post_id, 'mb_responsive');
-        }*/
     }
 
     /**
@@ -168,31 +210,6 @@ class Muni_Manager_Admin
             'mb-subscribers-id', 'Otras configuraciones', array($this, 'render_mb_subscribers'), 'subscribers', 'normal', 'core'
         );
     }
-
-    /*public function cd_mb_subscribers_save($post_id)
-    {
-        // Bail if we're doing an auto save
-        if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-            return;
-        }
-
-        // if our nonce isn't there, or we can't verify it, bail
-        if (!isset($_POST['meta_box_nonce']) || !wp_verify_nonce($_POST['meta_box_nonce'], 'subscribers_meta_box_nonce')) {
-            return;
-        }
-
-        // if our current user can't edit this post, bail
-        if (!current_user_can('edit_post', $post_id)) {
-            return;
-        }
-
-        // Email
-        if (isset($_POST['mb_email']) && !empty($_POST['mb_email'])) {
-            update_post_meta($post_id, 'mb_email', esc_attr($_POST['mb_email']));
-        } else {
-            delete_post_meta($post_id, 'mb_email');
-        }
-    }*/
 
     /**
      * Requires the file that is used to display the user interface of the post meta box.

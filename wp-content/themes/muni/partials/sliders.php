@@ -53,7 +53,7 @@
       <?php endwhile; ?>
     </div><!-- end Carousel-inner -->
 
-    <button class="Carousel-arrow Button Button--arrowDown text-center text-uppercase">Ver más</button>
+    <a href="about" class="js-move-scroll Carousel-arrow Button Button--arrowDown text-center text-uppercase">Ver más</a>
   </section><!-- end Carousel -->
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>
