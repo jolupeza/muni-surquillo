@@ -7,6 +7,8 @@
 @import "header";
 @import "carousel";
 @import "form";
+@import "pagination";
+@import "sidebar";
 
 /*
 .Page-loader
@@ -82,6 +84,9 @@
   @include display-flex();
   @include justify-content(space-between);
   margin: 25px 0;
+  &--wrap {
+    @include flex-wrap(wrap);
+  }
 }
 .Box {
   border: 1px solid $gray;
@@ -118,6 +123,10 @@
     color: $text_color;
     font-size: 1.25em;
     font-weight: 700;
+  }
+  &--50 {
+    @include flex-basis(48%);
+    margin-bottom: 30px;
   }
 }
 

@@ -220,6 +220,15 @@ b {
 .Page {
   padding: 50px 0;
 }
+.Page .Title {
+  margin-top: 0;
+}
+.Page--nopadding {
+  padding: 0;
+}
+.Page--nopadding .Title {
+  margin-top: 25px;
+}
 .Page--blue {
   background-color: #0c304a;
 }
@@ -227,9 +236,6 @@ b {
   background-image: url("../images/bg-girl.png");
   background-position: 90% 100%;
   background-repeat: no-repeat;
-}
-.Page .Title {
-  margin-top: 0;
 }
 
 .Header-navTop {
@@ -431,6 +437,44 @@ b {
   position: absolute;
 }
 
+.Carousel--novedades .carousel-indicators {
+  bottom: auto;
+  left: 52%;
+  margin-bottom: 0;
+  margin-left: 0;
+  top: 35%;
+  width: auto;
+}
+.Carousel--novedades .carousel-indicators li {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  height: 20px;
+  margin: 0;
+  width: 20px;
+}
+.Carousel--novedades .carousel-indicators li.active {
+  height: 20px;
+  width: 20px;
+}
+.Carousel--novedades .carousel-caption {
+  background-color: rgba(0, 48, 86, 0.8);
+  bottom: 80px;
+  left: 50%;
+  padding: 50px 30px 30px;
+  text-shadow: none;
+  width: 40%;
+}
+.Carousel--novedades .Carousel-category {
+  font-size: 1em;
+  margin-top: 0;
+}
+.Carousel--novedades .Carousel-captionTitle {
+  font-size: 1.75em;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
 .Form {
   margin-top: 20px;
 }
@@ -453,6 +497,127 @@ b {
 }
 .Form .input-group + .form-control-feedback {
   right: 40px;
+}
+.Form .input-group--gray .form-control {
+  -moz-border-radius: 5px 0 0 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px 0 0 5px;
+  border-color: #c0c0c0;
+}
+.Form .input-group--gray .form-control:-moz-placeholder {
+  text-align: right;
+}
+.Form .input-group--gray .form-control::-moz-placeholder {
+  text-align: right;
+}
+.Form .input-group--gray .form-control:-ms-input-placeholder {
+  text-align: right;
+}
+.Form .input-group--gray .form-control::-webkit-input-placeholder {
+  text-align: right;
+}
+.Form .input-group--gray .input-group-addon {
+  background-color: #fff;
+  border: 1px solid #c0c0c0;
+  border-left: none;
+  -moz-border-radius: 0 5px 5px 0;
+  -webkit-border-radius: 0;
+  border-radius: 0 5px 5px 0;
+  color: #c0c0c0;
+  font-size: 1.14em;
+}
+.Form .input-group--gray .input-group-addon button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.Page-navigation {
+  margin-bottom: 20px;
+}
+.Page-navigation ul {
+  margin: 0;
+}
+.Page-navigation ul li {
+  display: inline-block;
+}
+.Page-navigation ul li a {
+  border-color: #0c304a;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #0c304a;
+  font-size: 1.25em;
+  font-weight: 600;
+  line-height: 1.1em;
+}
+.Page-navigation ul li a:hover {
+  background-color: #003056;
+  border-color: #003056;
+  color: white;
+}
+
+.Sidebar--gray {
+  background-color: #eee;
+  padding: 25px 15px;
+}
+.Sidebar--skyBlue {
+  background-color: #2b79a1;
+  padding: 25px 15px;
+}
+
+.Sidebar-widget {
+  margin-bottom: 30px;
+}
+.Sidebar-widget .Form {
+  margin-top: 0;
+}
+.Sidebar-widget--noMargin {
+  margin-bottom: 0;
+}
+
+.Sidebar-widget-title {
+  border-bottom: 1px solid #30518a;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-top: 0;
+  padding-bottom: 5px;
+}
+.Sidebar-widget-title--noborder {
+  border-bottom: none;
+}
+
+.Sidebar-widget-list {
+  color: #30518a;
+  list-style-type: square;
+  padding-left: 25px;
+}
+.Sidebar-widget-list li {
+  font-size: 0.875em;
+  margin-bottom: 15px;
+}
+.Sidebar-widget-list li a {
+  color: #4b4b4b;
+  font-size: 1.29em;
+  font-weight: 600;
+}
+
+.Sidebar-widget-links {
+  list-style-type: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.Videos a {
+  color: #fdfdfd;
+  text-decoration: underline;
+}
+
+.Videos-title {
+  font-size: 1.25em;
+  font-weight: 700;
+  margin-top: 0;
 }
 
 /*
@@ -536,6 +701,10 @@ b {
   justify-content: space-between;
   margin: 25px 0;
 }
+.Boxes--wrap {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
 
 .Box {
   border: 1px solid #5d5d5d;
@@ -574,6 +743,11 @@ b {
   color: #1e1e1e;
   font-size: 1.25em;
   font-weight: 700;
+}
+.Box--50 {
+  -webkit-flex-basis: 48%;
+  flex-basis: 48%;
+  margin-bottom: 30px;
 }
 
 .Footer {

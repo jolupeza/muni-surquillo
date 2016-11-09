@@ -17,5 +17,27 @@
     + .form-control-feedback {
       right: 40px;
     }
+    &--gray {
+      .form-control {
+        @include border-radius(5px 0 0 5px);
+        border-color: #c0c0c0;
+        @include input-placeholder {
+          text-align: right;
+        }
+      }
+      .input-group-addon {
+        background-color: #fff;
+        border: 1px solid #c0c0c0;
+        border-left: none;
+        @include border-radius(0 5px 5px 0);
+        color: #c0c0c0;
+        font-size: 1.14em;
+        button {
+          background-color: transparent;
+          border: none;
+          padding: 0;
+        }
+      }
+    }
   }
 }

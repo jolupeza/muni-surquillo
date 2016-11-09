@@ -40,6 +40,15 @@ b {
 }
 .Page {
   padding: 50px 0;
+  .Title {
+    margin-top: 0;
+  }
+  &--nopadding {
+    padding: 0;
+    .Title {
+      margin-top: 25px;
+    }
+  }
   &--blue {
     background-color: $blueDark;
   }
@@ -47,8 +56,5 @@ b {
     background-image: url('../images/bg-girl.png');
     background-position: 90% 100%;
     background-repeat: no-repeat;
-  }
-  .Title {
-    margin-top: 0;
   }
 }

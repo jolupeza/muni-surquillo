@@ -1,0 +1,22 @@
+.Page-navigation {
+  margin-bottom: 20px;
+  ul {
+    margin: 0;
+    li {
+      display: inline-block;
+      a {
+        border-color: $blueDark;
+        @include border-radius(5px);
+        color: $blueDark;
+        font-size: 1.25em;
+        font-weight: 600;
+        line-height: 1.1em;
+        &:hover {
+          background-color: $blue;
+          border-color: $blue;
+          color: white;
+        }
+      }
+    }
+  }
+}
