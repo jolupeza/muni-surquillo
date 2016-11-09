@@ -63,17 +63,17 @@ add_action('after_setup_theme', 'my_theme_setup');
 /**********************************************************************************/
 if (function_exists('register_sidebar'))
 {
-  // register_sidebar(
-  //   array(
-  //     'name'          => __('Category Sidebar', THEMEDOMAIN),
-  //     'id'            => 'main-sidebar',
-  //     'description'   => __('Sidebar en el Blog', THEMEDOMAIN),
-  //     'before_widget' => '<article class="Sidebar-Widget">',
-  //     'after_widget'  => '</article><!-- end Sidebar-Widget -->',
-  //     'before_title'  => '',
-  //     'after_title'   => ''
-  //   )
-  // );
+  register_sidebar(
+    array(
+      'name'          => __('Categorías Sidebar', THEMEDOMAIN),
+      'id'            => 'main-sidebar',
+      'description'   => __('Sidebar en sección Novedades', THEMEDOMAIN),
+      'before_widget' => '<article class="Sidebar-widget">',
+      'after_widget'  => '</article><!-- end Sidebar-widget -->',
+      'before_title'  => '<h3 class="Sidebar-widget-title text--blue">',
+      'after_title'   => '</h3>'
+    )
+  );
 
   // register_sidebar(
   //   array(
@@ -260,7 +260,7 @@ function validate_email_subscriber_callback() {
 /* Load Theme Options Page and Custom Widgets */
 /****************************************************/
 require_once(TEMPLATEPATH . '/functions/muni-theme-customizer.php');
-// require_once(TEMPLATEPATH . '/functions/widget-last-posts.php');
+require_once(TEMPLATEPATH . '/functions/widget-categories.php');
 // require_once(TEMPLATEPATH . '/functions/widget-related-carreras.php');
 // require_once(TEMPLATEPATH . '/functions/widget-advertising.php');
 

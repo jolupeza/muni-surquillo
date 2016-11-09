@@ -109,6 +109,8 @@ class Muni_Manager
         $this->loader->add_filter('manage_edit-subscribers_columns', $admin, 'custom_columns_subscribers');
         $this->loader->add_action('manage_subscribers_posts_custom_column', $admin, 'custom_column_subscribers');
 
+        $this->loader->add_action('pre_get_posts', $admin, 'remove_pages_wp_search');
+
         // $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_contacts_add');
         // $this->loader->add_filter('manage_edit-contacts_columns', $admin, 'custom_columns_contacts');
         // $this->loader->add_action('manage_contacts_posts_custom_column', $admin, 'custom_column_contacts');

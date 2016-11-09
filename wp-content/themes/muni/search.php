@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md-8">
         <?php if (have_posts()) : ?>
-          <h2 class="Title text--blue h1">Últimas noticias</h2>
+          <h2 class="Title text--blue h1">Resultados de su búsqueda: <?php echo get_search_query(); ?></h2>
 
           <section class="Boxes Boxes--wrap">
             <?php while (have_posts()) : ?>
@@ -14,6 +14,10 @@
               <?php get_template_part('content', get_post_format()); ?>
             <?php endwhile; ?>
           </section><!-- end Boxes -->
+        <?php else : ?>
+          <article class="Boxes-noposts">
+            <h2 class="Title text--blue text-center"><?php _e('No se encontraron publicaciones.', THEMEDOMAIN); ?></h2>
+          </article>
         <?php endif; ?>
 
         <?php
@@ -25,7 +29,7 @@
           <nav aria-label="Page navigation" class="Page-navigation text-center">
             <?php
               $current_page = (get_query_var( 'paged' )) ? get_query_var( 'paged' ) : 1;
-              $format = ( get_option('permalink_structure' ) == '/%postname%/') ? 'page/%#%/' : '&paged=%#%';
+              $format = '&paged=%#%';
 
               echo paginate_links(array(
                 'base'      =>    get_pagenum_link(1) . '%_%',

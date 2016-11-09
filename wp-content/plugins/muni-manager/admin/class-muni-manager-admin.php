@@ -417,4 +417,14 @@ class Muni_Manager_Admin
 
         return false;
     }
+
+    /**
+     * Exclude pages from search results.
+     */
+    public function remove_pages_wp_search($query)
+    {
+        if ($query->is_search() && $query->is_main_query()) {
+            $query->set('post_type', 'post');
+        }
+    }
 }
