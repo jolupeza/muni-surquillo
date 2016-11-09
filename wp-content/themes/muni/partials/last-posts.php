@@ -26,7 +26,7 @@
         <?php endwhile; ?>
       </section><!-- end Boxes -->
 
-      <p class="text-center"><a href="" class="Button Button--transp Button--blue">Ver más noticias</a></p>
+      <p class="text-center"><a href="<?php echo home_url('novedades'); ?>" class="Button Button--transp Button--blue">Ver más noticias</a></p>
     </div><!-- end container -->
   </section><!-- end Page -->
 <?php endif; ?>

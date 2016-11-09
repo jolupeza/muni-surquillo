@@ -65,6 +65,7 @@ var j = jQuery.noConflict();
 
     j('.js-move-scroll').on('click', function(event) {
       event.preventDefault();
+
       var $this = j(this);
       var dest = $this.attr('href');
 

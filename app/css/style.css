@@ -555,6 +555,21 @@ b {
   background-color: #003056;
   border-color: #003056;
   color: white;
+  text-decoration: none;
+}
+.Page-navigation ul li .page-numbers {
+  border: 1px solid #0c304a;
+  padding: 6px 12px;
+}
+.Page-navigation ul li .page-numbers.current {
+  background-color: #003056;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border-color: #003056;
+  color: white;
+  font-size: 1.25em;
+  font-weight: 600;
 }
 
 .Sidebar--gray {

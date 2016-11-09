@@ -15,6 +15,19 @@
           background-color: $blue;
           border-color: $blue;
           color: white;
+          text-decoration: none;
+        }
+      }
+      .page-numbers {
+        border: 1px solid $blueDark;
+        padding: 6px 12px;
+        &.current {
+          background-color: $blue;
+          @include border-radius(5px);
+          border-color: $blue;
+          color: white;
+          font-size: 1.25em;
+          font-weight: 600;
         }
       }
     }

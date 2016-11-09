@@ -120,7 +120,7 @@ gulp.task('watch', function(){
   gulp.watch(['./app/**/*.html'], ['html'])
   gulp.watch(paths.compass, ['compass', 'inject'])
   gulp.watch(['./app/js/**/*.js'], ['inject'])
-  // gulp.watch(['./app/js/**/*.js'], ['jshint', 'inject'])
+  //gulp.watch(['./app/js/**/*.js'], ['jshint', 'inject'])
   // gulp.watch(['./bower.json'], ['wiredep'])
 })
 
