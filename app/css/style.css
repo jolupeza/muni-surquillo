@@ -109,10 +109,14 @@
   content: "";
   display: inline-block;
   height: 25px;
+  vertical-align: middle;
   width: 25px;
 }
 .Icon--phone::before {
   background-position: -75px 0;
+}
+.Icon--map::before {
+  background-position: -25px -25px;
 }
 
 .Button {
@@ -126,6 +130,8 @@
   -o-transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  max-width: 220px;
+  vertical-align: middle;
 }
 .Button--transp {
   background-color: transparent;
@@ -197,6 +203,14 @@ b {
   font-size: 0.875em;
 }
 
+.text--n {
+  font-size: 1em;
+}
+
+.text--nimportant {
+  font-size: 1em !important;
+}
+
 .text--l {
   font-size: 1.125em;
 }
@@ -207,6 +221,14 @@ b {
 
 .text--blue {
   color: #30518a;
+}
+
+.text--green {
+  color: #85a71e;
+}
+
+.text--greenSoft {
+  color: #bfd841;
 }
 
 .Title {
@@ -229,6 +251,9 @@ b {
 .Page--nopadding .Title {
   margin-top: 25px;
 }
+.Page--gray {
+  background-color: #d2d2d2;
+}
 .Page--blue {
   background-color: #0c304a;
 }
@@ -236,6 +261,55 @@ b {
   background-image: url("../images/bg-girl.png");
   background-position: 90% 100%;
   background-repeat: no-repeat;
+}
+.Page--details .Title {
+  margin-bottom: 40px;
+}
+.Page--details p {
+  font-size: 1.125em;
+}
+.Page--bg {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.Table .Table-header {
+  background-color: #335da4;
+  font-size: 1.5em;
+  font-weight: 800;
+  padding: 20px 0;
+}
+.Table .Table-row {
+  background-color: #497fda;
+  display: -webkit-flex;
+  display: flex;
+  padding: 10px 15px;
+}
+.Table .Table-row:nth-child(2n+1) {
+  background-color: #335da4;
+}
+.Table .Table-col {
+  font-size: 1.125em;
+  -webkit-flex-basis: 60%;
+  flex-basis: 60%;
+  padding: 0 10px;
+}
+.Table .Table-col:first-child {
+  -webkit-flex-basis: 40%;
+  flex-basis: 40%;
+}
+.Table .Table-col--legend {
+  font-weight: 600;
+}
+.Table .Table-footer {
+  background-color: #bfd841;
+  padding: 15px 0;
+}
+.Table .Table-footer a {
+  color: #3e3e3e;
+  font-size: 1.25em;
+  font-weight: 600;
 }
 
 .Header-navTop {

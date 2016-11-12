@@ -4,11 +4,17 @@
     content: "";
     display: inline-block;
     height: 25px;
+    vertical-align: middle;
     width: 25px;
   }
   &--phone {
     &::before {
       background-position: -75px 0;
+    }
+  }
+  &--map {
+    &::before {
+      background-position: -25px -25px;
     }
   }
 }
@@ -19,6 +25,8 @@
   font-weight: 700;
   padding: 10px 20px;
   @include transition(all 0.2s ease);
+  max-width: 220px;
+  vertical-align: middle;
   &--transp {
     background-color: transparent;
   }

@@ -1,0 +1,36 @@
+.Table {
+  .Table-header {
+    background-color: $azul2;
+    font-size: 1.5em;
+    font-weight: 800;
+    padding: 20px 0;
+  }
+  .Table-row {
+    background-color: $azul5;
+    @include display-flex();
+    padding: 10px 15px;
+    &:nth-child(2n+1) {
+      background-color: $azul2;
+    }
+  }
+  .Table-col {
+    font-size: 1.125em;
+    @include flex-basis(60%);
+    &:first-child {
+      @include flex-basis(40%);
+    }
+    padding: 0 10px;
+    &--legend {
+      font-weight: 600;
+    }
+  }
+  .Table-footer {
+    background-color: $greenSoft;
+    padding: 15px 0;
+    a {
+      color: #3e3e3e;
+      font-size: 1.25em;
+      font-weight: 600;
+    }
+  }
+}
