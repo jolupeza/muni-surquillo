@@ -298,6 +298,15 @@ class Muni_Manager_Admin
         }
     }
 
+    public function subscribers_button_view_edit($views)
+    {
+        echo '<p>'
+        . '<a href="' . plugin_dir_url(dirname(__FILE__)) . 'subscribers/generateExcel/" class="button button-primary">Generar excel</a>'
+        . '</p>';
+
+        return $views;
+    }
+
     /**
      * Add custom content type slides.
      */

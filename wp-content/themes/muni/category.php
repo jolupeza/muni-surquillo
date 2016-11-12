@@ -72,15 +72,13 @@
             </ul>
           </article><!-- end Sidebar-widget -->
         </aside><!-- end Sidebar -->
-        <aside class="Sidebar Sidebar--skyBlue">
-          <h3 class="Sidebar-widget-title Sidebar-widget-title--noborder text--white">Últimos vídeos</h3>
 
-          <article class="Videos">
-            <figure class="Videos-figure"></figure>
-            <h4 class="Videos-title text--white">Programa Ponte Pilas</h4>
-            <p><a href="">ver programa</a></p>
-          </article><!-- end Videos -->
-        </aside>
+        <?php
+          $filePath = TEMPLATEPATH . '/includes/last-programs.php';
+          if (file_exists($filePath)) {
+            include $filePath;
+          }
+        ?>
       </div>
     </div>
   </div><!-- end container -->

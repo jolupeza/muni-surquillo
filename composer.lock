@@ -1,0 +1,175 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "89b664fa9e2f4ce3e934188fae2b6cf9",
+    "content-hash": "51f6fb67d0706ac256540ec2d04fb66c",
+    "packages": [
+        {
+            "name": "endroid/simple-excel",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/endroid/SimpleExcel.git",
+                "reference": "2cb7fb393fcfb771776ac3fd97158ea6fc1e6c11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/endroid/SimpleExcel/zipball/2cb7fb393fcfb771776ac3fd97158ea6fc1e6c11",
+                "reference": "2cb7fb393fcfb771776ac3fd97158ea6fc1e6c11",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "phpoffice/phpexcel": "^1.8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Endroid\\SimpleExcel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeroen van den Enden",
+                    "email": "info@endroid.nl",
+                    "homepage": "http://endroid.nl/"
+                }
+            ],
+            "description": "Endroid Simple Excel",
+            "homepage": "https://github.com/endroid/SimpleExcel",
+            "keywords": [
+                "endroid",
+                "excel",
+                "sipmle"
+            ],
+            "time": "2016-02-23 12:07:29"
+        },
+        {
+            "name": "phpoffice/phpexcel",
+            "version": "1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPOffice/PHPExcel.git",
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xml": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPExcel": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Maarten Balliauw",
+                    "homepage": "http://blog.maartenballiauw.be"
+                },
+                {
+                    "name": "Mark Baker"
+                },
+                {
+                    "name": "Franck Lefevre",
+                    "homepage": "http://blog.rootslabs.net"
+                },
+                {
+                    "name": "Erik Tilt"
+                }
+            ],
+            "description": "PHPExcel - OpenXML - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
+            "homepage": "http://phpexcel.codeplex.com",
+            "keywords": [
+                "OpenXML",
+                "excel",
+                "php",
+                "spreadsheet",
+                "xls",
+                "xlsx"
+            ],
+            "time": "2015-05-01 07:00:55"
+        },
+        {
+            "name": "suncat/php-mobile-detect",
+            "version": "v2.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/suncat2000/php-mobile-detect.git",
+                "reference": "a1b702a470ea24ce42edf71433e27190ea2d90ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/suncat2000/php-mobile-detect/zipball/a1b702a470ea24ce42edf71433e27190ea2d90ef",
+                "reference": "a1b702a470ea24ce42edf71433e27190ea2d90ef",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mobile_Detect": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Victor Stanciu",
+                    "email": "vic.stanciu@gmail.com",
+                    "homepage": "https://plus.google.com/112830021345771739573"
+                },
+                {
+                    "name": "Serban Ghita",
+                    "email": "serbanghita@gmail.com",
+                    "homepage": "http://ghita.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Lightweight PHP class for detecting mobile devices",
+            "homepage": "https://github.com/suncat2000/php-mobile-detect",
+            "keywords": [
+                "mobile",
+                "mobile detect",
+                "mobile detector",
+                "mobile device"
+            ],
+            "time": "2012-07-23 20:25:18"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

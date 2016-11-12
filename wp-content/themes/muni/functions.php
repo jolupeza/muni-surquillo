@@ -148,7 +148,7 @@ function register_subscriptor_callback()
     );
     $the_query = new WP_Query($args);
     if (!$the_query->have_posts()) {
-      /*$receiverEmail = $options['email_contact'];
+      $receiverEmail = $options['email_contact'];
 
       if (!isset($receiverEmail) || empty($receiverEmail)) {
         $receiverEmail = get_option('admin_email');
@@ -186,7 +186,7 @@ function register_subscriptor_callback()
             //$headers[] = 'Reply-To: jolupeza@icloud.com';
             $headers[] = 'Content-type: text/html; charset=utf-8';
 
-            wp_mail($email, $subjectEmail, $content, $headers);*/
+            wp_mail($email, $subjectEmail, $content, $headers);
 
             $post_id = wp_insert_post(array(
                 'post_author' => 1,
@@ -195,7 +195,7 @@ function register_subscriptor_callback()
             ));
             update_post_meta($post_id, 'mb_email', $email);
             $result['result'] = true;
-          /*} else {
+          } else {
             $result['error'] = 'Plantilla email no encontrada.';
           }
         } else {
@@ -203,7 +203,7 @@ function register_subscriptor_callback()
         }
       } else {
         $result['error'] = 'Plantilla email no encontrada.';
-      }*/
+      }
     } else {
       $result['error'] = 'Correo electrónico se encuentra registrado.';
     }
@@ -256,13 +256,16 @@ function validate_email_subscriber_callback() {
   die();
 }
 
+// Bugs send emails WP 4.6.1
+add_filter('wp_mail_from', function() {
+  return 'jolupeza@gmail.com';
+});
+
 /****************************************************/
 /* Load Theme Options Page and Custom Widgets */
 /****************************************************/
 require_once(TEMPLATEPATH . '/functions/muni-theme-customizer.php');
 require_once(TEMPLATEPATH . '/functions/widget-categories.php');
-// require_once(TEMPLATEPATH . '/functions/widget-related-carreras.php');
-// require_once(TEMPLATEPATH . '/functions/widget-advertising.php');
 
 /*
  * Dump helper. Functions to dump variables to the screen, in a nicley formatted manner.

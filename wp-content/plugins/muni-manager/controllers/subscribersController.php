@@ -1,5 +1,4 @@
 <?php
-
 use Endroid\SimpleExcel\SimpleExcel;
 
 /**
@@ -20,49 +19,37 @@ class subscribersController extends Controller
 
     public function index()
     {
-        echo 'hola mundo';
+        echo '';
     }
 
-    public function generateExcel($carrera = '')
-    {        
+    public function generateExcel()
+    {
         $this->excel = new SimpleExcel();
         $objPHPExcel = new PHPExcel();
 
-        $filename = 'suscriptores.xlsx';
+//        $filename = 'suscriptores.xlsx';
+        $filename = 'suscriptores.xls';
 
         $title = 'Relación de Suscriptores';
-        
-        if (!empty($carrera)) {
-            $carrera = (int)$carrera;
-            $dataCarrera = get_post($carrera);
-            
-            $filename = "suscriptores-$dataCarrera->post_name.xlsx";
-            $title .= " a $dataCarrera->post_title";
-        }
 
         $objPHPExcel->setActiveSheetIndex(0);
         $objPHPExcel->getActiveSheet()->setTitle('Suscriptores');
         $objPHPExcel->getActiveSheet()->setCellValue('A1', $title);
         $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setSize(18);
         $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
-        $objPHPExcel->getActiveSheet()->mergeCells('A1:G1');
+        $objPHPExcel->getActiveSheet()->mergeCells('A1:B1');
         $objPHPExcel->getActiveSheet()->getStyle('A1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 
         $objPHPExcel->getActiveSheet()->getRowDimension(1)->setRowHeight(30);
         $objPHPExcel->getActiveSheet()->getRowDimension(3)->setRowHeight(20);
-        $objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(20);
+        $objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(40);
         $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(20);
-        $objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(18);
-        $objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(20);
-        $objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(20);
-        $objPHPExcel->getActiveSheet()->getColumnDimension('F')->setWidth(25);
-        $objPHPExcel->getActiveSheet()->getColumnDimension('G')->setWidth(30);
 
         $this->generateHeaderExcel($objPHPExcel);
-        $this->generateCellsExcel($objPHPExcel, $carrera);
+        $this->generateCellsExcel($objPHPExcel);
 
-        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'); //mime type XLSX
-//        header('Content-Type: application/vnd.ms-excel'); //mime type XLS
+//        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'); //mime type XLSX
+        header('Content-Type: application/vnd.ms-excel'); //mime type XLS
         header('Content-Disposition: attachment;filename="'.$filename.'"'); //tell browser what's the file name
         header('Cache-Control: max-age=0'); //no cache
 
@@ -90,35 +77,20 @@ class subscribersController extends Controller
     private function setHeaders()
     {
         $this->headers = array(
-            'A3' => 'Nombres',
-            'B3' => 'Apellidos',
-            'C3' => 'Correo electrónico',
-            'D3' => 'Teléfono / Celular',
-            'E3' => 'Distrito',
-            'F3' => 'Carrera',
-            'G3' => '¿Cómo se entero?',
+            'A3' => 'Correo electrónico',
+            'B3' => 'Fecha'
         );
 
         return $this->headers;
     }
 
-    private function generateCellsExcel(PHPExcel $excel, $carrera = '')
-    {        
+    private function generateCellsExcel(PHPExcel $excel)
+    {
         $args = array(
             'posts_per_page' => -1,
             'post_type' => 'subscribers',
         );
-        
-        if (!empty($carrera)) {
-            $carrera = (int)$carrera;
-            $args['meta_query'] = [
-                [
-                    'key' => 'mb_carrera',
-                    'value' => $carrera
-                ]                
-            ];
-        }
-        
+
         $i = 4;
         $the_query = new WP_Query($args);
 
@@ -129,47 +101,13 @@ class subscribersController extends Controller
                 $id = get_the_ID();
                 $values = get_post_custom($id);
 
-                $name = (isset($values['mb_name'])) ? esc_attr($values['mb_name'][0]) : '';
-                $lastname = (isset($values['mb_lastname'])) ? esc_attr($values['mb_lastname'][0]) : '';
                 $email = (isset($values['mb_email'])) ? esc_attr($values['mb_email'][0]) : '';
-                $phone = (isset($values['mb_phone'])) ? esc_attr($values['mb_phone'][0]) : '';
-                $district = (isset($values['mb_district'])) ? (int)esc_attr($values['mb_district'][0]) : '';
-                $carrera = (isset($values['mb_carrera'])) ? (int)esc_attr($values['mb_carrera'][0]) : '';
-                
-                $know = get_the_terms($id, 'knowsubs');
-                
-                $nameDistrict = '';
-                if (!empty($district)) {
-                    $district = get_post($district);
-                    $nameDistrict = $district->post_title;
-                }
-                
-                $nameCarrera = '';
-                if (!empty($carrera)) {
-                    $carrera = get_post($carrera);
-                    $nameCarrera = $carrera->post_title;
-                }
 
-                $excel->getActiveSheet()->setCellValue('A'.$i, $name);
+                $excel->getActiveSheet()->setCellValue('A'.$i, $email);
                 $excel->getActiveSheet()->getStyle('A'.$i)->getFont()->setSize(10);
 
-                $excel->getActiveSheet()->setCellValue('B'.$i, $lastname);
+                $excel->getActiveSheet()->setCellValue('B'.$i, get_the_time('d-m-Y'));
                 $excel->getActiveSheet()->getStyle('B'.$i)->getFont()->setSize(10);
-
-                $excel->getActiveSheet()->setCellValue('C'.$i, $email);
-                $excel->getActiveSheet()->getStyle('C'.$i)->getFont()->setSize(10);
-
-                $excel->getActiveSheet()->setCellValue('D'.$i, $phone);
-                $excel->getActiveSheet()->getStyle('D'.$i)->getFont()->setSize(10);
-
-                $excel->getActiveSheet()->setCellValue('E'.$i, $nameDistrict);
-                $excel->getActiveSheet()->getStyle('E'.$i)->getFont()->setSize(10);
-                
-                $excel->getActiveSheet()->setCellValue('F'.$i, $nameCarrera);
-                $excel->getActiveSheet()->getStyle('F'.$i)->getFont()->setSize(10);
-                
-                $excel->getActiveSheet()->setCellValue('G'.$i, $know[0]->name);
-                $excel->getActiveSheet()->getStyle('G'.$i)->getFont()->setSize(10);
 
 //                $excel->getActiveSheet()->setCellValue('G'.$i, $datePostulation);
 //                $excel->getActiveSheet()->getStyle('G'.$i)->getFont()->setSize(10);

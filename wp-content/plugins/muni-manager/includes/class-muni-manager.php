@@ -108,6 +108,7 @@ class Muni_Manager
         $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_subscribers_add');
         $this->loader->add_filter('manage_edit-subscribers_columns', $admin, 'custom_columns_subscribers');
         $this->loader->add_action('manage_subscribers_posts_custom_column', $admin, 'custom_column_subscribers');
+        $this->loader->add_filter('views_edit-subscribers', $admin, 'subscribers_button_view_edit');
 
         $this->loader->add_action('pre_get_posts', $admin, 'remove_pages_wp_search');
 

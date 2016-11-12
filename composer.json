@@ -1,11 +1,11 @@
 {
-    "name": "cepuch/webcepuch",
-    "description": "New website CEPUCH",
+    "name": "muni-surquillo",
+    "description": "New website Municipalidad de Surquillo",
     "license": "MIT",
     "authors": [
         {
             "name": "Jose Perez",
-            "email": "joseluis@watson.pe"
+            "email": "jolupeza@gmail.com"
         }
     ],
     "require": {
