@@ -25,7 +25,7 @@ if (function_exists('add_theme_support')) {
 
   add_theme_support('post-thumbnails', array('post', 'page', 'sliders', 'metas'));
   //set_post_thumbnail_size(210, 210, true);
-  // add_image_size('events-small', 760, 281, true);
+  add_image_size('post-thumb', 350, 350, true);
   // add_image_size('events-large', 362, 593, true);
 
   //add_theme_support('automatic-feed-links');

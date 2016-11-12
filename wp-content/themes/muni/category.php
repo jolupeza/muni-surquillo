@@ -1,9 +1,24 @@
 <?php get_header(); ?>
 
+<?php
+  $filePath = TEMPLATEPATH . '/includes/posts-featured.php';
+  if (file_exists($filePath)) {
+    include $filePath;
+  }
+?>
+
 <section class="Page Page--nopadding">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
+        <?php
+          global $wp_query;
+          $args = array(
+            'post__not_in' => $sticky
+          );
+          $args = array_merge($wp_query->query_vars, $args);
+          query_posts($args);
+        ?>
         <?php if (have_posts()) : ?>
           <h2 class="Title text--blue h1">Últimas noticias</h2>
 
@@ -14,32 +29,31 @@
               <?php get_template_part('content', get_post_format()); ?>
             <?php endwhile; ?>
           </section><!-- end Boxes -->
-        <?php endif; ?>
 
-        <?php
-          global $wp_query;
-          $total = $wp_query->max_num_pages;
+          <?php
+            $total = $wp_query->max_num_pages;
 
-          if ( $total > 1 ) :
-        ?>
-          <nav aria-label="Page navigation" class="Page-navigation text-center">
-            <?php
-              $current_page = (get_query_var( 'paged' )) ? get_query_var( 'paged' ) : 1;
-              $format = ( get_option('permalink_structure' ) == '/%postname%/') ? 'page/%#%/' : '&paged=%#%';
+            if ( $total > 1 ) :
+          ?>
+            <nav aria-label="Page navigation" class="Page-navigation text-center">
+              <?php
+                $current_page = (get_query_var( 'paged' )) ? get_query_var( 'paged' ) : 1;
+                $format = ( get_option('permalink_structure' ) == '/%postname%/') ? 'page/%#%/' : '&paged=%#%';
 
-              echo paginate_links(array(
-                'base'      =>    get_pagenum_link(1) . '%_%',
-                'format'    =>    $format,
-                'current'   =>    $current_page,
-                'prev_next' =>    True,
-                'prev_text' =>    __('&laquo;', THEMEDOMAIN),
-                'next_text' =>    __('&raquo;', THEMEDOMAIN),
-                'total'     =>    $total,
-                'mid_size'  =>    4,
-                'type'      =>    'list'
-              ));
-            ?>
-          </nav>
+                echo paginate_links(array(
+                  'base'      =>    get_pagenum_link(1) . '%_%',
+                  'format'    =>    $format,
+                  'current'   =>    $current_page,
+                  'prev_next' =>    True,
+                  'prev_text' =>    __('&laquo;', THEMEDOMAIN),
+                  'next_text' =>    __('&raquo;', THEMEDOMAIN),
+                  'total'     =>    $total,
+                  'mid_size'  =>    4,
+                  'type'      =>    'list'
+                ));
+              ?>
+            </nav>
+          <?php endif; ?>
         <?php endif; ?>
       </div><!-- end col-md-8 -->
 

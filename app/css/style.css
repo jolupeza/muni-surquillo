@@ -764,6 +764,21 @@ b {
   flex-basis: 48%;
   margin-bottom: 30px;
 }
+.Box--white p {
+  color: #fdfdfd;
+  text-shadow: 1px 1px 0 black;
+}
+.Box--white p a {
+  color: #fdfdfd;
+  text-shadow: 1px 1px 0 black;
+}
+.Box--white p a:hover {
+  color: #0c304a;
+}
+.Box--white .Box-title {
+  color: #fdfdfd;
+  text-shadow: 1px 1px 0 black;
+}
 
 .Footer {
   background-color: #181b24;
