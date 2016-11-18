@@ -123,6 +123,7 @@
     margin-right: -4px;
     padding: 15px 25px;
     text-transform: uppercase;
+    @include transition(all 0.2s ease);
     a {
       color: white;
       font-size: 0.875em;
@@ -130,27 +131,36 @@
       .icons {
         margin-right: 10px;
       }
-      &:hover {
+      &:hover, &:focus {
         text-decoration: none;
       }
     }
     &:first-child {
       background-color: $azul1;
+      border-bottom: 2px solid $azul1;
     }
     &:nth-child(2) {
       background-color: $azul2;
+      border-bottom: 2px solid $azul2;
     }
     &:nth-child(3) {
       background-color: $azul3;
+      border-bottom: 2px solid $azul3;
     }
     &:nth-child(4) {
       background-color: $azul4;
+      border-bottom: 2px solid $azul4;
     }
     &:nth-child(5) {
       background-color: $azul5;
+      border-bottom: 2px solid $azul5;
     }
     &:last-child {
       background-color: $azul6;
+      border-bottom: 2px solid $azul6;
+    }
+    &:hover, &.current-menu-item, &.current-category-ancestor {
+      border-bottom-color: $whiteDark;
     }
   }
 }

@@ -146,4 +146,88 @@ function muni_customize_register($wp_customize) {
         'settings' => 'muni_custom_settings[phone]',
         'type'     => 'text'
     ));
+
+    // Datos Municipalidad
+    $wp_customize->add_section('muni_data', array(
+        'title' => __( 'Datos de la Municipalidad de Surquillo', THEMEDOMAIN),
+        'description' => __('Configurar información sobre la empresa', THEMEDOMAIN),
+        'priority' => 38
+    ));
+
+    // Population
+    $wp_customize->add_setting('muni_custom_settings[population]', array(
+        'default' => '',
+        'type'    => 'option'
+    ));
+
+    $wp_customize->add_control('muni_custom_settings[population]', array(
+        'label'    => __('Población', THEMEDOMAIN),
+        'section'  => 'muni_data',
+        'settings' => 'muni_custom_settings[population]',
+        'type'     => 'text'
+    ));
+
+    // Location
+    $wp_customize->add_setting('muni_custom_settings[location]', array(
+        'default' => '',
+        'type'    => 'option'
+    ));
+
+    $wp_customize->add_control('muni_custom_settings[location]', array(
+        'label'    => __('Ubicación', THEMEDOMAIN),
+        'section'  => 'muni_data',
+        'settings' => 'muni_custom_settings[location]',
+        'type'     => 'text'
+    ));
+
+    // Latitud
+    $wp_customize->add_setting('muni_custom_settings[latitud]', array(
+        'default' => '',
+        'type'    => 'option'
+    ));
+
+    $wp_customize->add_control('muni_custom_settings[latitud]', array(
+        'label'    => __('Latitud', THEMEDOMAIN),
+        'section'  => 'muni_data',
+        'settings' => 'muni_custom_settings[latitud]',
+        'type'     => 'text'
+    ));
+
+    // Longitud
+    $wp_customize->add_setting('muni_custom_settings[longitud]', array(
+        'default' => '',
+        'type'    => 'option'
+    ));
+
+    $wp_customize->add_control('muni_custom_settings[longitud]', array(
+        'label'    => __('Longitud', THEMEDOMAIN),
+        'section'  => 'muni_data',
+        'settings' => 'muni_custom_settings[longitud]',
+        'type'     => 'text'
+    ));
+
+    // Limit
+    $wp_customize->add_setting('muni_custom_settings[limit]', array(
+        'default' => '',
+        'type'    => 'option'
+    ));
+
+    $wp_customize->add_control('muni_custom_settings[limit]', array(
+        'label'    => __('Límites', THEMEDOMAIN),
+        'section'  => 'muni_data',
+        'settings' => 'muni_custom_settings[limit]',
+        'type'     => 'textarea'
+    ));
+
+    // Plano Distrital
+    $wp_customize->add_setting('muni_custom_settings[plano]', array(
+        'default' => '',
+        'type' => 'option'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'plano', array(
+        'label' => __('Plano distrital', THEMEDOMAIN),
+        'section' => 'muni_data',
+        'settings' => 'muni_custom_settings[plano]'
+    )));
 }

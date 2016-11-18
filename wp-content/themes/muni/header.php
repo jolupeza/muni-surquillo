@@ -29,7 +29,7 @@
 
     <?php wp_head(); ?>
   </head>
-  <body>
+  <body <?php body_class(); ?>>
     <?php $options = get_option('muni_custom_settings'); ?>
     <!-- <div class="LoaderWrapper">
       <div id="loader" class="animated bounce infinite"></div>

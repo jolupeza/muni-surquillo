@@ -35,7 +35,7 @@
   @media only screen and (min-device-width: 601px) {
     .content {width: 600px !important;}
     .col425 {width: 425px !important;}
-    .col415 {width: 415px !important;}
+    .col315 {width: 315px !important;}
     }
 
   </style>

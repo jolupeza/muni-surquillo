@@ -6,47 +6,9 @@ var j = jQuery.noConflict();
   var $win = j(window);
   var $doc = j(document);
   var $animationElements = j('.animation-element');
-  // var $sliders = j('.Sliders');
-  // var $formSubs = j('.Course-subs');
-  // var $sidebar = j('.Sidebar');
   // var body = j('body');
   // var $header = j('.header');
   // var $footer = j('.Footer');
-
-  // function loaderEffect() {
-  //   j("#loader").delay(500).fadeOut();
-  //   j(".LoaderWrapper").delay(1000).fadeOut("slow");
-  // }
-
-  /*function loadingProcess() {
-    var loadedimages = 0;
-    var loadedpercent = 0;
-
-    body.imagesLoaded()
-    .always( function( instance ) {
-      //console.log('loading images');
-    })
-    .fail( function() {
-      //console.log('all images loaded, at least one is broken');
-    })
-    .done( function( instance ) {
-
-    })
-    .progress( function( instance, image ) {
-      var totalimage = instance.images.length;
-      var result = image.isLoaded ? 'loaded' : 'broken';
-      if(result==='loaded'){
-        loadedimages++;
-      }
-      loadedpercent = Math.round((loadedimages/totalimage)*100);
-      jQuery('#loadingbar').css('width', loadedpercent+'%');
-      //console.log( 'image is ' + result + ' for ' + image.img.src );
-    });
-  }*/
-
-  $win.on('load', function(){
-    // loaderEffect();
-  });
 
   $win.on('scroll', function(){
     if(j(this).scrollTop() > 150) {
@@ -57,12 +19,9 @@ var j = jQuery.noConflict();
   });
 
   $win.on('resize', function(){
-
   });
 
   $doc.on('ready', function(){
-    // loadingProcess();
-
     j('.js-move-scroll').on('click', function(event) {
       event.preventDefault();
 
@@ -96,18 +55,6 @@ var j = jQuery.noConflict();
         $this.submit();
       }
     });
-
-    // Mobile Slidebars
-    // j.slidebars();
-
-    // Swipe carousel bootstrap
-    // j(".carousel").swipe({
-    //   swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
-    //     if (direction === 'left') $(this).carousel('next');
-    //     if (direction === 'right') $(this).carousel('prev');
-    //   },
-    //   allowPageScroll:"vertical"
-    // });
 
     j('.carousel-showmanymoveone .item').each(function(){
       var itemToClone = j(this);

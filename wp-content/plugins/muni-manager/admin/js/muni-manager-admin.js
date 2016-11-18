@@ -119,7 +119,7 @@
 
             // Store the image's information into the meta data fields
             container_data.find('.hd-src').val( json.url );
-            // /container_data.find('.hd-title').val( json.title );
+            container_data.find('.hd-title').val( json.title );
             // /container_data.find('.hd-alt').val( json.alt );
             /*$( '#slider-' + num + '-src' ).val( json.url );
             $( '#slider-' + num + '-title' ).val( json.title );

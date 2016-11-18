@@ -35,7 +35,7 @@
   @media only screen and (min-device-width: 601px) {
     .content {width: 600px !important;}
     .col425 {width: 425px !important;}
-    .col415 {width: 415px !important;}
+    .col315 {width: 315px !important;}
     }
 
   </style>
@@ -92,11 +92,11 @@
             </tr>
           </table>
           <!--[if (gte mso 9)|(IE)]>
-            <table width="415" align="left" cellpadding="0" cellspacing="0" border="0">
+            <table width="315" align="left" cellpadding="0" cellspacing="0" border="0">
               <tr>
                 <td>
                   <![endif]-->
-                  <table class="col415" align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 415px;">
+                  <table class="col315" align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 315px;">
                     <tr>
                       <td>
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">

@@ -424,6 +424,10 @@ b {
   margin-right: -4px;
   padding: 15px 25px;
   text-transform: uppercase;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 .Menu-main li a {
   color: white;
@@ -433,26 +437,35 @@ b {
 .Menu-main li a .icons {
   margin-right: 10px;
 }
-.Menu-main li a:hover {
+.Menu-main li a:hover, .Menu-main li a:focus {
   text-decoration: none;
 }
 .Menu-main li:first-child {
   background-color: #30518a;
+  border-bottom: 2px solid #30518a;
 }
 .Menu-main li:nth-child(2) {
   background-color: #335da4;
+  border-bottom: 2px solid #335da4;
 }
 .Menu-main li:nth-child(3) {
   background-color: #3867b8;
+  border-bottom: 2px solid #3867b8;
 }
 .Menu-main li:nth-child(4) {
   background-color: #4276ce;
+  border-bottom: 2px solid #4276ce;
 }
 .Menu-main li:nth-child(5) {
   background-color: #497fda;
+  border-bottom: 2px solid #497fda;
 }
 .Menu-main li:last-child {
   background-color: #568ff0;
+  border-bottom: 2px solid #568ff0;
+}
+.Menu-main li:hover, .Menu-main li.current-menu-item, .Menu-main li.current-category-ancestor {
+  border-bottom-color: #fdfdfd;
 }
 
 .Carousel .carousel-caption {
@@ -516,7 +529,7 @@ b {
   left: 52%;
   margin-bottom: 0;
   margin-left: 0;
-  top: 35%;
+  top: 15%;
   width: auto;
 }
 .Carousel--novedades .carousel-indicators li {
@@ -535,7 +548,7 @@ b {
   background-color: rgba(0, 48, 86, 0.8);
   bottom: 80px;
   left: 50%;
-  padding: 50px 30px 30px;
+  padding: 30px;
   text-shadow: none;
   width: 40%;
 }

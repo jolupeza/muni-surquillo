@@ -7,6 +7,14 @@
       'ignore_sticky_posts' => 1,
       'post_status' => 'publish'
     );
+
+    $thisCat = get_category(get_query_var('cat'));
+    $currentCat = get_cat_id(single_cat_title("", false));
+
+    if ($thisCat->parent !== 0) {
+      $args['cat'] = $currentCat;
+    }
+
     $the_query = new WP_Query($args);
     if ($the_query->have_posts()) :
       $i = 0; $j = 0;
