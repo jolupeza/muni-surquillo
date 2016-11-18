@@ -568,6 +568,7 @@ b {
 
 .Form {
   margin-top: 20px;
+  position: relative;
 }
 .Form .form-control {
   -moz-border-radius: 0;

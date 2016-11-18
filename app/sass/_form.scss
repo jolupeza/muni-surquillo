@@ -1,5 +1,6 @@
 .Form {
   margin-top: 20px;
+  position: relative;
   .form-control {
     @include border-radius(0);
     border: 1px solid #202020;

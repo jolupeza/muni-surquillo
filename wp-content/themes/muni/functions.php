@@ -256,6 +256,122 @@ function validate_email_subscriber_callback() {
   die();
 }
 
+/***********************************************************/
+/* Register contacts via ajax */
+/***********************************************************/
+add_action('wp_ajax_register_contact', 'register_contact_callback');
+add_action('wp_ajax_nopriv_register_contact', 'register_contact_callback');
+
+function register_contact_callback()
+{
+  $nonce = $_POST['nonce'];
+  $result = array(
+    'result' => false,
+    'error' => ''
+  );
+
+  if (!wp_verify_nonce($nonce, 'muniajax-nonce')) {
+      die('¡Acceso denegado!');
+  }
+
+  $name = trim($_POST['name']);
+  $lastname = trim($_POST['lastname']);
+  $email = trim($_POST['email']);
+  $phone = trim($_POST['phone']);
+  $address = trim($_POST['address']);
+  $urba = trim($_POST['urba']);
+  $message = trim($_POST['message']);
+  $subject = (int)trim($_POST['subject']);
+
+  if (!empty($name) && !empty($lastname) && !empty($email) && is_email($email) && !empty($phone) && preg_match('/^[0-9]+$/', $phone) && !empty($address) && !empty($urba) && $subject && !empty($message)) {
+    $options = get_option('muni_custom_settings');
+
+    $name     = sanitize_text_field($name);
+    $lastname = sanitize_text_field($lastname);
+    $email    = sanitize_email($email);
+    $phone    = sanitize_text_field($phone);
+    $address  = sanitize_text_field($address);
+    $urba     = sanitize_text_field($urba);
+    $message  = sanitize_text_field($message);
+
+    $subject = get_term($subject, 'subjects');
+
+    if (!is_wp_error($subject)) {
+      $receiverEmail = $options['email_contact'];
+
+      if (!isset($receiverEmail) || empty($receiverEmail)) {
+        $receiverEmail = get_option('admin_email');
+      }
+
+      $subjectEmail = "Consulta Web Municipalidad de Surquillo";
+
+      ob_start();
+      $filename = TEMPLATEPATH . '/includes/template-email-contact.php';
+      if (file_exists($filename)) {
+        include $filename;
+
+        $content = ob_get_contents();
+        ob_get_clean();
+
+        $headers[] = 'From: Municipalidad de Surquillo';
+        //$headers[] = 'Reply-To: jolupeza@icloud.com';
+        $headers[] = 'Content-type: text/html; charset=utf-8';
+
+        if (wp_mail($receiverEmail, $subjectEmail, $content, $headers)) {
+          // Send email to customer
+          $subjectEmail = "Consulta recepcionada. Municipalidad de Surquillo.";
+
+          ob_start();
+          $filename = TEMPLATEPATH . '/includes/template-gratitude.php';
+          if (file_exists($filename)) {
+            $textEmail = 'Gracias por contactarte con nosotros, en breve nos pondremos en contacto con usted.';
+
+            include $filename;
+
+            $content = ob_get_contents();
+            ob_get_clean();
+
+            $headers[] = 'From: Municipalidad de Surquillo';
+            //$headers[] = 'Reply-To: jolupeza@icloud.com';
+            $headers[] = 'Content-type: text/html; charset=utf-8';
+
+            wp_mail($email, $subjectEmail, $content, $headers);
+
+            $post_id = wp_insert_post(array(
+                'post_author' => 1,
+                'post_status' => 'publish',
+                'post_type' => 'contacts',
+            ));
+            update_post_meta($post_id, 'mb_name', $name);
+            update_post_meta($post_id, 'mb_lastname', $lastname);
+            update_post_meta($post_id, 'mb_email', $email);
+            update_post_meta($post_id, 'mb_phone', $phone);
+            update_post_meta($post_id, 'mb_address', $address);
+            update_post_meta($post_id, 'mb_urba', $urba);
+            update_post_meta($post_id, 'mb_message', $message);
+            wp_set_object_terms($post_id, $subject->term_id, 'subjects');
+
+            $result['result'] = true;
+          } else {
+            $result['error'] = 'Plantilla email no encontrada.';
+          }
+        } else {
+          $result['error'] = 'No se puedo enviar email.';
+        }
+      } else {
+        $result['error'] = 'Plantilla email no encontrada.';
+      }
+    } else {
+      $result['error'] = 'Debe indicar el asunto de su consulta';
+    }
+  } else {
+    $result['error'] = 'Verifique que ha ingresado los datos correctamente.';
+  }
+
+  echo json_encode($result);
+  die();
+}
+
 // Bugs send emails WP 4.6.1
 add_filter('wp_mail_from', function() {
   return 'jolupeza@gmail.com';

@@ -112,10 +112,11 @@ class Muni_Manager
 
         $this->loader->add_action('pre_get_posts', $admin, 'remove_pages_wp_search');
 
-        // $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_contacts_add');
-        // $this->loader->add_filter('manage_edit-contacts_columns', $admin, 'custom_columns_contacts');
-        // $this->loader->add_action('manage_contacts_posts_custom_column', $admin, 'custom_column_contacts');
-        // $this->loader->add_filter('views_edit-contacts', $admin, 'contacts_button_view_edit');
+        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_contacts_add');
+        $this->loader->add_action('init', $admin, 'add_taxonomies_contacts');
+        $this->loader->add_filter('manage_edit-contacts_columns', $admin, 'custom_columns_contacts');
+        $this->loader->add_action('manage_contacts_posts_custom_column', $admin, 'custom_column_contacts');
+        $this->loader->add_filter('views_edit-contacts', $admin, 'contacts_button_view_edit');
 
         // $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_carreras_add');
         // $this->loader->add_action('save_post', $admin, 'cd_mb_carreras_save' );

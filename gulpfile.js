@@ -70,7 +70,7 @@ gulp.task('compress', function()  {
   //gulp.src('./app/**/*.html')
   gulp.src('./app/*.html')
     .pipe(useref())
-    .pipe(gulpif('*.js',  uglify()))
+    //.pipe(gulpif('*.js',  uglify()))
     //.pipe(gulpif('*.js',  uglify({mangle: false })))
     .pipe(gulpif('*.css', cssnano()))
     .pipe(gulp.dest('./public'))
