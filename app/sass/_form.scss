@@ -40,4 +40,55 @@
       }
     }
   }
+  &--80 {
+    margin: 20px auto 0;
+    width: 80%;
+  }
+  &--round {
+    .form-control {
+      border-color: #666;
+      @include border-radius(5px);
+      border-right: 1px solid #666;
+      height: 44px;
+      padding: 8px 12px;
+      @include input-placeholder {
+        color: $text-color;
+        font-size: 1em;
+      }
+    }
+  }
+  textarea {
+    &.form-control {
+      height: auto;
+    }
+  }
+}
+
+.select-style {
+  background: $whiteDark url('../images/arrow-select.png') 96% 50% no-repeat;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 280px;
+}
+.Form-select {
+  @include appearance(none);
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid #666;
+  @include border-radius(5px);
+  color: $text-color;
+  font-size: 0.875em;
+  height: 44px;
+  padding: 8px 5px;
+  width: 280px;
+  option {
+    color: $text-color;
+  }
+}
+.Form-loader {
+  left: 45%;
+  position: absolute;
+  top: 35%;
+  z-index: 9;
 }

@@ -153,6 +153,10 @@
   background-color: #2b79a1;
   color: #fdfdfd;
 }
+.Button--blueBg {
+  background-color: #30518a;
+  color: #fdfdfd;
+}
 .Button--arrowDown {
   background-color: transparent;
   border: none;
@@ -617,6 +621,72 @@ b {
   background-color: transparent;
   border: none;
   padding: 0;
+}
+.Form--80 {
+  margin: 20px auto 0;
+  width: 80%;
+}
+.Form--round .form-control {
+  border-color: #666;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border-right: 1px solid #666;
+  height: 44px;
+  padding: 8px 12px;
+}
+.Form--round .form-control:-moz-placeholder {
+  color: #1e1e1e;
+  font-size: 1em;
+}
+.Form--round .form-control::-moz-placeholder {
+  color: #1e1e1e;
+  font-size: 1em;
+}
+.Form--round .form-control:-ms-input-placeholder {
+  color: #1e1e1e;
+  font-size: 1em;
+}
+.Form--round .form-control::-webkit-input-placeholder {
+  color: #1e1e1e;
+  font-size: 1em;
+}
+.Form textarea.form-control {
+  height: auto;
+}
+
+.select-style {
+  background: #fdfdfd url("../images/arrow-select.png") 96% 50% no-repeat;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 280px;
+}
+
+.Form-select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid #666;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #1e1e1e;
+  font-size: 0.875em;
+  height: 44px;
+  padding: 8px 5px;
+  width: 280px;
+}
+.Form-select option {
+  color: #1e1e1e;
+}
+
+.Form-loader {
+  left: 45%;
+  position: absolute;
+  top: 35%;
+  z-index: 9;
 }
 
 .Page-navigation {

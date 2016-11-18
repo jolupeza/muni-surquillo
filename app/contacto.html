@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Municipalidad de Surquillo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- build:css css/style.min.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="lib/formvalidation/dist/css/formValidation.css" />
+    <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/animated.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+
+    <script>
+      // Picture element HTML5 shiv
+      // document.createElement( "picture" );
+    </script>
+    <!-- <script src="lib/picturefill/dist/picturefill.js" async></script> -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- <div class="LoaderWrapper">
+      <div id="loader" class="animated bounce infinite"></div>
+      <div id="loadingbar"></div>
+    </div> --><!-- end LoaderWrapper -->
+
+    <header class="Header">
+      <section class="Header-navTop text-right">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <nav class="Menu-top-wrapper">
+                <ul class="Menu-top list-inline">
+                  <li class="active"><a href="">Agenda Telefónica</a></li>
+                  <li><a href="">Consultas online</a></li>
+                </ul><!-- end Menu-top -->
+              </nav>
+              <nav class="Menu-social-wrapper">
+                <ul class="Menu-social list-inline">
+                  <li class="Menu-social-fb"><a href="">f</a></li>
+                  <li class="Menu-social-lnk"><a href="">in</a></li>
+                  <li class="Menu-social-you"><a href="">y</a></li>
+                </ul><!-- end Menu-social -->
+              </nav>
+            </div><!-- end col-md-12 -->
+          </div><!-- end row -->
+        </div><!-- end container -->
+      </section><!-- end Header-navTop -->
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h1 class="Header-logo">
+              <a href="http://muni-surquillo.web/app" title=""><img src="images/logo.png" alt=""></a>
+            </h1>
+          </div>
+          <div class="col-md-6">
+            <aside class="Header-central">
+              <i class="Header-central-icon Icon Icon--phone"></i>
+              <span>Central Telefónica <b>(51 1) 241 - 0413</b></span>
+            </aside>
+          </div>
+        </div><!-- end row -->
+      </div><!-- end container -->
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <nav class="Header-mainMenu text-center">
+              <ul class="Menu-main list-inline">
+                <li><a href="index.html"><i class="icons icon-nav_home_icon"></i>Inicio</a></li>
+                <li><a href="somos-surquillo.html"><i class="icons icon-nav_municipio_icon"></i>Somos Surquillo</a></li>
+                <li><a href=""><i class="icons icon-servicios_icon_nav"></i>Servicios y trámites</a></li>
+                <li><a href="category.html"><i class="icons icon-nav_novedades_icon"></i>Novedades</a></li>
+                <li><a href=""><i class="icons icon-nav_transparencia_icon"></i>Transparencia</a></li>
+                <li><a href=""><i class="icons icon-nav_contacto_icon"></i>Contacto</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header><!-- end Header -->
+
+    <figure class="Page-image Page-image--full">
+      <img class="img-responsive center-block" src="images/resources/contacto.jpg" alt="" />
+    </figure>
+
+    <section class="Page Page--details">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="Title text--blue h1">Contáctanos</h2>
+            <p>Para mayor información sobre la municipalidad, consulta o reclamo que tenga complete el siguiente formulario y nos podremos en contacto con usted.</p>
+
+            <form action="" class="Form Form--80 Form--round" method="POST" id="js-frm-contact">
+              <div class="Form-loader text-center hidden" id="js-form-subs-loader">
+                <span class="animated infinite glyphicon glyphicon-refresh text--white" aria-hidden="true"></span>
+              </div>
+
+              <p class="text--white text-center" id="js-form-contact-msg"></p>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="name" class="sr-only">Nombres</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Nombres" autocomplete="off" required />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="lastname" class="sr-only">Apellidos</label>
+                    <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Apellidos" autocomplete="off" required />
+                  </div>
+                </div>
+              </div><!-- end row -->
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="email" class="sr-only">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" autocomplete="off" required />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="phone" class="sr-only">Teléfono</label>
+                    <input type="text" class="form-control" name="phone" id="phone" placeholder="Teléfono" autocomplete="off" required />
+                  </div>
+                </div>
+              </div><!-- end row -->
+
+              <div class="row">
+                <div class="col-md-9">
+                  <div class="form-group">
+                    <label for="address" class="sr-only">Dirección</label>
+                    <input type="text" class="form-control" name="address" id="address" placeholder="Dirección" autocomplete="off" required />
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="urba" class="sr-only">Urbanización</label>
+                    <input type="text" class="form-control" name="urba" id="urba" placeholder="Urbanización" autocomplete="off" required />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="select-style">
+                  <select class="Form-select" name="subject" id="subject" required data-fv-notempty-message="Seleccionar asunto">
+                    <option value="">-- Señale cuál es el asunto --</option>
+                    <option value="1">Asunto 1</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="Form-label sr-only">Mensaje</label>
+                <textarea class="form-control Form-input" name="message" id="message" placeholder="Escribe tu mensaje aquí" rows="8" required></textarea>
+              </div>
+
+              <p class="text-center">
+                <input type="submit" class="Button Button--blue Button--blueBg text-uppercase" value="Enviar" />
+              </p>
+            </form>
+          </div><!-- end col-md-12 -->
+        </div><!-- end row -->
+      </div><!-- end container -->
+    </section><!-- end Page -->
+
+    <footer class="Footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h3 class="Footer-logo text-center">
+              <a href=""><img src="images/logo-footer.png" alt=""></a>
+            </h3><!-- end Footer-logo -->
+            <p class="text--white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, vitae excepturi, vel, libero fuga saepe necessitatibus repudiandae nesciunt consequuntur ut, praesentium. Quas perferendis, reiciendis dignissimos velit dolore, explicabo ipsam modi.</p>
+          </div><!-- end col-md-4 -->
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="text--white Title">Enlaces</h3>
+                <ul class="Footer-list">
+                  <li><a href="">Teléfonos de emergencia</a></li>
+                  <li><a href="">Registro Civil</a></li>
+                  <li><a href="">Bolsa de Trabajo</a></li>
+                  <li><a href="">Procedimiento de Separación Convencional y Divorcio Ulterior</a></li>
+                  <li><a href="">Conciliaciones Extra Judiciales</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h3 class="text--white Title">Servicios</h3>
+                <ul class="Footer-list">
+                  <li><a href="">Ventanilla Electrónica</a></li>
+                  <li><a href="">Solicitud de acceso a la información</a></li>
+                  <li><a href="">Estado de Cuenta Corriente</a></li>
+                  <li><a href="">Licencia de funcionamiento</a></li>
+                  <li><a href="">Licencia de edificación</a></li>
+                  <li><a href="">Tributos municipales</a></li>
+                </ul>
+              </div>
+            </div>
+          </div><!-- end col-md-4 -->
+          <div class="col-md-4">
+            <h3 class="text--white Title">Suscríbete</h3>
+            <p class="text--white">Suscríbete y entérate de las últimas novedades, eventos, actividades y nuevas ordenanzas.</p>
+
+            <form class="Form">
+              <div class="Footer-loader text-center hidden" id="js-form-subs-loader">
+                <span class="animated infinite glyphicon glyphicon-refresh text--white" aria-hidden="true"></span>
+              </div>
+              <p class="text-center text--white" id="js-form-subs-msg"></p>
+
+              <div class="form-group">
+                <label for="email" class="sr-only">Correo electrónico</label>
+                <div class="input-group">
+                  <input type="email" name="email" id="email" class="form-control" placeholder="Ingresa tu correo electrónico" aria-describedby="basic-email">
+                  <span class="input-group-addon" id="basic-email"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+                </div>
+              </div>
+            </form>
+          </div><!-- end col-md-4 -->
+        </div><!-- end row -->
+      </div><!-- end container -->
+
+      <div class="Footer-copy">
+        <div class="container">
+          <p class="text-center text--white text--s">Copyright &copy; 2009 - 2016. All rights reserved.</p>
+        </div>
+      </div>
+    </footer><!-- end Footer -->
+
+    <!-- <button class="ArrowTop text-hide">Ir a arriba</button> -->
+
+    <script>
+      var _root_ = 'http://muni-surquillo.web'
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!-- build:js js/vendor.min.js -->
+    <!-- bower:js -->
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/jquery.easing/js/jquery.easing.js"></script>
+    <script src="lib/imagesloaded/imagesloaded.pkgd.js"></script>
+    <script src="lib/jquery-touchswipe/jquery.touchSwipe.js"></script>
+    <script src="lib/formvalidation/dist/js/formValidation.js"></script>
+    <script src="lib/formvalidation/dist/js/framework/bootstrap.js"></script>
+    <script src="lib/formvalidation/dist/js/language/es_ES.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js js/app.min.js -->
+    <!-- inject:js -->
+    <script src="js/script.js"></script>
+    <!-- endinject -->
+    <!-- endbuild -->
+  </body>
+</html>
