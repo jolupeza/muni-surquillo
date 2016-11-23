@@ -14,10 +14,21 @@ add_action('customize_register', 'muni_customize_register');
 function muni_customize_register($wp_customize) {
     // Logo Footer
     $wp_customize->add_section('muni_logo', array(
-        'title' => __('Logo Footer', THEMEDOMAIN),
-        'description' => __('Le permite cargar un logo personalizado para el footer.', THEMEDOMAIN),
+        'title' => __('Logos', THEMEDOMAIN),
+        'description' => __('Le permite cargar un logos personalizados.', THEMEDOMAIN),
         'priority' => 35
     ));
+
+    $wp_customize->add_setting('muni_custom_settings[logo_movil]', array(
+        'default' => IMAGES . '/logo-escudo.png',
+        'type' => 'option'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'logo_movil', array(
+        'label' => __('Logo Móvil', THEMEDOMAIN),
+        'section' => 'muni_logo',
+        'settings' => 'muni_custom_settings[logo_movil]'
+    )));
 
     $wp_customize->add_setting('muni_custom_settings[logo]', array(
         'default' => IMAGES . '/logo-footer.png',
@@ -25,7 +36,7 @@ function muni_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'logo', array(
-        'label' => __('Sube tu logo', THEMEDOMAIN),
+        'label' => __('Logo Footer', THEMEDOMAIN),
         'section' => 'muni_logo',
         'settings' => 'muni_custom_settings[logo]'
     )));

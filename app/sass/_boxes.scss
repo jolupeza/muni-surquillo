@@ -1,0 +1,64 @@
+.ColsFlex {
+  @include display-flex();
+  margin-top: 30px;
+  @media only screen and (max-width: 600px) {
+    display: block;
+  }
+}
+.Col {
+  padding: 30px 40px;
+  &--50 {
+    @include flex-basis(50%);
+  }
+  &--33 {
+    @include flex-basis(33.3%);
+  }
+  .icons {
+    display: block;
+    font-size: 4em;
+    margin-bottom: 15px;
+  }
+  &--gray {
+    background-color: $gris;
+    border: 1px solid $gris;
+    @include transition(all 0.2s ease);
+    &:hover {
+      border-color: $azul1;
+      background-color: $whiteDark;
+    }
+  }
+  &--colors {
+    &:first-child, &:last-child {
+      background-color: $gris;
+    }
+    .Title-semi {
+      margin-top: 0;
+    }
+  }
+  &--orange {
+    border-top: 10px solid $orange;
+  }
+  &--green {
+    border-top: 10px solid $green;
+  }
+  &--skyBlue {
+    border-top: 10px solid $skyBlue;
+  }
+  .Title {
+    margin-bottom: 20px;
+  }
+}
+.Square {
+  border: 1px solid #757575;
+  margin: 20px auto 0;
+  padding: 20px;
+  width: 80%;
+}
+.Square-title {
+  font-size: 1em;
+  margin-top: 0;
+}
+.Square-number {
+  font-size: 1.25em;
+  margin-top: 0;
+}

@@ -39,40 +39,6 @@ var j = jQuery.noConflict();
       ev.preventDefault();
       j('html, body').animate({scrollTop: 0}, 800);
     });
-
-    j('.Header-MainMenu-list-item a').on('click', function(e){
-      var $this = j(this),
-        redirect = Boolean($this.data('redirect')),
-        $target = j(this.hash);
-
-      if (!redirect) {
-        e.preventDefault();
-
-        j('html, body').stop().animate({
-          'scrollTop': $target.offset().top + 2
-        }, 2000, 'easeInOutExpo');
-      } else {
-        $this.submit();
-      }
-    });
-
-    j('.carousel-showmanymoveone .item').each(function(){
-      var itemToClone = j(this);
-
-      for (var i = 1; i < 2; i++) {
-        itemToClone = itemToClone.next();
-
-        // wrap around if at end of item collection
-        if (!itemToClone.length) {
-          itemToClone = j(this).siblings(':first');
-        }
-
-        // grab item, clone, add marker class, add to collection
-        itemToClone.children(':first-child').clone()
-          .addClass("cloneditem-"+(i))
-          .appendTo(j(this));
-      }
-    });
   });
 
   function checkIfInView() {

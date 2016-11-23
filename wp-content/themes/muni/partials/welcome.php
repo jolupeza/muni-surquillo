@@ -10,7 +10,7 @@
     while ($the_query->have_posts()) :
       $the_query->the_post();
 ?>
-      <div class="article About-item">
+      <div class="article About-item About-item--center">
         <h2 class="Title text--blue h1"><?php the_title(); ?></h2>
         <?php the_content(); ?>
       </div><!-- end About-item -->

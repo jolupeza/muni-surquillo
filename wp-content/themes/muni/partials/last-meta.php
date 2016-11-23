@@ -12,12 +12,16 @@
       $the_query->the_post();
 ?>
   <div class="article About-item">
-    <figure class="Figure">
-      <img src="http://placehold.it/380x217/0054A6/fff/" alt="" class="img-responsive center-block">
-    </figure>
-    <h3 class="Subtitle text--blue text-center"><?php the_title(); ?></h3>
-    <?php the_content(''); ?>
-    <p class="text-center"><a href="<?php the_permalink(); ?>" class="Button Button--transp Button--blue">Ver metas</a></p>
+    <section class="About--flex">
+      <figure class="Figure">
+        <img src="http://placehold.it/380x217/0054A6/fff/" alt="" class="img-responsive center-block">
+      </figure>
+      <article class="About-info">
+        <h3 class="Subtitle text--blue text-center"><?php the_title(); ?></h3>
+        <?php the_content(''); ?>
+        <p class="text-center"><a href="<?php the_permalink(); ?>" class="Button Button--transp Button--blue">Ver metas</a></p>
+      </article>
+    </section>
   </div><!-- end About-item -->
 
 <?php endwhile; ?>

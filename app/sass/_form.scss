@@ -44,6 +44,10 @@
   &--80 {
     margin: 20px auto 0;
     width: 80%;
+    @media only screen and (max-width: 500px) {
+      margin: 20px 0 0;
+      width: 100%;
+    }
   }
   &--round {
     .form-control {
@@ -85,6 +89,40 @@
   width: 280px;
   option {
     color: $text-color;
+  }
+}
+.wrapper-select {
+  background-color: $whiteDark;
+  background-position: 96% 50%;
+  background-repeat: no-repeat;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  &--orange {
+    background-image: url('../images/arrow-select-orange.png');
+  }
+  &--green {
+    background-image: url('../images/arrow-select-green.png');
+  }
+  &--skyBlue {
+    background-image: url('../images/arrow-select-skyBlue.png');
+  }
+  select {
+    @include appearance(none);
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid #666;
+    @include border-radius(5px);
+    color: $text-color;
+    font-size: 0.875em;
+    height: 44px;
+    padding: 8px 5px;
+    text-align: center;
+    width: 100%;
+    option {
+      color: $text-color;
+    }
   }
 }
 .Form-loader {

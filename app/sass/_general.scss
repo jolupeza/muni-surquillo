@@ -43,12 +43,24 @@ b {
 .text--greenSoft {
   color: $greenSoft;
 }
+.text--orange {
+  color: $orange;
+}
+.text--skyBlue {
+  color: $skyBlue;
+}
 
 .Title {
   font-weight: 800;
 }
 .Subtitle {
   font-weight: 800;
+}
+.Title-semi {
+  font-weight: 600;
+}
+.Title-bold {
+  font-weight: 700;
 }
 .Page {
   padding: 50px 0;
@@ -71,18 +83,61 @@ b {
     background-image: url('../images/bg-girl.png');
     background-position: 90% 100%;
     background-repeat: no-repeat;
+    @media only screen and (max-width: 991px) {
+      background-image: none;
+      .Title {
+        text-align: center;
+      }
+    }
   }
   &--details {
     .Title {
       margin-bottom: 40px;
+      @media only screen and (max-width: 991px) {
+        text-align: center;
+      }
     }
     p {
       font-size: 1.125em;
     }
+    @media only screen and (max-width: 600px) {
+      .Button {
+        margin-bottom: 20px;
+      }
+    }
   }
-  &--bg {
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size: contain;
+  &--flex {
+    @include display-flex();
+    .Page-flex50 {
+      @include flex-basis(50%);
+      @media only screen and (max-width: 991px) {
+        img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+    .Page-flex40 {
+      @include flex-basis(40%);
+      padding-left: 20px;
+      @media only screen and (max-width: 991px) {
+        padding: 20px;
+      }
+    }
+    @media only screen and (max-width: 991px) {
+      display: block;
+      overflow: hidden;
+    }
+  }
+}
+.Page-bg {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.Page-image {
+  @media only screen and (max-width: 991px) {
+    padding-top: 90px;
   }
 }

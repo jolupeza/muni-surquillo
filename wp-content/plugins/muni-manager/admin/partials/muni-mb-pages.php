@@ -13,6 +13,8 @@
         $values = get_post_custom( get_the_ID() );
         $video = isset($values['mb_video']) ? esc_attr($values['mb_video'][0]) : '';
         $icon = isset($values['mb_icon']) ? esc_attr($values['mb_icon'][0]) : '';
+        $link = isset($values['mb_link']) ? esc_attr($values['mb_link'][0]) : '';        
+        $linkText = isset($values['mb_link_text']) ? esc_attr($values['mb_link_text'][0]) : '';
         $files = isset($values['mb_files']) ?  $values['mb_files'][0]  :  '';
         $files_title = isset($values['mb_files_title']) ?  $values['mb_files_title'][0]  :  '';
 
@@ -29,6 +31,18 @@
     <p class="content-mb">
         <label for="mb_icon">Ícono: </label>
         <input type="text" name="mb_icon" id="mb_icon" value="<?php echo $icon; ?>" />
+    </p>
+    
+    <!-- Link-->
+    <p class="content-mb">
+        <label for="mb_link">Enlace: </label>
+        <input type="text" name="mb_link" id="mb_link" value="<?php echo $link; ?>" />
+    </p>
+    
+    <!-- Text Link-->
+    <p class="content-mb">
+        <label for="mb_link_text">Texto de enlace: </label>
+        <input type="text" name="mb_link_text" id="mb_link_text" value="<?php echo $linkText; ?>" />
     </p>
     
     <fieldset>

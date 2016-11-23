@@ -16,12 +16,6 @@
     <!-- endinject -->
     <!-- endbuild -->
 
-    <script>
-      // Picture element HTML5 shiv
-      // document.createElement( "picture" );
-    </script>
-    <!-- <script src="lib/picturefill/dist/picturefill.js" async></script> -->
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -30,27 +24,22 @@
     <![endif]-->
   </head>
   <body>
-    <!-- <div class="LoaderWrapper">
-      <div id="loader" class="animated bounce infinite"></div>
-      <div id="loadingbar"></div>
-    </div> --><!-- end LoaderWrapper -->
-
     <header class="Header">
-      <section class="Header-navTop text-right">
+      <section class="Header-navTop text-right hidden-xs hidden-sm">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
               <nav class="Menu-top-wrapper">
                 <ul class="Menu-top list-inline">
-                  <li class="active"><a href="">Agenda Telefónica</a></li>
-                  <li><a href="">Consultas online</a></li>
+                  <li><a href="agenda.html">Agenda Telefónica</a></li>
+                  <li><a href="consulta.html">Consultas online</a></li>
                 </ul><!-- end Menu-top -->
               </nav>
               <nav class="Menu-social-wrapper">
                 <ul class="Menu-social list-inline">
-                  <li class="Menu-social-fb"><a href="">f</a></li>
-                  <li class="Menu-social-lnk"><a href="">in</a></li>
-                  <li class="Menu-social-you"><a href="">y</a></li>
+                  <li><a href=""><i class="icons icon-facebook"></i></a></li>
+                  <li><a href=""><i class="icons icon-linkedin"></i></a></li>
+                  <li><a href=""><i class="icons icon-youtube"></i></a></li>
                 </ul><!-- end Menu-social -->
               </nav>
             </div><!-- end col-md-12 -->
@@ -60,31 +49,36 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-xs-4 col-xs-push-8 col-md-6 col-md-push-0">
             <h1 class="Header-logo">
-              <a href="http://muni-surquillo.web/app" title=""><img src="images/logo.png" alt=""></a>
+              <a href="http://muni-surquillo.web/app" title="">
+                <picture>
+                  <source media="(min-width: 992px)" srcset="images/logo.png">
+                  <img src="images/logo-escudo.png" alt="">
+                </picture>
+              </a>
             </h1>
           </div>
-          <div class="col-md-6">
+          <div class="col-xs-8 col-xs-pull-4 col-md-6 col-md-pull-0">
             <aside class="Header-central">
-              <i class="Header-central-icon Icon Icon--phone"></i>
+              <i class="Header-central-icon icons icon-phone"></i>
               <span>Central Telefónica <b>(51 1) 241 - 0413</b></span>
             </aside>
           </div>
         </div><!-- end row -->
       </div><!-- end container -->
 
-      <div class="container">
+      <div class="container hidden-xs hidden-sm">
         <div class="row">
           <div class="col-md-12">
             <nav class="Header-mainMenu text-center">
               <ul class="Menu-main list-inline">
-                <li><a href="index.html"><i class="icons icon-nav_home_icon"></i>Inicio</a></li>
-                <li><a href="somos-surquillo.html"><i class="icons icon-nav_municipio_icon"></i>Somos Surquillo</a></li>
-                <li><a href=""><i class="icons icon-servicios_icon_nav"></i>Servicios y trámites</a></li>
-                <li><a href="category.html"><i class="icons icon-nav_novedades_icon"></i>Novedades</a></li>
-                <li><a href=""><i class="icons icon-nav_transparencia_icon"></i>Transparencia</a></li>
-                <li><a href="contacto.html"><i class="icons icon-nav_contacto_icon"></i>Contacto</a></li>
+                <li><a href="index.html"><i class="icons icon-home"></i>Inicio</a></li>
+                <li><a href="somos-surquillo.html"><i class="icons icon-surquillo"></i>Somos Surquillo</a></li>
+                <li><a href=""><i class="icons icon-servicios"></i>Servicios y trámites</a></li>
+                <li><a href="category.html"><i class="icons icon-novedades"></i>Novedades</a></li>
+                <li><a href=""><i class="icons icon-transparencia"></i>Transparencia</a></li>
+                <li><a href="contacto.html"><i class="icons icon-contacto"></i>Contacto</a></li>
               </ul>
             </nav>
           </div>
@@ -101,7 +95,10 @@
 
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="images/resources/slide1.jpg" alt="" />
+          <picture>
+            <source class="img-responsive center-block" media="(max-width: 767px)" srcset="images/resources/slide1-responsive.jpg">
+            <img class="img-responsive center-block" src="images/resources/slide1.jpg" alt="">
+          </picture>
           <div class="carousel-caption">
             <h3 class="Carousel-captionTitle text-uppercase">mejorando</h3>
             <h4 class="Carousel-captionSubtitle text-uppercase">por el bien de los vecinos</h4>
@@ -110,7 +107,10 @@
         </div><!-- end Carousel-item -->
 
         <div class="item">
-          <img src="images/resources/slide2.jpg" alt="" />
+          <picture>
+            <source class="img-responsive center-block" media="(max-width: 767px)" srcset="images/resources/slide1-responsive.jpg">
+            <img class="img-responsive center-block" src="images/resources/slide2.jpg" alt="">
+          </picture>
           <div class="carousel-caption">
             <h3 class="Carousel-captionTitle text-uppercase">mejorando</h3>
             <h4 class="Carousel-captionSubtitle text-uppercase">por el bien de los vecinos</h4>
@@ -119,12 +119,12 @@
         </div><!-- end Carousel-item -->
       </div><!-- end Carousel-inner -->
 
-      <a href="about" class="js-move-scroll Carousel-arrow Button Button--arrowDown text-center text-uppercase">Ver más</a>
+      <a href="about" class="hidden-xs hidden-sm js-move-scroll Carousel-arrow Button Button--arrowDown text-center text-uppercase">Ver más</a>
     </section><!-- end Carousel -->
 
     <div class="container">
       <section class="About" id="about">
-        <div class="article About-item">
+        <div class="article About-item About-item--center">
           <h2 class="Title text--blue h1">Bienvenido a Surquillo</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non tempore ratione, ipsum amet sint dolore quisquam nihil mollitia iste esse quo, quas praesentium. Officia nobis consectetur, ea incidunt fuga beatae.</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit obcaecati consequatur provident. Quaerat, rem quod, nostrum dolores nemo odio, neque amet vero quis laborum facere ipsum rerum pariatur velit provident.</p>
@@ -132,21 +132,29 @@
           <p><b>Lorem ipsum</b> <br>Gerente Municipal</p>
         </div><!-- end About-item -->
         <div class="article About-item">
-          <figure class="Figure">
-            <img src="http://placehold.it/380x217/0054A6/fff/" alt="" class="img-responsive center-block">
-          </figure>
-          <h3 class="Subtitle text--blue text-center">Metas período 2016 - II</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione neque quo praesentium odit aspernatur aliquam quisquam nemo quaerat voluptatem sit ipsam repudiandae voluptate vero, excepturi, esse totam! Officiis, beatae quae?</p>
-          <p class="text-center"><a href="" class="Button Button--transp Button--blue">Ver metas</a></p>
+          <section class="About--flex">
+            <figure class="Figure">
+              <img src="http://placehold.it/380x217/0054A6/fff/" alt="" class="img-responsive center-block">
+            </figure>
+            <article class="About-info">
+              <h3 class="Subtitle text--blue text-center">Metas período 2016 - II</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione neque quo praesentium odit aspernatur aliquam quisquam nemo quaerat voluptatem sit ipsam repudiandae voluptate vero, excepturi, esse totam! Officiis, beatae quae?</p>
+              <p class="text-center"><a href="" class="Button Button--transp Button--blue">Ver metas</a></p>
+            </article><!-- end About-info -->
+          </section>
         </div><!-- end About-item -->
         <div class="article About-item About-item--skyblue">
           <h3 class="Subtitle text--white text-center">Programas y eventos</h3>
-          <figure class="Figure">
-            <img src="http://placehold.it/380x217/85a71e/fff/" alt="" class="img-responsive center-block">
-          </figure>
-          <h4 class="Subtitle text--white">Programa Ponte Pilas</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aut, corrupti incidunt architecto earum praesentium iste accusantium nemo tempora dolorem, distinctio officiis tenetur harum optio suscipit atque. Alias, magnam esse?</p>
-          <p><a href="">ver programa</a></p>
+          <section class="About--flex">
+            <figure class="Figure text-center">
+              <img src="http://placehold.it/380x217/85a71e/fff/" alt="" class="img-responsive center-block">
+            </figure>
+            <article class="About-info">
+              <h4 class="Subtitle text--white">Programa Ponte Pilas</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aut, corrupti incidunt architecto earum praesentium iste accusantium nemo tempora dolorem, distinctio officiis tenetur harum optio suscipit atque. Alias, magnam esse?</p>
+              <p><a href="">ver programa</a></p>
+            </article>
+          </section>
         </div><!-- end About-item -->
       </section><!-- end About -->
     </div><!-- end container -->

@@ -11,12 +11,6 @@
       <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <?php endif; ?>
 
-    <script>
-      // Picture element HTML5 shiv
-      // document.createElement( "picture" );
-    </script>
-    <!-- <script src="lib/picturefill/dist/picturefill.js" async></script> -->
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -31,13 +25,8 @@
   </head>
   <body <?php body_class(); ?>>
     <?php $options = get_option('muni_custom_settings'); ?>
-    <!-- <div class="LoaderWrapper">
-      <div id="loader" class="animated bounce infinite"></div>
-      <div id="loadingbar"></div>
-    </div> --><!-- end LoaderWrapper -->
-
     <header class="Header">
-      <nav class="Header-navTop text-right">
+      <nav class="Header-navTop text-right hidden-xs hidden-sm">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
@@ -54,13 +43,13 @@
                 <nav class="Menu-social-wrapper">
                   <ul class="Menu-social list-inline">
                     <?php if (!empty($options['facebook'])) : ?>
-                      <li class="Menu-social-fb"><a href="<?php echo $options['facebook']; ?>" title="Síguenos en Facebook" target="_blank" rel="noopener noreferrer">f</a></li>
+                      <li><a href="<?php echo $options['facebook']; ?>" title="Síguenos en Facebook" target="_blank" rel="noopener noreferrer"><i class="icons icon-facebook"></i></a></li>
                     <?php endif; ?>
                     <?php if (!empty($options['linkedin'])) : ?>
-                      <li class="Menu-social-lnk"><a href="<?php echo $options['linkedin']; ?>" title="Síguenos en Linkedin" target="_blank" rel="noopener noreferrer">in</a></li>
+                      <li><a href="<?php echo $options['linkedin']; ?>" title="Síguenos en Linkedin" target="_blank" rel="noopener noreferrer"><i class="icons icon-linkedin"></i></a></li>
                     <?php endif; ?>
                     <?php if (!empty($options['youtube'])) : ?>
-                      <li class="Menu-social-you"><a href="<?php echo $options['youtube']; ?>" title="Síguenos en Youtube" target="_blank" rel="noopener noreferrer">y</a></li>
+                      <li><a href="<?php echo $options['youtube']; ?>" title="Síguenos en Youtube" target="_blank" rel="noopener noreferrer"><i class="icons icon-youtube"></i></a></li>
                     <?php endif; ?>
                   </ul><!-- end Menu-social -->
                 </nav><!-- end Menu-social-wrapper -->
@@ -72,21 +61,26 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-xs-4 col-xs-push-8 col-md-6 col-md-push-0">
             <?php
               $custom_logo_id = get_theme_mod('custom_logo');
               $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
+              $logoMovil = (isset($options['logo_movil']) && !empty($options['logo_movil'])) ? $options['logo_movil'] : IMAGES . '/logo-escudo.png';
             ?>
             <h1 class="Header-logo">
               <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>">
-                <img src="<?php echo $logo[0]; ?>" alt="<?php bloginfo('name'); ?> | <?php bloginfo('description'); ?>">
+                <picture>
+                  <source media="(min-width: 992px)" srcset="<?php echo $logo[0]; ?>">
+                  <img src="<?php echo $logoMovil; ?>" alt="<?php bloginfo('name'); ?> | <?php bloginfo('description'); ?>">
+                </picture>
+                <!-- <img src="<?php //echo $logo[0]; ?>" alt="<?php //bloginfo('name'); ?> | <?php// bloginfo('description'); ?>"> -->
               </a>
             </h1>
           </div><!-- end col-md-6 -->
           <?php if (!empty($options['phone'])) : ?>
-            <div class="col-md-6">
+            <div class="col-xs-8 col-xs-pull-4 col-md-6 col-md-pull-0">
               <aside class="Header-central">
-                <i class="Header-central-icon Icon Icon--phone"></i>
+                <i class="Header-central-icon icons icon-phone"></i>
                 <span>Central Telefónica <b><?php echo $options['phone']; ?></b></span>
               </aside>
             </div><!-- end col-md-6 -->
@@ -94,7 +88,7 @@
         </div><!-- end row -->
       </div><!-- end container -->
 
-      <div class="container">
+      <div class="container hidden-xs hidden-sm">
         <div class="row">
           <div class="col-md-12">
             <?php

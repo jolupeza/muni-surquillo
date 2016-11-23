@@ -23,11 +23,26 @@
         width: 20px;
       }
     }
+    @media only screen and (max-width: 991px) {
+      left: 0;
+      text-align: center;
+      top: 110px;
+      width: 100%;
+    }
   }
   .carousel-caption {
     @include text-shadow(none);
     left: 50%;
     top: 25%;
+    p {
+      margin-bottom: 0;
+    }
+    @media only screen and (max-width: 991px) {
+      left: 0;
+      text-align: center;
+      top: 20%;
+      width: 100%;
+    }
   }
   .Carousel-captionTitle {
     background-color: $green;
@@ -37,6 +52,16 @@
     font-weight: 700;
     margin-top: 0;
     padding: 8px 15px;
+    @media only screen and (max-width: 991px) {
+      display: block;
+      font-size: 2.5em;
+      margin: 0 auto 15px;
+      width: 40%;
+    }
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 10px;
+      width: 90%;
+    }
   }
   .Carousel-captionSubtitle {
     background-color: $blue;
@@ -46,6 +71,16 @@
     font-weight: 700;
     margin-top: 0;
     padding: 8px 15px;
+    @media only screen and (max-width: 991px) {
+      display: block;
+      font-size: 2em;
+      margin: 0 auto 15px;
+      width: 70%;
+    }
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 10px;
+      width: 95%;
+    }
   }
   .Carousel-arrow {
     bottom: 20px;
@@ -53,6 +88,9 @@
     font-weight: 700;
     left: 45%;
     position: absolute;
+  }
+  @media only screen and (max-width: 991px) {
+    padding-top: 90px;
   }
 }
 

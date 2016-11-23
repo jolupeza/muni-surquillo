@@ -150,6 +150,20 @@ class Muni_Manager_Admin
             delete_post_meta($post_id, 'mb_icon');
         }
         
+        // Text Link
+        if (isset($_POST['mb_link_text']) && !empty($_POST['mb_link_text'])) {
+            update_post_meta($post_id, 'mb_link_text', esc_attr($_POST['mb_link_text']));
+        } else {
+            delete_post_meta($post_id, 'mb_link_text');
+        }
+        
+        // Link
+        if (isset($_POST['mb_link']) && !empty($_POST['mb_link'])) {
+            update_post_meta($post_id, 'mb_link', esc_attr($_POST['mb_link']));
+        } else {
+            delete_post_meta($post_id, 'mb_link');
+        }
+        
         // Files
         if (isset($_POST['mb_files']) && count($_POST['mb_files'])) {
             $files = $_POST['mb_files'];
@@ -226,6 +240,13 @@ class Muni_Manager_Admin
         // Target
         $target = isset($_POST['mb_target']) && $_POST['mb_target'] ? 'on' : 'off';
         update_post_meta($post_id, 'mb_target', $target);
+        
+        // Image Responsive
+        if (isset($_POST['mb_responsive']) && !empty($_POST['mb_responsive'])) {
+            update_post_meta($post_id, 'mb_responsive', esc_attr($_POST['mb_responsive']));
+        } else {
+            delete_post_meta($post_id, 'mb_responsive');
+        }
     }
 
     /**

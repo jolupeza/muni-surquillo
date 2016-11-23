@@ -4,24 +4,21 @@
 @import "utils";
 @import "general";
 @import "table";
+@import "boxes";
 
 @import "header";
 @import "carousel";
 @import "form";
 @import "pagination";
 @import "sidebar";
-
-/*
-.Page-loader
-  left: 45%;
-  position: fixed;
-  top: 45%;
-  z-index: 5;
-*/
+@import "single";
 
 // About
 .About {
   @include display-flex();
+  @media only screen and (max-width: 991px) {
+    display: block;
+  }
 }
 .About-item {
   @include flex-basis(33.3%);
@@ -42,6 +39,29 @@
   .Figure {
     margin-bottom: 20px;
   }
+  &--center {
+    text-align: center;
+  }
+  @media only screen and (max-width: 991px) {
+    padding: 20px;
+  }
+  @media only screen and (max-width: 600px) {
+    padding: 20px 0;
+  }
+}
+.About--flex {
+  @media only screen and (max-width: 991px) {
+    @include display-flex();
+    .Figure, .About-info {
+      @include flex-basis(50%);
+    }
+    .About-info {
+      padding: 0 15px;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    display: block;
+  }
 }
 
 // Cards
@@ -49,6 +69,12 @@
   @include display-flex();
   @include flex-wrap(wrap);
   margin: 25px 0;
+  @media only screen and (max-width: 991px) {
+    @include justify-content(space-between);
+  }
+  @media only screen and (max-width: 600px) {
+    display: block;
+  }
 }
 .Card-item {
   border: 1px solid $whiteDark;
@@ -69,10 +95,17 @@
   }
   .icons {
     color: $greenSoft;
-    font-size: 2.5em;
+    font-size: 3.5em;
     left: 30px;
     position: absolute;
-    top: -20px;
+    top: -28px;
+  }
+  @media only screen and (max-width: 991px) {
+    @include flex-basis(48%);
+    margin-right: 0;
+  }
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 45px;
   }
 }
 .Card-title {
@@ -87,6 +120,12 @@
   margin: 25px 0;
   &--wrap {
     @include flex-wrap(wrap);
+  }
+  @media only screen and (max-width: 991px) {
+    @include flex-wrap(wrap);
+  }
+  @media only screen and (max-width: 600px) {
+    display: block;
   }
 }
 .Box {
@@ -146,6 +185,10 @@
       @include text-shadow(1px 1px 0 rgba(black, 1));
     }
   }
+  @media only screen and (max-width: 991px) {
+    @include flex-basis(48%);
+    margin-bottom: 15px;
+  }
 }
 
 // Footer
@@ -154,6 +197,9 @@
   padding: 25px 0;
   .Title {
     margin-bottom: 25px;
+    @media only screen and (max-width: 991px) {
+      text-align: center;
+    }
   }
 }
 .Footer-logo {

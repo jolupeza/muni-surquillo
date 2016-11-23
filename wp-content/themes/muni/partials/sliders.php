@@ -33,13 +33,18 @@
           $url = isset($values['mb_url']) ? esc_attr($values['mb_url'][0]) : '';
           $target = isset($values['mb_target']) ? esc_attr($values['mb_target'][0]) : '';
           $target = (!empty($target) && $target === 'on') ? 'target="_blank" rel="noopener noreferrer"' : '';
+          $responsive = isset( $values['mb_responsive'] ) ? esc_attr($values['mb_responsive'][0]) : '';
         ?>
         <div class="item <?php echo $active; ?>">
-          <?php
-            if (has_post_thumbnail()) {
-              the_post_thumbnail('full', array('class' => 'img-responsive center-block'));
-            }
-          ?>
+          <?php if (has_post_thumbnail()) : ?>
+            <picture>
+              <?php if (!empty($responsive)) : ?>
+                <source class="img-responsive center-block" media="(max-width: 767px)" srcset="<?php echo $responsive; ?>">
+              <?php endif; ?>
+              <?php the_post_thumbnail('full', array('class' => 'img-responsive center-block')); ?>
+            </picture>
+
+          <?php endif?>
           <div class="carousel-caption">
             <?php $content = get_the_content(); ?>
             <h3 class="Carousel-captionTitle text-uppercase"><?php the_title(); ?></h3>
@@ -53,7 +58,7 @@
       <?php endwhile; ?>
     </div><!-- end Carousel-inner -->
 
-    <a href="about" class="js-move-scroll Carousel-arrow Button Button--arrowDown text-center text-uppercase">Ver más</a>
+    <a href="about" class="hidden-xs hidden-sm js-move-scroll Carousel-arrow Button Button--arrowDown text-center text-uppercase">Ver más</a>
   </section><!-- end Carousel -->
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>

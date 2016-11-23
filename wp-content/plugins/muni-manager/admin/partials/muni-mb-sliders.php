@@ -11,7 +11,7 @@
 
     <?php
         $values = get_post_custom( get_the_ID() );
-        // $responsive = isset( $values['mb_responsive'] ) ? esc_attr($values['mb_responsive'][0]) : '';
+        $responsive = isset( $values['mb_responsive'] ) ? esc_attr($values['mb_responsive'][0]) : '';
         $url = isset($values['mb_url']) ? esc_attr($values['mb_url'][0]) : '';
         $target = isset($values['mb_target']) ? esc_attr($values['mb_target'][0]) : '';
 
@@ -30,13 +30,12 @@
         <input type="checkbox" name="mb_target" id="mb_target" <?php checked($target, 'on'); ?> />
     </p>
 
-    <?php /*
     <fieldset class="GroupForm">
         <legend class="GroupForm-legend">Imagen Responsive</legend>
 
         <div class="container-upload-file GroupForm-wrapperImage">
             <p class="btn-add-file">
-                <a title="Set Slider Image" href="javascript:;" class="set-file button button-primary">Añadir</a>
+                <a title="Agregar imagen" href="javascript:;" class="set-file button button-primary">Añadir</a>
             </p>
 
             <div class="hidden media-container">
@@ -52,5 +51,4 @@
             </p><!-- .media-info -->
         </div><!-- end container-upload-file -->
     </fieldset><!-- end GroupFrm -->
-    */ ?>
 </div><!-- #single-post-meta-manager -->

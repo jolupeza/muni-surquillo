@@ -112,6 +112,14 @@ if (function_exists('register_sidebar'))
   // );
 }
 
+/*****************************************************************/
+/* Add Support excerpt to page */
+/*****************************************************************/
+function wpcodex_add_excerpt_support_for_pages() {
+  add_post_type_support( 'page', 'excerpt' );
+}
+add_action( 'init', 'wpcodex_add_excerpt_support_for_pages' );
+
 /***********************************************************/
 /* Register subscriptor via ajax */
 /***********************************************************/
@@ -376,6 +384,22 @@ function register_contact_callback()
 add_filter('wp_mail_from', function() {
   return 'jolupeza@gmail.com';
 });
+
+/**********************************************************************************/
+/* Short content */
+/**********************************************************************************/
+function getSubString($string, $length = NULL)
+{
+  //Si no se especifica la longitud por defecto es 50
+  if ($length == NULL)
+      $length = 50;
+  //Primero eliminamos las etiquetas html y luego cortamos el string
+  $stringDisplay = substr(strip_tags($string), 0, $length);
+  //Si el texto es mayor que la longitud se agrega puntos suspensivos
+  if (strlen(strip_tags($string)) > $length)
+      $stringDisplay .= ' ...';
+  return $stringDisplay;
+}
 
 /****************************************************/
 /* Load Theme Options Page and Custom Widgets */
