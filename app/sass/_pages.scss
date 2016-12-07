@@ -1,0 +1,403 @@
+.Page {
+  padding: 50px 0;
+  .Title {
+    margin-top: 0;
+  }
+  &--nopadding {
+    padding: 0;
+    .Title {
+      margin-top: 25px;
+    }
+  }
+  &--gray {
+    background-color: $graySoft;
+  }
+  &--blue {
+    background-color: $blueDark;
+    p {
+      color: $whiteDark;
+    }
+  }
+  &--blue1 {
+    background-color: $azul1;
+    a {
+      &.text--white {
+        &:hover {
+          color: $whiteDark;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  &--girl {
+    background-image: url('../images/bg-girl.png');
+    background-position: 90% 100%;
+    background-repeat: no-repeat;
+    &--small {
+      background-position: 90%;
+    }
+    @media only screen and (max-width: 991px) {
+      background-image: none;
+      .Title {
+        text-align: center;
+      }
+    }
+  }
+  &--simple {
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    @media only screen and (max-width: 991px) {
+      background-image: none !important;
+    }
+  }
+  &--locals {
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    // background-size: contain;
+    @media only screen and (max-width: 991px) {
+      background-image: none !important;
+    }
+  }
+  &--details {
+    .Title {
+      margin-bottom: 40px;
+      @media only screen and (max-width: 991px) {
+        text-align: center;
+      }
+    }
+    p {
+      font-size: 1.125em;
+    }
+    @media only screen and (max-width: 600px) {
+      .Button {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &--flex {
+    @include display-flex();
+    .Page-flex50 {
+      @include flex-basis(50%);
+      @media only screen and (max-width: 991px) {
+        img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+    .Page-flex40 {
+      @include flex-basis(40%);
+      padding-left: 20px;
+      @media only screen and (max-width: 991px) {
+        padding: 20px;
+      }
+    }
+    @media only screen and (max-width: 991px) {
+      display: block;
+      overflow: hidden;
+    }
+  }
+}
+.Page-bg {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.Page-image {
+  position: relative;
+  @media only screen and (max-width: 991px) {
+    padding-top: 90px;
+  }
+  .Page-image-title {
+    bottom: 25px;
+    left: 10%;
+    position: absolute;
+    width: 50%;
+    .Title {
+      background-color: $azul2;
+      display: inline-block;
+      margin: 0;
+      padding: 15px 20px;
+      @media only screen and (max-width: 991px) {
+        font-size: 1.5em;
+        text-align: center;
+      }
+    }
+    @media only screen and (max-width: 991px) {
+      width: 80%;
+    }
+    @media only screen and (max-width: 767px) {
+      bottom: 10px;
+    }
+  }
+}
+.Page-nav {
+  margin-bottom: 50px;
+  ul {
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+  li {
+    display: inline-block;
+    margin: 0 15px;
+    vertical-align: top;
+    a {
+      color: white;
+      display: block;
+      font-size: 1.375em;
+      font-weight: 600;
+      @include opacity(0.5);
+      padding-bottom: 5px;
+      @include transition(all 0.2s ease);
+      &:visited, &:hover, &:focus {
+        text-decoration: none;
+      }
+    }
+    &::after {
+      background-color: white;
+      content: "";
+      display: none;
+      height: 3px;
+      margin: 0 auto;
+      @include transition(all 0.2s ease);
+      width: 70%;
+    }
+    &.active, &:hover, &:focus {
+      a {
+        @include opacity(1);
+      }
+      &::after {
+        display: block;
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      margin: 0 15px 20px 15px;
+    }
+  }
+  &--box {
+    margin-top: 30px;
+    li {
+      border: 1px solid $whiteDark;
+      padding: 5px 15px;
+      position: relative;
+      a {
+        padding-bottom: 0;
+        @media only screen and (max-width: 991px) {
+          font-size: 1em;
+        }
+      }
+      &::after {
+        background-color: transparent;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 15px solid $whiteDark;
+        bottom: -15px;
+        height: 0;
+        left: 45%;
+        position: absolute;
+        width: 0;
+      }
+      &.active, &:hover, &:focus {
+        background-color: $whiteDark;
+        a {
+          color: $blueDark;
+          padding-bottom: 0;
+        }
+        &::after {
+          display: block;
+        }
+      }
+      @media only screen and (max-width: 991px) {
+        margin: 0;
+        padding: 15px 5px;
+      }
+      @media only screen and (max-width: 767px) {
+        &.active, &:hover, &:focus {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      ul {
+        @include display-flex();
+      }
+    }
+    @media only screen and (max-width: 600px) {
+      ul {
+        display: block;
+        li {
+          display: block;
+        }
+      }
+    }
+  }
+}
+.Page-body {
+  margin-bottom: 30px;
+  position: relative;
+  &--services {
+    margin-top: 50px;
+  }
+  &--minHeight {
+    min-height: 300px;
+  }
+  .Page-body-loader {
+    color: white;
+    font-size: 3em;
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    z-index: 9;
+  }
+  .Flex {
+    @media only screen and (max-width: 767px) {
+      display: block;
+    }
+  }
+  .Flex--box {
+    margin-bottom: 40px;
+    @media only screen and (max-width: 991px) {
+      @include flex-wrap(wrap);
+    }
+  }
+  .Flex-item {
+    @include flex-basis(50%);
+  }
+  @media only screen and (max-width: 991px) {
+    margin-bottom: 40px;
+  }
+}
+.Page-search {
+  margin-top: 50px;
+  @media only screen and (max-width: 991px) {
+    margin-top: 0;
+    padding-top: 90px;
+  }
+}
+
+.Page-breadcrumbs {
+  margin-bottom: 15px;
+  padding-left: 0;
+  li {
+    color: $azul1;
+    display: inline-block;
+    font-weight: 600;
+    list-style: none;
+    margin-right: 10px;
+    vertical-align: top;
+    a {
+      color: #3e3e3e;
+      font-weight: 400;
+      &:hover {
+        color: $azul1;
+        text-decoration: none;
+      }
+    }
+    &::after {
+      content: ">";
+      display: inline-block;
+      margin-left: 5px;
+      vertical-align: top;
+    }
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+.Page-services {
+  ul {
+    li {
+      color: $green;
+      a {
+        color: $azul1;
+        font-weight: 700;
+      }
+      &::before {
+        content: "\e909";
+        display: inline-block;
+        font-family: 'icomoon' !important;
+        font-size: 1.5em;
+        margin-right: 10px;
+        position: relative;
+        top: -5px;
+        vertical-align: top;
+      }
+      @media only screen and (max-width: 991px) {
+        padding: 10px 0;
+      }
+    }
+  }
+}
+
+.Page-medium {
+  background: transparent url('../images/bg-page-medium.png') 0 0 repeat-y;
+  padding: 25px 0;
+  .col-md-4 {
+    border-right: 1px solid $whiteDark;
+  }
+  p {
+    color: $whiteDark;
+  }
+  &.Page-services {
+    li {
+      color: $whiteDark;
+      a {
+        color: $whiteDark;
+      }
+    }
+  }
+}
+
+.Page-locals {
+  ul {
+    li {
+      color: $azul1;
+      font-weight: 700;
+      margin-bottom: 15px;
+      a {
+        color: $azul1;
+        font-weight: 700;
+        &::before {
+          color: $green;
+          content: "\e909";
+          display: inline-block;
+          font-family: 'icomoon' !important;
+          font-size: 1.5em;
+          margin-right: 10px;
+          position: relative;
+          top: -5px;
+          vertical-align: top;
+        }
+      }
+      @media only screen and (max-width: 991px) {
+        padding: 5px 0;
+      }
+    }
+  }
+  .Page-body {
+    &.Flex {
+      @include flex-wrap(wrap);
+    }
+    .Flex-25 {
+      @include flex-basis(25%);
+      @media only screen and (max-width: 991px) {
+        @include flex-basis(50%);
+      }
+    }
+    .Flex-item {
+      margin-bottom: 20px;
+      padding: 0 15px;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    .Flex {
+      display: block;
+    }
+  }
+}

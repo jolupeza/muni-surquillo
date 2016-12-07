@@ -40,6 +40,11 @@
       font-size: 1.29em;
       font-weight: 600;
     }
+    &.active {
+      a {
+        font-weight: 800;
+      }
+    }
   }
 }
 .Sidebar-widget-links {

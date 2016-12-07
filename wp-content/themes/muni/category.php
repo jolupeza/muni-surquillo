@@ -64,6 +64,7 @@
 
         </aside><!-- end Sidebar -->
 
+        <?php /*
         <aside class="Sidebar">
           <article class="Sidebar-widget Sidebar-widget--noMargin">
             <ul class="Sidebar-widget-links">
@@ -72,6 +73,7 @@
             </ul>
           </article><!-- end Sidebar-widget -->
         </aside><!-- end Sidebar -->
+        */ ?>
 
         <?php
           $filePath = TEMPLATEPATH . '/includes/last-programs.php';

@@ -8,15 +8,36 @@
  */
 ?>
 <div id="mb-sliders-id">
-
     <?php
         $values = get_post_custom( get_the_ID() );
         $responsive = isset( $values['mb_responsive'] ) ? esc_attr($values['mb_responsive'][0]) : '';
+        $link_text = isset($values['mb_link_text']) ? esc_attr($values['mb_link_text'][0]) : '';
         $url = isset($values['mb_url']) ? esc_attr($values['mb_url'][0]) : '';
         $target = isset($values['mb_target']) ? esc_attr($values['mb_target'][0]) : '';
+        $pageId = isset($values['mb_page']) ? esc_attr($values['mb_page'][0]) : '';
+        
+        $pages = get_pages();
 
         wp_nonce_field( 'sliders_meta_box_nonce', 'meta_box_nonce' );
     ?>
+    
+    <?php if (count($pages)) : ?>
+        <p class="content-mb">
+            <label for="mb_page">Páginas:</label>
+            <select name="mb_page" id="mb_page">
+                <option value="">-- Seleccionar página --</option>
+                <?php foreach ($pages as $page) : ?>
+                <option value="<?php echo $page->ID; ?>" <?php selected($pageId, $page->ID); ?>><?php echo $page->post_title; ?></option>
+                <?php endforeach; ?>
+            </select>
+        </p>
+    <?php endif; ?>
+        
+    <!-- Link Text-->
+    <p class="content-mb">
+        <label for="mb_link_text">Texto de enlace: </label>
+        <input type="text" name="mb_link_text" id="mb_link_text" value="<?php echo $link_text; ?>" />
+    </p>
 
     <!-- URL-->
     <p class="content-mb">
@@ -29,6 +50,8 @@
         <label for="mb_target">Mostrar en otra pestaña:</label>
         <input type="checkbox" name="mb_target" id="mb_target" <?php checked($target, 'on'); ?> />
     </p>
+    
+    
 
     <fieldset class="GroupForm">
         <legend class="GroupForm-legend">Imagen Responsive</legend>

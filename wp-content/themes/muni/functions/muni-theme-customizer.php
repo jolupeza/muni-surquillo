@@ -1,4 +1,5 @@
 <?php
+
 /***********************************************************************************************/
 /* Add a menu option to link to the customizer */
 /***********************************************************************************************/
@@ -107,7 +108,7 @@ function muni_customize_register($wp_customize) {
     ));
 
     // Description
-    $wp_customize->add_setting('muni_custom_settings[desc]', array(
+    /*$wp_customize->add_setting('muni_custom_settings[desc]', array(
         'default' => '',
         'type'    => 'option'
     ));
@@ -117,7 +118,7 @@ function muni_customize_register($wp_customize) {
         'section'  => 'muni_info',
         'settings' => 'muni_custom_settings[desc]',
         'type'     => 'textarea'
-    ));
+    ));*/
 
     // Address
     $wp_customize->add_setting('muni_custom_settings[address]', array(
@@ -130,6 +131,32 @@ function muni_customize_register($wp_customize) {
         'section'  => 'muni_info',
         'settings' => 'muni_custom_settings[address]',
         'type'     => 'textarea'
+    ));
+
+    // Latitud
+    $wp_customize->add_setting('muni_custom_settings[map_latitud]', array(
+        'default' => '',
+        'type'    => 'option'
+    ));
+
+    $wp_customize->add_control('muni_custom_settings[map_latitud]', array(
+        'label'    => __('Ubicación Google Map Latitud', THEMEDOMAIN),
+        'section'  => 'muni_info',
+        'settings' => 'muni_custom_settings[map_latitud]',
+        'type'     => 'text'
+    ));
+
+    // Longitud
+    $wp_customize->add_setting('muni_custom_settings[map_longitud]', array(
+        'default' => '',
+        'type'    => 'option'
+    ));
+
+    $wp_customize->add_control('muni_custom_settings[map_longitud]', array(
+        'label'    => __('Ubicación Google Map Longitud', THEMEDOMAIN),
+        'section'  => 'muni_info',
+        'settings' => 'muni_custom_settings[map_longitud]',
+        'type'     => 'text'
     ));
 
     // Email
@@ -155,6 +182,19 @@ function muni_customize_register($wp_customize) {
         'label'    => __('Central Telefónica', THEMEDOMAIN),
         'section'  => 'muni_info',
         'settings' => 'muni_custom_settings[phone]',
+        'type'     => 'text'
+    ));
+
+    // Alerta
+    $wp_customize->add_setting('muni_custom_settings[phone_alert]', array(
+        'default' => '',
+        'type'    => 'option'
+    ));
+
+    $wp_customize->add_control('muni_custom_settings[phone_alert]', array(
+        'label'    => __('Seguridad Ciudadana', THEMEDOMAIN),
+        'section'  => 'muni_info',
+        'settings' => 'muni_custom_settings[phone_alert]',
         'type'     => 'text'
     ));
 
@@ -236,7 +276,7 @@ function muni_customize_register($wp_customize) {
         'type' => 'option'
     ));
 
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'plano', array(
+    $wp_customize->add_control(new WP_Customize_Upload_control($wp_customize, 'plano', array(
         'label' => __('Plano distrital', THEMEDOMAIN),
         'section' => 'muni_data',
         'settings' => 'muni_custom_settings[plano]'

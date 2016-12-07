@@ -29,7 +29,6 @@
         <li data-target="#carousel-novedades" data-slide-to="<?php echo $i; ?>" class="<?php echo $active; ?>"></li>
         <?php $i++; ?>
       <?php endwhile; ?>
-      <li data-target="#carousel-novedades" data-slide-to="1"></li>
     </ol><!-- end Carousel-indicators -->
   <?php endif; ?>
 
@@ -38,10 +37,20 @@
       <?php $the_query->the_post(); ?>
       <?php $active = ($j === 0) ? 'active' : ''; ?>
       <?php $category = get_the_category(); ?>
+      <?php
+        $values = get_post_custom(get_the_id());
+        $responsive = isset( $values['mb_responsive'] ) ? esc_attr($values['mb_responsive'][0]) : '';
+      ?>
 
       <?php if (has_post_thumbnail()) : ?>
         <div class="item <?php echo $active; ?>">
-          <?php the_post_thumbnail('full', array('class' => 'img-responsive center-block')); ?>
+          <picture>
+            <?php if (!empty($responsive)) : ?>
+                <source class="img-responsive center-block" media="(max-width: 767px)" srcset="<?php echo $responsive; ?>">
+              <?php endif; ?>
+              <?php the_post_thumbnail('full', array('class' => 'img-responsive center-block')); ?>
+          </picture>
+
           <div class="carousel-caption">
             <h3 class="Carousel-category text--white text-uppercase"><?php echo $category[0]->name; ?></h3>
             <h2 class="Carousel-captionTitle text-uppercase"><?php the_title(); ?></h2>

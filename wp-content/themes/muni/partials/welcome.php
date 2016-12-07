@@ -16,3 +16,4 @@
       </div><!-- end About-item -->
 <?php endwhile; ?>
 <?php endif; ?>
+<?php wp_reset_postdata(); ?>

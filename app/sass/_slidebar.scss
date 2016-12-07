@@ -1,0 +1,176 @@
+.Slidebar {
+  background-color: $azul1;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  overflow-y: auto;
+  padding: 30px 0;
+  position: fixed;
+  @include scale(0);
+  @include transition(all 0.2s ease-in-out);
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  &.active {
+    opacity: 1;
+    @include scale(1);
+  }
+  .Menu-top-wrapper, .Menu-social-wrapper {
+    display: block;
+  }
+  .Menu-top-wrapper {
+    border-bottom: 1px solid rgba(white, 0.4);
+    border-top: 1px solid rgba(white, 0.4);
+    margin-bottom: 25px;
+    padding: 25px 0;
+    .Menu-top {
+      margin: 0;
+      @media only screen and (max-width: 600px) {
+        li {
+          display: block;
+          margin-bottom: 20px;
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+    li {
+      a {
+        color: $whiteDark;
+        font-size: 1.5em;
+        padding-bottom: 3px;
+      }
+      &.active, &.current-menu-item, &:hover {
+        a {
+          border-bottom: 2px solid $whiteDark;
+          color: $whiteDark;
+        }
+      }
+    }
+  }
+  .Menu-social-wrapper {
+    margin: 0 0 25px 0;
+  }
+  .Menu-social {
+    li {
+      padding: 5px 15px;
+      a {
+        color: $whiteDark;
+        font-size: 2em;
+        &:hover {
+          color: $green;
+        }
+      }
+    }
+  }
+  .Header-central {
+    width: 45%;
+    span {
+      color: $whiteDark;
+      font-size: 1.2em;
+      b {
+        color: $whiteDark;
+        font-size: 1.5em;
+      }
+    }
+    @media only screen and (max-width: 991px) {
+      margin-left: 0;
+    }
+    @media only screen and (max-width: 767px) {
+      display: block;
+      margin: 0 auto 20px;
+      width: 90%;
+    }
+  }
+}
+.Slidebar-close {
+  color: $whiteDark;
+  cursor: pointer;
+  font-size: 2em;
+  position: absolute;
+  left: 25px;
+  top: 25px;
+}
+.Slidebar-nav {
+  margin-bottom: 25px;
+  margin-top: 100px;
+  overflow: hidden;
+  @media only screen and (max-width: 767px) {
+    margin-top: 70px;
+  }
+}
+.Slidebar-list {
+  margin: 0 auto;
+  padding-left: 0;
+  width: 50%;
+  li {
+    list-style: none;
+    margin-bottom: 25px;
+    a {
+      color: $whiteDark;
+      font-size: 1.625em;
+      padding-bottom: 3px;
+      &:hover, &:focus {
+        text-decoration: none;
+      }
+      .icons {
+        margin-right: 15px;
+      }
+      @media only screen and (max-width: 767px) {
+        font-size: 1.5em;
+      }
+    }
+    &:hover, &:focus, &.current-menu-item, &.current-category-ancestor, &.current-post-ancestor, &.current-page-ancestor {
+      > a {
+        border-bottom: 2px solid $whiteDark;
+        color: $whiteDark;
+        text-decoration: none;
+        .icons {
+          text-decoration: none;
+        }
+      }
+    }
+    &.js-more {
+      position: relative;
+      .js-slidebar-nav-more {
+        color: $whiteDark;
+        cursor: pointer;
+        display: block;
+        font-family: 'icomoon' !important;
+        font-size: 1.5em;
+        padding: 6px;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+    .sub-menu {
+      display: none;
+      margin-top: 15px;
+      @include transition(all 0.2s ease);
+      &.active {
+        display: block;
+      }
+      li {
+        &:hover, &:focus, &.current-menu-item, &.current-category-ancestor, &.current-post-ancestor, &.current-page-ancestor {
+          > a {
+            border-bottom: 2px solid $whiteDark;
+            color: $whiteDark;
+            text-decoration: none;
+            .icons {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    width: 80%
+  }
+  @media only screen and (max-width: 450px) {
+    width: 90%
+  }
+}
+

@@ -5,17 +5,10 @@
         <div class="row">
           <div class="col-md-4">
             <?php
-              $logo = (!empty($options['logo'])) ? $options['logo'] : IMAGES . '/logo-footer.png';
+              $lat = $options['map_latitud'];
+              $long = $options['map_longitud'];
             ?>
-            <h3 class="Footer-logo text-center">
-              <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>">
-                <img class="img-responsive center-block" src="<?php echo $logo; ?>" alt="<?php bloginfo('name'); ?> | <?php bloginfo('description'); ?>">
-              </a>
-            </h3><!-- end Footer-logo -->
-
-            <?php if (!empty($options['desc'])) : ?>
-              <p class="text--white"><?php echo $options['desc']; ?></p>
-            <?php endif; ?>
+            <figure class="Footer-map" id="map" data-lat="<?php echo $lat; ?>" data-long="<?php echo $long; ?>"></figure>
           </div><!-- end col-md-4 -->
           <div class="col-md-4">
             <div class="row">
@@ -52,9 +45,9 @@
               <p class="text-center text--white" id="js-form-subs-msg"></p>
 
               <div class="form-group">
-                <label for="email" class="sr-only">Correo electrónico</label>
+                <label for="emailsub" class="sr-only">Correo electrónico</label>
                 <div class="input-group">
-                  <input type="email" name="email" id="email" class="form-control" placeholder="Ingresa tu correo electrónico" aria-describedby="basic-email" required>
+                  <input type="email" name="emailsub" id="emailsub" class="form-control" placeholder="Ingresa tu correo electrónico" aria-describedby="basic-email" required>
                   <span class="input-group-addon" id="basic-email"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
                 </div>
               </div><!-- end form-group -->
@@ -63,6 +56,24 @@
                 <button type="submit" class="Button Button--transp Button--white text-uppercase">Suscribirme</button>
               </p>
             </form>
+
+            <?php if (!empty($options['phone']) || !empty($options['phone_alert'])) : ?>
+              <div class="Header-central-wrapper text-center">
+                <?php if (!empty($options['phone'])) : ?>
+                  <aside class="Header-central">
+                    <i class="Header-central-icon icons icon-phone text--red"></i>
+                    <span>Central Telefónica <b><?php echo $options['phone']; ?></b></span>
+                  </aside>
+                <?php endif; ?>
+
+                <?php if (!empty($options['phone_alert'])) : ?>
+                  <aside class="Header-central">
+                    <i class="Header-central-icon icons icon-phone text--green"></i>
+                    <span>Seguridad Ciudadana <b><?php echo $options['phone_alert']; ?></b></span>
+                  </aside>
+                <?php endif; ?>
+              </div><!-- end Header-central-wrapper -->
+            <?php endif; ?>
           </div><!-- end col-md-4 -->
         </div><!-- end row -->
       </div><!-- end container -->
@@ -77,9 +88,134 @@
     <!-- <button class="ArrowTop text-hide">Ir a arriba</button> -->
 
     <script>
-      var _root_ = '<?php echo home_url(); ?>'
+      var _root_ = '<?php echo home_url(); ?>';
+
+      var players = new Array();
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      function onYouTubeIframeAPIReady() {
+        if (typeof playerInfoList === 'undefined') return;
+
+        for (var i = 0; i < playerInfoList.length; i++) {
+          var curplayer = createPlayer(playerInfoList[i]);
+          players[i] = curplayer;
+        }
+      }
+
+      function createPlayer(playerInfo) {
+        return new YT.Player(playerInfo.idPlayer, {
+            height: playerInfo.height,
+            width: playerInfo.width,
+            videoId: playerInfo.videoId,
+            events: {
+              // 'onReady': onPlayerReady,
+              'onStateChange': onPlayerStateChange
+            }
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      // var done = false;
+      function onPlayerStateChange(event) {
+        if (event.target.a.className === 'Page-video') {
+          // if (event.data == YT.PlayerState.PLAYING && !done) {
+          if (event.data == YT.PlayerState.PLAYING) {
+            if (jQuery('#carousel-programs-events').length) {
+              jQuery('#carousel-programs-events').carousel('pause');
+            }
+          }
+
+          if ((event.data == YT.PlayerState.ENDED) || (event.data == YT.PlayerState.PAUSED)) {
+            if (jQuery('#carousel-programs-events').length) {
+              jQuery('#carousel-programs-events').carousel('cycle');
+            }
+          }
+        }
+      }
+
+      function stopVideoPlayer(player) {
+        player.stopVideo();
+      }
+
+      function stopVideo() {
+        player.stopVideo();
+      }
+
+      function loadVideo(id) {
+        player.loadVideoById(id);
+      }
+
+      function resizeVideoPlayer(player, width, height) {
+        player.setSize(width, height);
+      }
+
+      function resizeVideo(width, height) {
+        player.setSize(width, height);
+      }
+    </script>
+
+    <script>
+      var map, marker, infowindow;
     </script>
 
     <?php wp_footer(); ?>
+
+    <?php
+      if (!empty($lat) && !empty($long)) :
+    ?>
+      <script>
+        var lat = <?php echo $lat; ?>,
+            lon = <?php echo $long; ?>;
+        var contentString = '<div id="content" class="Marker">'+
+              '<div id="siteNotice">'+
+              '</div>'+
+              '<h1 id="firstHeading" class="firstHeading Marker-title text-center">Municipalidad de Surquillo</h1>'+
+              '<div id="bodyContent" class="Marker-body">'+
+              '<ul class="Marker-list">'+
+              '<li><strong>Dirección: </strong><?php echo $options['address'] ?></li>'+
+              '<li><strong>Teléfono: </strong><?php echo $options['phone'] ?></li>'+
+              '<li><strong>Correo: </strong><?php echo $options['email_contact'] ?></li>'+
+              '</ul>'+
+              '</div>'+
+              '</div>';
+
+        function initMap() {
+          var mapCoord = new google.maps.LatLng(lat, lon);
+
+          var opciones = {
+            zoom: 16,
+            center: mapCoord,
+            zoomControl: false,
+            mapTypeControl: false,
+            streetViewControl: false,
+            scrollwheel: false,
+          }
+
+          infowindow = new google.maps.InfoWindow({
+            content: contentString,
+            maxWidth: 300
+          });
+
+          map = new google.maps.Map(document.getElementById('map'), opciones);
+
+          marker = new google.maps.Marker({
+            position: mapCoord,
+            map: map,
+            title: 'Municipalidad de Surquillo'
+          });
+        }
+      </script>
+
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkaZmovHKN7O8UujpIT5BXnJBFow4Absk&callback=initMap">
+      </script>
+    <?php endif; ?>
   </body>
 </html>

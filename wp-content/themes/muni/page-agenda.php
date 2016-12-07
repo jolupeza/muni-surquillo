@@ -8,11 +8,22 @@
 <?php if (have_posts()) : ?>
   <?php while (have_posts()) : ?>
     <?php the_post(); ?>
-    <?php $idPage = get_the_id(); ?>
+    <?php
+      $idPage = get_the_id();
+      $values = get_post_custom($idPage);
+
+      $responsive = isset( $values['mb_responsive'] ) ? esc_attr($values['mb_responsive'][0]) : '';
+    ?>
     <?php if (has_post_thumbnail()) : ?>
       <figure class="Page-image Page-image--full">
-        <?php the_post_thumbnail('full', ['class' => 'img-responsive center-block']); ?>
+        <picture>
+          <?php if (!empty($responsive)) : ?>
+              <source class="img-responsive center-block" media="(max-width: 767px)" srcset="<?php echo $responsive; ?>">
+            <?php endif; ?>
+            <?php the_post_thumbnail('full', array('class' => 'img-responsive center-block')); ?>
+        </picture>
       </figure>
+    <?php endif; ?>
 
       <section class="Page Page--details">
         <div class="container">
@@ -26,66 +37,71 @@
                 <?php endif; ?>
               </h2>
               <?php the_content(); ?>
+  <?php endwhile; ?>
+<?php endif; ?>
 
-              <section class="ColsFlex">
-                <article class="Col Col--colors Col--orange Col--33 text-center">
-                  <h3 class="Title-semi text--blue">Consulta tributaria</h3>
-                  <h2 class="Title text--orange h1">241-0413</h2>
+              <?php
+                global $wpdb;
+                $sections = $wpdb->get_results("SELECT tt.term_taxonomy_id, t.term_id, t.name, tt.description FROM $wpdb->term_taxonomy tt INNER JOIN $wpdb->terms t ON tt.term_id = t.term_id WHERE tt.taxonomy = 'sections'");
+                if (count($sections)) :
+              ?>
+                <section class="ColsFlex">
+                  <?php foreach ($sections as $section) : ?>
+                    <?php
+                      $descArr = explode(',', $section->description);
+                      $color = $descArr[0];
+                      $option = $descArr[1];
+                      $title = $section->name;
+                      $titleArr = explode(' ', $title);
 
-                  <div class="wrapper-select wrapper-select--orange">
-                    <select name="subject" id="subject" required data-fv-notempty-message="Seleccionar asunto">
-                      <option value="">-- Seleccione una oficina --</option>
-                      <option value="1">Asunto 1</option>
-                    </select>
-                  </div>
+                      $firstParagraph = trim(substr($title, 0, strrpos($title, ' ')));
+                      $lastParagraph = trim($titleArr[count($titleArr) - 1]);
+                    ?>
 
-                  <div class="Square">
-                    <h4 class="Title-semi Square-title text-center">Gerencia General</h4>
-                    <h3 class="Title-bold Square-number">Anexo 113</h3>
-                  </div>
-                </article><!-- emd Col -->
+                    <article class="Col Col--colors Col--<?php echo $color; ?> Col--33 text-center">
+                      <h3 class="Title-semi text--blue"><?php echo $firstParagraph; ?></h3>
+                      <h2 class="Title text--<?php echo $color; ?> h1"><?php echo $lastParagraph; ?></h2>
 
-                <article class="Col Col--colors Col--green Col--33 text-center">
-                  <h3 class="Title-semi text--blue">Teléfonos de</h3>
-                  <h2 class="Title text--green h1">Emergencia</h2>
+                      <?php
+                        $args = [
+                          'post_type' => 'directories',
+                          'posts_per_page' => -1,
+                          'tax_query' => array(
+                            array(
+                              'taxonomy' => 'sections',
+                              'terms' => $section->term_id
+                            )
+                          ),
+                        ];
+                        $the_query = new WP_Query($args);
+                        if ($the_query->have_posts()) :
+                      ?>
 
-                  <div class="wrapper-select wrapper-select--green">
-                    <select name="subject" id="subject" required data-fv-notempty-message="Seleccionar asunto">
-                      <option value="">-- Seleccione una institución --</option>
-                      <option value="1">Asunto 1</option>
-                    </select>
-                  </div>
+                      <div class="wrapper-select wrapper-select--<?php echo $color; ?>">
+                        <select class="js-select-directory" data-id="<?php echo $section->term_id; ?>">
+                          <option value="">-- <?php echo $option; ?> --</option>
+                          <?php while ($the_query->have_posts()) : ?>
+                            <?php $the_query->the_post(); ?>
+                            <option value="<?php echo get_the_id(); ?>"><?php the_title(); ?></option>
+                          <?php endwhile; ?>
+                        </select>
+                      </div>
+                      <?php endif; ?>
+                      <?php wp_reset_postdata(); ?>
 
-                  <div class="Square">
-                    <h4 class="Title-semi Square-title text-center">Gerencia General</h4>
-                    <h3 class="Title-bold Square-number">Anexo 113</h3>
-                  </div>
-                </article><!-- emd Col -->
+                      <div class="Square hidden">
+                        <span class="Square-loader text-center glyphicon glyphicon-refresh animated rotateIn hidden" aria-hidden="true"></span>
 
-                <article class="Col Col--colors Col--skyBlue Col--33 text-center">
-                  <h3 class="Title-semi text--blue">Teléfonos de los</h3>
-                  <h2 class="Title text--skyBlue h1">Locales</h2>
-
-                  <div class="wrapper-select wrapper-select--skyBlue">
-                    <select name="subject" id="subject" required data-fv-notempty-message="Seleccionar asunto">
-                      <option value="">-- Seleccione una sede --</option>
-                      <option value="1">Asunto 1</option>
-                    </select>
-                  </div>
-
-                  <div class="Square">
-                    <h4 class="Title-semi Square-title text-center">Gerencia General</h4>
-                    <h3 class="Title-bold Square-number">Anexo 113</h3>
-                  </div>
-                </article><!-- emd Col -->
-              </section><!-- end ColsFlex -->
+                        <h4 class="Title-semi Square-title text-center hidden"></h4>
+                        <h3 class="Title-bold Square-number hidden"></h3>
+                      </div><!-- end Square -->
+                    </article><!-- emd Col -->
+                  <?php endforeach; ?>
+                </section><!-- end ColsFlex -->
+              <?php endif; ?>
             </div><!-- end col-md-12 -->
           </div><!-- end row -->
         </div><!-- end container -->
       </section><!-- end Page -->
-
-      <?php endif; ?>
-  <?php endwhile; ?>
-<?php endif; ?>
 
 <?php get_footer(); ?>

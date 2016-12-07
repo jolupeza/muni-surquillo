@@ -16,6 +16,9 @@
   display: inline-block;
   vertical-align: top;
 }
+.Menu-social-wrapper {
+  margin-right: 50px
+}
 .Menu-top {
   margin-bottom: 0;
   margin-right: 15px;
@@ -72,13 +75,16 @@
   }
 }
 .Header-central {
-  margin: 40px 0 0 auto;
-  width: 60%;
+  display: inline-block;
+  margin: 40px 20px 0 auto;
+  vertical-align: top;
+  width: 250px;
   span {
     color: $text-soft;
     display: inline-block;
     font-size: 0.875em;
     font-weight: 600;
+    text-align: left;
     vertical-align: top;
     width: 70%;
     b {
@@ -91,14 +97,20 @@
       }
     }
   }
+  @media only screen and (max-width: 1100px) {
+    margin-right: 10px;
+  }
   @media only screen and (max-width: 991px) {
+    margin-right: 10px;
     margin-top: 15px;
-    width: 100%;
+    text-align: left;
+    &:first-child {
+      margin-left: 60px;
+    }
   }
 }
 .Header-central-icon {
   border: 1px solid $graySoft;
-  color: $red;
   display: inline-block;
   font-size: 1.75em;
   margin-right: 10px;
@@ -114,17 +126,39 @@
   width: 100%;
   z-index: 9;
 }
+.Header-navToggle {
+  background-color: $azul1;
+  border: none;
+  display: none;
+  cursor: pointer;
+  padding: 30px 20px;
+  left: 0;
+  position: absolute;
+  z-index: 9;
+  .Icon {
+    &::before {
+      height: 30px;
+      width: 33px;
+    }
+  }
+  @media only screen and (max-width: 991px) {
+    display: block;
+  }
+}
 .Menu-main {
   margin-bottom: 0;
   li {
-    margin-right: -4px;
-    padding: 15px 25px;
+    margin-right: -5px;
+    padding: 0;
+    position: relative;
     text-transform: uppercase;
     @include transition(all 0.2s ease);
     a {
       color: white;
+      display: block;
       font-size: 0.875em;
       font-weight: 700;
+      padding: 15px 25px 13px 25px;
       .icons {
         font-size: 1.14em;
         margin-right: 10px;
@@ -132,33 +166,124 @@
       &:hover, &:focus {
         text-decoration: none;
       }
+      @media only screen and (min-width: 992px) and (max-width: 1100px) {
+        font-size: 0.75em;
+        padding: 15px 10px 13px 10px;
+      }
     }
     &:first-child {
       background-color: $azul1;
-      border-bottom: 2px solid $azul1;
+      .sub-menu {
+        li {
+          background-color: $azul1;
+        }
+      }
     }
     &:nth-child(2) {
       background-color: $azul2;
-      border-bottom: 2px solid $azul2;
+      .sub-menu {
+        li {
+          background-color: $azul2;
+        }
+      }
     }
     &:nth-child(3) {
       background-color: $azul3;
-      border-bottom: 2px solid $azul3;
+      .sub-menu {
+        li {
+          background-color: $azul3;
+        }
+      }
     }
     &:nth-child(4) {
       background-color: $azul4;
-      border-bottom: 2px solid $azul4;
+      .sub-menu {
+        li {
+          background-color: $azul4;
+        }
+      }
     }
     &:nth-child(5) {
       background-color: $azul5;
-      border-bottom: 2px solid $azul5;
+      .sub-menu {
+        li {
+          background-color: $azul5;
+        }
+      }
     }
     &:last-child {
       background-color: $azul6;
-      border-bottom: 2px solid $azul6;
+      .sub-menu {
+        li {
+          background-color: $azul6;
+        }
+      }
     }
-    &:hover, &.current-menu-item, &.current-category-ancestor, &.current-post-ancestor {
-      border-bottom-color: $whiteDark;
+    &:hover, &.current-menu-item, &.current-category-ancestor, &.current-post-ancestor, &.current-page-ancestor {
+      &::after {
+        background-color: white;
+      }
+    }
+    &:hover {
+      > .sub-menu {
+        display: block;
+      }
+    }
+    &::after {
+      background-color: transparent;
+      content: "";
+      display: block;
+      height: 2px;
+      margin: 0 auto;
+      @include transition(all 0.2s ease);
+      width: 70%;
     }
   }
+  .sub-menu {
+    display: none;
+    left: 0;
+    margin-top: 2px;
+    padding-left: 0;
+    position: absolute;
+    @include transition(all 0.2s ease);
+    min-width: 100%;
+    li {
+      color: white;
+      list-style: disc;
+      list-style-position: inside;
+      padding: 0 15px;
+      text-align: left;
+      a {
+        display: inline-block;
+        padding: 15px 0 13px 0;
+      }
+      @media only screen and (min-width: 992px) and (max-width: 1100px) {
+        padding: 0 10px;
+        a {
+          padding: 15px 0 13px 0;
+        }
+      }
+    }
+  }
+}
+
+.Header-search {
+  background-color: $whiteDark;
+  display: none;
+  position: absolute;
+  top: 0;
+  @include transition(all 0.2s ease);
+  width: 100%;
+  z-index: 9;
+  &.active {
+
+  }
+}
+.Header-buttonSearch {
+  background-color: $whiteDark;
+  border: none;
+  font-size: 1.5em;
+  padding: 5px 10px;
+  position: absolute;
+  right: 15px;
 }

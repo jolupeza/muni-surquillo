@@ -1,10 +1,16 @@
 <?php
-  $pageParent = get_page_by_title('Servicios Municipales');
+  $pageParent = get_page_by_title('Servicios y Trámites');
 
   $args = array(
     'posts_per_page' => 5,
     'post_type' => 'page',
     'post_parent' => $pageParent->ID,
+    'meta_query' => array(
+      array(
+        'key'     => 'mb_display_home',
+        'value'   => 'on'
+      ),
+    ),
     'order' => 'ASC',
     'orderby' => 'menu_order'
   );
@@ -15,7 +21,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <h2 class="Title text--white h1">Servicios Municipales</h2>
+          <h2 class="Title text--white text-center h1">Nuestros Servicios</h2>
         </div><!-- end col-xs-12 -->
       </div><!-- end row -->
 
@@ -37,7 +43,7 @@
         <?php endwhile; ?>
       </section>
 
-      <p class="text-center"><a href="" class="Button Button--transp Button--white">Ver más servicios ></a></p>
+      <p class="text-center"><a href="<?php echo get_permalink($pageParent->ID); ?>" class="Button Button--transp Button--white">Ver más servicios ></a></p>
     </div><!-- end container -->
   </section><!-- end Page -->
 <?php endif; ?>

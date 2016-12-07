@@ -30,10 +30,19 @@
         <?php $active = ($j === 0) ? 'active' : ''; ?>
         <?php
           $values = get_post_custom( get_the_ID() );
+
+          $pageId = isset($values['mb_page']) ? esc_attr($values['mb_page'][0]) : 0;
+          $link_text = isset($values['mb_link_text']) ? esc_attr($values['mb_link_text'][0]) : '';
+
           $url = isset($values['mb_url']) ? esc_attr($values['mb_url'][0]) : '';
           $target = isset($values['mb_target']) ? esc_attr($values['mb_target'][0]) : '';
           $target = (!empty($target) && $target === 'on') ? 'target="_blank" rel="noopener noreferrer"' : '';
           $responsive = isset( $values['mb_responsive'] ) ? esc_attr($values['mb_responsive'][0]) : '';
+
+          if ($pageId) {
+            $url = get_page_link($pageId);
+            $target = '';
+          }
         ?>
         <div class="item <?php echo $active; ?>">
           <?php if (has_post_thumbnail()) : ?>
@@ -49,8 +58,9 @@
             <?php $content = get_the_content(); ?>
             <h3 class="Carousel-captionTitle text-uppercase"><?php the_title(); ?></h3>
             <h4 class="Carousel-captionSubtitle text-uppercase"><?php echo $content; ?></h4>
+
             <?php if (!empty($url)) : ?>
-              <p><a href="<?php echo $url; ?>" class="Button Button--transp Button--white text-uppercase" <?php echo $target; ?>>ver metas ></a></p>
+              <p><a href="<?php echo $url; ?>" class="Button Button--transp Button--white text-uppercase" <?php echo $target; ?>><?php echo $link_text; ?> ></a></p>
           <?php endif; ?>
           </div><!-- end Carousel-caption -->
         </div><!-- end Carousel-item -->

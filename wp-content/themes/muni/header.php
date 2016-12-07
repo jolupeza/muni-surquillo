@@ -21,6 +21,17 @@
     <!-- Script required for extra functionality on the comment form -->
     <?php if (is_singular()) wp_enqueue_script( 'comment-reply' ); ?>
 
+    <!-- Api Youtube -->
+    <script>
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var playerInfoList = [];
+    </script>
+
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
@@ -54,14 +65,35 @@
                   </ul><!-- end Menu-social -->
                 </nav><!-- end Menu-social-wrapper -->
               <?php endif; ?>
+
+              <button type="button" class="Header-buttonSearch" id="js-display-search">
+                <i class="icons icon-search"></i>
+              </button>
+
+              <div class="Header-search">
+                <form class="Search text-center" action="<?php echo home_url(); ?>" method="get">
+                  <input name="s" id="s" type="text" class="form-control Search-input" placeholder="Escribe el término a buscar" autocomplete="off" />
+
+                  <button class="Search-button" type="submit">
+                    <i class="icons icon-search"></i>
+                  </button>
+                  <button class="Search-button" type="button" id="js-close-search">
+                    <span class="glyphicon glyphicon-remove"></span>
+                  </button>
+                </form><!-- end Search -->
+              </div><!-- end Header-search -->
             </div><!-- end col-md-12 -->
           </div><!-- end row -->
         </div><!-- end container -->
       </nav><!-- end Header-navTop -->
 
       <div class="container">
+        <button class="Header-navToggle js-toggle-slidebar">
+          <i class="Icon Icon--navToggle"></i>
+        </button>
+
         <div class="row">
-          <div class="col-xs-4 col-xs-push-8 col-md-6 col-md-push-0">
+          <div class="col-sm-2 col-sm-push-10 col-md-5 col-md-push-0">
             <?php
               $custom_logo_id = get_theme_mod('custom_logo');
               $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
@@ -73,17 +105,27 @@
                   <source media="(min-width: 992px)" srcset="<?php echo $logo[0]; ?>">
                   <img src="<?php echo $logoMovil; ?>" alt="<?php bloginfo('name'); ?> | <?php bloginfo('description'); ?>">
                 </picture>
-                <!-- <img src="<?php //echo $logo[0]; ?>" alt="<?php //bloginfo('name'); ?> | <?php// bloginfo('description'); ?>"> -->
               </a>
             </h1>
-          </div><!-- end col-md-6 -->
-          <?php if (!empty($options['phone'])) : ?>
-            <div class="col-xs-8 col-xs-pull-4 col-md-6 col-md-pull-0">
-              <aside class="Header-central">
-                <i class="Header-central-icon icons icon-phone"></i>
-                <span>Central Telefónica <b><?php echo $options['phone']; ?></b></span>
-              </aside>
-            </div><!-- end col-md-6 -->
+          </div><!-- end col-md-5 -->
+          <?php if (!empty($options['phone']) || !empty($options['phone_alert'])) : ?>
+            <div class="hidden-xs col-sm-10 col-sm-pull-2 col-md-7 col-md-pull-0">
+              <div class="Header-central-wrapper text-right">
+                <?php if (!empty($options['phone'])) : ?>
+                  <aside class="Header-central">
+                    <i class="Header-central-icon icons icon-phone text--red"></i>
+                    <span>Central Telefónica <b><?php echo $options['phone']; ?></b></span>
+                  </aside>
+                <?php endif; ?>
+
+                <?php if (!empty($options['phone_alert'])) : ?>
+                  <aside class="Header-central">
+                    <i class="Header-central-icon icons icon-phone text--green"></i>
+                    <span>Seguridad Ciudadana <b><?php echo $options['phone_alert']; ?></b></span>
+                  </aside>
+                <?php endif; ?>
+              </div><!-- end Header-central-wrapper -->
+            </div><!-- end col-md-7 -->
           <?php endif; ?>
         </div><!-- end row -->
       </div><!-- end container -->
@@ -104,3 +146,63 @@
         </div><!-- end row -->
       </div><!-- end container -->
     </header><!-- end Header -->
+
+    <section class="Slidebar">
+      <aside class="Slidebar-close js-toggle-slidebar">
+        <i class="glyphicon glyphicon-remove"></i>
+      </aside><!-- end Slidebar-close -->
+
+      <?php
+        $args = [
+          'theme_location' => 'main-menu',
+          'container' => 'nav',
+          'container_class' => 'Slidebar-nav',
+          'menu_class' => 'Slidebar-list',
+        ];
+        wp_nav_menu( $args );
+      ?>
+
+      <?php
+        $args = [
+          'theme_location' => 'top-menu',
+          'container' => 'nav',
+          'container_class' => 'Menu-top-wrapper text-center',
+          'menu_class' => 'Menu-top list-inline',
+        ];
+        wp_nav_menu( $args );
+      ?>
+
+      <?php if (isset($options['display_social_link']) && $options['display_social_link']) : ?>
+        <nav class="Menu-social-wrapper text-center">
+          <ul class="Menu-social list-inline">
+            <?php if (!empty($options['facebook'])) : ?>
+              <li><a href="<?php echo $options['facebook']; ?>" title="Síguenos en Facebook" target="_blank" rel="noopener noreferrer"><i class="icons icon-facebook"></i></a></li>
+            <?php endif; ?>
+            <?php if (!empty($options['linkedin'])) : ?>
+              <li><a href="<?php echo $options['linkedin']; ?>" title="Síguenos en Linkedin" target="_blank" rel="noopener noreferrer"><i class="icons icon-linkedin"></i></a></li>
+            <?php endif; ?>
+            <?php if (!empty($options['youtube'])) : ?>
+              <li><a href="<?php echo $options['youtube']; ?>" title="Síguenos en Youtube" target="_blank" rel="noopener noreferrer"><i class="icons icon-youtube"></i></a></li>
+            <?php endif; ?>
+          </ul><!-- end Menu-social -->
+        </nav><!-- end Menu-social-wrapper -->
+      <?php endif; ?>
+
+      <?php if (!empty($options['phone']) || !empty($options['phone_alert'])) : ?>
+        <div class="Header-central-wrapper text-center">
+          <?php if (!empty($options['phone'])) : ?>
+            <aside class="Header-central">
+              <i class="Header-central-icon icons icon-phone text--red"></i>
+              <span>Central Telefónica <b><?php echo $options['phone']; ?></b></span>
+            </aside>
+          <?php endif; ?>
+
+          <?php if (!empty($options['phone_alert'])) : ?>
+            <aside class="Header-central">
+              <i class="Header-central-icon icons icon-phone text--green"></i>
+              <span>Seguridad Ciudadana <b><?php echo $options['phone_alert']; ?></b></span>
+            </aside>
+          <?php endif; ?>
+        </div><!-- end Header-central-wrapper -->
+      <?php endif; ?>
+    </section><!-- end Slidebar -->

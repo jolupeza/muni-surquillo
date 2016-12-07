@@ -7,11 +7,15 @@ a {
   @include transition(all 0.2s ease-in-out);
 }
 p {
-  font-size: 0.875em;
+  // font-size: 0.875em;
   font-weight: 300;
 }
 b {
   font-weight: 700;
+}
+.iFrame {
+  border: none;
+  margin-top: 25px;
 }
 .text--xs {
   font-size: 0.625em;
@@ -49,6 +53,12 @@ b {
 .text--skyBlue {
   color: $skyBlue;
 }
+.text--azul4 {
+  color: $azul4;
+}
+.text--red {
+  color: $red;
+}
 
 .Title {
   font-weight: 800;
@@ -61,83 +71,4 @@ b {
 }
 .Title-bold {
   font-weight: 700;
-}
-.Page {
-  padding: 50px 0;
-  .Title {
-    margin-top: 0;
-  }
-  &--nopadding {
-    padding: 0;
-    .Title {
-      margin-top: 25px;
-    }
-  }
-  &--gray {
-    background-color: $graySoft;
-  }
-  &--blue {
-    background-color: $blueDark;
-  }
-  &--girl {
-    background-image: url('../images/bg-girl.png');
-    background-position: 90% 100%;
-    background-repeat: no-repeat;
-    @media only screen and (max-width: 991px) {
-      background-image: none;
-      .Title {
-        text-align: center;
-      }
-    }
-  }
-  &--details {
-    .Title {
-      margin-bottom: 40px;
-      @media only screen and (max-width: 991px) {
-        text-align: center;
-      }
-    }
-    p {
-      font-size: 1.125em;
-    }
-    @media only screen and (max-width: 600px) {
-      .Button {
-        margin-bottom: 20px;
-      }
-    }
-  }
-  &--flex {
-    @include display-flex();
-    .Page-flex50 {
-      @include flex-basis(50%);
-      @media only screen and (max-width: 991px) {
-        img {
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-        }
-      }
-    }
-    .Page-flex40 {
-      @include flex-basis(40%);
-      padding-left: 20px;
-      @media only screen and (max-width: 991px) {
-        padding: 20px;
-      }
-    }
-    @media only screen and (max-width: 991px) {
-      display: block;
-      overflow: hidden;
-    }
-  }
-}
-.Page-bg {
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.Page-image {
-  @media only screen and (max-width: 991px) {
-    padding-top: 90px;
-  }
 }

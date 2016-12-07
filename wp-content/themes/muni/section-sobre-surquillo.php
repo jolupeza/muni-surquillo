@@ -13,7 +13,7 @@
           if (!empty($files)) :
         ?>
           <p>Vea los siguientes documentos</p>
-          <p class="text-center text--nimportant">
+          <article class="Buttons-flex text--nimportant">
             <?php
               $files = unserialize($files);
               $filesTitle = unserialize($files_title);
@@ -26,7 +26,7 @@
               </a>
               <?php $i++; ?>
             <?php endforeach; ?>
-          </p>
+          </article>
         <?php endif; ?>
       </div><!-- end col-md-8 -->
 

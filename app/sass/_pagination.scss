@@ -32,4 +32,26 @@
       }
     }
   }
+  &--white {
+    ul {
+      li {
+        a {
+          color: $whiteDark;
+          &:hover {
+            background-color: $whiteDark;
+            border-color: $whiteDark;
+            color: $azul1;
+          }
+        }
+        .page-numbers {
+          border-color: $whiteDark;
+          &.current {
+            background-color: $whiteDark;
+            border-color: $whiteDark;
+            color: $azul1;
+          }
+        }
+      }
+    }
+  }
 }

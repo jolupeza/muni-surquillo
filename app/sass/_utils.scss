@@ -17,6 +17,11 @@
       background-position: -25px -25px;
     }
   }
+  &--navToggle {
+    &::before {
+      background-position: 0 -50px;
+    }
+  }
 }
 
 .Button {
@@ -27,6 +32,9 @@
   @include transition(all 0.2s ease);
   max-width: 220px;
   vertical-align: middle;
+  &--full {
+    max-width: none;
+  }
   &--transp {
     background-color: transparent;
   }
@@ -65,5 +73,20 @@
   }
   &:hover {
     text-decoration: none;
+  }
+}
+.Buttons-flex {
+  @include display-flex();
+  @include flex-wrap(wrap);
+  @include justify-content(space-around);
+  .Button {
+    margin-bottom: 15px;
+    padding: 10px 20px 10px 40px;
+    position: relative;
+    i {
+      left: 15px;
+      position: absolute;
+      top: 15px;
+    }
   }
 }

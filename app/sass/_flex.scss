@@ -1,0 +1,61 @@
+.Flex {
+  @include display-flex();
+  &--page {
+    .Flex-item {
+      padding-bottom: 30px;
+      padding-top: 25px;
+      .Title {
+        margin-bottom: 25px;
+      }
+      p {
+        font-size: 1.125em;
+      }
+      &:first-child {
+        padding-left: 10%;
+        padding-right: 25px;
+      }
+      &:last-child {
+        padding-left: 25px;
+        padding-right: 10%;
+        .Title {
+          text-align: right;
+        }
+        .Title-left {
+          text-align: left;
+        }
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      display: block;
+    }
+  }
+  &--box {
+    .Flex-item {
+
+    }
+  }
+}
+.Flex-50 {
+  @include flex-basis(50%);
+}
+.Flex-25 {
+  @include flex-basis(25%);
+}
+.Flex-gray {
+  background-color: #e7e7e7;
+  .Title {
+    color: $azul1;
+  }
+}
+.Flex-white {
+  background-color: $whiteDark;
+  .Title {
+    color: $azul1;
+  }
+}
+.Flex-skyBlue {
+  background-color: $azul4;
+  .Title, p {
+    color: $whiteDark;
+  }
+}

@@ -33,14 +33,35 @@
                   <li><a href=""><i class="icons icon-youtube"></i></a></li>
                 </ul><!-- end Menu-social -->
               </nav>
+
+              <button type="button" class="Header-buttonSearch" id="js-display-search">
+                <i class="icons icon-search"></i>
+              </button>
+
+              <div class="Header-search">
+                <form class="Search text-center" action="" method="get">
+                  <input name="s" id="s" type="text" class="form-control Search-input" placeholder="Escribe el término a buscar" autocomplete="off" />
+                  <!-- <input type="hidden" name="site_section" value="site-search" /> -->
+                  <button class="Search-button" type="submit">
+                    <i class="icons icon-search"></i>
+                  </button>
+                  <button class="Search-button" type="button" id="js-close-search">
+                    <span class="glyphicon glyphicon-remove"></span>
+                  </button>
+                </form>
+              </div>
             </div><!-- end col-md-12 -->
           </div><!-- end row -->
         </div><!-- end container -->
       </section><!-- end Header-navTop -->
 
       <div class="container">
+        <button class="Header-navToggle js-toggle-slidebar">
+          <i class="Icon Icon--navToggle"></i>
+        </button>
+
         <div class="row">
-          <div class="col-xs-4 col-xs-push-8 col-md-6 col-md-push-0">
+          <div class="col-sm-2 col-sm-push-10 col-md-5 col-md-push-0">
             <h1 class="Header-logo">
               <a href="http://muni-surquillo.web/app" title="">
                 <picture>
@@ -50,11 +71,17 @@
               </a>
             </h1>
           </div>
-          <div class="col-xs-8 col-xs-pull-4 col-md-6 col-md-pull-0">
-            <aside class="Header-central">
-              <i class="Header-central-icon icons icon-phone"></i>
-              <span>Central Telefónica <b>(51 1) 241 - 0413</b></span>
-            </aside>
+          <div class="hidden-xs col-sm-10 col-sm-pull-2 col-md-7 col-md-pull-0">
+            <div class="Header-central-wrapper text-right">
+              <aside class="Header-central">
+                <i class="Header-central-icon icons icon-phone text--red"></i>
+                <span>Central Telefónica <b>(51 1) 241 - 0413</b></span>
+              </aside>
+              <aside class="Header-central">
+                <i class="Header-central-icon icons icon-phone text--green"></i>
+                <span>Alerta Surquillo <b>(51 1) 241 - 0413</b></span>
+              </aside>
+            </div><!-- end Header-central-wrapper -->
           </div>
         </div><!-- end row -->
       </div><!-- end container -->
@@ -65,8 +92,15 @@
             <nav class="Header-mainMenu text-center">
               <ul class="Menu-main list-inline">
                 <li><a href="index.html"><i class="icons icon-home"></i>Inicio</a></li>
-                <li><a href="somos-surquillo.html"><i class="icons icon-surquillo"></i>Somos Surquillo</a></li>
-                <li><a href=""><i class="icons icon-servicios"></i>Servicios y trámites</a></li>
+                <li>
+                  <a href="somos-surquillo.html"><i class="icons icon-surquillo"></i>Somos Surquillo</a>
+                  <ul class="sub-menu">
+                    <li><a href="somos-surquillo.html">Surquillo</a></li>
+                    <li><a href="metas.html">Metas Municipales</a></li>
+                    <li><a href="municipalidad.html">Municipalidad</a></li>
+                  </ul>
+                </li>
+                <li><a href="servicios.html"><i class="icons icon-servicios"></i>Servicios y trámites</a></li>
                 <li><a href="category.html"><i class="icons icon-novedades"></i>Novedades</a></li>
                 <li><a href=""><i class="icons icon-transparencia"></i>Transparencia</a></li>
                 <li><a href="contacto.html"><i class="icons icon-contacto"></i>Contacto</a></li>
@@ -76,6 +110,55 @@
         </div>
       </div>
     </header><!-- end Header -->
+
+    <section class="Slidebar">
+      <aside class="Slidebar-close js-toggle-slidebar">
+        <i class="glyphicon glyphicon-remove"></i>
+      </aside><!-- end Slidebar-close -->
+
+      <nav class="Slidebar-nav">
+        <ul class="Slidebar-list">
+          <li><a href="index.html"><i class="icons icon-home"></i>Inicio</a></li>
+          <li class="js-more">
+            <a href="somos-surquillo.html"><i class="icons icon-surquillo"></i>Somos Surquillo</a>
+            <ul class="sub-menu">
+              <li><a href="somos-surquillo.html">Surquillo</a></li>
+              <li><a href="metas.html">Metas Municipales</a></li>
+              <li><a href="municipalidad.html">Municipalidad</a></li>
+            </ul>
+          </li>
+          <li><a href="servicios.html"><i class="icons icon-servicios"></i>Servicios y trámites</a></li>
+          <li><a href="category.html"><i class="icons icon-novedades"></i>Novedades</a></li>
+          <li><a href=""><i class="icons icon-transparencia"></i>Transparencia</a></li>
+          <li><a href="contacto.html"><i class="icons icon-contacto"></i>Contacto</a></li>
+        </ul>
+      </nav>
+
+      <nav class="Menu-top-wrapper text-center">
+        <ul class="Menu-top list-inline">
+          <li class="active"><a href="agenda.html">Agenda Telefónica</a></li>
+          <li><a href="consulta.html">Consultas online</a></li>
+        </ul><!-- end Menu-top -->
+      </nav>
+      <nav class="Menu-social-wrapper text-center">
+        <ul class="Menu-social list-inline">
+          <li><a href=""><i class="icons icon-facebook"></i></a></li>
+          <li><a href=""><i class="icons icon-linkedin"></i></a></li>
+          <li><a href=""><i class="icons icon-youtube"></i></a></li>
+        </ul><!-- end Menu-social -->
+      </nav>
+
+      <div class="Header-central-wrapper text-center">
+        <aside class="Header-central">
+          <i class="Header-central-icon icons icon-phone text--red"></i>
+          <span>Central Telefónica <b>(51 1) 241 - 0413</b></span>
+        </aside>
+        <aside class="Header-central">
+          <i class="Header-central-icon icons icon-phone text--green"></i>
+          <span>Alerta Surquillo <b>(51 1) 241 - 0413</b></span>
+        </aside>
+      </div><!-- end Header-central-wrapper -->
+    </section><!-- end Slidebar -->
 
     <section id="carousel-home" class="carousel slide Carousel Carousel--home" data-ride="carousel">
       <!-- Indicators -->
@@ -154,7 +237,7 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12">
-            <h2 class="Title text--white h1">Servicios Municipales</h2>
+            <h2 class="Title text--white text-center h1">Nuestros Servicios</h2>
           </div><!-- end col-xs-12 -->
         </div><!-- end row -->
 
@@ -286,6 +369,17 @@
                 </div>
               </div>
             </form>
+
+            <div class="Header-central-wrapper text-center">
+              <aside class="Header-central">
+                <i class="Header-central-icon icons icon-phone text--red"></i>
+                <span>Central Telefónica <b>(51 1) 241 - 0413</b></span>
+              </aside>
+              <aside class="Header-central">
+                <i class="Header-central-icon icons icon-phone text--green"></i>
+                <span>Alerta Surquillo <b>(51 1) 241 - 0413</b></span>
+              </aside>
+            </div><!-- end Header-central-wrapper -->
           </div><!-- end col-md-4 -->
         </div><!-- end row -->
       </div><!-- end container -->

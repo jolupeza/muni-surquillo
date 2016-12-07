@@ -13,13 +13,38 @@
         $values = get_post_custom( get_the_ID() );
         $video = isset($values['mb_video']) ? esc_attr($values['mb_video'][0]) : '';
         $icon = isset($values['mb_icon']) ? esc_attr($values['mb_icon'][0]) : '';
-        $link = isset($values['mb_link']) ? esc_attr($values['mb_link'][0]) : '';        
+        $link = isset($values['mb_link']) ? esc_attr($values['mb_link'][0]) : '';      
         $linkText = isset($values['mb_link_text']) ? esc_attr($values['mb_link_text'][0]) : '';
         $files = isset($values['mb_files']) ?  $values['mb_files'][0]  :  '';
         $files_title = isset($values['mb_files_title']) ?  $values['mb_files_title'][0]  :  '';
-
+        
+        $display_home = isset($values['mb_display_home']) ? esc_attr($values['mb_display_home'][0]) : '';
+        $responsive = isset( $values['mb_responsive'] ) ? esc_attr($values['mb_responsive'][0]) : '';
+        
+        $forms = (isset($values['mb_forms'])) ? $values['mb_forms'][0] : '';
+        $how = (isset($values['mb_how'])) ? $values['mb_how'][0] : '';
+        $cases = (isset($values['mb_cases'])) ? $values['mb_cases'][0] : '';
+        $legislation = (isset($values['mb_legislation'])) ? $values['mb_legislation'][0] : '';
+        
+        $locales = isset($values['mb_locales']) ? $values['mb_locales'][0] : '';
+        $iframe = isset($values['mb_iframe']) ? esc_attr($values['mb_iframe'][0]) : '';
+        
+        $args = array(
+            'post_type' => 'locales',
+            'posts_per_page' => -1,
+        );
+        $locals = get_posts($args);
+        
+        $bg = isset( $values['mb_bg'] ) ? esc_attr($values['mb_bg'][0]) : '';
+        
         wp_nonce_field('pages_meta_box_nonce', 'meta_box_nonce');
     ?>
+    
+    <!-- Iframe-->
+    <p class="content-mb">
+        <label for="mb_iframe">Iframe SRC: </label>
+        <input type="text" name="mb_iframe" id="mb_iframe" value="<?php echo $iframe; ?>" />
+    </p>
 
     <!-- Video-->
     <p class="content-mb">
@@ -44,6 +69,34 @@
         <label for="mb_link_text">Texto de enlace: </label>
         <input type="text" name="mb_link_text" id="mb_link_text" value="<?php echo $linkText; ?>" />
     </p>
+    
+    <!-- Display home -->
+    <p class="content-mb">
+        <label for="mb_display_home">Mostrar en home (Sólo para Servicios Municipales):</label>
+        <input type="checkbox" name="mb_display_home" id="mb_display_home" <?php checked($display_home, 'on'); ?> />
+    </p>
+    
+    <fieldset class="GroupForm">
+        <legend class="GroupForm-legend">Imagen Responsive</legend>
+
+        <div class="container-upload-file GroupForm-wrapperImage">
+            <p class="btn-add-file">
+                <a title="Agregar imagen" href="javascript:;" class="set-file button button-primary">Añadir</a>
+            </p>
+
+            <div class="hidden media-container">
+                <img src="<?php echo $responsive; ?>" alt="<?php //echo get_post_meta( $post->ID, 'slider-1-alt', true ); ?>" title="<?php //echo get_post_meta( $post->ID, 'slider-1-title', true ); ?>" />
+            </div><!-- .media-container -->
+
+            <p class="hidden">
+                <a title="Qutar imagen" href="javascript:;" class="remove-file button button-secondary">Quitar</a>
+            </p>
+
+            <p class="media-info">
+                <input class="hd-src" type="hidden" name="mb_responsive" value="<?php echo $responsive; ?>" />
+            </p><!-- .media-info -->
+        </div><!-- end container-upload-file -->
+    </fieldset><!-- end GroupFrm -->
     
     <fieldset>
         <legend>Archivos</legend>
@@ -111,4 +164,115 @@
             <?php endfor; ?>
         <?php endif; ?>
     </fieldset>
+    
+    <fieldset>
+        <legend>Formularios</legend>
+        <p>
+            <label for="mb_forms"></label>
+            <?php
+                $settings = array(
+                    'wpautop' => false,
+                    'textarea_name' => 'mb_forms',
+                    'media_buttons' => false,
+                    'textarea_rows' => 10,
+                );
+                wp_editor($forms, 'mb_forms', $settings);
+            ?>
+        </p>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Como completar los formularios</legend>
+        <p>
+            <label for="mb_how"></label>
+            <?php
+                $settings = array(
+                    'wpautop' => false,
+                    'textarea_name' => 'mb_how',
+                    'media_buttons' => false,
+                    'textarea_rows' => 10,
+                );
+                wp_editor($how, 'mb_how', $settings);
+            ?>
+        </p>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Casos Prácticos</legend>
+        <p>
+            <label for="mb_cases"></label>
+            <?php
+                $settings = array(
+                    'wpautop' => false,
+                    'textarea_name' => 'mb_cases',
+                    'media_buttons' => false,
+                    'textarea_rows' => 10,
+                );
+                wp_editor($cases, 'mb_cases', $settings);
+            ?>
+        </p>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Legislación</legend>
+        <p>
+            <label for="mb_legislation"></label>
+            <?php
+                $settings = array(
+                    'wpautop' => false,
+                    'textarea_name' => 'mb_legislation',
+                    'media_buttons' => false,
+                    'textarea_rows' => 10,
+                );
+                wp_editor($legislation, 'mb_legislation', $settings);
+            ?>
+        </p>
+    </fieldset>
+    
+    <hr>
+    
+    <fieldset>
+        <legend>Locales</legend>
+        
+        <?php if (count($locals)) : ?>
+            <?php
+                if (!empty($locales)) {
+                    $locales = unserialize($locales);
+                }
+            ?>
+            <ul>
+                <?php foreach ($locals as $local) : ?>
+                    <?php $id = $local->ID; ?>
+                    <li>
+                        <input type="checkbox" id="mb_locales_<?php echo $id; ?>" name="mb_locales[<?php echo $id; ?>]" <?php (isset($locales[$id])) ? checked($locales[$id], 'on') : ''; ?> />
+                        <label for="mb_locales_<?php echo $id; ?>"><?php echo $local->post_title; ?></label>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        <?php else : ?>
+            <p>No existen locales</p>
+        <?php endif; ?>
+    </fieldset>
+    
+    <fieldset class="GroupForm">
+        <legend class="GroupForm-legend">Imagen para Plantilla de Servicios con Locales</legend>
+
+        <div class="container-upload-file GroupForm-wrapperImage">
+            <p class="btn-add-file">
+                <a title="Agregar imagen" href="javascript:;" class="set-file button button-primary">Añadir</a>
+            </p>
+
+            <div class="hidden media-container">
+                <img src="<?php echo $bg; ?>" alt="<?php //echo get_post_meta( $post->ID, 'slider-1-alt', true ); ?>" title="<?php //echo get_post_meta( $post->ID, 'slider-1-title', true ); ?>" />
+            </div><!-- .media-container -->
+
+            <p class="hidden">
+                <a title="Qutar imagen" href="javascript:;" class="remove-file button button-secondary">Quitar</a>
+            </p>
+
+            <p class="media-info">
+                <input class="hd-src" type="hidden" name="mb_bg" value="<?php echo $bg; ?>" />
+            </p><!-- .media-info -->
+        </div><!-- end container-upload-file -->
+    </fieldset><!-- end GroupFrm -->
 </div><!-- #single-post-meta-manager -->

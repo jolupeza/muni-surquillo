@@ -63,12 +63,25 @@ class Muni_List_Categories_Widget extends WP_Widget
             if ($title) {
               echo $before_title . $title . $after_title;
             }
-            ?>
-              <ul class="Sidebar-widget-list">
-                <?php foreach ($categories as $category) : ?>
-                  <li><a href="<?php echo esc_url(get_category_link($category->term_id)); ?>" class="text-uppercase"><?php echo $category->name; ?></a></li>
-                <?php endforeach; ?>
-              </ul>
+
+            $thisCat = false;
+            if (is_category()) {
+              $thisCat = get_category(get_query_var('cat'));
+            }
+        ?>
+            <ul class="Sidebar-widget-list">
+              <?php foreach ($categories as $category) : ?>
+                <?php
+                  $active = '';
+                  if ($thisCat) {
+                    if ($thisCat->term_id === $category->term_id) {
+                      $active = 'class="active"';
+                    }
+                  }
+                ?>
+                <li <?php echo $active; ?>><a href="<?php echo esc_url(get_category_link($category->term_id)); ?>" class="text-uppercase"><?php echo $category->name; ?></a></li>
+              <?php endforeach; ?>
+            </ul>
             <?php
               echo $after_widget;
           endif;

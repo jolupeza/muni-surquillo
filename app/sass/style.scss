@@ -3,6 +3,7 @@
 @import "fonts";
 @import "utils";
 @import "general";
+@import "pages";
 @import "table";
 @import "boxes";
 
@@ -12,6 +13,9 @@
 @import "pagination";
 @import "sidebar";
 @import "single";
+@import "panels";
+@import "flex";
+@import "slidebar";
 
 // About
 .About {
@@ -34,6 +38,7 @@
     }
   }
   .Title, .Subtitle {
+    margin-bottom: 20px;
     margin-top: 0;
   }
   .Figure {
@@ -68,9 +73,9 @@
 .Cards {
   @include display-flex();
   @include flex-wrap(wrap);
-  margin: 25px 0;
+  margin: 60px 0 30px 0;
   @media only screen and (max-width: 991px) {
-    @include justify-content(space-between);
+    @include justify-content(space-around);
   }
   @media only screen and (max-width: 600px) {
     display: block;
@@ -78,8 +83,9 @@
 }
 .Card-item {
   border: 1px solid $whiteDark;
-  @include flex-basis(31%);
-  margin-bottom: 25px;
+  @include flex-basis(29%);
+  margin-bottom: 60px;
+  margin-left: 20px;
   margin-right: 20px;
   padding: 50px 20px 20px;
   position: relative;
@@ -94,14 +100,17 @@
     }
   }
   .icons {
+    background-color: $blueDark;
     color: $greenSoft;
     font-size: 3.5em;
-    left: 30px;
+    left: 35px;
+    padding: 5px 15px;
     position: absolute;
-    top: -28px;
+    top: -30px;
   }
   @media only screen and (max-width: 991px) {
-    @include flex-basis(48%);
+    @include flex-basis(46%);
+    margin-left: 0;
     margin-right: 0;
   }
   @media only screen and (max-width: 600px) {
@@ -123,6 +132,7 @@
   }
   @media only screen and (max-width: 991px) {
     @include flex-wrap(wrap);
+    @include justify-content(space-around);
   }
   @media only screen and (max-width: 600px) {
     display: block;
@@ -201,6 +211,18 @@
       text-align: center;
     }
   }
+  .Header-central {
+    margin: 20px auto;
+    span {
+      color: $whiteDark;
+      b {
+        color: $azul1;
+      }
+    }
+    @media only screen and (max-width: 991px) {
+      margin: 20px auto;
+    }
+  }
 }
 .Footer-logo {
   margin-bottom: 30px;
@@ -224,4 +246,16 @@
 }
 .Footer-loader {
   font-size: 2.5em;
+}
+.Footer-map {
+  margin-bottom: 20px;
+  margin-top: 24px;
+  height: 350px;
+}
+
+.Marker-list {
+  padding-left: 0;
+  li {
+    list-style: none;
+  }
 }

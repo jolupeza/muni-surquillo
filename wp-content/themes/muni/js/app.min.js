@@ -6,7 +6,7 @@ var j = jQuery.noConflict();
   var $win = j(window);
   var $doc = j(document);
   var $animationElements = j('.animation-element');
-  // var body = j('body');
+  var body = j('body');
   // var $header = j('.header');
   // var $footer = j('.Footer');
 
@@ -38,6 +38,69 @@ var j = jQuery.noConflict();
     j('.ArrowTop').on('click', function(ev){
       ev.preventDefault();
       j('html, body').animate({scrollTop: 0}, 800);
+    });
+
+    j('#accordion-metas, div[id^="accordion-locals"]').on('show.bs.collapse', function(ev) {
+      var panelCollapse = j(ev.target),
+          panelHeading = panelCollapse.prev(),
+          panelHeadings = panelCollapse.parent().parent().find('.panel-heading');
+
+      panelHeadings.each(function(index, el) {
+        j(this).removeClass('active');
+      });
+      panelHeading.addClass('active');
+    });
+
+    j('#accordion-metas, div[id^="accordion-locals"]').on('hide.bs.collapse', function(ev) {
+      var panelCollapse = j(ev.target),
+          panelHeading = panelCollapse.prev();
+
+      if (panelCollapse.hasClass('in')) {
+        panelHeading.removeClass('active');
+      }
+    });
+
+    j('#js-display-search').on('click', function() {
+      var $this = j(this),
+          searchWrapper = j('.Header-search');
+
+      searchWrapper.slideDown().find('.Search input[name="s"]').focus();
+    });
+
+    j('#js-close-search').on('click', function() {
+      var $this = j(this),
+          searchWrapper = j('.Header-search');
+
+      searchWrapper.slideUp();
+    });
+
+    j('.js-toggle-slidebar').on('click', function(ev) {
+      ev.preventDefault();
+      var slidebar = j('.Slidebar');
+
+      if (slidebar.hasClass('active')) {
+        slidebar.removeClass('active');
+      } else {
+        slidebar.addClass('active');
+      }
+    });
+
+    j('.Slidebar-list li').each(function(index, el) {
+      var $this = j(this);
+
+      if ($this.hasClass('js-more')) {
+        $this.append('<i class="icons icon-more js-slidebar-nav-more"></i>');
+      }
+    });
+
+    body.on('click', '.js-slidebar-nav-more', function(){
+      var $this = j(this);
+
+      if ($this.hasClass('active')) {
+        $this.removeClass('icon-minus active').addClass('icon-more').prev().removeClass('active');
+      } else {
+        $this.removeClass('icon-more').addClass('icon-minus active').prev().addClass('active');
+      }
     });
   });
 

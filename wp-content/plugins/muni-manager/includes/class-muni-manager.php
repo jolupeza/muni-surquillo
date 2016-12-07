@@ -101,6 +101,10 @@ class Muni_Manager
 
         $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_pages_add');
         $this->loader->add_action('save_post', $admin, 'cd_mb_pages_save' );
+        $this->loader->add_action('init', $admin, 'add_taxonomies_pages');
+        
+        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_post_add');
+        $this->loader->add_action('save_post', $admin, 'cd_mb_post_save' );
 
         $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_sliders_add');
         $this->loader->add_action('save_post', $admin, 'cd_mb_sliders_save' );
@@ -117,24 +121,28 @@ class Muni_Manager
         $this->loader->add_filter('manage_edit-contacts_columns', $admin, 'custom_columns_contacts');
         $this->loader->add_action('manage_contacts_posts_custom_column', $admin, 'custom_column_contacts');
         $this->loader->add_filter('views_edit-contacts', $admin, 'contacts_button_view_edit');
-
-        // $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_carreras_add');
-        // $this->loader->add_action('save_post', $admin, 'cd_mb_carreras_save' );
-        // $this->loader->add_action('init', $admin, 'add_taxonomies_carreras');
-
-        // $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_subscribers_add');
-        // $this->loader->add_filter('views_edit-subscribers', $admin, 'subscribers_button_view_edit');
-        // $this->loader->add_action('restrict_manage_posts', $admin, 'subscribers_table_filtering');
-        // $this->loader->add_filter('parse_query', $admin, 'subscribers_table_filter');
-        // $this->loader->add_action('init', $admin, 'add_taxonomies_subscribers');
-
-        // $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_students_add');
-        // $this->loader->add_filter('manage_edit-students_columns', $admin, 'custom_columns_students');
-        // $this->loader->add_action('manage_students_posts_custom_column', $admin, 'custom_column_students');
-        // $this->loader->add_filter('views_edit-students', $admin, 'students_button_view_edit');
-        // $this->loader->add_action('restrict_manage_posts', $admin, 'students_table_filtering');
-        // $this->loader->add_filter('parse_query', $admin, 'students_table_filter');
-        // $this->loader->add_action('init', $admin, 'add_taxonomies_students');
+        
+        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_directories_add');
+        $this->loader->add_action('save_post', $admin, 'cd_mb_directories_save' );
+        $this->loader->add_action('init', $admin, 'add_taxonomies_directories');
+        
+        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_authorities_add');
+        $this->loader->add_action('save_post', $admin, 'cd_mb_authorities_save' );
+        $this->loader->add_action('init', $admin, 'add_taxonomies_authorities');
+        
+        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_locales_add');
+        $this->loader->add_action('save_post', $admin, 'cd_mb_locales_save' );
+        
+        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_books_add');
+        $this->loader->add_filter('manage_edit-books_columns', $admin, 'custom_columns_books');
+        $this->loader->add_action('manage_books_posts_custom_column', $admin, 'custom_column_books');
+        $this->loader->add_filter('views_edit-books', $admin, 'books_button_view_edit');
+        
+        $this->loader->add_action('add_meta_boxes', $admin, 'cd_mb_informations_add');
+        $this->loader->add_action('init', $admin, 'add_taxonomies_deliveries');
+        $this->loader->add_filter('manage_edit-informations_columns', $admin, 'custom_columns_informations');
+        $this->loader->add_action('manage_informations_posts_custom_column', $admin, 'custom_column_informations');
+        $this->loader->add_filter('views_edit-informations', $admin, 'informations_button_view_edit');
 
         // $this->loader->add_action('init', $admin, 'unregister_post_type');
     }

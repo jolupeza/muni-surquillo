@@ -75,6 +75,9 @@
   overflow: hidden;
   padding: 0;
   width: 280px;
+  &--full {
+    width: 100%;
+  }
 }
 .Form-select {
   @include appearance(none);
@@ -87,10 +90,14 @@
   height: 44px;
   padding: 8px 5px;
   width: 280px;
+  &--full {
+    width: 100%;
+  }
   option {
     color: $text-color;
   }
 }
+
 .wrapper-select {
   background-color: $whiteDark;
   background-position: 96% 50%;
@@ -130,4 +137,105 @@
   position: absolute;
   top: 35%;
   z-index: 9;
+}
+
+.Search {
+  background-color: $whiteDark;
+  padding: 5px 0;
+}
+.Search-input {
+  border: none;
+  border-bottom: 1px solid $graySoft;
+  @include border-radius(0);
+  @include box-shadow(none);
+  display: inline-block;
+  height: 49px;
+  vertical-align: top;
+  width: 80%;
+  &:focus {
+    @include box-shadow(none);
+  }
+}
+.Search-button {
+  background-color: $graySoft;
+  border: none;
+  font-size: 1.7em;
+  padding: 5px 10px;
+  &[type="submit"] {
+    color: $green;
+  }
+  &[type="button"] {
+    color: $red;
+  }
+}
+
+.Form-fileUpload {
+  border: 1px solid rgba(black, 0.3);
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  span {
+    color: $text-color;
+    font-size: 0.9375em;
+    &::before {
+      display: inline-block;
+      color: $azul1;
+      content: "\e909";
+      font-family: 'icomoon' !important;
+      font-size: 2.5em;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  }
+  &:hover {
+    background-color: $azul1;
+    span {
+      &::before {
+        color: $green;
+      }
+    }
+    span {
+      color: $whiteDark;
+    }
+  }
+  .form-control-feedback {
+    @include border-radius(50%);
+    bottom: -5px;
+    font-size: 1.5em;
+    height: 25px;
+    line-height: 1.8em;
+    right: -10px;
+    top: auto;
+    width: 25px;
+  }
+  a {
+    &:hover {
+      text-decoration: none
+    }
+  }
+}
+.has-success {
+  .Form-fileUpload {
+    .form-control-feedback {
+      color: $green;
+    }
+  }
+}
+.has-error {
+  .Form-fileUpload {
+    .form-control-feedback {
+      color: $red;
+    }
+  }
+}
+.Form-file {
+  cursor: pointer;
+  font-size: 12px;
+  height: 50px;
+  margin: 0;
+  @include opacity(0);
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }

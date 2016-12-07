@@ -39,8 +39,12 @@
       </section><!-- end Header-navTop -->
 
       <div class="container">
+        <button class="Header-navToggle js-toggle-slidebar">
+          <i class="Icon Icon--navToggle"></i>
+        </button>
+
         <div class="row">
-          <div class="col-xs-4 col-xs-push-8 col-md-6 col-md-push-0">
+          <div class="col-sm-2 col-sm-push-10 col-md-6 col-md-push-0">
             <h1 class="Header-logo">
               <a href="http://muni-surquillo.web/app" title="">
                 <picture>
@@ -50,10 +54,14 @@
               </a>
             </h1>
           </div>
-          <div class="col-xs-8 col-xs-pull-4 col-md-6 col-md-pull-0">
+          <div class="hidden-xs col-sm-10 col-sm-pull-2 col-md-6 col-md-pull-0">
             <aside class="Header-central">
-              <i class="Header-central-icon icons icon-phone"></i>
+              <i class="Header-central-icon icons icon-phone text--red"></i>
               <span>Central Telefónica <b>(51 1) 241 - 0413</b></span>
+            </aside>
+            <aside class="Header-central">
+              <i class="Header-central-icon icons icon-phone text--green"></i>
+              <span>Alerta Surquillo <b>(51 1) 241 - 0413</b></span>
             </aside>
           </div>
         </div><!-- end row -->
@@ -78,7 +86,10 @@
     </header><!-- end Header -->
 
     <figure class="Page-image Page-image--full">
-      <img class="img-responsive center-block" src="images/resources/consulta-online.jpg" alt="">
+      <picture>
+        <source class="img-responsive center-block" media="(max-width: 767px)" srcset="images/resources/consulta-online-responsive.jpg">
+        <img class="img-responsive center-block" src="images/resources/consulta-online.jpg" alt="">
+      </picture>
     </figure>
 
     <section class="Page Page--details">

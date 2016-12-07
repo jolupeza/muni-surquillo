@@ -1,0 +1,154 @@
+.Panels {
+  &--metas {
+    border: 1px solid $azul5;
+    margin: 40px auto 0;
+    width: 600px;
+    .panel {
+      @include border-radius(0);
+      border: none;
+    }
+    .panel-heading {
+      background-color: #eee;
+      border-bottom: 1px solid $azul5;
+      border-top: 1px solid $azul5;
+      @include border-radius(0);
+      .panel-title {
+        a {
+          color: $text-color;
+          display: block;
+          padding-right: 50px;
+          position: relative;
+          &::after {
+            color: $azul5;
+            content: "\e911";
+            cursor: pointer;
+            font-family: 'icomoon' !important;
+            font-size: 1.5em;
+            position: absolute;
+            right: 10px;
+            top: -5px;
+            @include transition(all 0.2s ease);
+          }
+        }
+      }
+      &.active {
+        background-color: $azul5;
+        .panel-title {
+          a {
+            color: $whiteDark;
+            &::after {
+              color: $whiteDark;
+              content: "\e910";
+            }
+          }
+        }
+      }
+    }
+    .panel-body {
+      ul {
+        list-style: none;
+        padding-left: 0;
+        li {
+          margin-bottom: 20px;
+          padding-right: 55px;
+          position: relative;
+          a {
+            color: $azul5;
+            line-height: 1em;
+            position: absolute;
+            right: 0;
+            top: 2px;
+            &::before {
+              content: "\e909";
+              font-family: 'icomoon' !important;
+              font-size: 2em;
+              vertical-align: middle;
+            }
+            &:hover {
+              color: $azul1;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+  &--locals {
+    border: 1px solid $whiteDark;
+    margin: 20px 0 0;
+    .panel {
+      background-color: transparent;
+      @include border-radius(0);
+      border: none;
+      border-top: 1px solid $whiteDark;
+      &:first-child {
+        border-top: none;
+      }
+    }
+    .panel-heading {
+      background-color: transparent;
+      @include border-radius(0);
+      .panel-title {
+        a {
+          color: $whiteDark;
+          display: block;
+          position: relative;
+          &::after {
+            color: $whiteDark;
+            content: "\e911";
+            cursor: pointer;
+            font-family: 'icomoon' !important;
+            font-size: 1.5em;
+            font-weight: 300;
+            position: absolute;
+            right: 10px;
+            top: -5px;
+            @include transition(all 0.2s ease);
+          }
+          &:focus {
+            text-decoration: none;
+          }
+        }
+      }
+      &.active {
+        background-color: transparent;
+        .panel-title {
+          a {
+            color: $whiteDark;
+            &::after {
+              color: $whiteDark;
+              content: "\e910";
+            }
+          }
+        }
+      }
+    }
+    .panel-body {
+      background-color: $azul3;
+      ul {
+        list-style: none;
+        padding-left: 0;
+        li {
+          margin-bottom: 15px;
+          a {
+            color: $whiteDark;
+            font-weight: 300;
+            &:hover {
+              font-weight: 600;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      p {
+        color: $whiteDark;
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+}

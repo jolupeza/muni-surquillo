@@ -33,4 +33,40 @@
       font-weight: 600;
     }
   }
+  ul {
+    padding-left: 0;
+    li {
+      background-color: $azul2;
+      color: $whiteDark;
+      list-style: none;
+      padding: 10px 70px 10px 15px;
+      position: relative;
+      &:nth-child(2n+1) {
+        background-color: $azul5;
+      }
+      a {
+        color: $whiteDark;
+        line-height: 1em;
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        &::before {
+          content: "\e909";
+          font-family: 'icomoon' !important;
+          font-size: 2em;
+          vertical-align: middle;
+        }
+        &:hover {
+          color: $green;
+          text-decoration: none;
+          &::before {
+            color: $green;
+          }
+        }
+      }
+      @media only screen and (max-width: 991px) {
+        padding: 20px 70px 20px 15px;
+      }
+    }
+  }
 }
