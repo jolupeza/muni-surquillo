@@ -671,7 +671,7 @@ class Muni_Manager_Admin
     public function cd_mb_authorities_add()
     {
         add_meta_box(
-            'mb-sliders-id', 'Configuraciones', array($this, 'render_mb_authorities'), 'authorities', 'normal', 'core'
+            'mb-authorities-id', 'Configuraciones', array($this, 'render_mb_authorities'), 'authorities', 'normal', 'core'
         );
     }
 

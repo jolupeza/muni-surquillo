@@ -22,6 +22,8 @@
 
         <h4 class="Single-category Button Button--blueBg text-uppercase"><?php echo $category[0]->name; ?></h4>
       </figure><!-- end Single-figure -->
+    <?php else : ?>
+      <section class="Page-search"></section>
     <?php endif; ?>
 
     <section class="Page Page--nopadding">

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-12-03 13:53:09+0000\n"
+"PO-Revision-Date: 2016-12-11 18:49:42+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -627,7 +627,7 @@ msgstr "Ruta base REST para la taxonomía."
 #: wp-includes/l10n.php:1198
 msgctxt "default site language"
 msgid "Site Default"
-msgstr "Sitio predeterminado"
+msgstr "Predeterminado del sitio"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:426
 msgid "HTML description for the object, transformed for display."

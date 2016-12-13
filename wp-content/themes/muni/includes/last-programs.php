@@ -1,14 +1,20 @@
 <?php
   $args = array(
-    'posts_per_page' => 5,
-    'category_name' => 'programas'
+    'posts_per_page' => 3,
+    'category_name' => 'novedades'
   );
+
+  if (is_single()) {
+    global $post;
+    $args['post__not_in'] = [$post->ID];
+  }
+
   $the_query = new WP_Query($args);
   if ($the_query->have_posts()) :
     $i = 0; $j = 0;
 ?>
   <aside class="Sidebar Sidebar--skyBlue">
-    <h3 class="Sidebar-widget-title Sidebar-widget-title--noborder text--white">Últimos vídeos</h3>
+    <h3 class="Sidebar-widget-title Sidebar-widget-title--noborder text--white">Últimas Novedades</h3>
 
     <section class="About--flex">
       <div id="carousel-programs-events" class="carousel slide Carousel Carousel--programs" data-ride="carousel" data-interval="10000">
@@ -86,7 +92,7 @@
                 </figure>
                 <article class="About-info">
                   <h4 class="Subtitle text--white"><?php the_title(); ?></h4>
-                  <p><a class="text--white" href="<?php the_permalink(); ?>">ver programa</a></p>
+                  <p><a class="text--white" href="<?php the_permalink(); ?>">ver artículo</a></p>
                 </article>
               </div>
               <?php $j++; ?>
