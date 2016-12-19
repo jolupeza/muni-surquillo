@@ -2360,6 +2360,53 @@ b {
   }
 }
 
+.Gallery {
+  background-color: #335da4;
+  padding: 30px 0;
+}
+.Gallery .Gallery-list li {
+  cursor: pointer;
+}
+.Gallery .bx-viewport {
+  background-color: transparent;
+  border: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.Gallery .bx-controls-direction a {
+  color: #fdfdfd;
+  font-family: 'icomoon' !important;
+  font-size: 3em;
+  height: 52px;
+  line-height: 1.1em;
+  text-indent: 0;
+  width: 52px;
+}
+.Gallery .bx-controls-direction a:hover, .Gallery .bx-controls-direction a:focus {
+  text-decoration: none;
+}
+.Gallery .bx-controls-direction a:before {
+  height: 100%;
+  width: 100%;
+}
+.Gallery .bx-prev {
+  background: none;
+}
+.Gallery .bx-prev:before {
+  content: "\e902";
+}
+.Gallery .bx-next {
+  background: none;
+}
+.Gallery .bx-next:before {
+  content: "\e903";
+}
+.Gallery .Modal .modal-dialog {
+  margin-bottom: 0;
+  width: 700px;
+}
+
 .About {
   display: -webkit-flex;
   display: flex;

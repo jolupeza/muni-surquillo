@@ -1,8 +1,9 @@
 /resources
 /.sass-cache
 /node_modules
-!/app/lib/formvalidation
 /app/lib
+!/app/lib/formvalidation
+!/app/lib/jquery.bxslider
 /public/videos
 /vendor
 /nbproject

@@ -29,6 +29,8 @@
         $locales = isset($values['mb_locales']) ? $values['mb_locales'][0] : '';
         $iframe = isset($values['mb_iframe']) ? esc_attr($values['mb_iframe'][0]) : '';
         
+        $gallery = isset($values['mb_gallery']) ?  $values['mb_gallery'][0]  :  '';
+        
         $args = array(
             'post_type' => 'locales',
             'posts_per_page' => -1,
@@ -275,4 +277,62 @@
             </p><!-- .media-info -->
         </div><!-- end container-upload-file -->
     </fieldset><!-- end GroupFrm -->
+    
+    <fieldset>
+        <legend>Galeria de Imágenes</legend>
+
+        <?php
+            $totalGallery = 15;
+            $count = 0;
+            
+            if (!empty($gallery)) :
+            $gallery = unserialize($gallery);
+            $count = count($gallery);
+            $i = 0;
+
+            foreach ($gallery as $image) :
+        ?>
+                <div class="container-upload-file">
+                    <p class="btn-add-file">
+                        <a title="Agregar imagen" href="javascript:;" class="set-file button button-primary">Añadir Imagen</a>
+                    </p>
+
+                    <div class="hidden media-container">
+                        <img src="<?php echo $image; ?>" alt="<?php //echo get_post_meta( $post->ID, 'slider-1-alt', true ); ?>" title="<?php //echo get_post_meta( $post->ID, 'slider-1-title', true ); ?>" />
+                    </div><!-- .media-container -->
+
+                    <p class="hidden">
+                        <a title="Quitar imagen" href="javascript:;" class="remove-file button button-secondary">Quitar Imagen</a>
+                    </p>
+
+                    <p class="media-info">
+                        <input class="hd-src" type="hidden" name="mb_gallery[]" value="<?php echo $image; ?>" />
+                    </p><!-- end .media-info -->
+                </div><!-- end container-upload-file -->
+                <?php ++$i; ?>
+            <?php endforeach; ?>
+        <?php endif; ?>
+
+        <?php if ($count < $totalGallery) : ?>
+            <?php for ($i = 0; $i < ($totalGallery - $count); ++$i) : ?>
+                <div class="container-upload-file">
+                    <p class="btn-add-file">
+                        <a title="Agregar Imagen" href="javascript:;" class="set-file button button-primary">Añadir Imagen</a>
+                    </p>
+
+                    <div class="hidden media-container">
+                        <img src="" />
+                    </div><!-- .media-container -->
+
+                    <p class="hidden">
+                        <a title="Quitar archivo" href="javascript:;" class="remove-file button button-secondary">Quitar Imagen</a>
+                    </p>
+
+                    <p class="media-info">
+                        <input class="hd-src" type="hidden" name="mb_gallery[]" value="" />
+                    </p><!-- end .media-info -->
+                </div><!-- end container-upload-file -->
+            <?php endfor; ?>
+        <?php endif; ?>
+    </fieldset>
 </div><!-- #single-post-meta-manager -->

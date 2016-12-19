@@ -301,22 +301,22 @@ msgctxt "Theme starter content"
 msgid "Archives"
 msgstr "Archivos"
 
-#: wp-includes/theme.php:2063
+#: wp-includes/theme.php:2068
 msgctxt "Theme starter content"
 msgid "This is an example of a homepage section. Homepage sections can be any page other than the homepage itself, including the page that shows your latest blog posts."
 msgstr "Este es un ejemplo de una sección de la página de inicio. Las secciones de la página de inicio pueden estar en cualquier página aparte de la propia de inicio, incluida la página que muestra tus últimas entradas."
 
-#: wp-includes/theme.php:2057
+#: wp-includes/theme.php:2062
 msgctxt "Theme starter content"
 msgid "News"
 msgstr "Noticias"
 
-#: wp-includes/theme.php:2049
+#: wp-includes/theme.php:2054
 msgctxt "Theme starter content"
 msgid "This is a page with some basic contact information, such as an address and phone number. You might also try a plugin to add a contact form."
 msgstr "Esta es una página con información de contacto básica, como dirección y número de teléfono. Incluso puedes probar un plugin para añadir un formulario de contacto."
 
-#: wp-includes/theme.php:2044
+#: wp-includes/theme.php:2049
 msgctxt "Theme starter content"
 msgid "You might be an artist who would like to introduce yourself and your work here or maybe you&rsquo;re a business with a mission to describe."
 msgstr "Puedes ser un artista que quiere presentarse a sí mismo y a su trabajo o eres un negocio con una misión que describir."
@@ -331,7 +331,7 @@ msgctxt "Theme starter content"
 msgid "Recent Comments"
 msgstr "Comentarios recientes"
 
-#: wp-includes/theme.php:2039
+#: wp-includes/theme.php:2044
 msgctxt "Theme starter content"
 msgid "Welcome to your site! This is your homepage, which is what most visitors will see when they come to your site for the first time."
 msgstr "¡Bienvenido a tu sitio! Esta es tu página de inicio, que es la que la mayoría de visitantes verán cuando vengan a tu sitio por primera vez."
@@ -406,27 +406,27 @@ msgstr "Lo siento, no tienes permisos para crear nuevos términos."
 msgid "Sorry, you are not allowed to read comments without a post."
 msgstr "Lo siento, no tienes permisos para leer comentarios sin una entrada."
 
-#: wp-includes/theme.php:2031
+#: wp-includes/theme.php:2036
 msgctxt "Theme starter content"
 msgid "YouTube"
 msgstr "YouTube"
 
-#: wp-includes/theme.php:2019
+#: wp-includes/theme.php:2024
 msgctxt "Theme starter content"
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: wp-includes/theme.php:2015
+#: wp-includes/theme.php:2020
 msgctxt "Theme starter content"
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: wp-includes/theme.php:2007
+#: wp-includes/theme.php:2012
 msgctxt "Theme starter content"
 msgid "GitHub"
 msgstr "GitHub"
 
-#: wp-includes/theme.php:2003
+#: wp-includes/theme.php:2008
 msgctxt "Theme starter content"
 msgid "Foursquare"
 msgstr "Foursquare"
@@ -464,73 +464,73 @@ msgstr "Lo siento, no tienes permisos para hacer fijas entradas."
 msgid "Reassign the deleted user's posts and links to this user ID."
 msgstr "Reasignando las entradas y los enlaces del usuario borrado a la ID de ese usuario."
 
-#: wp-includes/class-wp-customize-manager.php:3843
+#: wp-includes/class-wp-customize-manager.php:3850
 msgid "This theme doesn't support video headers on this page. Navigate to the front page or another page that supports video headers."
 msgstr "Este tema no admite encabezados de vídeo en esta página. Puedes ir a la página principal u otra página que admita encabezados de vídeo."
 
-#: wp-includes/class-wp-customize-manager.php:3923
-#: wp-includes/class-wp-customize-manager.php:3926
+#: wp-includes/class-wp-customize-manager.php:3930
+#: wp-includes/class-wp-customize-manager.php:3933
 msgid "Select Video"
 msgstr "Seleccionar vídeo"
 
-#: wp-includes/class-wp-customize-manager.php:3924
+#: wp-includes/class-wp-customize-manager.php:3931
 msgid "Change Video"
 msgstr "Cambiar vídeo"
 
-#: wp-includes/class-wp-customize-manager.php:3925
+#: wp-includes/class-wp-customize-manager.php:3932
 msgid "No video selected"
 msgstr "No has seleccionado ningún vídeo"
 
-#: wp-includes/class-wp-customize-manager.php:3927
+#: wp-includes/class-wp-customize-manager.php:3934
 msgid "Choose Video"
 msgstr "Elegir vídeo"
 
-#: wp-includes/theme.php:2062
+#: wp-includes/theme.php:2067
 msgctxt "Theme starter content"
 msgid "A homepage section"
 msgstr "Una sección de la página de inicio"
 
-#: wp-includes/theme.php:2043
+#: wp-includes/theme.php:2048
 msgctxt "Theme starter content"
 msgid "About"
 msgstr "Acerca de"
 
-#: wp-includes/theme.php:2011
+#: wp-includes/theme.php:2016
 msgctxt "Theme starter content"
 msgid "Instagram"
 msgstr "Instagram"
 
-#: wp-includes/theme.php:2053
+#: wp-includes/theme.php:2058
 msgctxt "Theme starter content"
 msgid "Blog"
 msgstr "Blog"
 
-#: wp-includes/theme.php:1995
+#: wp-includes/theme.php:2000
 msgctxt "Theme starter content"
 msgid "Email"
 msgstr "Correo electrónico"
 
-#: wp-includes/theme.php:2038
+#: wp-includes/theme.php:1970 wp-includes/theme.php:2043
 msgctxt "Theme starter content"
 msgid "Home"
 msgstr "Inicio"
 
-#: wp-includes/theme.php:2048
+#: wp-includes/theme.php:2053
 msgctxt "Theme starter content"
 msgid "Contact"
 msgstr "Contacto"
 
-#: wp-includes/theme.php:2023
+#: wp-includes/theme.php:2028
 msgctxt "Theme starter content"
 msgid "Twitter"
 msgstr "Twitter"
 
-#: wp-includes/theme.php:1999
+#: wp-includes/theme.php:2004
 msgctxt "Theme starter content"
 msgid "Facebook"
 msgstr "Facebook"
 
-#: wp-includes/theme.php:2027
+#: wp-includes/theme.php:2032
 msgctxt "Theme starter content"
 msgid "Yelp"
 msgstr "Yelp"
@@ -611,7 +611,7 @@ msgstr "Ocultar controles"
 msgid "Document Preview"
 msgstr "Vista previa del documento"
 
-#: wp-includes/class-wp-customize-manager.php:3838
+#: wp-includes/class-wp-customize-manager.php:3845
 msgid "Header Media"
 msgstr "Cabecera multimedia"
 
@@ -645,11 +645,11 @@ msgstr "Leyenda HTML del adjunto, transformada para su visualización."
 msgid "Caption for the attachment, as it exists in the database."
 msgstr "Leyenda del adjunto, si existe en la base de datos."
 
-#: wp-includes/class-wp-customize-manager.php:4119
+#: wp-includes/class-wp-customize-manager.php:4126
 msgid "CSS allows you to customize the appearance and layout of your site with code. Separate CSS is saved for each of your themes. In the editing area the Tab key enters a tab character. To move below this area by pressing Tab, press the Esc key followed by the Tab key."
 msgstr "CSS te permite personalizar con código la apariencia y el diseño de tu sitio. Se guardan distintos CSS para cada uno de tus temas. En el área de edición, la tecla Tab introduce un carácter tabulador. Para moverte debajo de este área pulsando Tab, pulsa la tecla Esc y después la tecla Tab."
 
-#: wp-includes/class-wp-customize-manager.php:4308
+#: wp-includes/class-wp-customize-manager.php:4315
 msgid "Please enter a valid YouTube URL."
 msgstr "Por favor, introduce una URL de YouTube válida."
 
@@ -661,7 +661,7 @@ msgstr "Desplegar menú principal"
 msgid "Collapse Main menu"
 msgstr "Contraer menú principal"
 
-#: wp-includes/class-wp-customize-manager.php:3935
+#: wp-includes/class-wp-customize-manager.php:3942
 msgid "Or, enter a YouTube URL:"
 msgstr "O escribe una URL de YouTube:"
 
@@ -719,11 +719,11 @@ msgstr "Limitar el conjunto de resultados a las entradas con uno o más slugs es
 msgid "Comment is required."
 msgstr "Es necesario un comentario."
 
-#: wp-includes/class-wp-customize-nav-menus.php:797
+#: wp-includes/class-wp-customize-nav-menus.php:796
 msgid "Status is forbidden"
 msgstr "Estado prohibido"
 
-#: wp-includes/class-wp-customize-nav-menus.php:794
+#: wp-includes/class-wp-customize-nav-menus.php:793
 msgid "Empty title"
 msgstr "Título vacío"
 
@@ -1657,19 +1657,19 @@ msgstr "Buscar elementos multimedia..."
 msgid "ERROR: This is not a valid feed."
 msgstr "ERROR: Este no es un feed válido."
 
-#: wp-includes/customize/class-wp-customize-selective-refresh.php:190
+#: wp-includes/customize/class-wp-customize-selective-refresh.php:188
 msgid "Click to edit this element."
 msgstr "Haz clic para editar este elemento."
 
-#: wp-includes/customize/class-wp-customize-selective-refresh.php:189
+#: wp-includes/customize/class-wp-customize-selective-refresh.php:187
 msgid "Click to edit the site title."
 msgstr "Haz clic para editar el título del sitio."
 
-#: wp-includes/customize/class-wp-customize-selective-refresh.php:188
+#: wp-includes/customize/class-wp-customize-selective-refresh.php:186
 msgid "Click to edit this widget."
 msgstr "Haz clic para editar este widget."
 
-#: wp-includes/customize/class-wp-customize-selective-refresh.php:187
+#: wp-includes/customize/class-wp-customize-selective-refresh.php:185
 msgid "Click to edit this menu."
 msgstr "Haz clic para editar este menú."
 
@@ -1677,25 +1677,21 @@ msgstr "Haz clic para editar este menú."
 msgid "While you can crop images to your liking after clicking <strong>Add new image</strong>, we recommend matching the size of your video."
 msgstr "Aunque puedes recortar las imágenes que te gustan después de hacer clic en <strong>Añadir imagen</strong>, recomendamos que se ajuste al tamaño de tu vídeo."
 
-#: wp-includes/customize/class-wp-customize-custom-css-setting.php:225
+#: wp-includes/customize/class-wp-customize-custom-css-setting.php:219
 msgid "Imbalanced/unclosed character errors can be caused by <code>content: \"\";</code> declarations. You may need to remove this or add it to a custom CSS file."
 msgstr "Errores de caracteres desequilibrados o sin cerrar son causados por declaraciones como <code>contenido: \"\";</code>. Pues que necesites eliminarlo o añadirlo en un fichero CSS personalizado."
 
-#: wp-includes/customize/class-wp-customize-custom-css-setting.php:221
+#: wp-includes/customize/class-wp-customize-custom-css-setting.php:215
 msgid "There is an extra <code>*/</code>, indicating an end to a comment.  Be sure that there is an opening <code>/*</code> for every closing <code>*/</code>."
 msgstr "Hay un <code>*/</code> de más, indicando el final de un comentario. Asegúrate de que hay un <code>/*</code> abierto para cada <code>*/</code> cerrado."
 
-#: wp-includes/customize/class-wp-customize-custom-css-setting.php:218
+#: wp-includes/customize/class-wp-customize-custom-css-setting.php:212
 msgid "There is %s unclosed code comment. Close each comment with <code>*/</code>."
 msgid_plural "There are %s unclosed code comments. Close each comment with <code>*/</code>."
 msgstr[0] "Existe %s comentario de código sin cerrar. Cierra cada comentario con <code>*/</code>."
 msgstr[1] "Existen %s comentarios de código sin cerrar. Cierra cada comentario con <code>*/</code>."
 
 #: wp-includes/customize/class-wp-customize-custom-css-setting.php:196
-msgid "Your single quotes <code>'</code> are uneven. Make sure there is a closing <code>'</code> for every opening <code>'</code>."
-msgstr "Tus comillas simples <code>'</code> son impares. Asegúrate de que hay una comilla <code>'</code> de cierre para cada comilla de apertura <code>'</code>."
-
-#: wp-includes/customize/class-wp-customize-custom-css-setting.php:202
 msgid "Your double quotes <code>\"</code> are uneven. Make sure there is a closing <code>\"</code> for every opening <code>\"</code>."
 msgstr "Tus comillas dobles <code>\"</code> son desiguales. Asegurarse que exista un cierre <code>\"</code> para cada código abierto <code>\"</code>."
 
@@ -1761,7 +1757,7 @@ msgstr "No se han encontrado widgets."
 msgid "Number of widgets found: %d"
 msgstr "Número de widgets encontrados: %d"
 
-#: wp-includes/class-wp-customize-nav-menus.php:879
+#: wp-includes/class-wp-customize-nav-menus.php:878
 msgid "Post"
 msgstr "Entrada"
 
@@ -1770,57 +1766,57 @@ msgid "There are no widget areas on the page shown, however other pages in this 
 msgstr "No hay áreas de widget en la página mostrada, de todas maneras existen en otras páginas de este tema."
 
 #. translators: %1$s is the post type name and %2$s is the error message.
-#: wp-includes/class-wp-customize-nav-menus.php:884
+#: wp-includes/class-wp-customize-nav-menus.php:883
 msgid "%1$s could not be created: %2$s"
 msgstr "%1$s no se pudo crear: %2$s"
 
 #. translators: 1: .mp4, 2: .mov
-#: wp-includes/class-wp-customize-manager.php:4284
+#: wp-includes/class-wp-customize-manager.php:4291
 msgid "Only %1$s or %2$s files may be used for header video. Please convert your video file and try again, or, upload your video to YouTube and link it with the option below."
 msgstr "Sólo se pueden usar archivos %1$s or %2$s para el vídeo de la cabecera. Por favor, convierte tu video e inténtalo de nuevo o sube tu vídeo a YouTube y enlázalo con la opción de abajo."
 
-#: wp-includes/class-wp-customize-manager.php:4278
+#: wp-includes/class-wp-customize-manager.php:4285
 msgid "This video file is too large to use as a header video. Try a shorter video or optimize the compression settings and re-upload a file that is less than 8MB. Or, upload your video to YouTube and link it with the option below."
 msgstr "Este archivo de vídeo es demasiado grande para ser empleado como un vídeo de cabecera. Inténtalo con un vídeo más corto u optimiza los ajuste de compresión y vuelve a subir el archivo con menos de 8 MB  de peso. También puedes subir tu vídeo a YouTube y enlazarlo con la opción siguiente."
 
-#: wp-includes/class-wp-customize-manager.php:4238
+#: wp-includes/class-wp-customize-manager.php:4245
 msgid "Unrecognized background setting."
 msgstr "Ajuste de fondo no reconocido."
 
-#: wp-includes/class-wp-customize-manager.php:4121
+#: wp-includes/class-wp-customize-manager.php:4128
 msgid "Learn more about CSS"
 msgstr "Aprende más sobre CSS"
 
-#: wp-includes/class-wp-customize-manager.php:4115
+#: wp-includes/class-wp-customize-manager.php:4122
 msgid "Additional CSS"
 msgstr "CSS adicional"
 
-#: wp-includes/class-wp-customize-manager.php:4122
+#: wp-includes/class-wp-customize-manager.php:4129
 msgid "(link opens in a new window)"
 msgstr "(el enlace se abre en una ventana nueva)"
 
-#: wp-includes/class-wp-customize-manager.php:4213
+#: wp-includes/class-wp-customize-manager.php:4220
 msgid "Invalid value for background repeat."
 msgstr "Valor no válido de la repetición de la imagen de fondo."
 
-#: wp-includes/class-wp-customize-manager.php:4221
+#: wp-includes/class-wp-customize-manager.php:4228
 msgid "Invalid value for background position X."
 msgstr "Valor no válido de la posición X de la imagen de fondo."
 
-#: wp-includes/class-wp-customize-manager.php:4225
+#: wp-includes/class-wp-customize-manager.php:4232
 msgid "Invalid value for background position Y."
 msgstr "Valor no válido de la posición Y de la imagen de fondo."
 
-#: wp-includes/class-wp-customize-manager.php:4229
-#: wp-includes/class-wp-customize-manager.php:4233
+#: wp-includes/class-wp-customize-manager.php:4236
+#: wp-includes/class-wp-customize-manager.php:4240
 msgid "Invalid value for background size."
 msgstr "Valor no válido del tamaño de la imagen de fondo."
 
-#: wp-includes/class-wp-customize-manager.php:4217
+#: wp-includes/class-wp-customize-manager.php:4224
 msgid "Invalid value for background attachment."
 msgstr "Valor no válido para el archivo adjunto de fondo."
 
-#: wp-includes/class-wp-customize-manager.php:4128
+#: wp-includes/class-wp-customize-manager.php:4135
 msgid ""
 "You can add your own CSS here.\n"
 "\n"
@@ -1830,80 +1826,80 @@ msgstr ""
 "\n"
 "Haz clic en el icono de ayuda de arriba para averiguar más."
 
-#: wp-includes/class-wp-customize-manager.php:4021
+#: wp-includes/class-wp-customize-manager.php:4028
 msgid "Original"
 msgstr "Original"
 
-#: wp-includes/class-wp-customize-manager.php:4002
+#: wp-includes/class-wp-customize-manager.php:4009
 #: wp-includes/customize/class-wp-customize-background-position-control.php:69
 msgid "Image Position"
 msgstr "Posición de la imagen"
 
-#: wp-includes/class-wp-customize-manager.php:3983
-#: wp-includes/class-wp-customize-manager.php:4022
+#: wp-includes/class-wp-customize-manager.php:3990
+#: wp-includes/class-wp-customize-manager.php:4029
 msgid "Fit to Screen"
 msgstr "Ajustar a la pantalla"
 
-#: wp-includes/class-wp-customize-manager.php:4017
+#: wp-includes/class-wp-customize-manager.php:4024
 msgid "Image Size"
 msgstr "Tamaño de la imagen"
 
-#: wp-includes/class-wp-customize-manager.php:4046
+#: wp-includes/class-wp-customize-manager.php:4053
 msgid "Scroll with Page"
 msgstr "Desplazar con la página"
 
-#: wp-includes/class-wp-customize-manager.php:4034
+#: wp-includes/class-wp-customize-manager.php:4041
 msgid "Repeat Background Image"
 msgstr "Repetir la imagen de fondo"
 
-#: wp-includes/class-wp-customize-manager.php:3984
+#: wp-includes/class-wp-customize-manager.php:3991
 msgctxt "Repeat Image"
 msgid "Repeat"
 msgstr "Repetir"
 
-#: wp-includes/class-wp-customize-manager.php:3985
+#: wp-includes/class-wp-customize-manager.php:3992
 msgctxt "Custom Preset"
 msgid "Custom"
 msgstr "Personalizada"
 
-#: wp-includes/class-wp-customize-manager.php:3917
+#: wp-includes/class-wp-customize-manager.php:3924
 msgid "Header Video"
 msgstr "Vídeo de cabecera"
 
 #. translators: 1: .mp4, 2: header width in pixels
-#: wp-includes/class-wp-customize-manager.php:3857
+#: wp-includes/class-wp-customize-manager.php:3864
 msgid "Upload your video in %1$s format and minimize its file size for best results. Your theme recommends a width of %2$s pixels."
 msgstr "Para obtener mejores resultados, sube tu video en formato <code>.mp4</code> y minimiza su tamaño de archivo. Tu tema recomienda %s píxeles de ancho."
 
-#: wp-includes/class-wp-customize-manager.php:3977
+#: wp-includes/class-wp-customize-manager.php:3984
 msgctxt "Background Preset"
 msgid "Preset"
 msgstr "Configuración"
 
-#: wp-includes/class-wp-customize-manager.php:3981
+#: wp-includes/class-wp-customize-manager.php:3988
 msgctxt "Default Preset"
 msgid "Default"
 msgstr "Predeterminada"
 
 #. translators: 1: .mp4, 2: header height in pixels
-#: wp-includes/class-wp-customize-manager.php:3864
+#: wp-includes/class-wp-customize-manager.php:3871
 msgid "Upload your video in %1$s format and minimize its file size for best results. Your theme recommends a height of %2$s pixels."
 msgstr "Sube tu vídeo en el formato %1$s y minimiza su tamaño para tener mejores resultados. Tu tema recomienda una altura de %2$s píxeles."
 
-#: wp-includes/class-wp-customize-manager.php:3839
+#: wp-includes/class-wp-customize-manager.php:3846
 msgid "If you add a video, the image will be used as a fallback while the video loads."
 msgstr "Si añades un video, la imagen se utilizará como alternativa mientras que el video carga."
 
 #. translators: 1: .mp4, 2: header size in pixels
-#: wp-includes/class-wp-customize-manager.php:3850
+#: wp-includes/class-wp-customize-manager.php:3857
 msgid "Upload your video in %1$s format and minimize its file size for best results. Your theme recommends dimensions of %2$s pixels."
 msgstr "Sube tu vídeo en formato %1$s y minimiza su tamaño de archivo para obtener mejores resultados. Tu tema recomienda unas dimensiones de %2$s pixeles."
 
-#: wp-includes/class-wp-customize-manager.php:1984
+#: wp-includes/class-wp-customize-manager.php:1991
 msgid "Setting does not exist or is unrecognized."
 msgstr "La configuración no existe o no se reconoce."
 
-#: wp-includes/class-wp-customize-manager.php:1989
+#: wp-includes/class-wp-customize-manager.php:1996
 msgid "Unauthorized to modify setting due to capability."
 msgstr "No autorizado para modificar la configuración debido a los permisos."
 
@@ -1921,11 +1917,11 @@ msgstr "Nuevo título de página"
 msgid "PHP's XML extension is not available. Please contact your hosting provider to enable PHP's XML extension."
 msgstr "La extensión XML de PHP no está disponible. Por favor contacta con tu proveedor de alojamiento para habilitar la extensión XML de PHP."
 
-#: wp-includes/class-wp-customize-manager.php:1806
+#: wp-includes/class-wp-customize-manager.php:1784
 msgid "This form is not live-previewable."
 msgstr "Este formulario no se puede previsualizar en vivo."
 
-#: wp-includes/class-wp-customize-manager.php:1805
+#: wp-includes/class-wp-customize-manager.php:1783
 msgid "This link is not live-previewable."
 msgstr "Este enlace no se puede previsualizar en vivo."
 
@@ -2313,17 +2309,17 @@ msgstr "Lo siento, no tienes permisos para añadir una categoría."
 msgid "Sorry, you are not allowed to list users."
 msgstr "Lo siento, no tienes permisos para listar usuarios."
 
-#: wp-includes/class-wp-customize-manager.php:2012
+#: wp-includes/class-wp-customize-manager.php:2019
 #: wp-includes/class-wp-customize-setting.php:549
 msgid "Invalid value."
 msgstr "Valor no válido."
 
 #. translators: URL to the widgets panel of the customizer
-#: wp-includes/class-wp-customize-nav-menus.php:586
+#: wp-includes/class-wp-customize-nav-menus.php:585
 msgid "You can also place menus in <a href=\"%s\">widget areas</a> with the &#8220;Custom Menu&#8221; widget."
 msgstr "También puedes poner menús en <a href=\"%s\">los widgets</a> con el widget  &#8220;Menú personalizado&#8221;."
 
-#: wp-includes/class-wp-customize-manager.php:2341
+#: wp-includes/class-wp-customize-manager.php:2348
 msgid "There is %s invalid setting."
 msgid_plural "There are %s invalid settings."
 msgstr[0] "Hay %s ajuste no válido."
@@ -2401,7 +2397,7 @@ msgstr "La constante %1$s <strong>está obsoleta</strong>. Utiliza la constante 
 
 #. translators: 1: panel id, 2: link to 'customize_loaded_components' filter
 #. reference
-#: wp-includes/class-wp-customize-manager.php:2933
+#: wp-includes/class-wp-customize-manager.php:2940
 msgid "Removing %1$s manually will cause PHP warnings. Use the %2$s filter instead."
 msgstr "Quitar manualmente %1$s puede provocar avisos PHP. Utiliza en su lugar el filtro %2$s."
 
@@ -2501,7 +2497,7 @@ msgstr "Entrar"
 msgid "<strong>ERROR</strong>: Invalid username, email address or incorrect password."
 msgstr "<strong>ERROR</strong>: Nombre de usuario o correo electrónico no válido o contraseña incorrecta."
 
-#: wp-includes/class-wp-customize-manager.php:3779
+#: wp-includes/class-wp-customize-manager.php:3786
 msgid "Choose logo"
 msgstr "Elegir logo"
 
@@ -2509,7 +2505,7 @@ msgstr "Elegir logo"
 msgid "Close dialog"
 msgstr "Cerrar diálogo"
 
-#: wp-includes/class-wp-customize-manager.php:3777
+#: wp-includes/class-wp-customize-manager.php:3784
 msgid "No logo selected"
 msgstr "No se ha elegido un logo"
 
@@ -2520,16 +2516,16 @@ msgid "The called constructor method for %1$s in %2$s is <strong>deprecated</str
 msgstr "¡El método de llamada al constructor %1$s en %2$s está <strong>obsoleto</strong> desde la versión %3$s! Utiliza %4$s en su lugar."
 
 #. translators: %s: document.write()
-#: wp-includes/customize/class-wp-customize-selective-refresh.php:192
+#: wp-includes/customize/class-wp-customize-selective-refresh.php:190
 msgid "%s is forbidden"
 msgstr "%s no está permitido"
 
-#: wp-includes/class-wp-customize-manager.php:3774
+#: wp-includes/class-wp-customize-manager.php:3781
 msgid "Change logo"
 msgstr "Cambiar logo"
 
-#: wp-includes/class-wp-customize-manager.php:3773
-#: wp-includes/class-wp-customize-manager.php:3778
+#: wp-includes/class-wp-customize-manager.php:3780
+#: wp-includes/class-wp-customize-manager.php:3785
 msgid "Select logo"
 msgstr "Elegir logo"
 
@@ -2568,7 +2564,7 @@ msgstr "Papelera"
 msgid "<strong>ERROR</strong>: your comment is too long."
 msgstr "<strong>ERROR</strong>: tu comentario es demasiado largo."
 
-#: wp-includes/class-wp-customize-manager.php:3765
+#: wp-includes/class-wp-customize-manager.php:3772
 msgid "Logo"
 msgstr "Logo"
 
@@ -2590,12 +2586,12 @@ msgstr "Tipo de objeto no válido"
 msgid "Template is missing. Standalone themes need to have a %1$s template file. <a href=\"%2$s\">Child themes</a> need to have a Template header in the %3$s stylesheet."
 msgstr "La plantilla no está disponible. Los temas necesitan un archivo de plantilla %1$s. Los <a href=\"%2$s\">Temas hijo</a> necesitan una cabecera de plantilla en la hoja de estilos %3$s."
 
-#: wp-includes/class-wp-customize-manager.php:3732
-#: wp-includes/class-wp-customize-manager.php:3809
+#: wp-includes/class-wp-customize-manager.php:3739
+#: wp-includes/class-wp-customize-manager.php:3816
 msgid "Display Site Title and Tagline"
 msgstr "Muestra el título y descripción del sitio"
 
-#: wp-includes/class-wp-customize-manager.php:3608
+#: wp-includes/class-wp-customize-manager.php:3615
 msgid "Enter tablet preview mode"
 msgstr "Entrar en el modo de vista previa en tableta"
 
@@ -2603,16 +2599,16 @@ msgstr "Entrar en el modo de vista previa en tableta"
 msgid "Comment Submission Failure"
 msgstr "Fallo al enviar el comentario"
 
-#: wp-includes/class-wp-customize-manager.php:3604
+#: wp-includes/class-wp-customize-manager.php:3611
 msgid "Enter desktop preview mode"
 msgstr "Entrar en la vista previa de escritorio"
 
-#: wp-includes/class-wp-customize-manager.php:3611
+#: wp-includes/class-wp-customize-manager.php:3618
 msgid "Enter mobile preview mode"
 msgstr "Entrar en la vista previa móvil"
 
-#: wp-includes/class-wp-customize-manager.php:1804
-#: wp-includes/customize/class-wp-customize-selective-refresh.php:186
+#: wp-includes/class-wp-customize-manager.php:1782
+#: wp-includes/customize/class-wp-customize-selective-refresh.php:184
 msgid "Shift-click to edit this element."
 msgstr "Mayúsculas-Clic para editar este elemento."
 
@@ -3274,7 +3270,7 @@ msgid "Press return or enter to open this section"
 msgstr "Pulsa retorno o intro para abrir esta sección"
 
 #. translators: %s: document title from the preview
-#: wp-includes/class-wp-customize-manager.php:3276
+#: wp-includes/class-wp-customize-manager.php:3283
 msgid "Live Preview: %s"
 msgstr "Vista previa: %s"
 
@@ -3297,7 +3293,7 @@ msgstr "Lo siento, no tienes permisos para modificar las  opciones del tema en e
 msgid "The post type %1$s is not registered, so it may not be reliable to check the capability \"%2$s\" against a post of that type."
 msgstr "El tipo de publicación %1$s no está registrado así que puede que no sea fiable para comprobar la capacidad de \"%2$s\" para un contenido de ese tipo."
 
-#: wp-includes/class-wp-customize-nav-menus.php:973
+#: wp-includes/class-wp-customize-nav-menus.php:972
 #: wp-includes/class-wp-customize-widgets.php:786
 msgid "Clear Results"
 msgstr "Limpiar resultados"
@@ -3307,7 +3303,7 @@ msgid "The following formatting shortcuts are replaced when pressing Enter. Pres
 msgstr "Los siguientes atajos de formato se sustituyen al pulsar Intro. Pulsa Escape o el botón Deshacer para deshacer los cambios."
 
 #. translators: %s: Title of a section with menu items
-#: wp-includes/class-wp-customize-nav-menus.php:1023
+#: wp-includes/class-wp-customize-nav-menus.php:1022
 msgid "Toggle section: %s"
 msgstr "Desplegar/Plegar sección: %s"
 
@@ -3334,7 +3330,7 @@ msgstr "Eliminar el elemento de menú %1$s (%2$s)"
 msgid "Edit menu item: %1$s (%2$s)"
 msgstr "Editar el elemento del menú %1$s (%2$s)"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1057
+#: wp-includes/class-wp-customize-nav-menus.php:1056
 msgid "Toggle section: Custom Links"
 msgstr "Desplegar/Plegar sección: Enlaces personalizados"
 
@@ -3368,7 +3364,7 @@ msgstr "Vista previa como un icono del navegador"
 msgid "Preview as an app icon"
 msgstr "Vista previa como un icono de aplicación"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1019
+#: wp-includes/class-wp-customize-nav-menus.php:1018
 msgid "No items"
 msgstr "Nada"
 
@@ -3420,21 +3416,21 @@ msgstr "Añade una nueva imagen de cabecera"
 msgid "Add new image"
 msgstr "Añadir nueva imagen"
 
-#: wp-includes/class-wp-customize-manager.php:3746
+#: wp-includes/class-wp-customize-manager.php:3753
 msgid "Site Icon"
 msgstr "Icono del sitio"
 
 #. translators: %s: site icon size in pixels
-#: wp-includes/class-wp-customize-manager.php:3749
+#: wp-includes/class-wp-customize-manager.php:3756
 msgid "The Site Icon is used as a browser and app icon for your site. Icons must be square, and at least %s pixels wide and tall."
 msgstr "El icono del sitio lo usa el navegador como icono de la aplicación para tu sitio. Los iconos deben ser cuadrados y al menos de %s píxeles de ancho y alto."
 
-#: wp-includes/class-wp-customize-manager.php:3697
+#: wp-includes/class-wp-customize-manager.php:3704
 msgid "Site Identity"
 msgstr "Identidad del sitio"
 
 #. translators: 1: Title of a menu item, 2: Type of a menu item
-#: wp-includes/class-wp-customize-nav-menus.php:918
+#: wp-includes/class-wp-customize-nav-menus.php:917
 msgid "Add to menu: %1$s (%2$s)"
 msgstr "Añadir al menú: %1$s (%2$s)"
 
@@ -3463,7 +3459,7 @@ msgid "Username may not be longer than 60 characters."
 msgstr "El nombre de usuario no puede ser superior a 60 caracteres."
 
 #. translators: URL to the widgets panel of the customizer
-#: wp-includes/class-wp-customize-nav-menus.php:563
+#: wp-includes/class-wp-customize-nav-menus.php:562
 msgid "Menus can be displayed in locations defined by your theme or in <a href=\"%s\">widget areas</a> by adding a &#8220;Custom Menu&#8221; widget."
 msgstr "Los menús se pueden mostrar en lugares definidos por el tema o en el <a href=\"%s\">área de widgets</a> añadiendo un widget \"Menú personalizado\"."
 
@@ -3487,7 +3483,7 @@ msgstr "Previsualizar el tema"
 msgid "Active theme"
 msgstr "Tema activo"
 
-#: wp-includes/class-wp-customize-nav-menus.php:565
+#: wp-includes/class-wp-customize-nav-menus.php:564
 msgid "Menus can be displayed in locations defined by your theme."
 msgstr "Los menús se pueden mostrar en localizaciones definidos por su tema."
 
@@ -3757,61 +3753,61 @@ msgstr "Personalización"
 msgid "Menu Options"
 msgstr "Opciones del menú"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1073
+#: wp-includes/class-wp-customize-nav-menus.php:1072
 msgid "Add to Menu"
 msgstr "Añadir al menú"
 
-#: wp-includes/class-wp-customize-nav-menus.php:968
+#: wp-includes/class-wp-customize-nav-menus.php:967
 msgid "Search menu items&hellip;"
 msgstr "Elementos del menú de búsqueda&hellip;"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1055
+#: wp-includes/class-wp-customize-nav-menus.php:1054
 msgid "Custom Links"
 msgstr "Enlaces personalizados"
 
-#: wp-includes/class-wp-customize-nav-menus.php:969
+#: wp-includes/class-wp-customize-nav-menus.php:968
 #: wp-includes/class-wp-customize-widgets.php:787
 msgid "The search results will be updated as you type."
 msgstr "Los resultados de búsqueda se actualizarán a medida que escribes."
 
-#: wp-includes/class-wp-customize-nav-menus.php:934
+#: wp-includes/class-wp-customize-nav-menus.php:933
 msgid "Move one level down"
 msgstr "Mover a un nivel inferior"
 
-#: wp-includes/class-wp-customize-nav-menus.php:962
+#: wp-includes/class-wp-customize-nav-menus.php:961
 msgid "Add Menu Items"
 msgstr "Añadir elementos de menú"
 
-#: wp-includes/class-wp-customize-nav-menus.php:967
+#: wp-includes/class-wp-customize-nav-menus.php:966
 msgid "Search Menu Items"
 msgstr "Buscar elementos de menú"
 
-#: wp-includes/class-wp-customize-nav-menus.php:933
+#: wp-includes/class-wp-customize-nav-menus.php:932
 msgid "Move one level up"
 msgstr "Mover a un nivel superior"
 
-#: wp-includes/class-wp-customize-nav-menus.php:676
+#: wp-includes/class-wp-customize-nav-menus.php:675
 msgid "Add a Menu"
 msgstr "Añadir un menú"
 
-#: wp-includes/class-wp-customize-nav-menus.php:590
+#: wp-includes/class-wp-customize-nav-menus.php:589
 msgid "Menu Locations"
 msgstr "Ubicaciones de menús"
 
-#: wp-includes/class-wp-customize-nav-menus.php:688
+#: wp-includes/class-wp-customize-nav-menus.php:687
 msgid "New menu name"
 msgstr "Nuevo nombre de menú"
 
 #. translators: &#9656; is the unicode right-pointing triangle, and %s is the
 #. section title in the Customizer
 #: wp-includes/class-wp-customize-nav-menus.php:428
-#: wp-includes/class-wp-customize-nav-menus.php:959
+#: wp-includes/class-wp-customize-nav-menus.php:958
 #: wp-includes/class-wp-customize-section.php:246
 #: wp-includes/class-wp-customize-widgets.php:777
 msgid "Customizing &#9656; %s"
 msgstr "Personalizando &#9656; %s"
 
-#: wp-includes/class-wp-customize-nav-menus.php:560
+#: wp-includes/class-wp-customize-nav-menus.php:559
 msgid "This panel is used for managing navigation menus for content you have already published on your site. You can create menus and add items for existing content such as pages, posts, categories, tags, formats, or custom links."
 msgstr "Este panel se usa para gestionar los menús de navegación de los contenidos que ya has publicado en tu sitio. Puedes crear menús y añadir elementos del contenido existente, como páginas, entradas, categorías, etiquetas, formatos, o enlaces personalizados. "
 
@@ -3916,7 +3912,7 @@ msgctxt "nav menu home label"
 msgid "Home"
 msgstr "Inicio"
 
-#: wp-includes/class-wp-customize-nav-menus.php:791
+#: wp-includes/class-wp-customize-nav-menus.php:790
 msgid "Unknown post type"
 msgstr "Tipo de contenido desconocido."
 
@@ -4050,12 +4046,12 @@ msgstr "Cambiar"
 msgid "Dismiss this notice."
 msgstr "Descartar este aviso."
 
-#: wp-includes/class-wp-customize-nav-menus.php:579
+#: wp-includes/class-wp-customize-nav-menus.php:578
 msgid "Your theme supports one menu. Select which menu you would like to use."
 msgstr "Tu tema soporta un único menú. Elige qué menú te gustaría usar."
 
 #. translators: %s: number of menu locations
-#: wp-includes/class-wp-customize-nav-menus.php:582
+#: wp-includes/class-wp-customize-nav-menus.php:581
 msgid "Your theme supports %s menu. Select which menu appears in each location."
 msgid_plural "Your theme supports %s menus. Select which menu appears in each location."
 msgstr[0] "Tu tema soporta %s menús. Elige qué menú debería aparecer en cada lugar."
@@ -4077,7 +4073,7 @@ msgstr "Imagen sugerida #%d"
 msgid "Taxonomy names must be between 1 and 32 characters in length."
 msgstr "Los nombres de taxonomías deben tener entre 1 y 32 caracteres de longitud."
 
-#: wp-includes/theme.php:2950
+#: wp-includes/theme.php:2955
 msgid "Customizer"
 msgstr "Personalizador"
 
@@ -4275,7 +4271,7 @@ msgstr[1] "%1$s comentarios<span class=\"screen-reader-text\"> en %2$s</span>"
 msgid "No Comments<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "No hay comentarios<span class=\"screen-reader-text\"> en %s</span>"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1068
+#: wp-includes/class-wp-customize-nav-menus.php:1067
 #: wp-includes/class-wp-editor.php:1452 wp-includes/media-template.php:817
 msgid "Link Text"
 msgstr "Texto del enlace"
@@ -4315,7 +4311,7 @@ msgid "Distraction-free writing mode"
 msgstr "Modo de escritura sin distracción"
 
 #. translators: 1: Theme support 2: hook name
-#: wp-includes/theme.php:2398
+#: wp-includes/theme.php:2403
 msgid "Theme support for %1$s should be registered before the %2$s hook."
 msgstr "El soporte del Tema para %1$s debe estar registrado antes del gancho %2$s."
 
@@ -4356,7 +4352,7 @@ msgstr "Área de texto enriquecido. Pulsa Alt-Shift-H para obtener ayuda."
 msgid "The following values do not describe a valid date: month %1$s, day %2$s."
 msgstr "Los siguientes valores no describen una fecha válida: mes %1$s, día %2$s."
 
-#: wp-includes/theme.php:2242
+#: wp-includes/theme.php:2247
 msgid "You need to pass an array of types."
 msgstr "Tienes que pasar una matriz de tipos."
 
@@ -4843,7 +4839,7 @@ msgstr "Aunque puedes recortar imágenes a tu gusto después de hacer clic en <s
 msgid "(WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.)"
 msgstr "(WordPress no pudo establecer una conexión segura con WordPress.org. Por favor, contacta con el administrador de tu servidor.)"
 
-#: wp-includes/class-wp-customize-widgets.php:1133
+#: wp-includes/class-wp-customize-widgets.php:1128
 msgid "Shift-click to edit this widget."
 msgstr "Mayúsculas + clic para editar este widget."
 
@@ -5449,7 +5445,7 @@ msgstr "El argumento de la consulta %s debe tener un marcador de posición."
 msgid "Hint: The password should be at least twelve characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! \" ? $ % ^ &amp; )."
 msgstr "Truco: La contraseña debe ser de al menos doce caracteres. Para hacerla más fuerte usa mayúsculas y minúsculas, números y símbolos como ! \" ? $ % ^ y )."
 
-#: wp-includes/class-wp-customize-nav-menus.php:953
+#: wp-includes/class-wp-customize-nav-menus.php:952
 #: wp-includes/class-wp-customize-panel.php:368
 #: wp-includes/class-wp-customize-section.php:368
 #: wp-includes/class-wp-customize-widgets.php:772
@@ -5661,12 +5657,12 @@ msgstr "Cabeceras sugeridas al azar"
 msgid "No image set"
 msgstr "No se ha definido ninguna imagen"
 
-#: wp-includes/class-wp-customize-nav-menus.php:932
+#: wp-includes/class-wp-customize-nav-menus.php:931
 #: wp-includes/class-wp-customize-widgets.php:700
 msgid "Move down"
 msgstr "Bajar"
 
-#: wp-includes/class-wp-customize-nav-menus.php:931
+#: wp-includes/class-wp-customize-nav-menus.php:930
 #: wp-includes/class-wp-customize-widgets.php:701
 msgid "Move up"
 msgstr "Subir"
@@ -6527,11 +6523,11 @@ msgstr "HTML"
 msgid "Hex Value"
 msgstr "Valor hexadecimal "
 
-#: wp-includes/class-wp-customize-manager.php:3816
+#: wp-includes/class-wp-customize-manager.php:3823
 msgid "Header Text Color"
 msgstr "Color del texto de la cabecera"
 
-#: wp-includes/class-wp-customize-manager.php:3793
+#: wp-includes/class-wp-customize-manager.php:3800
 msgid "Colors"
 msgstr "Colores"
 
@@ -6570,7 +6566,7 @@ msgstr "Lo siento, no puedes poner como fija una entrada privada."
 msgid "Sorry, you are not allowed to publish this page."
 msgstr "Lo siento, no tienes permisos para publicar esta página."
 
-#: wp-includes/class-wp-customize-manager.php:3870
+#: wp-includes/class-wp-customize-manager.php:3877
 #: wp-includes/customize/class-wp-customize-header-image-control.php:31
 msgid "Header Image"
 msgstr "Imagen de cabecera"
@@ -6611,15 +6607,15 @@ msgstr "Por favor, introduce un nombre para el sitio."
 msgid "Please enter a username."
 msgstr "Por favor escribe un nombre de usuario."
 
-#: wp-includes/class-wp-customize-manager.php:4085
+#: wp-includes/class-wp-customize-manager.php:4092
 msgid "A static page"
 msgstr "Una página estática"
 
-#: wp-includes/class-wp-customize-manager.php:3831
+#: wp-includes/class-wp-customize-manager.php:3838
 msgid "Background Color"
 msgstr "Color de fondo"
 
-#: wp-includes/class-wp-customize-manager.php:3952
+#: wp-includes/class-wp-customize-manager.php:3959
 #: wp-includes/customize/class-wp-customize-background-image-control.php:30
 msgid "Background Image"
 msgstr "Imagen de fondo"
@@ -6636,15 +6632,15 @@ msgstr "Eliminar imagen"
 msgid "Sorry, you are not allowed to edit this comment."
 msgstr "Lo siento, no estás autorizado a editar este comentario."
 
-#: wp-includes/class-wp-customize-manager.php:4107
+#: wp-includes/class-wp-customize-manager.php:4114
 msgid "Posts page"
 msgstr "Página de entradas"
 
-#: wp-includes/class-wp-customize-manager.php:4095
+#: wp-includes/class-wp-customize-manager.php:4102
 msgid "Front page"
 msgstr "Portada"
 
-#: wp-includes/class-wp-customize-manager.php:3775
+#: wp-includes/class-wp-customize-manager.php:3782
 #: wp-includes/class-wp-customize-widgets.php:730
 #: wp-includes/class-wp-editor.php:1052
 #: wp-includes/customize/class-wp-customize-image-control.php:37
@@ -6771,34 +6767,34 @@ msgstr "La hoja de estilo no es legible."
 msgid "The \"%s\" theme is not a valid parent theme."
 msgstr "El tema \"%s\" no es un tema padre válido."
 
-#: wp-includes/class-wp-customize-manager.php:4084
+#: wp-includes/class-wp-customize-manager.php:4091
 msgid "Your latest posts"
 msgstr "Tus últimas entradas"
 
-#: wp-includes/class-wp-customize-manager.php:3719
+#: wp-includes/class-wp-customize-manager.php:3726
 msgid "Tagline"
 msgstr "Descripción corta"
 
-#: wp-includes/class-wp-customize-manager.php:4080
+#: wp-includes/class-wp-customize-manager.php:4087
 msgid "Front page displays"
 msgstr "Página frontal muestra"
 
-#: wp-includes/class-wp-customize-manager.php:4069
+#: wp-includes/class-wp-customize-manager.php:4076
 msgid "Your theme supports a static front page."
 msgstr "Tu tema permite una página estática como portada."
 
-#: wp-includes/class-wp-customize-manager.php:4067
+#: wp-includes/class-wp-customize-manager.php:4074
 msgid "Static Front Page"
 msgstr "Portada estática"
 
 #: wp-includes/class-wp-customize-control.php:551
-#: wp-includes/class-wp-customize-nav-menus.php:596
+#: wp-includes/class-wp-customize-nav-menus.php:595
 #: wp-includes/widgets/class-wp-nav-menu-widget.php:143
 msgid "&mdash; Select &mdash;"
 msgstr "&mdash; Elegir &mdash;"
 
 #. translators: %s: document title from the preview
-#: wp-includes/class-wp-customize-manager.php:3273
+#: wp-includes/class-wp-customize-manager.php:3280
 msgid "Customize: %s"
 msgstr "Personalizar: %s"
 
@@ -6969,7 +6965,7 @@ msgstr "Crear un archivo de configuración"
 msgid "You can create a %s file through a web interface, but this doesn't work for all server setups. The safest way is to manually create the file."
 msgstr "Puedes crear un fichero %s a través de una interfaz web, pero esto no funciona en todas las configuraciones de servidores. La forma más segura es crear el archivo manualmente."
 
-#: wp-includes/class-wp-customize-manager.php:4120
+#: wp-includes/class-wp-customize-manager.php:4127
 msgid "https://codex.wordpress.org/CSS"
 msgstr "https://codex.wordpress.org/CSS"
 
@@ -8097,7 +8093,7 @@ msgid "One response to %s"
 msgstr "Una respuesta a %s"
 
 #: wp-includes/admin-bar.php:789
-#: wp-includes/class-wp-customize-nav-menus.php:568
+#: wp-includes/class-wp-customize-nav-menus.php:567
 msgid "Menus"
 msgstr "Menús"
 
@@ -9132,7 +9128,7 @@ msgstr "Insertar/Editar enlace"
 
 #: wp-includes/class-wp-editor.php:1033 wp-includes/script-loader.php:463
 #: wp-includes/script-loader.php:574 wp-includes/script-loader.php:583
-#: wp-includes/script-loader.php:752 wp-includes/theme.php:2949
+#: wp-includes/script-loader.php:752 wp-includes/theme.php:2954
 msgid "The changes you made will be lost if you navigate away from this page."
 msgstr "Los cambios realizados se perderán si abres otra página."
 
@@ -9762,8 +9758,8 @@ msgstr "Abajo a la izquierda"
 msgid "Bottom Right"
 msgstr "Abajo a la derecha"
 
-#: wp-includes/class-wp-customize-manager.php:3982
-#: wp-includes/class-wp-customize-manager.php:4023
+#: wp-includes/class-wp-customize-manager.php:3989
+#: wp-includes/class-wp-customize-manager.php:4030
 msgid "Fill Screen"
 msgstr "Rellenar pantalla"
 
@@ -9813,7 +9809,7 @@ msgstr "Temas"
 msgid "Height"
 msgstr "Altura"
 
-#: wp-includes/class-wp-customize-manager.php:3776
+#: wp-includes/class-wp-customize-manager.php:3783
 #: wp-includes/customize/class-wp-customize-color-control.php:54
 #: wp-includes/customize/class-wp-customize-image-control.php:38
 #: wp-includes/customize/class-wp-customize-media-control.php:62
@@ -9985,7 +9981,7 @@ msgstr "Sitios"
 msgid "First Post"
 msgstr "Primera entrada"
 
-#: wp-includes/class-wp-customize-manager.php:3708
+#: wp-includes/class-wp-customize-manager.php:3715
 #: wp-includes/class-wp-xmlrpc-server.php:479
 msgid "Site Title"
 msgstr "Título del sitio"
@@ -10160,7 +10156,7 @@ msgstr "No"
 msgid "Author"
 msgstr "Autor"
 
-#: wp-includes/class-wp-customize-nav-menus.php:1064
+#: wp-includes/class-wp-customize-nav-menus.php:1063
 #: wp-includes/class-wp-editor.php:1448
 #: wp-includes/customize/class-wp-customize-nav-menu-item-control.php:91
 #: wp-includes/media-template.php:373 wp-includes/media-template.php:554
@@ -10222,7 +10218,7 @@ msgid "All Categories"
 msgstr "Todas las categorías"
 
 #: wp-includes/class-wp-customize-control.php:598
-#: wp-includes/class-wp-customize-nav-menus.php:1033
+#: wp-includes/class-wp-customize-nav-menus.php:1032
 msgid "Add"
 msgstr "Añadir"
 

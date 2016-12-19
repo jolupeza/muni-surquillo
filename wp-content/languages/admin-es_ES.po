@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-12-10 13:06:44+0000\n"
+"PO-Revision-Date: 2016-12-14 12:28:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1936,7 +1936,7 @@ msgstr[1] "%s entradas de este autor"
 #: wp-admin/includes/class-theme-installer-skin.php:69
 #: wp-admin/includes/class-theme-upgrader-skin.php:59
 msgid "Live Preview &#8220;%s&#8221;"
-msgstr "Vista Previa &#8220;%s&#8221;"
+msgstr "Vista previa &#8220;%s&#8221;"
 
 #: wp-admin/includes/class-wp-press-this.php:1486
 msgid "More actions"
@@ -2393,7 +2393,7 @@ msgstr "Ocultar los ajustes de la entrada"
 
 #: wp-admin/plugin-editor.php:148 wp-admin/theme-editor.php:30
 msgid "In the editing area the Tab key enters a tab character. To move below this area by pressing Tab, press the Esc key followed by the Tab key. In some cases the Esc key will need to be pressed twice before the Tab key will allow you to continue."
-msgstr "En el área de edición la tecla Tab introduce un carácter de tabulación. Para moverse por debajo de esta zona pulsando Tab, pulsa la tecla Esc seguida de la tecla Tab. En algunos casos habrá que presionar dos veces la tecla Esc antes de que la tecla Tab te permita continuar."
+msgstr "En el área de edición la tecla Tab introduce un carácter de tabulación. Para moverse por debajo de esta área pulsando Tab, pulsa la tecla Esc seguida de la tecla Tab. En algunos casos habrá que presionar dos veces la tecla Esc antes de que la tecla Tab te permita continuar."
 
 #: wp-admin/includes/class-wp-screen.php:1139
 msgid "Number of items per page:"
@@ -2515,7 +2515,7 @@ msgstr "j M @ H:i"
 
 #: wp-admin/includes/class-wp-press-this.php:241
 msgid "This category cannot be added. Please change the name and try again."
-msgstr "Esta categoría no puede ser añadida. Cambia el nombre e inténtalo de nuevo."
+msgstr "No pudo añadirse esta categoría. Cambia el nombre e inténtalo de nuevo."
 
 #: wp-admin/includes/class-wp-press-this.php:248
 msgid "Error while adding the category. Please try again later."
@@ -2606,7 +2606,7 @@ msgid ""
 "UPDATE LOG\n"
 "=========="
 msgstr ""
-"ACTUALIZAR LOG\n"
+"REGISTRO DE LA ACTUALIZACIÓN\n"
 "=========="
 
 #. translators: Do not translate USERNAME, ADMIN_URL, EMAIL, SITENAME, SITEURL:

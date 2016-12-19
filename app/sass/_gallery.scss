@@ -1,0 +1,54 @@
+.Gallery {
+  background-color: $azul2;
+  padding: 30px 0;
+  .Gallery-list {
+    li {
+      cursor: pointer;
+    }
+  }
+  .bx-viewport {
+    background-color: transparent;
+    border: none;
+    @include box-shadow(none);
+  }
+  .bx-controls-direction {
+    a {
+      color: $whiteDark;
+      font-family: 'icomoon' !important;
+      font-size: 3em;
+      height: 52px;
+      line-height: 1.1em;
+      text-indent: 0;
+      width: 52px;
+      &:hover, &:focus {
+        text-decoration: none;
+      }
+      &:before {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  .bx-prev {
+    background: none;
+    &:before {
+      content: "\e902";
+    }
+  }
+  .bx-next {
+    background: none;
+    &:before {
+      content: "\e903";
+    }
+  }
+
+  .Modal {
+    .modal-dialog {
+      margin-bottom: 0;
+      width: 700px;
+    }
+    .Modal-figure {
+
+    }
+  }
+}

@@ -252,6 +252,32 @@ class Muni_Manager_Admin
         } else {
             delete_post_meta($post_id, 'mb_bg');
         }
+        
+        // Gallery
+        if (isset($_POST['mb_gallery']) && count($_POST['mb_gallery'])) {
+            $images = $_POST['mb_gallery'];
+
+            $save = false;
+            $newArrImages = array();
+            $i = 0;
+
+            foreach ($images as $image) {
+                if (!empty($image)) {
+                    $save = true;
+                    $newArrImages[] = $image;
+                }
+
+                ++$i;
+            }
+
+            if ($save) {
+                update_post_meta($post_id, 'mb_gallery', $newArrImages);
+            } else {
+                delete_post_meta($post_id, 'mb_gallery');
+            }
+        } else {
+            delete_post_meta($post_id, 'mb_gallery');
+        }
     }
 
     /**

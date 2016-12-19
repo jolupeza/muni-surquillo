@@ -9,6 +9,7 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="lib/formvalidation/dist/css/formValidation.css" />
+    <link rel="stylesheet" href="lib/jquery.bxslider/jquery.bxslider.css" />
     <!-- endbower -->
     <!-- inject:css -->
     <link rel="stylesheet" href="css/animated.css">
@@ -173,6 +174,42 @@
       </article><!-- end Page-flex50 -->
     </section><!-- end Page -->
 
+    <section class="Gallery">
+      <ul class="Gallery-list">
+        <li class="js-open-modal" data-toggle="modal" data-target="#js-modal-gallery" data-image="images/resources/gallery/gallery01">
+          <img src="images/resources/gallery/gallery01">
+        </li>
+        <li class="js-open-modal" data-toggle="modal" data-target="#js-modal-gallery" data-image="images/resources/gallery/gallery02">
+          <img src="images/resources/gallery/gallery02">
+        </li>
+        <li class="js-open-modal" data-toggle="modal" data-target="#js-modal-gallery" data-image="images/resources/gallery/gallery03">
+          <img src="images/resources/gallery/gallery03">
+        </li>
+        <li class="js-open-modal" data-toggle="modal" data-target="#js-modal-gallery" data-image="images/resources/gallery/gallery04">
+          <img src="images/resources/gallery/gallery04">
+        </li>
+        <li class="js-open-modal" data-toggle="modal" data-target="#js-modal-gallery" data-image="images/resources/gallery/gallery05">
+          <img src="images/resources/gallery/gallery05">
+        </li>
+        <li class="js-open-modal" data-toggle="modal" data-target="#js-modal-gallery" data-image="images/resources/gallery/gallery06">
+          <img src="images/resources/gallery/gallery06">
+        </li>
+      </ul>
+
+      <div class="modal fade Modal" id="js-modal-gallery" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <figure class="Modal-figure">
+                <img class="img-responsive center-block" src="" alt="">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer class="Footer">
       <div class="container">
         <div class="row">
@@ -252,6 +289,7 @@
     <script src="lib/formvalidation/dist/js/formValidation.js"></script>
     <script src="lib/formvalidation/dist/js/framework/bootstrap.js"></script>
     <script src="lib/formvalidation/dist/js/language/es_ES.js"></script>
+    <script src="lib/jquery.bxslider/jquery.bxslider.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js js/app.min.js -->

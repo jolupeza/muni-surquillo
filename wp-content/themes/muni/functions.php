@@ -26,6 +26,7 @@ if (function_exists('add_theme_support')) {
   add_theme_support('post-thumbnails', array('post', 'page', 'sliders', 'authorities', 'locales'));
   //set_post_thumbnail_size(210, 210, true);
   add_image_size('post-thumb', 320, 240, true);
+  add_image_size('page-gallery', 375, 234, true);
   // add_image_size('events-large', 362, 593, true);
 
   //add_theme_support('automatic-feed-links');
@@ -1132,6 +1133,22 @@ function register_info_callback()
 
   echo json_encode($result);
   die();
+}
+
+function muni_get_image_id($file_url)
+{
+  $file_path = ltrim(str_replace(wp_upload_dir()['baseurl'], '', $file_url), '/');
+
+  global $wpdb;
+  $statement = $wpdb->prepare("SELECT `ID` FROM `mdws_posts` AS posts JOIN `mdws_postmeta` AS meta on meta.`post_id`=posts.`ID` WHERE posts.`guid`='%s' OR (meta.`meta_key`='_wp_attached_file' AND meta.`meta_value` LIKE '%%%s');", $file_url, $file_path);
+
+  $attachment = $wpdb->get_col($statement);
+
+  if (count($attachment) < 1) {
+      return false;
+  }
+
+  return $attachment[0];
 }
 
 /****************************************************/

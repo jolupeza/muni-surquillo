@@ -7,8 +7,7 @@ var j = jQuery.noConflict();
   var $doc = j(document);
   var $animationElements = j('.animation-element');
   var body = j('body');
-  // var $header = j('.header');
-  // var $footer = j('.Footer');
+  var gallery;
 
   $win.on('scroll', function(){
     if(j(this).scrollTop() > 150) {
@@ -101,6 +100,51 @@ var j = jQuery.noConflict();
       } else {
         $this.removeClass('icon-more').addClass('icon-minus active').prev().addClass('active');
       }
+    });
+
+    // Gallery Surquillo
+    if(j('.Gallery').length) {
+      // widthBxSlider = parseInt(j('.Carousel--class').width());
+      // widthBxSlider = (widthBxSlider * 42) / 100;
+
+      gallery = j('.Gallery-list').bxSlider({
+        auto: true,
+        autoHover: true,
+        minSlides: 1,
+        maxSlides: 5,
+        moveSlides: 1,
+        slideWidth: 375,
+        slideMargin: 0,
+        nextText: '',
+        prevText: '',
+        pager: false,
+        onSliderLoad: function() {
+          j('.bx-controls-direction a').on('click', function(){
+            var i = $(this).attr('data-slide-index');
+              gallery.goToSlide(i);
+              gallery.stopAuto();
+              gallery.startAuto();
+              return false;
+          });
+        }
+      });
+    }
+
+    j('#js-modal-gallery').on('show.bs.modal', function (e) {
+      var $this = $(e.relatedTarget),
+          image = $this.data('image'),
+          modal = $(this);
+
+      modal.find('.Modal-figure img').attr('src', image);
+      gallery.stopAuto();
+    });
+
+    j('#js-modal-gallery').on('hidden.bs.modal', function (e) {
+      var $this = $(e.relatedTarget),
+          modal = $(this);
+
+      modal.find('.Modal-figure img').attr('src', '');
+      gallery.startAuto();
     });
   });
 
